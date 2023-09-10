@@ -1,30 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <v-app>
+    <HeaderComponent v-bind:title="title" />
+    <v-main class="blue-grey lighten-5">
+      <router-view />
+    </v-main>
+    <v-overlay :opacity="0.75" :value="isLoading">
+      <v-progress-circular indeterminate width="16" size="128">
+        Loading
+      </v-progress-circular>
+    </v-overlay>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup lang="ts">
+import { ref } from "vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
 
-nav {
-  padding: 30px;
+const title = ref<string>("Mathotsanayan Admin");
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+let isLoading = ref<boolean>(false);
+</script>

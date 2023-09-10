@@ -1,7 +1,10 @@
-export async function authenticatedFetch(url: string, options?: RequestInit): Promise<Response> {
-  const accessToken = localStorage.getItem('accessToken');
+export async function authenticatedFetch(
+  url: string,
+  options?: RequestInit
+): Promise<Response> {
+  const accessToken = localStorage.getItem("accessToken");
   if (!accessToken) {
-    throw new Error('No access token available');
+    throw new Error("No access token available");
   }
   const headers = {
     ...options?.headers,

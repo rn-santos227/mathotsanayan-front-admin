@@ -1,9 +1,5 @@
-import { createStore } from "vuex";
+import { createPinia } from "pinia";
+import { useAuthModule } from "./modules/auth_module";
 
-export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+const pinia = createPinia();
+export { pinia, useAuthModule };
