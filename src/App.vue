@@ -1,7 +1,7 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <HeaderComponent v-bind:title="title" />
-    <v-main class="blue-grey lighten-5">
+    <v-main app class="blue-grey lighten-5">
       <router-view />
     </v-main>
     <v-overlay :opacity="0.75" :value="isLoading">
