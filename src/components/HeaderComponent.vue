@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar color="yellow accent-4" elevation="1" app>
-    <v-toolbar-title class="text-h6">
+  <v-app-bar color="purple-darken-3" dark elevation="1" app>
+    <v-toolbar-title class="text-h5 font-weight-bold">
       {{ props.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
@@ -8,8 +8,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
-
 const props = defineProps({
   title: {
     type: String,
