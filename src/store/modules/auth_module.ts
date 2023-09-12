@@ -40,6 +40,7 @@ export const useAuthModule = defineStore("auth", {
           body: JSON.stringify({ email, password }),
         });
 
+        console.log(response);
         if (!response.ok) {
           throw new Error("Invalid Credentials.");
         }

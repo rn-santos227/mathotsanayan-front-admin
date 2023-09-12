@@ -54,7 +54,9 @@ import { required, email, minLength } from "@vuelidate/validators";
 import { ref, reactive, computed } from "vue";
 import Login from "@/types/Login";
 import { useValidationErrors } from "@/services/handlers";
+import { useAuthModule } from "@/store";
 
+const authModule = useAuthModule();
 const show = ref<boolean>(false);
 const state = reactive<Login>({
   email: "",
@@ -72,7 +74,7 @@ const v$ = useVuelidate(rules, state);
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
-    console.log("okay!");
+    authModule.login(v$.value.email.$model, v$.value.password.$model);
   }
 };
 </script>
