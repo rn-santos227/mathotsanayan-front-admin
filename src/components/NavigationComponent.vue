@@ -20,6 +20,7 @@
         <template v-for="(route, key_1) in routesItem" :key="key_1">
           <v-list-item
             v-if="route.children.length <= 0"
+            :class="{ 'my-active-class': isActive(route.route) }"
             :to="route.route"
             :prepend-icon="route.icon"
             :title="route.text"
@@ -34,6 +35,7 @@
             </template>
             <v-list-item
               v-for="(child, key_2) in route.children"
+              :class="{ 'my-active-class': isActive(child.route) }"
               :key="key_2"
               :title="child.text"
               :prepend-icon="child.icon"
@@ -49,10 +51,22 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useAuthModule } from "@/store";
+import { useRoute } from "vue-router";
 import routesItem from "@/helpers/drawer";
 
+const router = useRoute();
 const drawer = ref<boolean>(true);
 const mini = ref<boolean>(false);
 
 const authModule = useAuthModule();
+const isActive = (route: string) => {
+  return router.path === route;
+};
 </script>
+
+<style>
+.my-active-class {
+  background-color: #6a1b9a;
+  color: #ffffff;
+}
+</style>

@@ -23,7 +23,15 @@ const authModule = useAuthModule();
 const title = ref<string>("Mathotsanayan Admin");
 let isLoading = ref<boolean>(false);
 
-await authModule.fetchUserData();
+async function fetchUserData() {
+  try {
+    await authModule.fetchUserData();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+fetchUserData();
 </script>
 
 <style>

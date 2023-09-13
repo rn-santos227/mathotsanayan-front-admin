@@ -39,15 +39,9 @@ export const useAuthModule = defineStore("auth", {
           },
           body: JSON.stringify({ email, password }),
         });
-
         console.log(response);
-        if (!response.ok) {
-          throw new Error("Invalid Credentials.");
-        }
-
         const data = await response.json();
         const { token, admin } = data;
-
         this.setAdmin(admin);
         this.setToken(token);
       } catch (error) {
@@ -57,16 +51,12 @@ export const useAuthModule = defineStore("auth", {
     },
 
     async fetchUserData() {
+      if (!this.isAuthenticated) return;
       try {
-        const response = await authenticatedFetch(api.AUTH.AUTH);
-        if (!response.ok) {
-          throw new Error("Invalid Credentials.");
-        }
-
+        const response = await authenticatedFetch(api.AUTH.USER);
         const data = await response.json();
-        const { admin } = data;
-
-        this.setAdmin(admin);
+        const { user } = data;
+        this.setAdmin(user);
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;

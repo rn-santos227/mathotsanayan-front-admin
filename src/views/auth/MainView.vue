@@ -52,10 +52,11 @@
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 import { ref, reactive, computed } from "vue";
-import Login from "@/types/Login";
 import { useValidationErrors } from "@/services/handlers";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
+
+import Login from "@/types/Login";
 
 const authModule = useAuthModule();
 const router = useRouter();
