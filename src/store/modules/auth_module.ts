@@ -2,7 +2,7 @@ import User from "@/types/User";
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 import Admin from "@/types/Admin";
-import API from "@/helpers/api";
+import api from "@/helpers/api";
 
 export const useAuthModule = defineStore("auth", {
   state: (): User => ({
@@ -32,7 +32,7 @@ export const useAuthModule = defineStore("auth", {
 
     async login(email: string, password: string): Promise<void> {
       try {
-        const response = await fetch(API.AUTH.LOGIN, {
+        const response = await fetch(api.AUTH.LOGIN, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,16 +58,15 @@ export const useAuthModule = defineStore("auth", {
 
     async fetchUserData() {
       try {
-        const response = await authenticatedFetch(API.AUTH.AUTH);
+        const response = await authenticatedFetch(api.AUTH.AUTH);
         if (!response.ok) {
           throw new Error("Invalid Credentials.");
         }
 
         const data = await response.json();
-        const { token, admin } = data;
+        const { admin } = data;
 
         this.setAdmin(admin);
-        this.setToken(token);
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;
@@ -76,7 +75,7 @@ export const useAuthModule = defineStore("auth", {
 
     async logout() {
       try {
-        await authenticatedFetch(API.AUTH.LOGOUT);
+        await authenticatedFetch(api.AUTH.LOGOUT);
         this.accessToken = null;
         this.isAuthenticated = false;
         this.admin = null;

@@ -29,7 +29,7 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: "/",
+    path: "/modules",
     name: "modules",
     component: ModulesView,
     meta: {
@@ -90,9 +90,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthModule();
-  const isAuthenticated = authStore.isAuthenticated;
-
-  if (to.meta.forAuth && !isAuthenticated) {
+  if (to.meta.forAuth && !authStore.isAuthenticated) {
     next("/login");
   } else {
     next();

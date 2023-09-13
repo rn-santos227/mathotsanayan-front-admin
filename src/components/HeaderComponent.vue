@@ -39,6 +39,9 @@
 
 <script setup lang="ts">
 import { useAuthModule } from "@/store";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const authModule = useAuthModule();
 const props = defineProps({
@@ -49,6 +52,9 @@ const props = defineProps({
 });
 
 const logout = async () => {
-  authModule.logout();
+  await authModule.logout();
+  if (!authModule.isAuthenticated) {
+    router.push("/login");
+  }
 };
 </script>

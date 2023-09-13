@@ -55,12 +55,14 @@ import { ref, reactive, computed } from "vue";
 import Login from "@/types/Login";
 import { useValidationErrors } from "@/services/handlers";
 import { useAuthModule } from "@/store";
+import { useRouter } from "vue-router";
 
 const authModule = useAuthModule();
+const router = useRouter();
 const show = ref<boolean>(false);
 const state = reactive<Login>({
-  email: "",
-  password: "",
+  email: "mathotsanayan@gmail.com",
+  password: "Test@12345",
 });
 const rules = computed(() => {
   return {
@@ -74,13 +76,10 @@ const v$ = useVuelidate(rules, state);
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
-    authModule.login(v$.value.email.$model, v$.value.password.$model);
+    await authModule.login(v$.value.email.$model, v$.value.password.$model);
+    if (authModule.isAuthenticated) {
+      router.push("/");
+    }
   }
 };
 </script>
-
-<style>
-.base {
-  background-color: #fffde7;
-}
-</style>

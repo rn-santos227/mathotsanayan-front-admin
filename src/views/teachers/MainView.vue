@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <v-container> </v-container>
+  <v-container class="base fill-height" fluid> </v-container>
 </template>

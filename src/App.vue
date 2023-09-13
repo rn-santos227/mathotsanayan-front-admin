@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
     <HeaderComponent v-bind:title="title" />
+    <NavigationComponent />
     <v-main app>
       <router-view />
     </v-main>
@@ -15,8 +16,18 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
+import NavigationComponent from "./components/NavigationComponent.vue";
+import { useAuthModule } from "./store";
 
+const authModule = useAuthModule();
 const title = ref<string>("Mathotsanayan Admin");
-
 let isLoading = ref<boolean>(false);
+
+await authModule.fetchUserData();
 </script>
+
+<style>
+.base {
+  background-color: #fffde7;
+}
+</style>
