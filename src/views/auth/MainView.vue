@@ -12,7 +12,7 @@
         <v-card-text class="text--primary">
           <v-text-field
             class="mx-4"
-            v-model="v$.email.$model"
+            v-model.trim="v$.email.$model"
             label="Email"
             density="compact"
             variant="outlined"
@@ -21,7 +21,7 @@
           />
           <v-text-field
             class="mx-4 mt-4"
-            v-model="v$.password.$model"
+            v-model.trim="v$.password.$model"
             label="Password"
             density="compact"
             variant="outlined"
