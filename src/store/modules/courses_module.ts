@@ -1,7 +1,7 @@
 import Course from "@/types/Course";
 import { defineStore } from "pinia";
 
-export const useCourseModule = defineStore("store", {
+export const useCourseModule = defineStore("courses", {
   state: () => ({
     courses: [] as Course[],
     isLoading: false as boolean,

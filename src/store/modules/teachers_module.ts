@@ -1,7 +1,7 @@
 import Teacher from "@/types/Teacher";
 import { defineStore } from "pinia";
 
-export const useTeacherModule = defineStore("store", {
+export const useTeacherModule = defineStore("teachers", {
   state: () => ({
     teachers: [] as Teacher[],
     isLoading: false as boolean,

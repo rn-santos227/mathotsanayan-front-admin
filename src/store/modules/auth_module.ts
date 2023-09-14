@@ -11,6 +11,7 @@ export const useAuthModule = defineStore("auth", {
     admin: null,
     accessToken: localStorage.getItem("accessToken") || null,
     isAuthenticated: !!localStorage.getItem("accessToken"),
+    isLoading: false,
   }),
 
   actions: {
@@ -32,6 +33,7 @@ export const useAuthModule = defineStore("auth", {
 
     async login(email: string, password: string): Promise<void> {
       try {
+        this.isLoading = true;
         const response = await fetch(api.AUTH.LOGIN, {
           method: "POST",
           headers: {
@@ -47,12 +49,15 @@ export const useAuthModule = defineStore("auth", {
       } catch (error) {
         console.error("Error logging in:", error);
         throw error;
+      } finally {
+        this.isLoading = false;
       }
     },
 
     async fetchUserData() {
       if (!this.isAuthenticated) return;
       try {
+        this.isLoading = true;
         const response = await authenticatedFetch(api.AUTH.USER);
         const data = await response.json();
         const { user } = data;
@@ -60,11 +65,14 @@ export const useAuthModule = defineStore("auth", {
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;
+      } finally {
+        this.isLoading = false;
       }
     },
 
     async logout() {
       try {
+        this.isLoading = true;
         await authenticatedFetch(api.AUTH.LOGOUT);
         this.accessToken = null;
         this.isAuthenticated = false;
@@ -73,6 +81,8 @@ export const useAuthModule = defineStore("auth", {
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;
+      } finally {
+        this.isLoading = false;
       }
     },
   },

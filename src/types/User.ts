@@ -6,5 +6,6 @@ interface User {
   admin: Admin | null;
   accessToken: string | null;
   isAuthenticated: boolean;
+  isLoading: boolean;
 }
 export default User;
