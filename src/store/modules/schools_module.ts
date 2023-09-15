@@ -27,4 +27,10 @@ export const useSchoolModule = defineStore("schools", {
       this.schools = this.schools.filter((item) => item.id !== school.id);
     },
   },
+
+  getters: {
+    getSchools(): School[] {
+      return this.schools;
+    },
+  },
 });

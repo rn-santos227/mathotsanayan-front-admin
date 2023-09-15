@@ -1,7 +1,7 @@
 import Admin from "./Admin";
 
 interface User {
-  id: number | null;
+  id?: number;
   type: number;
   admin: Admin | null;
   accessToken: string | null;

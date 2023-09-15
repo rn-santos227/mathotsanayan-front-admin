@@ -1,5 +1,33 @@
 <template>
-  <v-container> </v-container>
+  <v-data-table
+    class="w-100"
+    :items="schools"
+    :headers="schoolHeader"
+    :loading="schoolModule.isLoading"
+    item-value="name"
+  >
+    <template v-slot:item="props">
+      <tr>
+        <td class="text-xs-left">
+          {{ props.item.raw.name }}
+        </td>
+        <td class="text-xs-left">
+          {{ props.item.raw.contact_number }}
+        </td>
+        <td></td>
+      </tr>
+    </template>
+  </v-data-table>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { VDataTable } from "vuetify/labs/VDataTable";
+
+import { computed } from "vue";
+import { useSchoolModule } from "@/store";
+import schoolHeader from "@/helpers/headers/header_schools";
+import School from "@/types/School";
+
+const schoolModule = useSchoolModule();
+const schools = computed<School[]>(() => schoolModule.getSchools);
+</script>

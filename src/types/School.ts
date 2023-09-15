@@ -1,5 +1,5 @@
 interface School {
-  id: number | null;
+  id?: number;
   name: string;
   contact_number: string;
   description: string | null;

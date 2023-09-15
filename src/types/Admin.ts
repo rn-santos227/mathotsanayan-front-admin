@@ -1,5 +1,5 @@
 interface Admin {
-  id: number | null;
+  id?: number;
   email: string;
   name: string;
   contact_number: string;

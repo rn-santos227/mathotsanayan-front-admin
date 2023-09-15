@@ -2,10 +2,10 @@ import School from "./School";
 import Teacher from "./Teacher";
 
 interface Section {
-  id: number | null;
+  id?: number;
   name: string;
   level: string;
-  description: string | null;
+  description?: string;
   school_id: number | School;
   teacher_id: number | Teacher;
 }

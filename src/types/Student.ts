@@ -2,12 +2,12 @@ import School from "./School";
 import Section from "./Section";
 
 interface Student {
-  id: number | null;
+  id?: number;
   first_name: string;
-  middle_name: string | null;
+  middle_name?: string;
   last_name: string;
-  suffix: string | null;
-  student_number: string | null;
+  suffix?: string;
+  student_number?: string;
   email: string;
   contact_number: string;
   school_id: number | School;

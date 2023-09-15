@@ -5,7 +5,7 @@
     <v-main app>
       <router-view />
     </v-main>
-    <v-overlay :opacity="0.75" :value="isLoading">
+    <v-overlay :opacity="0.75" :value="authModule.isLoading">
       <v-progress-circular indeterminate width="16" size="128">
         Loading
       </v-progress-circular>
@@ -21,7 +21,6 @@ import { useAuthModule } from "./store";
 
 const authModule = useAuthModule();
 const title = ref<string>("Mathotsanayan Admin");
-let isLoading = ref<boolean>(false);
 
 async function fetchUserData() {
   try {

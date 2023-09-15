@@ -6,7 +6,7 @@ import api from "@/helpers/api";
 
 export const useAuthModule = defineStore("auth", {
   state: (): User => ({
-    id: null,
+    id: 0,
     type: 1 as number,
     admin: null,
     accessToken: localStorage.getItem("accessToken") || null,

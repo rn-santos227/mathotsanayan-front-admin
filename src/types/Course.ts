@@ -1,7 +1,7 @@
 import Module from "./Module";
 
 interface Course {
-  id: number | null;
+  id?: number;
   name: string;
   description: string | null;
   modules: Module[] | null;

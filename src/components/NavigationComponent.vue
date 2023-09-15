@@ -64,7 +64,7 @@ const isActive = (route: string) => {
 };
 </script>
 
-<style>
+<style scoped>
 .my-active-class {
   background-color: #6a1b9a;
   color: #ffffff;

@@ -2,7 +2,7 @@ import Course from "./Course";
 import Module from "./Module";
 
 interface Question {
-  id: number | null;
+  id?: number;
   content: string;
   type: string;
   file: string | string;
