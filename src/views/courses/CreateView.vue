@@ -92,6 +92,8 @@
       </v-card>
     </v-dialog>
   </v-btn>
+  <SuccessComponent ref="success" />
+  <ErrorComponent ref="error" />
 </template>
 
 <script setup lang="ts">
@@ -99,11 +101,24 @@ import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useCourseModule } from "@/store";
+import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import Course from "@/types/Course";
 import VCourse from "@/helpers/validations/v_courses";
 import rules from "@/helpers/rules/rules_courses";
 
 const dialog = ref<boolean>(false);
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
 const state = reactive<Course>({
   name: "",
   description: "",
@@ -126,9 +141,14 @@ const clearForm = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
-    useCourseModule().create(state);
-    clearForm();
-    dialog.value = false;
+    const response = await useCourseModule().create(state);
+    if (response) {
+      clearForm();
+      success.value.show("School has been successfully recorded.");
+      dialog.value = false;
+    } else {
+      error.value.show("The server has not able to process request.");
+    }
   }
 };
 </script>

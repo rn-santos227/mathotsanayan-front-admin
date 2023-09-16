@@ -30,7 +30,7 @@ export const useCourseModule = defineStore("courses", {
       this.courses = this.courses.filter((item) => item.id !== course.id);
     },
 
-    async create(payload: Course): Promise<void> {
+    async create(payload: Course): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(api.COURSES.CREATE, {
@@ -44,30 +44,32 @@ export const useCourseModule = defineStore("courses", {
         const data = await response.json();
         const { course } = data;
         this.addCourse(course);
+        return true;
       } catch (error) {
         console.error("Error Course in:", error);
-        throw error;
+        return false;
       } finally {
         this.isLoading = false;
       }
     },
 
-    async read(): Promise<void> {
+    async read(): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(api.COURSES.READ);
         const data = await response.json();
         const { courses } = data;
         this.setCourses(courses);
+        return true;
       } catch (error) {
         console.error("Error Course in:", error);
-        throw error;
+        return false;
       } finally {
         this.isLoading = false;
       }
     },
 
-    async update(payload: Course): Promise<void> {
+    async update(payload: Course): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
@@ -84,9 +86,10 @@ export const useCourseModule = defineStore("courses", {
         const data = await response.json();
         const { course } = data;
         this.updateCourse(course);
+        return true;
       } catch (error) {
         console.error("Error Course in:", error);
-        throw error;
+        return false;
       } finally {
         this.isLoading = false;
       }

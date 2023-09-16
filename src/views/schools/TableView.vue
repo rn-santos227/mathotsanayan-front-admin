@@ -15,7 +15,7 @@
           {{ props.item.raw.contact_number }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.created_at }}
+          {{ formatDate(props.item.raw.created_at) }}
         </td>
         <td></td>
       </tr>
@@ -28,6 +28,7 @@ import { VDataTable } from "vuetify/labs/VDataTable";
 
 import { computed, onMounted } from "vue";
 import { useSchoolModule } from "@/store";
+import { formatDate } from "@/helpers/utils";
 import headers from "@/helpers/headers/header_schools";
 import School from "@/types/School";
 

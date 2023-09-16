@@ -15,7 +15,7 @@
           {{ props.item.raw.modules?.length }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.created_at }}
+          {{ formatDate(props.item.raw.created_at) }}
         </td>
         <td></td>
       </tr>
@@ -27,6 +27,8 @@
 import { computed, onMounted } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
 import { useCourseModule } from "@/store";
+import { formatDate } from "@/helpers/utils";
+
 import headers from "@/helpers/headers/header_courses";
 import Course from "@/types/Course";
 

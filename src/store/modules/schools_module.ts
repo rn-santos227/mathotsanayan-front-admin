@@ -30,7 +30,7 @@ export const useSchoolModule = defineStore("schools", {
       this.schools = this.schools.filter((item) => item.id !== school.id);
     },
 
-    async create(payload: School): Promise<void> {
+    async create(payload: School): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(api.SCHOOLS.CREATE, {
@@ -44,30 +44,36 @@ export const useSchoolModule = defineStore("schools", {
         const data = await response.json();
         const { school } = data;
         this.addSchool(school);
+
+        return true;
       } catch (error) {
         console.error("Error School in:", error);
-        throw error;
+
+        return false;
       } finally {
         this.isLoading = false;
       }
     },
 
-    async read(): Promise<void> {
+    async read(): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(api.SCHOOLS.READ);
         const data = await response.json();
         const { schools } = data;
         this.setSchools(schools);
+
+        return true;
       } catch (error) {
         console.error("Error School in:", error);
-        throw error;
+
+        return false;
       } finally {
         this.isLoading = false;
       }
     },
 
-    async update(payload: School): Promise<void> {
+    async update(payload: School): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
@@ -84,9 +90,10 @@ export const useSchoolModule = defineStore("schools", {
         const data = await response.json();
         const { school } = data;
         this.updateSchool(school);
+        return true;
       } catch (error) {
         console.error("Error School in:", error);
-        throw error;
+        return false;
       } finally {
         this.isLoading = false;
       }

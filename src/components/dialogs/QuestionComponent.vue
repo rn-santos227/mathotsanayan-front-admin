@@ -1,27 +1,41 @@
 <template>
   <v-dialog v-model="dialog">
-    <v-card class="ma-auto" width="25%">
+    <v-sheet
+      class="ma-auto text-center mx-auto"
+      elevation="12"
+      max-width="550"
+      rounded="lg"
+      width="100%"
+    >
       <v-card class="rounded-0 rounded-t mb-2" color="purple-darken-3" flat>
-        <v-card-text>
+        <v-card-text class="text-left">
           <span class="text-subtitle-1 font-weight-bold">
             <v-icon class="mr-2" icon="mdi-information-outline"></v-icon>
-            Confirmation Message
+            System Message
           </span>
         </v-card-text>
       </v-card>
-      <v-card-text class="mx-auto my-2">
-        <v-icon></v-icon>
-      </v-card-text>
-      <v-card-text class="mx-auto">
+      <v-icon
+        class="my-5"
+        color="purple-darken-3"
+        icon="mdi-help-circle"
+        size="112"
+      ></v-icon>
+      <h2 class="text-h4 mb-6 text-purple-darken-3">QUESTION</h2>
+      <span class="mx-auto">
         {{ text }}
-      </v-card-text>
-      <v-divider class="my-2" />
+      </span>
+      <v-divider class="mb-2 mt-6" />
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn @click="cancel">Cancel</v-btn>
-        <v-btn @click="confirm">Confirm</v-btn>
+        <v-btn variant="flat" width="100" color="error" dark @click="cancel">
+          Cancel
+        </v-btn>
+        <v-btn variant="flat" width="100" color="success" dark @click="confirm">
+          Confirm
+        </v-btn>
       </v-card-actions>
-    </v-card>
+    </v-sheet>
   </v-dialog>
 </template>
 

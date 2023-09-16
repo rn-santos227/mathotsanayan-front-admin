@@ -1,10 +1,12 @@
 interface School {
   id?: number;
   name: string;
-  contact_number: string;
+  address?: string;
+  email?: string;
+  contact_number?: string;
+  description?: string | null;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  description?: string | null;
 }
 export default School;
