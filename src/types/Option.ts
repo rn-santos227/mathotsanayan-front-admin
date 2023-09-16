@@ -7,8 +7,11 @@ interface Option {
   content: string;
   type: string;
   file?: string;
-  course_id: number | Course;
-  module_id: number | Module;
-  question_id: number | Question;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
+  course?: number | Course;
+  module?: number | Module;
+  question?: number | Question;
 }
 export default Option;

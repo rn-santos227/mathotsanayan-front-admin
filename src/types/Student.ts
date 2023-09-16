@@ -9,8 +9,13 @@ interface Student {
   suffix?: string;
   student_number?: string;
   email: string;
+  password?: string;
+  password_confirm?: string;
   contact_number: string;
-  school_id: number | School;
-  section_id: number | Section;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
+  school?: number | School;
+  section?: number | Section;
 }
 export default Student;

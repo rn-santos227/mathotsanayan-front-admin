@@ -1,6 +1,6 @@
 <template>
-  <v-btn variant="outlined">
-    Create School
+  <v-btn variant="outlined" prepend-icon="mdi-plus">
+    Create Course
     <v-dialog
       class="ma-auto"
       persistent
@@ -8,7 +8,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="50vh">
+      <v-card height="40vh">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -25,7 +25,7 @@
                   density="comfortable"
                   variant="outlined"
                   icon="mdi-close"
-                  @click="dialog = !dialog"
+                  @click="close"
                 >
                 </v-btn>
               </v-col>
@@ -33,13 +33,39 @@
           </v-card-title>
         </v-card>
         <form>
-          <v-card-text class="text--primary"> </v-card-text>
-          <v-divider class="mb-2"></v-divider>
+          <v-card-text class="text--primary">
+            <v-row>
+              <v-col>
+                <v-text-field
+                  class="mx-4"
+                  v-model.trim="v$.name.$model"
+                  label="Course Name"
+                  density="compact"
+                  variant="outlined"
+                  :error="v$.name.$error"
+                  :error-messages="errors.name"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  class="mx-4"
+                  v-model.trim="state.description"
+                  label="Course Description/Notes"
+                  density="compact"
+                  variant="outlined"
+                />
+              </v-col>
+            </v-row>
+          </v-card-text>
+          <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
             <v-row>
               <v-col>
                 <v-btn
                   class="mb-3"
+                  @click.prevent="clearForm"
                   variant="elevated"
                   width="200"
                   dark
@@ -50,6 +76,7 @@
                 </v-btn>
                 <v-btn
                   class="mb-3"
+                  @click.prevent="submitForm"
                   variant="elevated"
                   width="200"
                   dark
@@ -68,7 +95,40 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, reactive, computed } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { useValidationErrors } from "@/services/handlers";
+import { useCourseModule } from "@/store";
+import Course from "@/types/Course";
+import VCourse from "@/helpers/validations/v_courses";
+import rules from "@/helpers/rules/rules_courses";
 
 const dialog = ref<boolean>(false);
+const state = reactive<Course>({
+  name: "",
+  description: "",
+});
+
+const v$ = useVuelidate(rules, state);
+const errors = computed(() => useValidationErrors<VCourse>(v$.value.$errors));
+
+const close = () => {
+  dialog.value = !dialog.value;
+  clearForm();
+};
+
+const clearForm = () => {
+  state.name = "";
+  state.description = "";
+  v$.value.$reset();
+};
+
+const submitForm = async () => {
+  const result = await v$.value.$validate();
+  if (result) {
+    useCourseModule().create(state);
+    clearForm();
+    dialog.value = false;
+  }
+};
 </script>

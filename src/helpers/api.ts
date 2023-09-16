@@ -11,42 +11,42 @@ export default {
   COURSES: {
     CREATE: `${BACKEND}courses/create`,
     READ: `${BACKEND}courses`,
-    UPDATE: `${BACKEND}courses/{id}`,
-    DELETE: `${BACKEND}courses/{id}`,
+    UPDATE: `${BACKEND}courses/`,
+    DELETE: `${BACKEND}courses/`,
   },
 
   MODULES: {
     CREATE: `${BACKEND}modules/create`,
     READ: `${BACKEND}modules`,
-    UPDATE: `${BACKEND}modules/{id}`,
-    DELETE: `${BACKEND}modules/{id}`,
+    UPDATE: `${BACKEND}modules/`,
+    DELETE: `${BACKEND}modules/`,
   },
 
   SCHOOLS: {
     CREATE: `${BACKEND}schools/create`,
     READ: `${BACKEND}schools`,
-    UPDATE: `${BACKEND}schools/{id}`,
-    DELETE: `${BACKEND}schools/{id}`,
+    UPDATE: `${BACKEND}schools/`,
+    DELETE: `${BACKEND}schools/`,
   },
 
   SECTIONS: {
     CREATE: `${BACKEND}sections/create`,
     READ: `${BACKEND}sections`,
-    UPDATE: `${BACKEND}sections/{id}`,
-    DELETE: `${BACKEND}sections/{id}`,
+    UPDATE: `${BACKEND}sections/`,
+    DELETE: `${BACKEND}sections/`,
   },
 
   STUDENTS: {
     CREATE: `${BACKEND}students/create`,
     READ: `${BACKEND}students`,
-    UPDATE: `${BACKEND}students/{id}`,
-    DELETE: `${BACKEND}students/{id}`,
+    UPDATE: `${BACKEND}students/`,
+    DELETE: `${BACKEND}students/`,
   },
 
   TEACHERS: {
     CREATE: `${BACKEND}teachers/create`,
     READ: `${BACKEND}teachers`,
-    UPDATE: `${BACKEND}teachers/{id}`,
-    DELETE: `${BACKEND}teachers/{id}`,
+    UPDATE: `${BACKEND}teachers/`,
+    DELETE: `${BACKEND}teachers/`,
   },
 };

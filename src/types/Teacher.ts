@@ -3,10 +3,16 @@ import School from "./School";
 interface Teacher {
   id: number | null;
   first_name: string;
-  middle_name: string | null;
+  middle_name?: string | null;
   last_name: string;
+  suffix?: string;
   email: string;
+  password?: string;
+  password_confirm?: string;
   contact_number: string;
-  school_id: number | School;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
+  school?: number | School;
 }
 export default Teacher;

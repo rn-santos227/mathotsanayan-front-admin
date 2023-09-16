@@ -6,7 +6,10 @@ interface Section {
   name: string;
   level: string;
   description?: string;
-  school_id: number | School;
-  teacher_id: number | Teacher;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
+  school?: number | School;
+  teacher?: number | Teacher;
 }
 export default Section;

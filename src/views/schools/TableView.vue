@@ -14,6 +14,9 @@
         <td class="text-xs-left">
           {{ props.item.raw.contact_number }}
         </td>
+        <td class="text-xs-left">
+          {{ props.item.raw.created_at }}
+        </td>
         <td></td>
       </tr>
     </template>
@@ -23,11 +26,15 @@
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
 
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { useSchoolModule } from "@/store";
 import headers from "@/helpers/headers/header_schools";
 import School from "@/types/School";
 
 const schoolModule = useSchoolModule();
 const schools = computed<School[]>(() => schoolModule.getSchools);
+
+onMounted(() => {
+  useSchoolModule().read();
+});
 </script>

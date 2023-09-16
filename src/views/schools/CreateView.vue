@@ -25,7 +25,7 @@
                   density="comfortable"
                   variant="outlined"
                   icon="mdi-close"
-                  @click="dialog = !dialog"
+                  @click="close"
                 >
                 </v-btn>
               </v-col>
@@ -72,7 +72,7 @@
               </v-col>
             </v-row>
           </v-card-text>
-          <v-divider class="mb-2" />
+          <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
             <v-row>
               <v-col>
@@ -111,7 +111,7 @@
 import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-
+import { useSchoolModule } from "@/store";
 import School from "@/types/School";
 import VSchool from "@/helpers/validations/v_schools";
 import rules from "@/helpers/rules/rules_schools";
@@ -123,8 +123,13 @@ const state = reactive<School>({
   description: "",
 });
 
-const errors = computed(() => useValidationErrors<VSchool>(v$.value.$errors));
 const v$ = useVuelidate(rules, state);
+const errors = computed(() => useValidationErrors<VSchool>(v$.value.$errors));
+
+const close = () => {
+  dialog.value = !dialog.value;
+  clearForm();
+};
 
 const clearForm = () => {
   state.name = "";
@@ -136,7 +141,9 @@ const clearForm = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
+    useSchoolModule().create(state);
     clearForm();
+    dialog.value = false;
   }
 };
 </script>

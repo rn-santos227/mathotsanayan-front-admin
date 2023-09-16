@@ -6,8 +6,11 @@ interface Question {
   content: string;
   type: string;
   file: string | string;
-  module_id: number | Module;
-  course_id: number | Course;
+  created_at?: string;
+  updated_at?: string;
+  deleted_at?: string;
+  module?: number | Module;
+  course?: number | Course;
   questions: Question[] | null;
 }
 export default Question;

@@ -9,7 +9,7 @@
         <v-card-title>
           <v-row>
             <v-col>
-              <span class="tex-h6-1 font-weight-bold"> Schools Manager </span>
+              <span class="text-h5 font-weight-bold"> Schools Manager </span>
             </v-col>
             <v-col class="d-flex">
               <v-spacer />

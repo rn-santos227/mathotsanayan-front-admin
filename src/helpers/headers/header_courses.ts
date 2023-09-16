@@ -9,14 +9,21 @@ const headers: Array<any> = [
   {
     title: "Number of Modules",
     align: "start",
-    sortable: false,
-    key: "modules",
+    sortable: true,
+    key: "modules.length",
+  },
+  {
+    title: "Date Created",
+    align: "start",
+    sortable: true,
+    key: "created_at",
   },
   {
     title: "Action",
     align: "end",
     sortable: false,
     key: "action",
+    width: "10%",
   },
 ];
 

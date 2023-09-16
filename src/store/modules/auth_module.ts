@@ -1,8 +1,9 @@
 import User from "@/types/User";
-import { defineStore } from "pinia";
-import { authenticatedFetch } from "@/services/api";
 import Admin from "@/types/Admin";
 import api from "@/helpers/api";
+
+import { defineStore } from "pinia";
+import { authenticatedFetch } from "@/services/api";
 
 export const useAuthModule = defineStore("auth", {
   state: (): User => ({
@@ -41,7 +42,7 @@ export const useAuthModule = defineStore("auth", {
           },
           body: JSON.stringify({ email, password }),
         });
-        console.log(response);
+
         const data = await response.json();
         const { token, admin } = data;
         this.setAdmin(admin);
@@ -54,7 +55,7 @@ export const useAuthModule = defineStore("auth", {
       }
     },
 
-    async fetchUserData() {
+    async fetchUserData(): Promise<void> {
       if (!this.isAuthenticated) return;
       try {
         this.isLoading = true;
@@ -70,7 +71,7 @@ export const useAuthModule = defineStore("auth", {
       }
     },
 
-    async logout() {
+    async logout(): Promise<void> {
       try {
         this.isLoading = true;
         await authenticatedFetch(api.AUTH.LOGOUT);
