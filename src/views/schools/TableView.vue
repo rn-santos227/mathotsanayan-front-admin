@@ -2,7 +2,7 @@
   <v-data-table
     class="w-100"
     :items="schools"
-    :headers="schoolHeader"
+    :headers="headers"
     :loading="schoolModule.isLoading"
     item-value="name"
   >
@@ -25,7 +25,7 @@ import { VDataTable } from "vuetify/labs/VDataTable";
 
 import { computed } from "vue";
 import { useSchoolModule } from "@/store";
-import schoolHeader from "@/helpers/headers/header_schools";
+import headers from "@/helpers/headers/header_schools";
 import School from "@/types/School";
 
 const schoolModule = useSchoolModule();

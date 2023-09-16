@@ -35,12 +35,21 @@
       </v-menu>
     </div>
   </v-app-bar>
+  <QuestionComponent ref="confirm" @confirm="handeConfirm" />
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
+import QuestionComponent from "./dialogs/QuestionComponent.vue";
+
+const confirm = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 const router = useRouter();
 
 const authModule = useAuthModule();
@@ -51,10 +60,14 @@ const props = defineProps({
   },
 });
 
-const logout = async () => {
+const handeConfirm = async () => {
   await authModule.logout();
   if (!authModule.isAuthenticated) {
     router.push("/login");
   }
+};
+
+const logout = () => {
+  confirm.value.show("Are you sure you want to log off?");
 };
 </script>

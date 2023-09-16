@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-const schoolHeader: Array<any> = [
+const headers: Array<any> = [
   {
     title: "School Name",
     align: "start",
@@ -20,4 +20,4 @@ const schoolHeader: Array<any> = [
   },
 ];
 
-export default schoolHeader;
+export default headers;

@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <HeaderComponent v-bind:title="title" />
+    <HeaderComponent :title="title" />
     <NavigationComponent />
     <v-main app>
       <router-view />

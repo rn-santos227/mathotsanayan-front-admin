@@ -32,6 +32,7 @@
             @click:append-inner="show = !show"
           />
         </v-card-text>
+        <v-divider class="mb-2"></v-divider>
         <v-card-actions class="text-right">
           <v-btn
             @click.prevent="submitForm"
@@ -49,14 +50,14 @@
 </template>
 
 <script setup lang="ts">
-import { useVuelidate } from "@vuelidate/core";
-import { required, email, minLength } from "@vuelidate/validators";
 import { ref, reactive, computed } from "vue";
+import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
 import Login from "@/types/Login";
+import rules from "@/helpers/rules/rules_login";
 
 const authModule = useAuthModule();
 const router = useRouter();
@@ -65,12 +66,7 @@ const state = reactive<Login>({
   email: "mathotsanayan@gmail.com",
   password: "Test@12345",
 });
-const rules = computed(() => {
-  return {
-    email: { required, email },
-    password: { required, minLength: minLength(6) },
-  };
-});
+
 const errors = computed(() => useValidationErrors<Login>(v$.value.$errors));
 const v$ = useVuelidate(rules, state);
 

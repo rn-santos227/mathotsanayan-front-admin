@@ -1,12 +1,22 @@
 <template>
   <v-container class="base fill-height" fluid>
     <v-card class="ma-4" width="100%" height="95%">
-      <v-card class="rounded-0 rounded-t mb-6" color="purple-darken-3" flat>
-        <v-card-text>
-          <span class="text-subtitle-1 font-weight-bold">
-            Schools Manager
-          </span>
-        </v-card-text>
+      <v-card
+        class="rounded-0 rounded-t mb-3 py-2"
+        color="purple-darken-3"
+        flat
+      >
+        <v-card-title>
+          <v-row>
+            <v-col>
+              <span class="tex-h6-1 font-weight-bold"> Schools Manager </span>
+            </v-col>
+            <v-col class="d-flex">
+              <v-spacer />
+              <CreateViewVue />
+            </v-col>
+          </v-row>
+        </v-card-title>
       </v-card>
       <v-card-text>
         <TableViewVue />
@@ -16,5 +26,6 @@
 </template>
 
 <script setup lang="ts">
+import CreateViewVue from "./CreateView.vue";
 import TableViewVue from "./TableView.vue";
 </script>
