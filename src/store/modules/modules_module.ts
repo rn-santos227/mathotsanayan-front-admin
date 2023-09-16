@@ -27,4 +27,10 @@ export const useModuleModule = defineStore("modules", {
       this.modules = this.modules.filter((item) => item.id !== module.id);
     },
   },
+
+  getters: {
+    getModules(): Module[] {
+      return this.modules;
+    },
+  },
 });

@@ -27,4 +27,10 @@ export const useStudentModule = defineStore("student", {
       this.students = this.students.filter((item) => item.id !== student.id);
     },
   },
+
+  getters: {
+    getStudents(): Student[] {
+      return this.students;
+    },
+  },
 });

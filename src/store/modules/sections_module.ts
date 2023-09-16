@@ -27,4 +27,10 @@ export const useSectionModule = defineStore("sections", {
       this.sections = this.sections.filter((item) => item.id !== section.id);
     },
   },
+
+  getters: {
+    getSections(): Section[] {
+      return this.sections;
+    },
+  },
 });

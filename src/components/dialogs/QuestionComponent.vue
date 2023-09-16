@@ -9,6 +9,9 @@
           </span>
         </v-card-text>
       </v-card>
+      <v-card-text class="mx-auto my-2">
+        <v-icon></v-icon>
+      </v-card-text>
       <v-card-text class="mx-auto">
         {{ text }}
       </v-card-text>

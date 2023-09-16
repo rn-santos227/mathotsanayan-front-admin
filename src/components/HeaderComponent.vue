@@ -9,7 +9,18 @@
         <template v-slot:activator="{ props }">
           <v-btn
             v-bind="props"
-            density="compact"
+            density="comfortable"
+            icon="mdi-help-circle-outline"
+            size="x-large"
+          >
+          </v-btn>
+        </template>
+      </v-menu>
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            density="comfortable"
             icon="mdi-account-circle-outline"
             size="x-large"
           >

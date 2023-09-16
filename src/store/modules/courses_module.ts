@@ -27,4 +27,10 @@ export const useCourseModule = defineStore("courses", {
       this.courses = this.courses.filter((item) => item.id !== course.id);
     },
   },
+
+  getters: {
+    getCourses(): Course[] {
+      return this.courses;
+    },
+  },
 });

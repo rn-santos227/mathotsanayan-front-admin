@@ -27,4 +27,10 @@ export const useTeacherModule = defineStore("teachers", {
       this.teachers = this.teachers.filter((item) => item.id !== teacher.id);
     },
   },
+
+  getters: {
+    getTeachers(): Teacher[] {
+      return this.teachers;
+    },
+  },
 });

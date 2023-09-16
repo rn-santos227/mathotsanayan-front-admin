@@ -1,5 +1,5 @@
 <template>
-  <v-btn variant="outlined">
+  <v-btn variant="outlined" prepend-icon="mdi-plus">
     Create School
     <v-dialog
       class="ma-auto"
@@ -8,7 +8,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card>
+      <v-card height="50vh">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -17,9 +17,7 @@
           <v-card-title>
             <v-row>
               <v-col>
-                <span class="text-subtitle-1 font-weight-bold">
-                  Create New School
-                </span>
+                <span class="text-h5"> Create New School </span>
               </v-col>
               <v-col class="d-flex">
                 <v-spacer />
@@ -73,36 +71,36 @@
                 />
               </v-col>
             </v-row>
-            <v-divider class="mb-2"></v-divider>
-            <v-card-actions class="text-right">
-              <v-row>
-                <v-col>
-                  <v-btn
-                    class="mb-3"
-                    @click.prevent="submitForm"
-                    variant="elevated"
-                    width="200"
-                    dark
-                    color="error"
-                    prepend-icon="mdi-close"
-                  >
-                    Clear
-                  </v-btn>
-                  <v-btn
-                    class="mb-3"
-                    @click.prevent="submitForm"
-                    variant="elevated"
-                    width="200"
-                    dark
-                    color="success"
-                    prepend-icon="mdi-check"
-                  >
-                    Submit
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-card-actions>
           </v-card-text>
+          <v-divider class="mb-2" />
+          <v-card-actions class="text-right">
+            <v-row>
+              <v-col>
+                <v-btn
+                  class="mb-3"
+                  @click.prevent="clearForm"
+                  variant="elevated"
+                  width="200"
+                  dark
+                  color="error"
+                  prepend-icon="mdi-close"
+                >
+                  Clear
+                </v-btn>
+                <v-btn
+                  class="mb-3"
+                  @click.prevent="submitForm"
+                  variant="elevated"
+                  width="200"
+                  dark
+                  color="success"
+                  prepend-icon="mdi-check"
+                >
+                  Submit
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-card-actions>
         </form>
       </v-card>
     </v-dialog>
@@ -128,10 +126,17 @@ const state = reactive<School>({
 const errors = computed(() => useValidationErrors<VSchool>(v$.value.$errors));
 const v$ = useVuelidate(rules, state);
 
+const clearForm = () => {
+  state.name = "";
+  state.contact_number = "";
+  state.description = "";
+  v$.value.$reset();
+};
+
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
-    //
+    clearForm();
   }
 };
 </script>
