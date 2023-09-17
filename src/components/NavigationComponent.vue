@@ -8,8 +8,9 @@
       >
         <template v-slot:append>
           <v-btn
+            color="purple-darken-3"
             size="small"
-            variant="text"
+            variant="outlined"
             :icon="mini ? 'mdi-chevron-right' : 'mdi-chevron-left'"
             @click.stop="mini = !mini"
           ></v-btn>

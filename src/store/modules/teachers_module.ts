@@ -56,7 +56,7 @@ export const useTeacherModule = defineStore("teachers", {
     async read(): Promise<boolean> {
       try {
         this.isLoading = true;
-        const response = await authenticatedFetch(api.COURSES.READ);
+        const response = await authenticatedFetch(api.TEACHERS.READ);
         const data = await response.json();
         const { teachers } = data;
         this.setTeachers(teachers);
@@ -82,10 +82,35 @@ export const useTeacherModule = defineStore("teachers", {
             body: JSON.stringify(payload),
           }
         );
-
         const data = await response.json();
         const { teacher } = data;
         this.updateTeacher(teacher);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async delete(payload: Teacher): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.TEACHERS.DELETE}${payload.id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { teacher } = data;
+        this.deleteTeacher(teacher);
         return true;
       } catch (error) {
         console.error("Error Teacher in:", error);

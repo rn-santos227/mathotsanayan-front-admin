@@ -97,6 +97,32 @@ export const useSchoolModule = defineStore("schools", {
         this.isLoading = false;
       }
     },
+
+    async delete(payload: School): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.SCHOOLS.DELETE}${payload.id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { school } = data;
+        this.deleteSchool(school);
+        return true;
+      } catch (error) {
+        console.error("Error School in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
   },
 
   getters: {

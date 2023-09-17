@@ -94,6 +94,32 @@ export const useCourseModule = defineStore("courses", {
         this.isLoading = false;
       }
     },
+
+    async delete(payload: Course): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.COURSES.DELETE}${payload.id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { course } = data;
+        this.deleteCourse(course);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
   },
 
   getters: {

@@ -1,19 +1,19 @@
-import Header from "@/types/Header";
-const headers: Array<Header> = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const headers: Array<any> = [
   {
-    title: "Studet's Name",
+    title: "Studet Name",
     align: "start",
     sortable: true,
     key: "full_name",
   },
   {
-    title: "Studet's Email",
+    title: "Studet Email",
     align: "start",
     sortable: true,
     key: "email",
   },
   {
-    title: "Studet's Section",
+    title: "Studet Section",
     align: "start",
     sortable: true,
     key: "section.name",

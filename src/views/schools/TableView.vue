@@ -35,7 +35,7 @@ import School from "@/types/School";
 const schoolModule = useSchoolModule();
 const schools = computed<School[]>(() => schoolModule.getSchools);
 
-onMounted(() => {
-  useSchoolModule().read();
+onMounted(async () => {
+  await useSchoolModule().read();
 });
 </script>

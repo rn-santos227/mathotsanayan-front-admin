@@ -18,7 +18,7 @@
           {{ props.item.raw?.teacher_id }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.created_at }}
+          {{ formatDate(props.item.raw.created_at) }}
         </td>
         <td></td>
       </tr>
@@ -27,13 +27,18 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
+import { useSectionModule } from "@/store";
+import { formatDate } from "@/helpers/utils";
 
-import { computed } from "vue";
-import { useSectionModule } from "@/store/modules/sections_module";
 import headers from "@/helpers/headers/header_sections";
 import Section from "@/types/Section";
 
 const sectionModule = useSectionModule();
 const sections = computed<Section[]>(() => sectionModule.getSections);
+
+onMounted(async () => {
+  await useSectionModule().read();
+});
 </script>

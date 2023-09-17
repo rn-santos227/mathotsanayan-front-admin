@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
-import { useTeacherModule } from "@/store";
+import { useTeacherModule, useSchoolModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
 import headers from "@/helpers/headers/header_teachers";
@@ -38,7 +38,8 @@ import Teacher from "@/types/Teacher";
 const teacherModule = useTeacherModule();
 const teachers = computed<Teacher[]>(() => teacherModule.getTeachers);
 
-onMounted(() => {
-  useTeacherModule().read();
+onMounted(async () => {
+  await useTeacherModule().read();
+  await useSchoolModule().read();
 });
 </script>

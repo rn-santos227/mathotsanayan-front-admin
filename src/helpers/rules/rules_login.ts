@@ -1,9 +1,9 @@
-import { required, email, minLength } from "@vuelidate/validators";
+import { required, email, minLength, maxLength } from "@vuelidate/validators";
 import { computed } from "vue";
 
 const rules = computed(() => {
   return {
-    email: { required, email },
+    email: { required, email, maxLength: maxLength(50) },
     password: { required, minLength: minLength(6) },
   };
 });

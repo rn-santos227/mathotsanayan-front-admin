@@ -1,5 +1,5 @@
-import Header from "@/types/Header";
-const headers: Array<Header> = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const headers: Array<any> = [
   {
     title: "Section Name",
     align: "start",

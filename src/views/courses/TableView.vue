@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
 import { useCourseModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
@@ -34,8 +34,4 @@ import Course from "@/types/Course";
 
 const courseModule = useCourseModule();
 const courses = computed<Course[]>(() => courseModule.getCourses);
-
-onMounted(() => {
-  useCourseModule().read();
-});
 </script>
