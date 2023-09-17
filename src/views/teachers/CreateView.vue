@@ -192,7 +192,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeacherModule, useSchoolModule } from "@/store";
@@ -200,7 +200,7 @@ import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";
-import rules from "@/helpers/rules/rules_teachers";
+import { rules, rules_password } from "@/helpers/rules/rules_teachers";
 
 const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
@@ -229,6 +229,13 @@ const state = reactive<Teacher>({
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VTeacher>(v$.value.$errors));
+
+watch(
+  () => state.password,
+  (pword: string) => {
+    rules_password.value = pword;
+  }
+);
 
 const close = () => {
   dialog.value = !dialog.value;

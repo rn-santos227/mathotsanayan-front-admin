@@ -5,19 +5,17 @@
     <v-main app>
       <router-view />
     </v-main>
-    <v-overlay :opacity="0.75" :value="authModule.isLoading">
-      <v-progress-circular indeterminate width="16" size="128">
-        Loading
-      </v-progress-circular>
-    </v-overlay>
+    <LoadingComponent v-bind:activate="authModule.isLoading" />
   </v-app>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useAuthModule } from "./store";
+
 import HeaderComponent from "./components/HeaderComponent.vue";
 import NavigationComponent from "./components/NavigationComponent.vue";
-import { useAuthModule } from "./store";
+import LoadingComponent from "./components/dialogs/LoadingComponent.vue";
 
 const authModule = useAuthModule();
 const title = ref<string>("Mathotsanayan Admin");

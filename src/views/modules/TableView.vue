@@ -1,5 +1,44 @@
 <template>
-  <v-container> </v-container>
+  <v-data-table
+    class="w-100"
+    :items="modules"
+    :headers="headers"
+    :loading="moduleModule.isLoading"
+    item-value="name"
+  >
+    <template v-slot:item="props">
+      <tr>
+        <td class="text-xs-left">
+          {{ props.item.raw.name }}
+        </td>
+        <td class="text-xs-left">
+          {{ props.item.raw.questions.length }}
+        </td>
+        <td class="text-xs-left">
+          {{ props.item.raw.course.name }}
+        </td>
+        <td class="text-xs-left">
+          {{ formatDate(props.item.raw.created_at) }}
+        </td>
+        <td></td>
+      </tr>
+    </template>
+  </v-data-table>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { VDataTable } from "vuetify/labs/VDataTable";
+
+import { computed, onMounted } from "vue";
+import { useModuleModule } from "@/store";
+import { formatDate } from "@/helpers/utils";
+import headers from "@/helpers/headers/header_modules";
+import Module from "@/types/Module";
+
+const moduleModule = useModuleModule();
+const modules = computed<Module[]>(() => moduleModule.getModules);
+
+onMounted(async () => {
+  await useModuleModule().read();
+});
+</script>

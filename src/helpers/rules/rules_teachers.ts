@@ -5,8 +5,9 @@ import {
   minLength,
   sameAs,
 } from "@vuelidate/validators";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
+const rules_password = ref("");
 const rules = computed(() => {
   return {
     first_name: {
@@ -25,15 +26,14 @@ const rules = computed(() => {
       minLength: minLength(6),
     },
     password_confirm: {
-      sameAsPassword: sameAs("password"),
+      sameAsPassword: sameAs(rules_password),
     },
     email: {
       required,
       email,
-      maxLength: maxLength(50),
+      maxLength: maxLength(100),
     },
     contact_number: {
-      required,
       maxLength: maxLength(50),
     },
     school: {
@@ -42,4 +42,4 @@ const rules = computed(() => {
   };
 });
 
-export default rules;
+export { rules, rules_password };

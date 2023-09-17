@@ -13,7 +13,7 @@
           <v-text-field
             class="mx-4"
             v-model.trim="v$.email.$model"
-            prepend-inner-icon="mdi-mail"
+            prepend-inner-icon="mdi-email"
             label="Email"
             density="compact"
             variant="outlined"
@@ -49,6 +49,7 @@
       </form>
     </v-card>
   </v-container>
+  <ErrorComponent ref="error" />
 </template>
 
 <script setup lang="ts">
@@ -58,11 +59,18 @@ import { useValidationErrors } from "@/services/handlers";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import Login from "@/types/Login";
 import rules from "@/helpers/rules/rules_login";
 
 const authModule = useAuthModule();
 const router = useRouter();
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 const show = ref<boolean>(false);
 const state = reactive<Login>({
   email: "mathotsanayan@gmail.com",
@@ -75,9 +83,15 @@ const v$ = useVuelidate(rules, state);
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
-    await authModule.login(v$.value.email.$model, v$.value.password.$model);
-    if (authModule.isAuthenticated) {
-      router.push("/");
+    try {
+      await authModule.login(v$.value.email.$model, v$.value.password.$model);
+      if (authModule.isAuthenticated) {
+        router.push("/");
+      } else {
+        //
+      }
+    } catch (err) {
+      error.value.show("The server has not able to process request.");
     }
   }
 };
