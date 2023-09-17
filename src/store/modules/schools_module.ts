@@ -48,7 +48,6 @@ export const useSchoolModule = defineStore("schools", {
         return true;
       } catch (error) {
         console.error("Error School in:", error);
-
         return false;
       } finally {
         this.isLoading = false;

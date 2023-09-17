@@ -3,6 +3,7 @@ import Section from "./Section";
 
 interface Student {
   id?: number;
+  full_name?: string;
   first_name: string;
   middle_name?: string;
   last_name: string;

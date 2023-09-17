@@ -2,6 +2,7 @@ import School from "./School";
 
 interface Teacher {
   id: number | null;
+  full_name?: string;
   first_name: string;
   middle_name?: string | null;
   last_name: string;

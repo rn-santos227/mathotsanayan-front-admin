@@ -1,10 +1,10 @@
-// eslint-disable-next-line
-const headers: Array<any> = [
+import Header from "@/types/Header";
+const headers: Array<Header> = [
   {
     title: "Course Name",
     align: "start",
     sortable: true,
-    key: "name",
+    key: "full_name",
   },
   {
     title: "Number of Modules",

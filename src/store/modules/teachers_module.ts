@@ -1,5 +1,8 @@
 import Teacher from "@/types/Teacher";
+import api from "@/helpers/api";
+
 import { defineStore } from "pinia";
+import { authenticatedFetch } from "@/services/api";
 
 export const useTeacherModule = defineStore("teachers", {
   state: () => ({
@@ -25,6 +28,71 @@ export const useTeacherModule = defineStore("teachers", {
 
     deleteTeacher(teacher: Teacher) {
       this.teachers = this.teachers.filter((item) => item.id !== teacher.id);
+    },
+
+    async create(payload: Teacher): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(api.TEACHERS.CREATE, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        const { teacher } = data;
+        this.addTeacher(teacher);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async read(): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(api.COURSES.READ);
+        const data = await response.json();
+        const { teachers } = data;
+        this.setTeachers(teachers);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async update(payload: Teacher): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.COURSES.UPDATE}${payload.id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { teacher } = data;
+        this.updateTeacher(teacher);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
     },
   },
 

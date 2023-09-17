@@ -10,7 +10,7 @@
           <v-btn
             size="small"
             variant="text"
-            icon="mdi-chevron-left"
+            :icon="mini ? 'mdi-chevron-right' : 'mdi-chevron-left'"
             @click.stop="mini = !mini"
           ></v-btn>
         </template>
@@ -40,7 +40,8 @@
               :title="child.text"
               :prepend-icon="child.icon"
               :to="child.route"
-            ></v-list-item>
+            >
+            </v-list-item>
           </v-list-group>
         </template>
       </v-list>
