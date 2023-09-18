@@ -39,4 +39,8 @@ fetchUserData();
 .v-input__control {
   background-color: #fffde7;
 }
+
+.v-data-table-header__content > span {
+  font-weight: bolder;
+}
 </style>
