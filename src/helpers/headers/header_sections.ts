@@ -16,7 +16,7 @@ const headers: Array<any> = [
     title: "Section Teacher",
     align: "start",
     sortable: false,
-    key: "teacher_id",
+    key: "teacher.full_name",
   },
   {
     title: "Date Created",

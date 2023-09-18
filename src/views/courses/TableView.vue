@@ -17,7 +17,21 @@
         <td class="text-xs-left">
           {{ formatDate(props.item.raw.created_at) }}
         </td>
-        <td></td>
+        <td>
+          <v-menu>
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-bind="props"
+                block
+                color="purple-darken-3"
+                variant="outlined"
+              >
+                <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
+              >
+            </template>
+            <v-list density="compact" variant="plain"> </v-list>
+          </v-menu>
+        </td>
       </tr>
     </template>
   </v-data-table>
