@@ -13,6 +13,7 @@
           <v-text-field
             class="mx-4"
             v-model.trim="v$.email.$model"
+            autocomplete="email"
             prepend-inner-icon="mdi-email"
             label="Email"
             density="compact"
@@ -23,6 +24,7 @@
           <v-text-field
             class="mx-4 mt-4"
             v-model.trim="v$.password.$model"
+            autocomplete="new-password"
             prepend-inner-icon="mdi-lock"
             label="Password"
             density="compact"

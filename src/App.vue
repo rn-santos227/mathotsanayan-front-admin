@@ -35,4 +35,8 @@ fetchUserData();
 .base {
   background-color: #fffde7;
 }
+
+.v-input__control {
+  background-color: #fffde7;
+}
 </style>

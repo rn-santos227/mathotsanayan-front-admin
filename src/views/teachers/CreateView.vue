@@ -102,6 +102,7 @@
                 <v-text-field
                   class="mx-4"
                   v-model.trim="v$.email.$model"
+                  autocomplete="email"
                   label="Email Address"
                   density="compact"
                   variant="outlined"
@@ -127,6 +128,7 @@
                   class="mx-4 mt-4"
                   prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password.$model"
+                  autocomplete="new-password"
                   label="Password"
                   density="compact"
                   variant="outlined"
@@ -142,6 +144,7 @@
                   class="mx-4 mt-4"
                   prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password_confirm.$model"
+                  autocomplete="new-password"
                   label="Password"
                   density="compact"
                   variant="outlined"

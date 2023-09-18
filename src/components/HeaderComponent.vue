@@ -26,7 +26,7 @@
           >
           </v-btn>
         </template>
-        <v-list density="compact" color="primary" variant="plain">
+        <v-list density="compact" variant="plain">
           <v-list-item>
             <template v-slot:prepend>
               <v-icon icon="mdi-key"></v-icon>
@@ -34,13 +34,11 @@
             <v-list-item-title>Change Password</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
-          <v-list-item>
+          <v-list-item @click.prevent="logout()">
             <template v-slot:prepend>
               <v-icon icon="mdi-logout-variant"></v-icon>
             </template>
-            <v-list-item-title @click.prevent="logout()">
-              Logout
-            </v-list-item-title>
+            <v-list-item-title> Logout </v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>

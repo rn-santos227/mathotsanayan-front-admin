@@ -20,9 +20,10 @@ const headers: Array<any> = [
   },
   {
     title: "Action",
-    align: "end",
+    align: "center",
     sortable: false,
     key: "action",
+    width: "10%",
   },
 ];
 

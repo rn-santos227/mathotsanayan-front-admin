@@ -172,6 +172,8 @@ const close = () => {
 
 const clearForm = () => {
   state.name = "";
+  state.email = "";
+  state.address = "";
   state.contact_number = "";
   state.description = "";
   v$.value.$reset();
