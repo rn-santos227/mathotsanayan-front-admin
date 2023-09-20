@@ -114,7 +114,7 @@
                 <v-text-field
                   class="mx-4"
                   v-model.trim="v$.contact_number.$model"
-                  label="Contact Number"
+                  label="Contact Number (Optional)"
                   density="compact"
                   variant="outlined"
                   :error="v$.contact_number.$error"
@@ -192,6 +192,7 @@
   </v-btn>
   <SuccessComponent ref="success" />
   <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useTeacherModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -199,8 +200,11 @@ import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeacherModule, useSchoolModule } from "@/store";
+
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";
 import { rules, rules_password } from "@/helpers/rules/rules_teachers";
@@ -240,11 +244,6 @@ watch(
   }
 );
 
-const close = () => {
-  dialog.value = !dialog.value;
-  clearForm();
-};
-
 const clearForm = () => {
   state.first_name = "";
   state.middle_name = "";
@@ -256,6 +255,11 @@ const clearForm = () => {
   state.contact_number = "";
   state.school = "";
   v$.value.$reset();
+};
+
+const close = () => {
+  dialog.value = !dialog.value;
+  clearForm();
 };
 
 const submitForm = async () => {

@@ -19,7 +19,9 @@
           <v-card-title>
             <v-row>
               <v-col>
-                <span class="text-h5"> Update School ID: {{ state.id }} </span>
+                <span class="text-h5">
+                  Update Course ID: {{ padLeft(state.id) }}
+                </span>
               </v-col>
               <v-col class="d-flex">
                 <v-spacer />
@@ -144,6 +146,7 @@ import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 import School from "@/types/School";
 import VSchool from "@/helpers/validations/v_schools";
 import rules from "@/helpers/rules/rules_schools";
+import { padLeft } from "@/helpers/utils";
 
 const dialog = ref<boolean>(false);
 const success = ref({
@@ -162,7 +165,7 @@ const props = defineProps<{
   school: School;
 }>();
 
-const state = reactive<School>(props.school);
+const state = reactive<School>({ ...props.school });
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VSchool>(v$.value.$errors));

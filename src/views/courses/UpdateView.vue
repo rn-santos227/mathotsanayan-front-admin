@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="40vh">
+      <v-card height="360">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -19,7 +19,9 @@
           <v-card-title>
             <v-row>
               <v-col>
-                <span class="text-h5"> Update Course ID: {{ state.id }} </span>
+                <span class="text-h5">
+                  Update Course ID: {{ padLeft(state.id) }}
+                </span>
               </v-col>
               <v-col class="d-flex">
                 <v-spacer />
@@ -112,6 +114,7 @@ import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 import Course from "@/types/Course";
 import VCourse from "@/helpers/validations/v_courses";
 import rules from "@/helpers/rules/rules_courses";
+import { padLeft } from "@/helpers/utils";
 
 const dialog = ref<boolean>(false);
 const success = ref({
@@ -130,7 +133,7 @@ const props = defineProps<{
   course: Course;
 }>();
 
-const state = reactive<Course>(props.course);
+const state = reactive<Course>({ ...props.course });
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VCourse>(v$.value.$errors));

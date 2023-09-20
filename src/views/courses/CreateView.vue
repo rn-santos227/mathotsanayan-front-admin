@@ -8,7 +8,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="40vh">
+      <v-card height="360">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -94,6 +94,7 @@
   </v-btn>
   <SuccessComponent ref="success" />
   <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useCourseModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -101,8 +102,11 @@ import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useCourseModule } from "@/store";
+
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+
 import Course from "@/types/Course";
 import VCourse from "@/helpers/validations/v_courses";
 import rules from "@/helpers/rules/rules_courses";

@@ -28,3 +28,14 @@ export function formatDate(date: string): string {
 
   return formattedDate;
 }
+
+export function padLeft(num: number | undefined): string {
+  if (num === undefined) {
+    return "undefined";
+  }
+  let str = num.toString();
+  while (str.length < 7) {
+    str = "0" + str;
+  }
+  return str;
+}
