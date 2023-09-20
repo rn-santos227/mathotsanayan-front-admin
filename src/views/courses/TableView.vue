@@ -29,7 +29,9 @@
                 <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
               >
             </template>
-            <v-list density="compact" variant="plain"> </v-list>
+            <v-list density="compact" variant="plain">
+              <UpdateView v-bind:course="props.item.raw" />
+            </v-list>
           </v-menu>
         </td>
       </tr>
@@ -38,8 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
+import UpdateView from "./UpdateView.vue";
+
+import { computed, onMounted } from "vue";
 import { useCourseModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
@@ -48,4 +52,8 @@ import Course from "@/types/Course";
 
 const courseModule = useCourseModule();
 const courses = computed<Course[]>(() => courseModule.getCourses);
+
+onMounted(async () => {
+  await useCourseModule().read();
+});
 </script>

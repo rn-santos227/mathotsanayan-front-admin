@@ -1,6 +1,8 @@
 <template>
-  <v-list-item>
-    <v-list-item-title>Update</v-list-item-title>
+  <v-list-item @click.prevent>
+    <v-list-item-title>
+      <v-icon icon="mdi-update"></v-icon> Update
+    </v-list-item-title>
     <v-dialog
       class="ma-auto"
       persistent
@@ -8,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="70vh">
+      <v-card height="640">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -160,22 +162,10 @@ const props = defineProps<{
   school: School;
 }>();
 
-const state = reactive<School>({
-  id: props.school.id,
-  name: props.school.name,
-  email: props.school.email,
-  address: props.school.address,
-  contact_number: props.school.contact_number,
-  description: props.school.description,
-});
+const state = reactive<School>(props.school);
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VSchool>(v$.value.$errors));
-
-const close = () => {
-  dialog.value = false;
-  resetForm();
-};
 
 const resetForm = () => {
   state.name = props.school.name;
@@ -186,13 +176,18 @@ const resetForm = () => {
   v$.value.$reset();
 };
 
+const close = () => {
+  dialog.value = false;
+  resetForm();
+};
+
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (result) {
     const response = await useSchoolModule().update(state);
     if (response) {
       resetForm();
-      success.value.show("School has been successfully recorded.");
+      success.value.show("School has been successfully updated.");
       dialog.value = false;
     } else {
       error.value.show("The server has not able to process request.");
