@@ -252,6 +252,8 @@ const resetForm = () => {
   state.email = props.teacher.email;
   state.contact_number = props.teacher.contact_number;
   state.school = props.teacher.school;
+  state.password = "";
+  state.password_confirm = "";
   v$.value.$reset();
 };
 

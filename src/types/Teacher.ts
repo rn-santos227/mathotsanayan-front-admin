@@ -4,7 +4,7 @@ interface Teacher {
   id?: number;
   full_name?: string;
   first_name: string;
-  middle_name: string | null;
+  middle_name: string;
   last_name: string;
   suffix: string;
   email: string;

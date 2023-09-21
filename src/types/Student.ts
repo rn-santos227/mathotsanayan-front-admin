@@ -3,20 +3,20 @@ import Section from "./Section";
 
 interface Student {
   id?: number;
-  fullname?: string;
+  full_name?: string;
   first_name: string;
-  middle_name?: string;
+  middle_name: string;
   last_name: string;
-  suffix?: string;
-  student_number?: string;
+  suffix: string;
+  student_number: string;
   email: string;
-  password?: string;
-  password_confirm?: string;
+  password: string;
+  password_confirm: string;
   contact_number: string;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  school?: number | School;
-  section?: number | Section;
+  school: number | string | School;
+  section: number | string | Section;
 }
 export default Student;
