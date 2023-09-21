@@ -20,8 +20,8 @@ const rules = computed(() => {
       maxLength: maxLength(50),
     },
     suffix: { maxLength: maxLength(5) },
-
     student_number: {
+      required,
       maxLength: maxLength(50),
     },
     contact_number: {
