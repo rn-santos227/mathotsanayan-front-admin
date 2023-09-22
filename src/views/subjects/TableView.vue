@@ -1,9 +1,9 @@
 <template>
   <v-data-table
     class="w-100"
-    :items="courses"
+    :items="subjects"
     :headers="headers"
-    :loading="courseModule.isLoading"
+    :loading="subjectModule.isLoading"
     item-value="name"
   >
     <template v-slot:item="props">
@@ -11,7 +11,9 @@
         <td class="text-xs-left">
           {{ props.item.raw.name }}
         </td>
-
+        <td class="text-xs-left">
+          {{ props.item.raw.description }}
+        </td>
         <td class="text-xs-left">
           {{ formatDate(props.item.raw.created_at) }}
         </td>
@@ -27,9 +29,7 @@
                 <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
               >
             </template>
-            <v-list density="compact" variant="plain">
-              <UpdateView v-bind:course="props.item.raw" />
-            </v-list>
+            <v-list density="compact" variant="plain"> </v-list>
           </v-menu>
         </td>
       </tr>
@@ -39,19 +39,18 @@
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
-import UpdateView from "./UpdateView.vue";
 
 import { computed, onMounted } from "vue";
-import { useCourseModule } from "@/store";
+import { useSubjectModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
-import headers from "@/helpers/headers/header_courses";
-import Course from "@/types/Course";
+import headers from "@/helpers/headers/header_subject";
+import Subject from "@/types/Subject";
 
-const courseModule = useCourseModule();
-const courses = computed<Course[]>(() => courseModule.getCourses);
+const subjectModule = useSubjectModule();
+const subjects = computed<Subject[]>(() => subjectModule.getSubjects);
 
 onMounted(async () => {
-  await useCourseModule().read();
+  await useSubjectModule().read();
 });
 </script>

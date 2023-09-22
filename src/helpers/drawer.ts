@@ -42,7 +42,7 @@ export default [
     children: [
       {
         text: "Courses",
-        icon: "mdi-book",
+        icon: "mdi-certificate",
         route: "/courses",
         activator: false,
         children: [],
@@ -58,6 +58,13 @@ export default [
         text: "Sections",
         icon: "mdi-chair-school",
         route: "/sections",
+        activator: false,
+        children: [],
+      },
+      {
+        text: "Subjects",
+        icon: "mdi-book",
+        route: "/subjects",
         activator: false,
         children: [],
       },

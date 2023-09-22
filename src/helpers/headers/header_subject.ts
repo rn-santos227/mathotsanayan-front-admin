@@ -1,10 +1,16 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const headers: Array<any> = [
   {
-    title: "Course Name",
+    title: "Subject Name",
     align: "start",
     sortable: true,
     key: "full_name",
+  },
+  {
+    title: "Number of Modules",
+    align: "start",
+    sortable: true,
+    key: "modules.length",
   },
   {
     title: "Date Created",

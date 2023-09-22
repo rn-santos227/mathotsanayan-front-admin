@@ -43,6 +43,13 @@ export default {
     DELETE: `${BACKEND}students/`,
   },
 
+  SUBJECTS: {
+    CREATE: `${BACKEND}subjects/create`,
+    READ: `${BACKEND}subjects`,
+    UPDATE: `${BACKEND}subjects/`,
+    DELETE: `${BACKEND}subjects/`,
+  },
+
   TEACHERS: {
     CREATE: `${BACKEND}teachers/create`,
     READ: `${BACKEND}teachers`,
