@@ -148,7 +148,7 @@ const submitForm = async () => {
     const response = await useCourseModule().create(state);
     if (response) {
       clearForm();
-      success.value.show("School has been successfully recorded.");
+      success.value.show("Course has been successfully recorded.");
       dialog.value = false;
     } else {
       error.value.show("The server has not able to process request.");
