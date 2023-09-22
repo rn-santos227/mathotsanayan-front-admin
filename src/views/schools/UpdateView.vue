@@ -1,6 +1,6 @@
 <template>
   <v-list-item @click.prevent>
-    <v-list-item-title>
+    <v-list-item-title class="text-button">
       <v-icon icon="mdi-update"></v-icon> Update
     </v-list-item-title>
     <v-dialog

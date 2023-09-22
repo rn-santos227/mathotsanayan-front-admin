@@ -31,6 +31,7 @@
             </template>
             <v-list density="compact" variant="plain">
               <UpdateView v-bind:school="props.item.raw" />
+              <DeleteView v-bind:school="props.item.raw" />
             </v-list>
           </v-menu>
         </td>
@@ -42,6 +43,7 @@
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
 import UpdateView from "./UpdateView.vue";
+import DeleteView from "./DeleteView.vue";
 
 import { computed, onMounted } from "vue";
 import { useSchoolModule } from "@/store";
