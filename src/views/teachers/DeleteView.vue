@@ -87,8 +87,13 @@ const error = ref({
 });
 
 const confirm = async () => {
-  await useTeacherModule().delete(props.teacher);
-  dialog.value = false;
+  const response = await useTeacherModule().delete(props.teacher);
+  if (response) {
+    success.value.show("Course has been successfully deleted.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process request.");
+  }
 };
 
 const cancel = async () => {

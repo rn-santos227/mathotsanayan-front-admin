@@ -2,7 +2,7 @@ interface School {
   id?: number;
   name: string;
   address?: string;
-  email?: string;
+  email: string;
   contact_number?: string;
   description?: string | null;
   created_at?: string;

@@ -42,8 +42,8 @@ export const useSubjectModule = defineStore("subjects", {
         });
 
         const data = await response.json();
-        const { subjects } = data;
-        this.addSubject(subjects);
+        const { subject } = data;
+        this.addSubject(subject);
         return true;
       } catch (error) {
         console.error("Error Subject in:", error);

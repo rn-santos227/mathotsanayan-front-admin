@@ -55,10 +55,12 @@
               <v-col>
                 <v-text-field
                   class="mx-4"
-                  v-model.trim="state.email"
+                  v-model.trim="v$.email.$model"
                   label="School Email (Optional)"
                   density="compact"
                   variant="outlined"
+                  :error="v$.email.$error"
+                  :error-messages="errors.email"
                 />
               </v-col>
             </v-row>
@@ -139,6 +141,7 @@ import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useSchoolModule } from "@/store";
+
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";

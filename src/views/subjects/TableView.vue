@@ -12,7 +12,7 @@
           {{ props.item.raw.name }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.description }}
+          {{ props.item.raw?.modules.length }}
         </td>
         <td class="text-xs-left">
           {{ formatDate(props.item.raw.created_at) }}
@@ -29,7 +29,10 @@
                 <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
               >
             </template>
-            <v-list density="compact" variant="plain"> </v-list>
+            <v-list density="compact" variant="plain">
+              <UpdateView v-bind:subject="props.item.raw" />
+              <DeleteView v-bind:subject="props.item.raw" />
+            </v-list>
           </v-menu>
         </td>
       </tr>
@@ -39,6 +42,8 @@
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
+import UpdateView from "./UpdateView.vue";
+import DeleteView from "./DeleteView.vue";
 
 import { computed, onMounted } from "vue";
 import { useSubjectModule } from "@/store";

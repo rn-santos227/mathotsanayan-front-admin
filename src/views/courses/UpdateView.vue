@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="360">
+      <v-card height="450">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -48,6 +48,19 @@
                   variant="outlined"
                   :error="v$.name.$error"
                   :error-messages="errors.name"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  class="mx-4"
+                  v-model.trim="v$.abbreviation.$model"
+                  label="Course Abbreviation"
+                  density="compact"
+                  variant="outlined"
+                  :error="v$.abbreviation.$error"
+                  :error-messages="errors.abbreviation"
                 />
               </v-col>
             </v-row>

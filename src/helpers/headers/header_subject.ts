@@ -4,7 +4,7 @@ const headers: Array<any> = [
     title: "Subject Name",
     align: "start",
     sortable: true,
-    key: "full_name",
+    key: "name",
   },
   {
     title: "Number of Modules",

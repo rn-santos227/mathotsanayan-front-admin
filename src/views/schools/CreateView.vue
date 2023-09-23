@@ -51,10 +51,12 @@
               <v-col>
                 <v-text-field
                   class="mx-4"
-                  v-model.trim="state.email"
+                  v-model.trim="v$.email.$model"
                   label="School Email (Optional)"
                   density="compact"
                   variant="outlined"
+                  :error="v$.email.$error"
+                  :error-messages="errors.email"
                 />
               </v-col>
             </v-row>
