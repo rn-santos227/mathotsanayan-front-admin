@@ -4,12 +4,11 @@ import Teacher from "./Teacher";
 interface Section {
   id?: number;
   name: string;
-  level: string;
-  description?: string;
+  description: string;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  school?: number | School;
-  teacher?: number | Teacher;
+  school: number | string | School;
+  teacher: number | string | Teacher;
 }
 export default Section;

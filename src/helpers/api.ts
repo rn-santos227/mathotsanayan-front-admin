@@ -22,6 +22,13 @@ export default {
     DELETE: `${BACKEND}modules/`,
   },
 
+  QUESTIONS: {
+    CREATE: `${BACKEND}questions/create`,
+    READ: `${BACKEND}questions`,
+    UPDATE: `${BACKEND}questions/`,
+    DELETE: `${BACKEND}questions/`,
+  },
+
   SCHOOLS: {
     CREATE: `${BACKEND}schools/create`,
     READ: `${BACKEND}schools`,

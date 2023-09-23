@@ -8,7 +8,7 @@
       activator="parent"
       width="70%"
     >
-      <v-card height="645">
+      <v-card height="740">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -84,14 +84,16 @@
               <v-col>
                 <v-autocomplete
                   class="mx-4"
-                  v-model.trim="state.school"
-                  prepend-inner-icon="mdi-school"
-                  label="School Name (Optional)"
+                  v-model.trim="v$.course.$model"
+                  prepend-inner-icon="mdi-certificate"
+                  label="Student Course"
                   density="compact"
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSchoolModule().getSchools"
+                  :items="useCourseModule().getCourses"
+                  :error="v$.course.$error"
+                  :error-messages="errors.course"
                 />
               </v-col>
             </v-row>
@@ -99,14 +101,33 @@
               <v-col>
                 <v-autocomplete
                   class="mx-4"
-                  v-model.trim="state.section"
+                  v-model.trim="v$.school.$model"
+                  prepend-inner-icon="mdi-school"
+                  label="Student School"
+                  density="compact"
+                  variant="outlined"
+                  item-title="name"
+                  item-value="id"
+                  :items="useSchoolModule().getSchools"
+                  :error="v$.school.$error"
+                  :error-messages="errors.school"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-autocomplete
+                  class="mx-4"
+                  v-model.trim="v$.section.$model"
                   prepend-inner-icon="mdi-chair-school"
-                  label="School Section (Optional)"
+                  label="Student Section"
                   density="compact"
                   variant="outlined"
                   item-title="name"
                   item-value="id"
                   :items="useSectionModule().getSections"
+                  :error="v$.section.$error"
+                  :error-messages="errors.section"
                 />
               </v-col>
             </v-row>
@@ -138,7 +159,7 @@
                 <v-text-field
                   class="mx-4"
                   v-model.trim="v$.student_number.$model"
-                  label="Student Number (Optional)"
+                  label="Student Number"
                   density="compact"
                   variant="outlined"
                   :error="v$.student_number.$error"
@@ -223,7 +244,12 @@
 import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useStudentModule, useSchoolModule, useSectionModule } from "@/store";
+import {
+  useStudentModule,
+  useCourseModule,
+  useSchoolModule,
+  useSectionModule,
+} from "@/store";
 
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
@@ -256,6 +282,7 @@ const state = reactive<Student>({
   contact_number: "",
   password: "",
   password_confirm: "",
+  course: "",
   school: "",
   section: "",
 });
@@ -280,6 +307,7 @@ const clearForm = () => {
   state.email = "";
   state.student_number = "";
   state.contact_number = "";
+  state.course = "";
   state.school = "";
   state.section = "";
   v$.value.$reset();

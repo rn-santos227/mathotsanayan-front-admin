@@ -145,15 +145,16 @@ const state = reactive<Course>({
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VCourse>(v$.value.$errors));
 
+const clearForm = () => {
+  state.name = "";
+  state.abbreviation = "";
+  state.description = "";
+  v$.value.$reset();
+};
+
 const close = () => {
   dialog.value = !dialog.value;
   clearForm();
-};
-
-const clearForm = () => {
-  state.name = "";
-  state.description = "";
-  v$.value.$reset();
 };
 
 const submitForm = async () => {

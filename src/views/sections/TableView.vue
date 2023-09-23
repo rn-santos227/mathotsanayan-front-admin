@@ -43,7 +43,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
-import { useSectionModule } from "@/store";
+import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
 import headers from "@/helpers/headers/header_sections";
@@ -54,5 +54,7 @@ const sections = computed<Section[]>(() => sectionModule.getSections);
 
 onMounted(async () => {
   await useSectionModule().read();
+  await useSchoolModule().read();
+  await useTeacherModule().read();
 });
 </script>

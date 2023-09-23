@@ -13,10 +13,10 @@ const headers: Array<any> = [
     key: "questions.length",
   },
   {
-    title: "Module Course",
+    title: "Module Subject",
     align: "start",
     sortable: true,
-    key: "course.name",
+    key: "subject.name",
   },
   {
     title: "Date Created",

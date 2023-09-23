@@ -2,6 +2,6 @@ interface VModule {
   name: string;
   description: string;
   step: string;
-  course: string;
+  subject: string;
 }
 export default VModule;

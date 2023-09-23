@@ -40,6 +40,15 @@ const rules = computed(() => {
     password_confirm: {
       sameAsPassword: sameAs(rules_password),
     },
+    course: {
+      required,
+    },
+    school: {
+      required,
+    },
+    section: {
+      required,
+    },
   };
 });
 

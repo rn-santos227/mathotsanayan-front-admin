@@ -8,6 +8,7 @@ interface VStudent {
   password_confirm: string;
   contact_number: string;
   student_number: string;
+  course: string;
   school: string;
   section: string;
 }

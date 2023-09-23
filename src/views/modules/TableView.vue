@@ -44,7 +44,7 @@
 import { VDataTable } from "vuetify/labs/VDataTable";
 
 import { computed, onMounted } from "vue";
-import { useModuleModule } from "@/store";
+import { useModuleModule, useSubjectModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 import headers from "@/helpers/headers/header_modules";
 import Module from "@/types/Module";
@@ -54,5 +54,6 @@ const modules = computed<Module[]>(() => moduleModule.getModules);
 
 onMounted(async () => {
   await useModuleModule().read();
+  await useSubjectModule().read();
 });
 </script>
