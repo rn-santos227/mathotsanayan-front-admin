@@ -26,7 +26,7 @@
           ></v-icon>
           <h2 class="text-h4 mb-6 text-orange-darken-3">WARNING</h2>
           <span class="mx-auto">
-            Are you sure you want to delete this Subject?
+            Are you sure you want to delete this Course?
           </span>
           <v-divider class="mb-2 mt-6" />
           <v-card-actions>
@@ -56,21 +56,21 @@
   </v-list-item>
   <SuccessComponent ref="success" />
   <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useSubjectModule().isLoading" />
+  <LoadingComponent v-bind:activate="useCourseModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useSubjectModule } from "@/store";
+import { useCourseModule } from "@/store";
 
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
-import Subject from "@/types/Subject";
+import Course from "@/types/Course";
 
 const props = defineProps<{
-  subject: Subject;
+  course: Course;
 }>();
 
 const dialog = ref<boolean>(false);
@@ -87,9 +87,9 @@ const error = ref({
 });
 
 const confirm = async () => {
-  const response = await useSubjectModule().delete(props.subject);
+  const response = await useCourseModule().delete(props.course);
   if (response) {
-    success.value.show("Subject has been successfully deleted.");
+    success.value.show("Course has been successfully deleted.");
     dialog.value = false;
   } else {
     error.value.show("The server has not able to process the request.");

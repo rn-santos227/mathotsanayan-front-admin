@@ -327,7 +327,7 @@ const submitForm = async () => {
       success.value.show("Student has been successfully recorded.");
       dialog.value = false;
     } else {
-      error.value.show("The server has not able to process request.");
+      error.value.show("The server has not able to process the request.");
     }
   }
 };

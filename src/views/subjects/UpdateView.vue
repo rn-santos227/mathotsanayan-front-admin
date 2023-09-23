@@ -157,7 +157,7 @@ const submitForm = async () => {
       success.value.show("Subject has been successfully updated.");
       dialog.value = false;
     } else {
-      error.value.show("The server has not able to process request.");
+      error.value.show("The server has not able to process the request.");
     }
   }
 };
