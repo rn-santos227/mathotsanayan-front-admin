@@ -47,10 +47,10 @@
                 />
               </v-col>
               <v-col cols="3">
-                <v-text-field
+                <v-select
+                  :items="steps"
                   class="mx-4"
                   v-model.trim="v$.step.$model"
-                  type="number"
                   label="Module Step"
                   density="compact"
                   variant="outlined"
@@ -127,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useModuleModule, useSubjectModule } from "@/store";
@@ -141,6 +141,7 @@ import VModule from "@/helpers/validations/v_modules";
 import rules from "@/helpers/rules/rules_modules";
 
 const dialog = ref<boolean>(false);
+const steps = ref<string[] | number[]>([]);
 const success = ref({
   show: (message: string) => {
     return message;
@@ -162,6 +163,18 @@ const state = reactive<Module>({
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VModule>(v$.value.$errors));
+
+watch(
+  () => state.subject,
+  () => {
+    if (
+      typeof state.subject === "number" ||
+      typeof state.subject === "string"
+    ) {
+      steps.value = useSubjectModule().getModuleCount(state.subject);
+    }
+  }
+);
 
 const clearForm = () => {
   state.name = "";

@@ -15,7 +15,7 @@
           {{ props.item.raw.questions.length }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.course.name }}
+          {{ props.item.raw.subject.name }}
         </td>
         <td class="text-xs-left">
           {{ formatDate(props.item.raw.created_at) }}

@@ -30,6 +30,17 @@ export const useSubjectModule = defineStore("subjects", {
       this.subjects = this.subjects.filter((item) => item.id !== subject.id);
     },
 
+    getModuleCount(id: number | string): number[] {
+      const steps = [] as number[];
+      const subject = this.subjects.find((item) => item.id == id);
+      if (subject?.modules) {
+        for (let index = 0; index <= subject.modules.length; index++) {
+          steps.push(index + 1);
+        }
+      }
+      return steps;
+    },
+
     async create(payload: Subject): Promise<boolean> {
       try {
         this.isLoading = true;

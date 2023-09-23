@@ -4,7 +4,7 @@ interface Module {
   id?: number;
   name: string;
   description: string;
-  step: number | string;
+  step: string | null | undefined;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
