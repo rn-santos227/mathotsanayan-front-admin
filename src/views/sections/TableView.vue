@@ -32,7 +32,10 @@
                 <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
               >
             </template>
-            <v-list density="compact" variant="plain"> </v-list>
+            <v-list density="compact" variant="plain">
+              <UpdateView v-bind:section="props.item.raw" />
+              <DeleteView v-bind:section="props.item.raw" />
+            </v-list>
           </v-menu>
         </td>
       </tr>
@@ -41,8 +44,11 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from "vue";
 import { VDataTable } from "vuetify/labs/VDataTable";
+import UpdateView from "./UpdateView.vue";
+import DeleteView from "./DeleteView.vue";
+
+import { computed, onMounted } from "vue";
 import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
