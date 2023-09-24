@@ -3,7 +3,7 @@
     class="w-100"
     :items="subjects"
     :headers="headers"
-    :loading="subjectModule.isLoading"
+    :loading="subjectModule.isTableLoading"
     item-value="name"
   >
     <template v-slot:item="props">

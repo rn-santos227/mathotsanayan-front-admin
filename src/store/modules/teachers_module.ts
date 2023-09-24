@@ -8,6 +8,7 @@ export const useTeacherModule = defineStore("teachers", {
   state: () => ({
     teachers: [] as Teacher[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -55,7 +56,7 @@ export const useTeacherModule = defineStore("teachers", {
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.TEACHERS.READ);
         const data = await response.json();
         const { teachers } = data;
@@ -65,7 +66,7 @@ export const useTeacherModule = defineStore("teachers", {
         console.error("Error Teacher in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

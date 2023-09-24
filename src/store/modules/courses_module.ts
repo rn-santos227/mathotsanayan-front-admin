@@ -8,6 +8,7 @@ export const useCourseModule = defineStore("courses", {
   state: () => ({
     courses: [] as Course[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -55,7 +56,7 @@ export const useCourseModule = defineStore("courses", {
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.COURSES.READ);
         const data = await response.json();
         const { courses } = data;
@@ -65,7 +66,7 @@ export const useCourseModule = defineStore("courses", {
         console.error("Error Course in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

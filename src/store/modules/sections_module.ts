@@ -8,6 +8,7 @@ export const useSectionModule = defineStore("sections", {
   state: () => ({
     sections: [] as Section[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -55,7 +56,7 @@ export const useSectionModule = defineStore("sections", {
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.SECTIONS.READ);
         const data = await response.json();
         const { sections } = data;
@@ -65,7 +66,7 @@ export const useSectionModule = defineStore("sections", {
         console.error("Error Section in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

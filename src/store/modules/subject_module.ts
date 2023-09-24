@@ -8,6 +8,7 @@ export const useSubjectModule = defineStore("subjects", {
   state: () => ({
     subjects: [] as Subject[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -66,7 +67,7 @@ export const useSubjectModule = defineStore("subjects", {
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.SUBJECTS.READ);
         const data = await response.json();
         const { subjects } = data;
@@ -76,7 +77,7 @@ export const useSubjectModule = defineStore("subjects", {
         console.error("Error Subject in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

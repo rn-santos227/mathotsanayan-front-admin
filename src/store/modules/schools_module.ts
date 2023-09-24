@@ -8,6 +8,7 @@ export const useSchoolModule = defineStore("schools", {
   state: () => ({
     schools: [] as School[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -56,7 +57,7 @@ export const useSchoolModule = defineStore("schools", {
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.SCHOOLS.READ);
         const data = await response.json();
         const { schools } = data;
@@ -68,7 +69,7 @@ export const useSchoolModule = defineStore("schools", {
 
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

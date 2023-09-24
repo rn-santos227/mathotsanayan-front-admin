@@ -8,6 +8,7 @@ export const useStudentModule = defineStore("student", {
   state: () => ({
     students: [] as Student[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -32,7 +33,7 @@ export const useStudentModule = defineStore("student", {
 
     async create(payload: Student): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.STUDENTS.CREATE, {
           method: "POST",
           headers: {
@@ -49,7 +50,7 @@ export const useStudentModule = defineStore("student", {
         console.error("Error Student in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

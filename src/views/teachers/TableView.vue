@@ -3,7 +3,7 @@
     class="w-100"
     :items="teachers"
     :headers="headers"
-    :loading="teacherModule.isLoading"
+    :loading="teacherModule.isTableLoading"
     item-value="name"
   >
     <template v-slot:item="props">
@@ -34,6 +34,7 @@
             </template>
             <v-list density="compact" variant="plain">
               <UpdateView v-bind:teacher="props.item.raw" />
+              <DeleteView v-bind:teacher="props.item.raw" />
             </v-list>
           </v-menu>
         </td>
@@ -45,6 +46,7 @@
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
 import UpdateView from "./UpdateView.vue";
+import DeleteView from "./DeleteView.vue";
 
 import { computed, onMounted } from "vue";
 import { useTeacherModule, useSchoolModule } from "@/store";

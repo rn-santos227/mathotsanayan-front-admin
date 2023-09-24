@@ -54,18 +54,11 @@
       </v-dialog>
     </v-list-item-title>
   </v-list-item>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useModuleModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { useModuleModule } from "@/store";
-
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
 import Module from "@/types/Module";
 

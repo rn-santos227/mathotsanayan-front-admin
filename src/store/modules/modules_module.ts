@@ -8,6 +8,7 @@ export const useModuleModule = defineStore("modules", {
   state: () => ({
     modules: [] as Module[],
     isLoading: false as boolean,
+    isTableLoading: false,
   }),
 
   actions: {
@@ -32,7 +33,7 @@ export const useModuleModule = defineStore("modules", {
 
     async create(payload: Module): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.MODULES.CREATE, {
           method: "POST",
           headers: {
@@ -49,7 +50,7 @@ export const useModuleModule = defineStore("modules", {
         console.error("Error Module in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 

@@ -36,7 +36,7 @@
               width="100"
               color="error"
               dark
-              @click="cancel"
+              @click.prevent="cancel"
             >
               Cancel
             </v-btn>
@@ -45,7 +45,7 @@
               width="100"
               color="success"
               dark
-              @click="confirm"
+              @click.prevent="confirm"
             >
               Confirm
             </v-btn>
@@ -54,24 +54,13 @@
       </v-dialog>
     </v-list-item-title>
   </v-list-item>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useCourseModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { useCourseModule } from "@/store";
 
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
-
 import Course from "@/types/Course";
-
-const props = defineProps<{
-  course: Course;
-}>();
 
 const dialog = ref<boolean>(false);
 const success = ref({
@@ -85,6 +74,10 @@ const error = ref({
     return message;
   },
 });
+
+const props = defineProps<{
+  course: Course;
+}>();
 
 const confirm = async () => {
   const response = await useCourseModule().delete(props.course);
