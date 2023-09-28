@@ -54,41 +54,39 @@
       </v-dialog>
     </v-list-item-title>
   </v-list-item>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useCourseModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { inject, ref, reactive } from "vue";
 import { useCourseModule } from "@/store";
-
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
 import Course from "@/types/Course";
 
 const dialog = ref<boolean>(false);
-const success = ref({
-  show: (message: string) => {
-    return message;
+const success = inject("success", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 
-const error = ref({
-  show: (message: string) => {
-    return message;
+const error = inject("error", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 
 const props = defineProps<{
   course: Course;
 }>();
+
 const state = reactive<Course>({ ...props.course });
 
 const confirm = async () => {
-  const response = await useCourseModule().update(state);
+  const response = await useCourseModule().delete(state);
   if (response) {
     success.value.show("Course has been successfully deleted.");
     dialog.value = false;
