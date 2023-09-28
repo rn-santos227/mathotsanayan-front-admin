@@ -33,7 +33,7 @@ export const useStudentModule = defineStore("student", {
 
     async create(payload: Student): Promise<boolean> {
       try {
-        this.isTableLoading = true;
+        this.isLoading = true;
         const response = await authenticatedFetch(api.STUDENTS.CREATE, {
           method: "POST",
           headers: {
@@ -50,13 +50,13 @@ export const useStudentModule = defineStore("student", {
         console.error("Error Student in:", error);
         return false;
       } finally {
-        this.isTableLoading = false;
+        this.isLoading = false;
       }
     },
 
     async read(): Promise<boolean> {
       try {
-        this.isLoading = true;
+        this.isTableLoading = true;
         const response = await authenticatedFetch(api.STUDENTS.READ);
         const data = await response.json();
         const { students } = data;
@@ -66,7 +66,7 @@ export const useStudentModule = defineStore("student", {
         console.error("Error Student in:", error);
         return false;
       } finally {
-        this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 
