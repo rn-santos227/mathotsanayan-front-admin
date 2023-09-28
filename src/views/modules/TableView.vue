@@ -34,18 +34,37 @@
       </tr>
     </template>
   </v-data-table>
+  <SuccessComponent ref="success" />
+  <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useModuleModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
-import UpdateView from "./UpdateView.vue";
-import DeleteView from "./DeleteView.vue";
-
-import { computed, onMounted } from "vue";
+import { computed, onMounted, provide, ref } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
+
+import UpdateView from "./UpdateView.vue";
+import DeleteView from "./DeleteView.vue";
+import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+
 import headers from "@/helpers/headers/header_modules";
 import Module from "@/types/Module";
+
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 
 const moduleModule = useModuleModule();
 const modules = computed<Module[]>(() => moduleModule.getModules);
@@ -54,4 +73,7 @@ onMounted(async () => {
   await useModuleModule().read();
   await useSubjectModule().read();
 });
+
+provide("success", success);
+provide("error", error);
 </script>

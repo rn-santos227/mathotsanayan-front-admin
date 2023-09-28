@@ -42,7 +42,6 @@ import { formatDate } from "@/helpers/utils";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
-
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
 import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
 import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";

@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { inject, ref } from "vue";
 import { useModuleModule } from "@/store";
 
 import Module from "@/types/Module";
@@ -67,15 +67,19 @@ const props = defineProps<{
 }>();
 
 const dialog = ref<boolean>(false);
-const success = ref({
-  show: (message: string) => {
-    return message;
+const success = inject("success", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 
-const error = ref({
-  show: (message: string) => {
-    return message;
+const error = inject("error", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 

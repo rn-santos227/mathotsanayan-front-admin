@@ -57,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive } from "vue";
+import { inject, ref } from "vue";
 import { useCourseModule } from "@/store";
 
 import Course from "@/types/Course";
@@ -83,10 +83,8 @@ const props = defineProps<{
   course: Course;
 }>();
 
-const state = reactive<Course>({ ...props.course });
-
 const confirm = async () => {
-  const response = await useCourseModule().delete(state);
+  const response = await useCourseModule().delete(props.course);
   if (response) {
     success.value.show("Course has been successfully deleted.");
     dialog.value = false;
