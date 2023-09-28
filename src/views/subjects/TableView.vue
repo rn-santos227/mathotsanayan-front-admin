@@ -18,22 +18,15 @@
           {{ formatDate(props.item.raw.created_at) }}
         </td>
         <td>
-          <v-menu>
-            <template v-slot:activator="{ props }">
-              <v-btn
-                v-bind="props"
-                block
-                color="purple-darken-3"
-                variant="outlined"
-              >
-                <v-icon size="large">mdi-dots-horizontal</v-icon></v-btn
-              >
-            </template>
-            <v-list density="compact" variant="plain">
-              <UpdateView v-bind:subject="props.item.raw" />
-              <DeleteView v-bind:subject="props.item.raw" />
-            </v-list>
-          </v-menu>
+          <v-btn block color="purple-darken-3" variant="outlined">
+            <v-icon size="large">mdi-dots-horizontal</v-icon>
+            <v-menu activator="parent">
+              <v-list density="compact" variant="plain">
+                <UpdateView v-bind:subject="props.item.raw" />
+                <DeleteView v-bind:subject="props.item.raw" />
+              </v-list>
+            </v-menu>
+          </v-btn>
         </td>
       </tr>
     </template>
