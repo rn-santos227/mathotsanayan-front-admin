@@ -34,24 +34,53 @@
       </tr>
     </template>
   </v-data-table>
+  <SuccessComponent ref="success" />
+  <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useStudentModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
+import { computed, onMounted, provide, ref } from "vue";
+import {
+  useStudentModule,
+  useCourseModule,
+  useSchoolModule,
+  useSectionModule,
+} from "@/store";
+import { formatDate } from "@/helpers/utils";
+
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
-
-import { computed, onMounted } from "vue";
-import { useStudentModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
+import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
 import headers from "@/helpers/headers/header_students";
 import Student from "@/types/Student";
+
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 
 const studentModule = useStudentModule();
 const students = computed<Student[]>(() => studentModule.getStudents);
 
 onMounted(async () => {
   await useStudentModule().read();
+  await useCourseModule().read();
+  await useSchoolModule().read();
+  await useSectionModule().read();
 });
+
+provide("success", success);
+provide("error", error);
 </script>
