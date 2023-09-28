@@ -125,20 +125,13 @@
       </v-card>
     </v-dialog>
   </v-list-item>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useModuleModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch } from "vue";
+import { inject, ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useModuleModule, useSubjectModule } from "@/store";
-
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
 import Module from "@/types/Module";
 import VModule from "@/helpers/validations/v_modules";
@@ -147,15 +140,19 @@ import { padLeft } from "@/helpers/utils";
 
 const dialog = ref<boolean>(false);
 const steps = ref<string[] | number[]>([]);
-const success = ref({
-  show: (message: string) => {
-    return message;
+const success = inject("success", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 
-const error = ref({
-  show: (message: string) => {
-    return message;
+const error = inject("error", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 

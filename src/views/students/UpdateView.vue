@@ -239,13 +239,10 @@
       </form>
     </v-card>
   </v-list-item>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useStudentModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch } from "vue";
+import { inject, ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import {
@@ -255,10 +252,6 @@ import {
   useSectionModule,
 } from "@/store";
 
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
-
 import Student from "@/types/Student";
 import VStudent from "@/helpers/validations/v_students";
 import { rules, rules_password } from "@/helpers/rules/rules_students";
@@ -266,14 +259,19 @@ import { padLeft } from "@/helpers/utils";
 
 const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
-const success = ref({
-  show: (message: string) => {
-    return message;
+const success = inject("success", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
-const error = ref({
-  show: (message: string) => {
-    return message;
+
+const error = inject("error", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
   },
 });
 

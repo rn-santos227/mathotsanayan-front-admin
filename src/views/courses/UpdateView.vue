@@ -123,7 +123,6 @@ import rules from "@/helpers/rules/rules_courses";
 import { padLeft } from "@/helpers/utils";
 
 const dialog = ref<boolean>(false);
-
 const success = inject("success", {
   value: {
     show: (message: string) => {
