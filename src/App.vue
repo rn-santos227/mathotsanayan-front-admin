@@ -36,7 +36,8 @@ fetchUserData();
   background-color: #fffde7;
 }
 
-.v-input__control {
+.v-field__field,
+.v-field__overlay {
   background-color: #fffde7;
 }
 

@@ -34,16 +34,35 @@
       </tr>
     </template>
   </v-data-table>
+  <SuccessComponent ref="success" />
+  <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useSchoolModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
+import { computed, onMounted, provide, ref } from "vue";
+import { useTeacherModule, useSchoolModule } from "@/store";
+import { formatDate } from "@/helpers/utils";
+
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
 
-import { computed, onMounted } from "vue";
-import { useTeacherModule, useSchoolModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
+import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 
 import headers from "@/helpers/headers/header_teachers";
 import Teacher from "@/types/Teacher";
@@ -55,4 +74,7 @@ onMounted(async () => {
   await useTeacherModule().read();
   await useSchoolModule().read();
 });
+
+provide("success", success);
+provide("error", error);
 </script>

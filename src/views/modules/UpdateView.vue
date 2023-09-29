@@ -95,6 +95,16 @@
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
             <v-row>
+              <v-col cols="3">
+                <v-switch
+                  class="active ml-6"
+                  color="green-darken-3"
+                  inset
+                  hide-details
+                  label="Activate"
+                  v-model="state.active"
+                />
+              </v-col>
               <v-col>
                 <v-btn
                   class="mb-3"
@@ -203,3 +213,9 @@ const submitForm = async () => {
   }
 };
 </script>
+
+<style>
+.active {
+  margin-top: -10px;
+}
+</style>
