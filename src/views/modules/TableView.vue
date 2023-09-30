@@ -25,6 +25,7 @@
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
+                <QuestionView />
                 <UpdateView v-bind:module="props.item.raw" />
                 <DeleteView v-bind:module="props.item.raw" />
               </v-list>
@@ -45,6 +46,7 @@ import { computed, onMounted, provide, ref } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
+import QuestionView from "./questions/DialogView.vue";
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
 import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";

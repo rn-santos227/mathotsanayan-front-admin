@@ -1,7 +1,7 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-delete-circle"></v-icon> Delete
+      <v-icon icon="mdi-delete-circle-outline"></v-icon> Delete
       <v-dialog activator="parent" v-model="dialog">
         <v-sheet
           class="ma-auto text-center mx-auto"
