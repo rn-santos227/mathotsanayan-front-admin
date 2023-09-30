@@ -1,5 +1,7 @@
 import Course from "./Course";
 import Module from "./Module";
+import Option from "./Option";
+import Solution from "./Solution";
 
 interface Question {
   id?: number;
@@ -11,6 +13,7 @@ interface Question {
   deleted_at?: string;
   module?: number | Module;
   course?: number | Course;
-  questions: Question[] | null;
+  options?: Option[] | null;
+  solutions?: Solution[] | null;
 }
 export default Question;

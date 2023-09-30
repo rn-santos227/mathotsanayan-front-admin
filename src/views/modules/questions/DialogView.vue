@@ -34,6 +34,9 @@
             </v-row>
           </v-card-title>
         </v-card>
+        <v-card-text>
+          <TableView v-bind:questions="props.questions" />
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -41,7 +44,14 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import TableView from "./TableView.vue";
+
+import Question from "@/types/Question";
+
 const dialog = ref<boolean>(false);
+const props = defineProps<{
+  questions: Question[];
+}>();
 
 const close = () => {
   dialog.value = !dialog.value;
