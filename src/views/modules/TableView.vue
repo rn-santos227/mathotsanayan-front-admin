@@ -25,7 +25,7 @@
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
-                <QuestionView v-bind:questions="props.item.raw.questions" />
+                <QuestionView v-bind:module="props.item.raw" />
                 <UpdateView v-bind:module="props.item.raw" />
                 <DeleteView v-bind:module="props.item.raw" />
               </v-list>

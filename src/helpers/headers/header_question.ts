@@ -1,12 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const headers: Array<any> = [
   {
-    title: "Question Name",
-    align: "start",
-    sortable: true,
-    key: "name",
-  },
-  {
     title: "Question Type",
     align: "start",
     sortable: true,

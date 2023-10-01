@@ -35,7 +35,7 @@
           </v-card-title>
         </v-card>
         <v-card-text>
-          <TableView v-bind:questions="props.questions" />
+          <TableView v-bind:questions="props.module.questions" />
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -46,11 +46,11 @@
 import { ref } from "vue";
 import TableView from "./TableView.vue";
 
-import Question from "@/types/Question";
+import Module from "@/types/Module";
 
 const dialog = ref<boolean>(false);
 const props = defineProps<{
-  questions: Question[];
+  module: Module;
 }>();
 
 const close = () => {

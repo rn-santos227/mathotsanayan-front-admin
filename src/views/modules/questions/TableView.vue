@@ -8,9 +8,6 @@
     <template v-slot:item="props">
       <tr>
         <td class="text-xs-left">
-          {{ props.item.raw.content }}
-        </td>
-        <td class="text-xs-left">
           {{ props.item.raw.type }}
         </td>
         <td class="text-xs-left">
@@ -36,6 +33,6 @@ import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
 
 const props = defineProps<{
-  questions: Question[];
+  questions?: Question[];
 }>();
 </script>
