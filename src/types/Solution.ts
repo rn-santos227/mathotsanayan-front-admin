@@ -5,9 +5,9 @@ import Question from "./Question";
 interface Solution {
   id?: number;
   title: string;
-  soltution: string;
+  content: string;
   type: string;
-  file?: string;
+  file: File[];
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;

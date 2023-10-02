@@ -6,7 +6,7 @@ interface Option {
   id?: number;
   content: string;
   type: string;
-  file?: string;
+  file: File[];
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
