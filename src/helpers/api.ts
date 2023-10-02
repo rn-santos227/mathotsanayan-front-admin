@@ -24,6 +24,7 @@ export default {
 
   QUESTIONS: {
     CREATE: `${BACKEND}questions/create`,
+    CREATEALL: `${BACKEND}questions/create/all`,
     READ: `${BACKEND}questions`,
     UPDATE: `${BACKEND}questions/`,
     DELETE: `${BACKEND}questions/`,

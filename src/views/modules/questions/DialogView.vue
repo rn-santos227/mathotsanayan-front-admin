@@ -32,10 +32,23 @@
                 </v-btn>
               </v-col>
             </v-row>
+            <v-divider class="my-4" />
+            <v-row>
+              <v-col>
+                <v-tabs v-model="tabs" fixed-tabs bg-color="purple-darken-3">
+                  <v-tab value="0"> Questions List </v-tab>
+                  <v-tab value="1"> Create Question </v-tab>
+                </v-tabs>
+              </v-col>
+            </v-row>
           </v-card-title>
         </v-card>
         <v-card-text>
-          <TableView v-bind:questions="props.module.questions" />
+          <v-window v-model="tabs">
+            <v-window-item value="0">
+              <TableView v-bind:questions="props.module.questions" />
+            </v-window-item>
+          </v-window>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -48,6 +61,7 @@ import TableView from "./TableView.vue";
 
 import Module from "@/types/Module";
 
+const tabs = ref<number>(0);
 const dialog = ref<boolean>(false);
 const props = defineProps<{
   module: Module;
