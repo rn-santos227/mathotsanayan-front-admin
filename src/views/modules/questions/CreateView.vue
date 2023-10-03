@@ -1,17 +1,14 @@
 <template>
   <form v-for="(question, index) in questions" :key="index">
-    <v-row>
+    <v-row class="my-1">
       <v-col>
         <v-text-field
-          class="mx-4"
           v-model="question.content"
           label="Question Content/Instruction"
           density="compact"
           variant="outlined"
         />
       </v-col>
-    </v-row>
-    <v-row>
       <v-col>
         <v-select
           v-model="question.type"
@@ -21,8 +18,6 @@
           variant="outlined"
         />
       </v-col>
-    </v-row>
-    <v-row>
       <v-col>
         <v-file-input
           v-model="question.file"
@@ -40,11 +35,11 @@
 import { ref } from "vue";
 import Question from "@/types/Question";
 
-const types = ref<string[]>(["multiple", "word"]);
+const types = ref<string[]>(["multiple selection", "word problem"]);
 const questions = ref<Question[]>([
   {
     content: "",
-    type: "word",
+    type: "word problem",
     file: [],
     options: [],
     solutions: [],

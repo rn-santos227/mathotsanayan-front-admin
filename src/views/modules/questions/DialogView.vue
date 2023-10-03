@@ -48,6 +48,9 @@
             <v-window-item value="0">
               <TableView v-bind:questions="props.module.questions" />
             </v-window-item>
+            <v-window-item value="0">
+              <CreateView v-bind:questions="props.module.questions" />
+            </v-window-item>
           </v-window>
         </v-card-text>
       </v-card>
@@ -57,6 +60,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import CreateView from "./CreateView.vue";
 import TableView from "./TableView.vue";
 
 import Module from "@/types/Module";
