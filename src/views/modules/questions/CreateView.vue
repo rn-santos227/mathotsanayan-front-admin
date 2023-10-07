@@ -55,6 +55,7 @@
             />
           </v-col>
         </v-row>
+        <v-divider />
         <v-row>
           <v-col v-if="question.type == 'multiple selection'">
             <v-card
@@ -76,6 +77,7 @@
                     <v-col class="d-flex">
                       <v-spacer />
                       <v-btn
+                        v-if="checkList(question.options)"
                         density="comfortable"
                         variant="outlined"
                         icon="mdi-delete-circle-outline"
@@ -88,80 +90,112 @@
             </v-card>
           </v-col>
           <v-col>
-            <v-card
-              class="ma-4"
-              variant="outlined"
-              v-for="(solution, index_3) in question.solutions"
-              :key="index_3"
-            >
-              <v-card
-                class="rounded-0 rounded-t mb-6 py-2"
-                color="purple-darken-3"
-                flat
-              >
-                <v-card-title>
-                  <v-row>
-                    <v-col>
-                      <span class="text-h6">
-                        Solution # {{ index_3 + 1 }}
-                      </span>
-                    </v-col>
-                    <v-col class="d-flex">
-                      <v-spacer />
-                      <v-btn
-                        density="comfortable"
-                        variant="outlined"
-                        icon="mdi-delete-circle-outline"
-                      >
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-card-title>
-              </v-card>
-            </v-card>
+            <v-row>
+              <v-col class="mx-4 mt-4">
+                <v-btn
+                  color="light-blue-darken-2"
+                  block
+                  @click.prevent="addSolution(index_1)"
+                >
+                  Add Solutions
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-card
+                  class="mx-4 mb-4"
+                  variant="outlined"
+                  v-for="(solution, index_3) in question.solutions"
+                  :key="index_3"
+                >
+                  <v-card
+                    class="rounded-0 rounded-t mb-6 py-2"
+                    color="purple-darken-3"
+                    flat
+                  >
+                    <v-card-title>
+                      <v-row>
+                        <v-col>
+                          <span class="text-h6">
+                            Solution # {{ index_3 + 1 }}
+                          </span>
+                        </v-col>
+                        <v-col class="d-flex">
+                          <v-spacer />
+                          <v-btn
+                            v-if="checkList(question.solutions)"
+                            density="comfortable"
+                            variant="outlined"
+                            icon="mdi-delete-circle-outline"
+                          >
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-card-title>
+                  </v-card>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
           <v-col>
-            <v-card
-              class="ma-4"
-              variant="outlined"
-              v-for="(correct, index_4) in question.corrects"
-              :key="index_4"
-            >
-              <v-card
-                class="rounded-0 rounded-t mb-6 py-2"
-                color="purple-darken-3"
-                flat
-              >
-                <v-card-title>
-                  <v-row>
-                    <v-col>
-                      <span class="text-h6">
-                        Correct Answer # {{ index_4 + 1 }}
-                      </span>
-                    </v-col>
-                    <v-col class="d-flex">
-                      <v-spacer />
-                      <v-btn
-                        density="comfortable"
-                        variant="outlined"
-                        icon="mdi-delete-circle-outline"
-                      >
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-card-title>
-              </v-card>
-            </v-card>
+            <v-row>
+              <v-col class="mx-4 mt-4">
+                <v-btn
+                  color="light-blue-darken-2"
+                  block
+                  @click.prevent="addCorrect(index_1)"
+                >
+                  Add Correct Answers
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-card
+                  class="mx-4 mb-4"
+                  variant="outlined"
+                  v-for="(correct, index_4) in question.corrects"
+                  :key="index_4"
+                >
+                  <v-card
+                    class="rounded-0 rounded-t mb-6 py-2"
+                    color="purple-darken-3"
+                    flat
+                  >
+                    <v-card-title>
+                      <v-row>
+                        <v-col>
+                          <span class="text-h6">
+                            Correct Answer # {{ index_4 + 1 }}
+                          </span>
+                        </v-col>
+                        <v-col class="d-flex">
+                          <v-spacer />
+                          <v-btn
+                            v-if="checkList(question.corrects)"
+                            density="comfortable"
+                            variant="outlined"
+                            icon="mdi-delete-circle-outline"
+                          >
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-card-title>
+                  </v-card>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
         </v-row>
       </v-card>
+      <v-divider class="my-5" />
     </form>
-    <v-divider class="my-5" />
     <v-row>
       <v-col>
         <v-btn
           class="mb-2"
-          color="purple-darken-3"
+          color="light-blue-darken-3"
           block
           @click.prevent="addQuestion"
         >
@@ -180,6 +214,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Question from "@/types/Question";
+import Option from "@/types/Option";
+import Solution from "@/types/Solution";
+import Correct from "@/types/Correct";
 
 const types = ref<string[]>(["multiple selection", "word problem"]);
 const questions = ref<Question[]>([
@@ -231,6 +268,39 @@ const addQuestion = () => {
     ],
   });
   console.log(questions.value.length);
+};
+
+const addOption = (index: number) => {
+  questions.value[index].options?.push({
+    content: "",
+    type: "",
+    file: [],
+  });
+};
+
+const addSolution = (index: number) => {
+  questions.value[index].solutions?.push({
+    title: "",
+    content: "",
+    type: "",
+    file: [],
+  });
+};
+
+const addCorrect = (index: number) => {
+  questions.value[index].corrects?.push({
+    content: "",
+  });
+};
+
+const checkList = (
+  list: Option[] | Solution[] | Correct[] | null | undefined
+): boolean => {
+  if (list) {
+    if (list.length > 1) {
+      return true;
+    } else return false;
+  } else return false;
 };
 
 const removeQuestion = (index: number) => {
