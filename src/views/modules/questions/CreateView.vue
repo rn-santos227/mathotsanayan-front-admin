@@ -58,16 +58,99 @@
         <v-row>
           <v-col v-if="question.type == 'multiple selection'">
             <v-card
+              class="ma-4"
+              variant="outlined"
               v-for="(option, index_2) in question.options"
               :key="index_2"
             >
+              <v-card
+                class="rounded-0 rounded-t mb-6 py-2"
+                color="purple-darken-3"
+                flat
+              >
+                <v-card-title>
+                  <v-row>
+                    <v-col>
+                      <span class="text-h6"> Option # {{ index_2 + 1 }} </span>
+                    </v-col>
+                    <v-col class="d-flex">
+                      <v-spacer />
+                      <v-btn
+                        density="comfortable"
+                        variant="outlined"
+                        icon="mdi-delete-circle-outline"
+                      >
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-card-title>
+              </v-card>
             </v-card>
           </v-col>
           <v-col>
             <v-card
+              class="ma-4"
+              variant="outlined"
               v-for="(solution, index_3) in question.solutions"
               :key="index_3"
             >
+              <v-card
+                class="rounded-0 rounded-t mb-6 py-2"
+                color="purple-darken-3"
+                flat
+              >
+                <v-card-title>
+                  <v-row>
+                    <v-col>
+                      <span class="text-h6">
+                        Solution # {{ index_3 + 1 }}
+                      </span>
+                    </v-col>
+                    <v-col class="d-flex">
+                      <v-spacer />
+                      <v-btn
+                        density="comfortable"
+                        variant="outlined"
+                        icon="mdi-delete-circle-outline"
+                      >
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-card-title>
+              </v-card>
+            </v-card>
+          </v-col>
+          <v-col>
+            <v-card
+              class="ma-4"
+              variant="outlined"
+              v-for="(correct, index_4) in question.corrects"
+              :key="index_4"
+            >
+              <v-card
+                class="rounded-0 rounded-t mb-6 py-2"
+                color="purple-darken-3"
+                flat
+              >
+                <v-card-title>
+                  <v-row>
+                    <v-col>
+                      <span class="text-h6">
+                        Correct Answer # {{ index_4 + 1 }}
+                      </span>
+                    </v-col>
+                    <v-col class="d-flex">
+                      <v-spacer />
+                      <v-btn
+                        density="comfortable"
+                        variant="outlined"
+                        icon="mdi-delete-circle-outline"
+                      >
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+                </v-card-title>
+              </v-card>
             </v-card>
           </v-col>
         </v-row>
@@ -104,8 +187,26 @@ const questions = ref<Question[]>([
     content: "",
     type: "word problem",
     file: [],
-    options: [],
-    solutions: [],
+    options: [
+      {
+        content: "",
+        type: "",
+        file: [],
+      },
+    ],
+    solutions: [
+      {
+        title: "",
+        content: "",
+        type: "",
+        file: [],
+      },
+    ],
+    corrects: [
+      {
+        content: "",
+      },
+    ],
   },
 ]);
 
@@ -121,6 +222,11 @@ const addQuestion = () => {
         content: "",
         type: "",
         file: [],
+      },
+    ],
+    corrects: [
+      {
+        content: "",
       },
     ],
   });

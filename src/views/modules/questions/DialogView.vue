@@ -6,12 +6,14 @@
     <v-dialog
       class="ma-auto"
       persistent
+      scrollable
       v-model="dialog"
       activator="parent"
       width="80%"
     >
-      <v-card height="860">
+      <v-card>
         <v-card
+          absolute
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
           flat
@@ -43,7 +45,7 @@
             </v-row>
           </v-card-title>
         </v-card>
-        <v-card-text>
+        <v-card-text class="question-height">
           <v-window v-model="tabs">
             <v-window-item value="0">
               <TableView v-bind:questions="props.module.questions" />
@@ -75,3 +77,9 @@ const close = () => {
   dialog.value = !dialog.value;
 };
 </script>
+
+<style>
+.question-height {
+  height: 860px;
+}
+</style>

@@ -8,8 +8,8 @@ interface Correct {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  module: number | string | Module;
-  question: number | string | Question;
-  subject: number | string | Subject;
+  module?: number | string | Module;
+  question?: number | string | Question;
+  subject?: number | string | Subject;
 }
 export default Correct;
