@@ -48,6 +48,7 @@
             <v-file-input
               v-model="question.file"
               :items="types"
+              accept="image/*"
               label="Question Attachment"
               density="compact"
               variant="outlined"
