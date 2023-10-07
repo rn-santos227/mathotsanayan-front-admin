@@ -1,6 +1,6 @@
 <template>
   <div class="mx-8">
-    <form v-for="(question, index) in questions" :key="index">
+    <form v-for="(question, index_1) in questions" :key="index_1">
       <v-card class="mb-8" elevation="4">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
@@ -10,7 +10,7 @@
           <v-card-title>
             <v-row>
               <v-col>
-                <span class="text-h6"> Question # {{ index + 1 }} </span>
+                <span class="text-h6"> Question # {{ index_1 + 1 }} </span>
               </v-col>
               <v-col class="d-flex">
                 <v-spacer />
@@ -19,7 +19,7 @@
                   density="comfortable"
                   variant="outlined"
                   icon="mdi-delete-circle-outline"
-                  @click="remove(index)"
+                  @click="removeQuestion(index_1)"
                 >
                 </v-btn>
               </v-col>
@@ -53,6 +53,22 @@
               density="compact"
               variant="outlined"
             />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col v-if="question.type == 'multiple selection'">
+            <v-card
+              v-for="(option, index_2) in question.options"
+              :key="index_2"
+            >
+            </v-card>
+          </v-col>
+          <v-col>
+            <v-card
+              v-for="(solution, index_3) in question.solutions"
+              :key="index_3"
+            >
+            </v-card>
           </v-col>
         </v-row>
       </v-card>
@@ -99,12 +115,19 @@ const addQuestion = () => {
     type: "word problem",
     file: [],
     options: [],
-    solutions: [],
+    solutions: [
+      {
+        title: "",
+        content: "",
+        type: "",
+        file: [],
+      },
+    ],
   });
   console.log(questions.value.length);
 };
 
-const remove = (index: number) => {
+const removeQuestion = (index: number) => {
   questions.value.splice(index, 1);
 };
 
