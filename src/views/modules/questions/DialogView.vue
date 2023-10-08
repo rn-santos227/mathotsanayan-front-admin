@@ -34,8 +34,8 @@
                 </v-btn>
               </v-col>
             </v-row>
-            <v-divider class="my-4" />
-            <v-row>
+            <v-divider class="mt-4" />
+            <v-row class="pb-4">
               <v-col>
                 <v-tabs v-model="tabs" fixed-tabs bg-color="purple-darken-3">
                   <v-tab value="0"> Questions List </v-tab>
@@ -50,7 +50,7 @@
             <v-window-item value="0">
               <TableView v-bind:questions="props.module.questions" />
             </v-window-item>
-            <v-window-item value="0">
+            <v-window-item value="1">
               <CreateView v-bind:questions="props.module.questions" />
             </v-window-item>
           </v-window>

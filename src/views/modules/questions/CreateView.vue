@@ -1,7 +1,7 @@
 <template>
   <div class="mx-8">
     <form v-for="(question, index_1) in questions" :key="index_1">
-      <v-card class="mb-8" elevation="4">
+      <v-card class="mb-8 pb-8 question-border" elevation="4">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -54,13 +54,14 @@
             />
           </v-col>
         </v-row>
-        <v-divider />
+        <v-divider class="border-opacity-100" />
         <v-row>
           <v-col v-if="question.type == 'multiple selection'">
             <v-row>
               <v-col class="mx-4 mt-4">
                 <v-btn
                   color="light-blue-darken-2"
+                  prepend-icon="mdi-plus"
                   block
                   @click.prevent="addOption(index_1)"
                 >
@@ -138,6 +139,7 @@
               <v-col class="mx-4 mt-4">
                 <v-btn
                   color="cyan-darken-2"
+                  prepend-icon="mdi-plus"
                   block
                   @click.prevent="addSolution(index_1)"
                 >
@@ -215,6 +217,7 @@
               <v-col class="mx-4 mt-4">
                 <v-btn
                   color="teal-darken-2"
+                  prepend-icon="mdi-plus"
                   block
                   @click.prevent="addCorrect(index_1)"
                 >
@@ -278,6 +281,7 @@
       <v-col>
         <v-btn
           class="mb-2"
+          prepend-icon="mdi-plus"
           color="purple-darken-3"
           block
           @click.prevent="addQuestion"
@@ -418,5 +422,9 @@ const submit = async () => {
 
 .outlined-border-corrects {
   border: 2px solid #00796b;
+}
+
+.question-border {
+  border: 2px solid #6a1b9a;
 }
 </style>
