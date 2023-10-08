@@ -162,7 +162,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { ref } from "vue";
+import { useVuelidate } from "@vuelidate/core";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import SolutionComponent from "@/components/questions/SolutionComponent.vue";
@@ -173,8 +174,10 @@ import Option from "@/types/Option";
 import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
+import rules from "@/helpers/rules/rules_questions";
+
 const types = ref<string[]>(["multiple selection", "word problem"]);
-const questions = reactive<Question[]>([
+const questions = ref<Question[]>([
   {
     content: "",
     type: "word problem",
@@ -198,9 +201,12 @@ const questions = reactive<Question[]>([
     ],
   },
 ]);
+const v$ = questions.value.map((question) => {
+  return useVuelidate(rules, question);
+});
 
 const addQuestion = () => {
-  questions.push({
+  questions.value.push({
     content: "",
     type: "word problem",
     file: [],
@@ -225,21 +231,21 @@ const addQuestion = () => {
 };
 
 const addOption = (index: number) => {
-  questions[index].options?.push({
+  questions.value[index].options?.push({
     content: "",
     file: [],
   });
 };
 
 const addSolution = (index: number) => {
-  questions[index].solutions?.push({
+  questions.value[index].solutions?.push({
     solution: "",
     file: [],
   });
 };
 
 const addCorrect = (index: number) => {
-  questions[index].corrects?.push({
+  questions.value[index].corrects?.push({
     content: "",
   });
 };
@@ -255,23 +261,23 @@ const checkList = (
 };
 
 const removeQuestion = (index: number) => {
-  questions.splice(index, 1);
+  questions.value.splice(index, 1);
 };
 
 const removeOption = (index_1: number, index_2: number) => {
-  questions[index_1].options?.splice(index_2, 1);
+  questions.value[index_1].options?.splice(index_2, 1);
 };
 
 const removeSolution = (index_1: number, index_2: number) => {
-  questions[index_1].solutions?.splice(index_2, 1);
+  questions.value[index_1].solutions?.splice(index_2, 1);
 };
 
 const removeCorrect = (index_1: number, index_2: number) => {
-  questions[index_1].corrects?.splice(index_2, 1);
+  questions.value[index_1].corrects?.splice(index_2, 1);
 };
 
 const submit = async () => {
-  console.log(questions);
+  console.log(v$);
 };
 </script>
 
