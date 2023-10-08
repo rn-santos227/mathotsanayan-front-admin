@@ -122,7 +122,7 @@
                     </v-row>
                     <v-row>
                       <v-file-input
-                        v-model="question.file"
+                        v-model="option.file"
                         accept="image/*"
                         label="Option Attachment"
                         density="compact"
