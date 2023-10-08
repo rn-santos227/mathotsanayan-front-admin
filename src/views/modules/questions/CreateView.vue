@@ -71,66 +71,16 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-card
-                  class="mx-4 mb-4 outlined-border-options"
-                  variant="outlined"
+                <OptionComponent
                   v-for="(option, index_2) in question.options"
+                  v-model:content="option.content"
+                  v-model:type="option.type"
+                  v-model:file="option.file"
+                  :index="index_2"
+                  :check="checkList(question.options)"
                   :key="index_2"
-                >
-                  <v-card
-                    class="rounded-0 rounded-t mb-6 py-2"
-                    color="light-blue-darken-2"
-                    flat
-                  >
-                    <v-card-title>
-                      <v-row>
-                        <v-col>
-                          <span class="text-h6">
-                            Option # {{ index_2 + 1 }}
-                          </span>
-                        </v-col>
-                        <v-col class="d-flex">
-                          <v-spacer />
-                          <v-btn
-                            v-if="checkList(question.options)"
-                            density="comfortable"
-                            variant="outlined"
-                            icon="mdi-delete-circle-outline"
-                            @click="removeOption(index_1, index_2)"
-                          >
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-card-title>
-                  </v-card>
-                  <v-card-text class="ma-4">
-                    <v-row>
-                      <v-text-field
-                        v-model="option.content"
-                        label="Option Content"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                    <v-row>
-                      <v-text-field
-                        v-model="option.type"
-                        label="Option Type"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                    <v-row>
-                      <v-file-input
-                        v-model="option.file"
-                        accept="image/*"
-                        label="Option Attachment"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                  </v-card-text>
-                </v-card>
+                  @remove="removeOption(index_1, index_2)"
+                />
               </v-col>
             </v-row>
           </v-col>
@@ -305,6 +255,8 @@ import Option from "@/types/Option";
 import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
+import OptionComponent from "@/components/questions/OptionComponent.vue";
+
 const types = ref<string[]>(["multiple selection", "word problem"]);
 const questions = ref<Question[]>([
   {
@@ -407,15 +359,11 @@ const removeCorrect = (index_1: number, index_2: number) => {
 };
 
 const submit = async () => {
-  //
+  console.log(questions.value);
 };
 </script>
 
 <style scoped>
-.outlined-border-options {
-  border: 2px solid #0288d1;
-}
-
 .outlined-border-solutions {
   border: 2px solid #0097a7;
 }
