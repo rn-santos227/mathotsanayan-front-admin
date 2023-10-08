@@ -34,14 +34,6 @@
         />
       </v-row>
       <v-row>
-        <v-text-field
-          v-model="type"
-          label="Option Type"
-          density="compact"
-          variant="outlined"
-        />
-      </v-row>
-      <v-row>
         <v-file-input
           v-model="file"
           accept="image/*"
@@ -59,30 +51,17 @@ import { computed } from "vue";
 
 const props = defineProps<{
   content: string;
-  type: string;
   file: File[];
   index: number;
   check: boolean;
 }>();
 
-const emit = defineEmits([
-  "update:content",
-  "update:type",
-  "update:file",
-  "remove",
-]);
+const emit = defineEmits(["update:content", "update:file", "remove"]);
 
 const content = computed({
   get: () => props.content,
   set: (value: string) => {
     emit("update:content", value);
-  },
-});
-
-const type = computed({
-  get: () => props.type,
-  set: (value: string) => {
-    emit("update:type", value);
   },
 });
 

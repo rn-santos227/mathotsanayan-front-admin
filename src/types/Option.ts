@@ -5,7 +5,6 @@ import Question from "./Question";
 interface Option {
   id?: number;
   content: string;
-  type: string;
   file: File[];
   created_at?: string;
   updated_at?: string;

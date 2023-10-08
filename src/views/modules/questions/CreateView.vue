@@ -74,7 +74,6 @@
                 <OptionComponent
                   v-for="(option, index_2) in question.options"
                   v-model:content="option.content"
-                  v-model:type="option.type"
                   v-model:file="option.file"
                   :index="index_2"
                   :check="checkList(question.options)"
@@ -99,66 +98,15 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-card
-                  class="mx-4 mb-4 outlined-border-solutions"
-                  variant="outlined"
+                <SolutionComponent
                   v-for="(solution, index_3) in question.solutions"
+                  v-model:solution="solution.solution"
+                  v-model:file="solution.file"
+                  :index="index_3"
+                  :check="checkList(question.solutions)"
                   :key="index_3"
-                >
-                  <v-card
-                    class="rounded-0 rounded-t mb-6 py-2"
-                    color="cyan-darken-2"
-                    flat
-                  >
-                    <v-card-title>
-                      <v-row>
-                        <v-col>
-                          <span class="text-h6">
-                            Solution # {{ index_3 + 1 }}
-                          </span>
-                        </v-col>
-                        <v-col class="d-flex">
-                          <v-spacer />
-                          <v-btn
-                            v-if="checkList(question.solutions)"
-                            density="comfortable"
-                            variant="outlined"
-                            icon="mdi-delete-circle-outline"
-                            @click="removeSolution(index_1, index_3)"
-                          >
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-card-title>
-                  </v-card>
-                  <v-card-text class="ma-4">
-                    <v-row>
-                      <v-text-field
-                        v-model="solution.content"
-                        label="Solution Content"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                    <v-row>
-                      <v-text-field
-                        v-model="solution.type"
-                        label="Solution Type"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                    <v-row>
-                      <v-file-input
-                        v-model="solution.file"
-                        accept="image/*"
-                        label="Solution Attachment"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                  </v-card-text>
-                </v-card>
+                  @remove="removeSolution(index_1, index_3)"
+                />
               </v-col>
             </v-row>
           </v-col>
@@ -177,49 +125,14 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-card
-                  class="mx-4 mb-4 outlined-border-corrects"
-                  variant="outlined"
+                <CorrectComponent
                   v-for="(correct, index_4) in question.corrects"
+                  v-model:content="correct.content"
+                  :index="index_4"
+                  :check="checkList(question.corrects)"
                   :key="index_4"
-                >
-                  <v-card
-                    class="rounded-0 rounded-t mb-6 py-2"
-                    color="teal-darken-2"
-                    flat
-                  >
-                    <v-card-title>
-                      <v-row>
-                        <v-col>
-                          <span class="text-h6">
-                            Correct Answer # {{ index_4 + 1 }}
-                          </span>
-                        </v-col>
-                        <v-col class="d-flex">
-                          <v-spacer />
-                          <v-btn
-                            v-if="checkList(question.corrects)"
-                            density="comfortable"
-                            variant="outlined"
-                            icon="mdi-delete-circle-outline"
-                            @click="removeCorrect(index_1, index_4)"
-                          >
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-card-title>
-                  </v-card>
-                  <v-card-text class="ma-4">
-                    <v-row>
-                      <v-text-field
-                        v-model="correct.content"
-                        label="Correct Answer"
-                        density="compact"
-                        variant="outlined"
-                      />
-                    </v-row>
-                  </v-card-text>
-                </v-card>
+                  @remove="removeCorrect(index_1, index_4)"
+                />
               </v-col>
             </v-row>
           </v-col>
@@ -256,6 +169,8 @@ import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
+import SolutionComponent from "@/components/questions/SolutionComponent.vue";
+import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
 const types = ref<string[]>(["multiple selection", "word problem"]);
 const questions = ref<Question[]>([
@@ -266,15 +181,12 @@ const questions = ref<Question[]>([
     options: [
       {
         content: "",
-        type: "",
         file: [],
       },
     ],
     solutions: [
       {
-        title: "",
-        content: "",
-        type: "",
+        solution: "",
         file: [],
       },
     ],
@@ -294,9 +206,7 @@ const addQuestion = () => {
     options: [],
     solutions: [
       {
-        title: "",
-        content: "",
-        type: "",
+        solution: "",
         file: [],
       },
     ],
@@ -306,22 +216,18 @@ const addQuestion = () => {
       },
     ],
   });
-  console.log(questions.value.length);
 };
 
 const addOption = (index: number) => {
   questions.value[index].options?.push({
     content: "",
-    type: "",
     file: [],
   });
 };
 
 const addSolution = (index: number) => {
   questions.value[index].solutions?.push({
-    title: "",
-    content: "",
-    type: "",
+    solution: "",
     file: [],
   });
 };
@@ -364,14 +270,6 @@ const submit = async () => {
 </script>
 
 <style scoped>
-.outlined-border-solutions {
-  border: 2px solid #0097a7;
-}
-
-.outlined-border-corrects {
-  border: 2px solid #00796b;
-}
-
 .question-border {
   border: 2px solid #6a1b9a;
 }
