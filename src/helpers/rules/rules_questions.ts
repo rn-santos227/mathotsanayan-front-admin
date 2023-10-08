@@ -4,7 +4,6 @@ import { computed } from "vue";
 const rules = computed(() => {
   return {
     content: { required, maxLength: maxLength(200) },
-    type: { required },
     file: { required },
   };
 });

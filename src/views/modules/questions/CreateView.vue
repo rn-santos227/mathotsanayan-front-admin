@@ -162,18 +162,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import Question from "@/types/Question";
-import Option from "@/types/Option";
-import Solution from "@/types/Solution";
-import Correct from "@/types/Correct";
+import { ref, reactive } from "vue";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import SolutionComponent from "@/components/questions/SolutionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
+import Question from "@/types/Question";
+import Option from "@/types/Option";
+import Solution from "@/types/Solution";
+import Correct from "@/types/Correct";
+
 const types = ref<string[]>(["multiple selection", "word problem"]);
-const questions = ref<Question[]>([
+const questions = reactive<Question[]>([
   {
     content: "",
     type: "word problem",
@@ -199,11 +200,16 @@ const questions = ref<Question[]>([
 ]);
 
 const addQuestion = () => {
-  questions.value.push({
+  questions.push({
     content: "",
     type: "word problem",
     file: [],
-    options: [],
+    options: [
+      {
+        content: "",
+        file: [],
+      },
+    ],
     solutions: [
       {
         solution: "",
@@ -219,21 +225,21 @@ const addQuestion = () => {
 };
 
 const addOption = (index: number) => {
-  questions.value[index].options?.push({
+  questions[index].options?.push({
     content: "",
     file: [],
   });
 };
 
 const addSolution = (index: number) => {
-  questions.value[index].solutions?.push({
+  questions[index].solutions?.push({
     solution: "",
     file: [],
   });
 };
 
 const addCorrect = (index: number) => {
-  questions.value[index].corrects?.push({
+  questions[index].corrects?.push({
     content: "",
   });
 };
@@ -249,23 +255,23 @@ const checkList = (
 };
 
 const removeQuestion = (index: number) => {
-  questions.value.splice(index, 1);
+  questions.splice(index, 1);
 };
 
 const removeOption = (index_1: number, index_2: number) => {
-  questions.value[index_1].options?.splice(index_2, 1);
+  questions[index_1].options?.splice(index_2, 1);
 };
 
 const removeSolution = (index_1: number, index_2: number) => {
-  questions.value[index_1].solutions?.splice(index_2, 1);
+  questions[index_1].solutions?.splice(index_2, 1);
 };
 
 const removeCorrect = (index_1: number, index_2: number) => {
-  questions.value[index_1].corrects?.splice(index_2, 1);
+  questions[index_1].corrects?.splice(index_2, 1);
 };
 
 const submit = async () => {
-  console.log(questions.value);
+  console.log(questions);
 };
 </script>
 
