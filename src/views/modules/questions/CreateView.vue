@@ -47,7 +47,6 @@
           <v-col>
             <v-file-input
               v-model="question.file"
-              :items="types"
               accept="image/*"
               label="Question Attachment"
               density="compact"
@@ -58,42 +57,87 @@
         <v-divider />
         <v-row>
           <v-col v-if="question.type == 'multiple selection'">
-            <v-card
-              class="ma-4"
-              variant="outlined"
-              v-for="(option, index_2) in question.options"
-              :key="index_2"
-            >
-              <v-card
-                class="rounded-0 rounded-t mb-6 py-2"
-                color="purple-darken-3"
-                flat
-              >
-                <v-card-title>
-                  <v-row>
-                    <v-col>
-                      <span class="text-h6"> Option # {{ index_2 + 1 }} </span>
-                    </v-col>
-                    <v-col class="d-flex">
-                      <v-spacer />
-                      <v-btn
-                        v-if="checkList(question.options)"
-                        density="comfortable"
+            <v-row>
+              <v-col class="mx-4 mt-4">
+                <v-btn
+                  color="light-blue-darken-2"
+                  block
+                  @click.prevent="addOption(index_1)"
+                >
+                  Add Options
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-card
+                  class="mx-4 mb-4 outlined-border-options"
+                  variant="outlined"
+                  v-for="(option, index_2) in question.options"
+                  :key="index_2"
+                >
+                  <v-card
+                    class="rounded-0 rounded-t mb-6 py-2"
+                    color="light-blue-darken-2"
+                    flat
+                  >
+                    <v-card-title>
+                      <v-row>
+                        <v-col>
+                          <span class="text-h6">
+                            Option # {{ index_2 + 1 }}
+                          </span>
+                        </v-col>
+                        <v-col class="d-flex">
+                          <v-spacer />
+                          <v-btn
+                            v-if="checkList(question.options)"
+                            density="comfortable"
+                            variant="outlined"
+                            icon="mdi-delete-circle-outline"
+                            @click="removeOption(index_1, index_2)"
+                          >
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-card-title>
+                  </v-card>
+                  <v-card-text class="ma-4">
+                    <v-row>
+                      <v-text-field
+                        v-model="option.content"
+                        label="Option Content"
+                        density="compact"
                         variant="outlined"
-                        icon="mdi-delete-circle-outline"
-                      >
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-card-title>
-              </v-card>
-            </v-card>
+                      />
+                    </v-row>
+                    <v-row>
+                      <v-text-field
+                        v-model="option.type"
+                        label="Option Type"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                    <v-row>
+                      <v-file-input
+                        v-model="question.file"
+                        accept="image/*"
+                        label="Option Attachment"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
           </v-col>
           <v-col>
             <v-row>
               <v-col class="mx-4 mt-4">
                 <v-btn
-                  color="light-blue-darken-2"
+                  color="cyan-darken-2"
                   block
                   @click.prevent="addSolution(index_1)"
                 >
@@ -104,14 +148,14 @@
             <v-row>
               <v-col>
                 <v-card
-                  class="mx-4 mb-4"
+                  class="mx-4 mb-4 outlined-border-solutions"
                   variant="outlined"
                   v-for="(solution, index_3) in question.solutions"
                   :key="index_3"
                 >
                   <v-card
                     class="rounded-0 rounded-t mb-6 py-2"
-                    color="purple-darken-3"
+                    color="cyan-darken-2"
                     flat
                   >
                     <v-card-title>
@@ -128,12 +172,40 @@
                             density="comfortable"
                             variant="outlined"
                             icon="mdi-delete-circle-outline"
+                            @click="removeSolution(index_1, index_3)"
                           >
                           </v-btn>
                         </v-col>
                       </v-row>
                     </v-card-title>
                   </v-card>
+                  <v-card-text class="ma-4">
+                    <v-row>
+                      <v-text-field
+                        v-model="solution.content"
+                        label="Solution Content"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                    <v-row>
+                      <v-text-field
+                        v-model="solution.type"
+                        label="Solution Type"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                    <v-row>
+                      <v-file-input
+                        v-model="solution.file"
+                        accept="image/*"
+                        label="Solution Attachment"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                  </v-card-text>
                 </v-card>
               </v-col>
             </v-row>
@@ -142,7 +214,7 @@
             <v-row>
               <v-col class="mx-4 mt-4">
                 <v-btn
-                  color="light-blue-darken-2"
+                  color="teal-darken-2"
                   block
                   @click.prevent="addCorrect(index_1)"
                 >
@@ -153,14 +225,14 @@
             <v-row>
               <v-col>
                 <v-card
-                  class="mx-4 mb-4"
+                  class="mx-4 mb-4 outlined-border-corrects"
                   variant="outlined"
                   v-for="(correct, index_4) in question.corrects"
                   :key="index_4"
                 >
                   <v-card
                     class="rounded-0 rounded-t mb-6 py-2"
-                    color="purple-darken-3"
+                    color="teal-darken-2"
                     flat
                   >
                     <v-card-title>
@@ -177,12 +249,23 @@
                             density="comfortable"
                             variant="outlined"
                             icon="mdi-delete-circle-outline"
+                            @click="removeCorrect(index_1, index_4)"
                           >
                           </v-btn>
                         </v-col>
                       </v-row>
                     </v-card-title>
                   </v-card>
+                  <v-card-text class="ma-4">
+                    <v-row>
+                      <v-text-field
+                        v-model="correct.content"
+                        label="Correct Answer"
+                        density="compact"
+                        variant="outlined"
+                      />
+                    </v-row>
+                  </v-card-text>
                 </v-card>
               </v-col>
             </v-row>
@@ -195,7 +278,7 @@
       <v-col>
         <v-btn
           class="mb-2"
-          color="light-blue-darken-3"
+          color="purple-darken-3"
           block
           @click.prevent="addQuestion"
         >
@@ -307,7 +390,33 @@ const removeQuestion = (index: number) => {
   questions.value.splice(index, 1);
 };
 
+const removeOption = (index_1: number, index_2: number) => {
+  questions.value[index_1].options?.splice(index_2, 1);
+};
+
+const removeSolution = (index_1: number, index_2: number) => {
+  questions.value[index_1].solutions?.splice(index_2, 1);
+};
+
+const removeCorrect = (index_1: number, index_2: number) => {
+  questions.value[index_1].corrects?.splice(index_2, 1);
+};
+
 const submit = async () => {
   //
 };
 </script>
+
+<style scoped>
+.outlined-border-options {
+  border: 2px solid #0288d1;
+}
+
+.outlined-border-solutions {
+  border: 2px solid #0097a7;
+}
+
+.outlined-border-corrects {
+  border: 2px solid #00796b;
+}
+</style>
