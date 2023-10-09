@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-8">
-    <form v-for="(question, index_1) in questions" :key="index_1">
+  <v-card-text class="question-height">
+    <form class="mx-8" v-for="(question, index_1) in questions" :key="index_1">
       <v-card class="mb-8 pb-8 question-border" elevation="4">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
@@ -138,27 +138,27 @@
           </v-col>
         </v-row>
       </v-card>
-      <v-divider class="my-5" />
     </form>
-    <v-row>
-      <v-col>
-        <v-btn
-          class="mb-2"
-          prepend-icon="mdi-plus"
-          color="purple-darken-3"
-          block
-          @click.prevent="addQuestion"
-        >
-          Add Question
-        </v-btn>
-      </v-col>
-      <v-col>
-        <v-btn class="mb-2" color="success" block @click.prevent="submit">
-          Submit
-        </v-btn>
-      </v-col>
-    </v-row>
-  </div>
+  </v-card-text>
+  <v-divider />
+  <v-row class="mx-6 my-3">
+    <v-col>
+      <v-btn
+        class="mb-2"
+        prepend-icon="mdi-plus"
+        color="purple-darken-3"
+        block
+        @click.prevent="addQuestion"
+      >
+        Add Question
+      </v-btn>
+    </v-col>
+    <v-col>
+      <v-btn class="mb-2" color="success" block @click.prevent="submit">
+        Submit
+      </v-btn>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup lang="ts">
@@ -201,6 +201,7 @@ const questions = ref<Question[]>([
     ],
   },
 ]);
+
 const v$ = questions.value.map((question) => {
   return useVuelidate(rules, question);
 });
@@ -284,5 +285,10 @@ const submit = async () => {
 <style scoped>
 .question-border {
   border: 2px solid #6a1b9a;
+}
+
+.question-height {
+  height: calc(100vh - 300px);
+  overflow-y: auto;
 }
 </style>

@@ -1,29 +1,31 @@
 <template>
-  <v-data-table
-    class="w-100"
-    :items="props.questions"
-    :headers="headers"
-    item-value="name"
-    :loading="useQuestionModule().isTableLoading"
-  >
-    <template v-slot:item="props">
-      <tr>
-        <td class="text-xs-left">
-          {{ props.item.raw.type }}
-        </td>
-        <td class="text-xs-left">
-          {{ props.item.raw?.answers.length }}
-        </td>
-        <td class="text-xs-left">
-          {{ props.item.raw?.solutions.length }}
-        </td>
-        <td class="text-xs-left">
-          {{ formatDate(props.item.raw.created_at) }}
-        </td>
-        <td></td>
-      </tr>
-    </template>
-  </v-data-table>
+  <v-card-text class="question-height">
+    <v-data-table
+      class="w-100"
+      :items="props.questions"
+      :headers="headers"
+      item-value="name"
+      :loading="useQuestionModule().isTableLoading"
+    >
+      <template v-slot:item="props">
+        <tr>
+          <td class="text-xs-left">
+            {{ props.item.raw.type }}
+          </td>
+          <td class="text-xs-left">
+            {{ props.item.raw?.answers.length }}
+          </td>
+          <td class="text-xs-left">
+            {{ props.item.raw?.solutions.length }}
+          </td>
+          <td class="text-xs-left">
+            {{ formatDate(props.item.raw.created_at) }}
+          </td>
+          <td></td>
+        </tr>
+      </template>
+    </v-data-table>
+  </v-card-text>
   <SuccessComponent ref="success" />
   <ErrorComponent ref="error" />
   <LoadingComponent v-bind:activate="useQuestionModule().isLoading" />
@@ -61,3 +63,9 @@ const props = defineProps<{
 provide("success", success);
 provide("error", error);
 </script>
+
+<style scoped>
+.question-height {
+  height: calc(100vh - 200px);
+}
+</style>
