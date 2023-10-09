@@ -183,6 +183,7 @@ import Correct from "@/types/Correct";
 
 const props = defineProps<{
   module: Module;
+  index: number;
 }>();
 
 const types = ref<string[]>(["multiple selection", "word problem"]);

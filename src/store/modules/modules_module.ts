@@ -1,4 +1,5 @@
 import Module from "@/types/Module";
+import Question from "@/types/Question";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
@@ -14,6 +15,10 @@ export const useModuleModule = defineStore("modules", {
   actions: {
     setModules(modules: Module[]) {
       this.modules = modules;
+    },
+
+    setQuestionModule(index: number, questions: Question[]) {
+      this.modules[index].questions = questions;
     },
 
     addModule(module: Module) {

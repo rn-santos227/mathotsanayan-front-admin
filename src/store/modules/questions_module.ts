@@ -1,3 +1,4 @@
+import Module from "@/types/Module";
 import Question from "@/types/Question";
 import api from "@/helpers/api";
 
@@ -13,20 +14,23 @@ export const useQuestionModule = defineStore("questions", {
   actions: {
     async createAll(
       payload: Question[],
-      id: number
+      module: Module
     ): Promise<Question[] | null> {
       try {
         this.isLoading = true;
-        const response = await authenticatedFetch(api.QUESTIONS.CREATEALL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            questions: payload,
-            id: id,
-          }),
-        });
+        const response = await authenticatedFetch(
+          `${api.QUESTIONS.CREATEALL}${module.id}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              questions: payload,
+              module: module,
+            }),
+          }
+        );
         const data = await response.json();
         const { questions } = data;
         return questions;

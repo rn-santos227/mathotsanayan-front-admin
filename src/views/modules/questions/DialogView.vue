@@ -49,7 +49,7 @@
             <TableView v-bind:questions="props.module.questions" />
           </v-window-item>
           <v-window-item value="1">
-            <CreateView v-bind:module="props.module" />
+            <CreateView v-bind:module="props.module" v-bind:index="index" />
           </v-window-item>
         </v-window>
       </v-card>
@@ -68,6 +68,7 @@ const tabs = ref<number>(0);
 const dialog = ref<boolean>(false);
 const props = defineProps<{
   module: Module;
+  index: number;
 }>();
 
 const close = () => {
