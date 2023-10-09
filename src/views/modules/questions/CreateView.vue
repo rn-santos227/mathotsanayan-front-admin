@@ -1,6 +1,10 @@
 <template>
   <v-card-text class="question-height">
-    <form class="mx-8" v-for="(question, index_1) in questions" :key="index_1">
+    <form
+      class="mx-8 mt-4"
+      v-for="(question, index_1) in questions"
+      :key="index_1"
+    >
       <v-card class="mb-8 pb-8 question-border" elevation="4">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
@@ -162,22 +166,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useVuelidate } from "@vuelidate/core";
+import { ref, reactive } from "vue";
+// import { useVuelidate } from "@vuelidate/core";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import SolutionComponent from "@/components/questions/SolutionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
+import Module from "@/types/Module";
 import Question from "@/types/Question";
 import Option from "@/types/Option";
 import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
-import rules from "@/helpers/rules/rules_questions";
+// import rules from "@/helpers/rules/rules_questions";
+
+const props = defineProps<{
+  module: Module;
+}>();
 
 const types = ref<string[]>(["multiple selection", "word problem"]);
-const questions = ref<Question[]>([
+const questions = reactive<Question[]>([
   {
     content: "",
     type: "word problem",
@@ -202,12 +211,8 @@ const questions = ref<Question[]>([
   },
 ]);
 
-const v$ = questions.value.map((question) => {
-  return useVuelidate(rules, question);
-});
-
 const addQuestion = () => {
-  questions.value.push({
+  questions.push({
     content: "",
     type: "word problem",
     file: [],
@@ -232,21 +237,21 @@ const addQuestion = () => {
 };
 
 const addOption = (index: number) => {
-  questions.value[index].options?.push({
+  questions[index].options?.push({
     content: "",
     file: [],
   });
 };
 
 const addSolution = (index: number) => {
-  questions.value[index].solutions?.push({
+  questions[index].solutions?.push({
     solution: "",
     file: [],
   });
 };
 
 const addCorrect = (index: number) => {
-  questions.value[index].corrects?.push({
+  questions[index].corrects?.push({
     content: "",
   });
 };
@@ -262,23 +267,24 @@ const checkList = (
 };
 
 const removeQuestion = (index: number) => {
-  questions.value.splice(index, 1);
+  questions.splice(index, 1);
 };
 
 const removeOption = (index_1: number, index_2: number) => {
-  questions.value[index_1].options?.splice(index_2, 1);
+  questions[index_1].options?.splice(index_2, 1);
 };
 
 const removeSolution = (index_1: number, index_2: number) => {
-  questions.value[index_1].solutions?.splice(index_2, 1);
+  questions[index_1].solutions?.splice(index_2, 1);
 };
 
 const removeCorrect = (index_1: number, index_2: number) => {
-  questions.value[index_1].corrects?.splice(index_2, 1);
+  questions[index_1].corrects?.splice(index_2, 1);
 };
 
 const submit = async () => {
-  console.log(v$);
+  console.log(props.module);
+  //
 };
 </script>
 
