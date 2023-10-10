@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-4 mb-4 outlined-border-solutions" variant="outlined">
+  <v-card class="mb-4 outlined-border-solutions" variant="outlined">
     <v-card class="rounded-0 rounded-t mb-6 py-2" color="cyan-darken-2" flat>
       <v-card-title>
         <v-row>

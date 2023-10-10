@@ -1,7 +1,7 @@
 <template>
   <v-card-text class="question-height">
     <form
-      class="mx-8 mt-4"
+      class="mx-2 mt-4"
       v-for="(question, index_1) in questions"
       :key="index_1"
     >
@@ -30,39 +30,16 @@
             </v-row>
           </v-card-title>
         </v-card>
-        <v-row class="my-1 px-12">
-          <v-col>
-            <v-text-field
-              v-model="question.content"
-              label="Question Content/Instruction"
-              density="compact"
-              variant="outlined"
-            />
-          </v-col>
-          <v-col>
-            <v-select
-              v-model="question.type"
-              :items="types"
-              label="Question Type"
-              density="compact"
-              variant="outlined"
-            />
-          </v-col>
-          <v-col>
-            <v-file-input
-              v-model="question.file"
-              accept="image/*"
-              label="Question Attachment"
-              density="compact"
-              variant="outlined"
-            />
-          </v-col>
-        </v-row>
+        <QuestionComponent
+          v-model:content="question.content"
+          v-model:type="question.type"
+          v-model:file="question.file"
+        />
         <v-divider class="border-opacity-100" />
-        <v-row>
+        <v-row class="mx-1">
           <v-col v-if="question.type == 'multiple selection'">
             <v-row>
-              <v-col class="mx-4 mt-4">
+              <v-col class="mt-4">
                 <v-btn
                   color="light-blue-darken-2"
                   prepend-icon="mdi-plus"
@@ -89,7 +66,7 @@
           </v-col>
           <v-col>
             <v-row>
-              <v-col class="mx-4 mt-4">
+              <v-col class="mt-4">
                 <v-btn
                   color="cyan-darken-2"
                   prepend-icon="mdi-plus"
@@ -116,7 +93,7 @@
           </v-col>
           <v-col>
             <v-row>
-              <v-col class="mx-4 mt-4">
+              <v-col class="mt-4">
                 <v-btn
                   color="teal-darken-2"
                   prepend-icon="mdi-plus"
@@ -166,10 +143,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
-// import { useVuelidate } from "@vuelidate/core";
+import { reactive } from "vue";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
+import QuestionComponent from "@/components/questions/QuestionComponent.vue";
 import SolutionComponent from "@/components/questions/SolutionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
@@ -179,14 +156,11 @@ import Option from "@/types/Option";
 import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
-// import rules from "@/helpers/rules/rules_questions";
-
 const props = defineProps<{
   module: Module;
   index: number;
 }>();
 
-const types = ref<string[]>(["multiple selection", "word problem"]);
 const questions = reactive<Question[]>([
   {
     content: "",
@@ -285,7 +259,6 @@ const removeCorrect = (index_1: number, index_2: number) => {
 
 const submit = async () => {
   console.log(props.module);
-  //
 };
 </script>
 
