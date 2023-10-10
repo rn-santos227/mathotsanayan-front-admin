@@ -34,6 +34,7 @@
           v-model:content="question.content"
           v-model:type="question.type"
           v-model:file="question.file"
+          ref="question"
         />
         <v-divider class="border-opacity-100" />
         <v-row class="mx-1">
@@ -60,6 +61,7 @@
                   :check="checkList(question.options)"
                   :key="index_2"
                   @remove="removeOption(index_1, index_2)"
+                  ref="option"
                 />
               </v-col>
             </v-row>
@@ -87,6 +89,7 @@
                   :check="checkList(question.solutions)"
                   :key="index_3"
                   @remove="removeSolution(index_1, index_3)"
+                  ref="solution"
                 />
               </v-col>
             </v-row>
@@ -113,6 +116,7 @@
                   :check="checkList(question.corrects)"
                   :key="index_4"
                   @remove="removeCorrect(index_1, index_4)"
+                  ref="correct"
                 />
               </v-col>
             </v-row>
@@ -143,7 +147,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { ref, reactive } from "vue";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
@@ -155,6 +159,14 @@ import Question from "@/types/Question";
 import Option from "@/types/Option";
 import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
+
+const question = ref([
+  {
+    validate: () => {
+      return null;
+    },
+  },
+]);
 
 const props = defineProps<{
   module: Module;
@@ -259,6 +271,9 @@ const removeCorrect = (index_1: number, index_2: number) => {
 
 const submit = async () => {
   console.log(props.module);
+  question.value.forEach(async (item) => {
+    console.log(await item.validate());
+  });
 };
 </script>
 

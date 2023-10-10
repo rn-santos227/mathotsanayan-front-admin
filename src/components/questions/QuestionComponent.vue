@@ -79,11 +79,11 @@ const file = computed({
   },
 });
 
-const check = async () => {
+const validate = async () => {
   return await v$.value.$validate();
 };
 
 defineExpose({
-  check,
+  validate,
 });
 </script>

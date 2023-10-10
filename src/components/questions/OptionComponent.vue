@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mb-4 outlined-border-options" variant="outlined">
+  <v-card class="mx-4 mb-4 outlined-border-options" variant="outlined">
     <v-card
       class="rounded-0 rounded-t mb-6 py-2"
       color="light-blue-darken-2"
