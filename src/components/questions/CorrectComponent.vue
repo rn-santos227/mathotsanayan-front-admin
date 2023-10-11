@@ -28,6 +28,8 @@
           label="Correct Answer"
           density="compact"
           variant="outlined"
+          :error="v$.content.$error"
+          :error-messages="errors.content"
         />
       </v-row>
     </v-card-text>
@@ -36,6 +38,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { useValidationErrors } from "@/services/handlers";
+
+import VCorrect from "@/helpers/validations/v_corrects";
+import rules from "@/helpers/rules/rules_corrects";
 
 const props = defineProps<{
   content: string;
@@ -44,6 +51,9 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits(["update:content", "remove"]);
+
+const v$ = useVuelidate(rules, props);
+const errors = computed(() => useValidationErrors<VCorrect>(v$.value.$errors));
 
 const content = computed({
   get: () => props.content,
@@ -55,6 +65,14 @@ const content = computed({
 const remove = () => {
   emit("remove");
 };
+
+const validate = async () => {
+  return await v$.value.$validate();
+};
+
+defineExpose({
+  validate,
+});
 </script>
 
 <style scoped>

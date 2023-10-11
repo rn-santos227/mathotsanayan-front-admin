@@ -27,6 +27,8 @@
           label="Solution Content"
           density="compact"
           variant="outlined"
+          :error="v$.solution.$error"
+          :error-messages="errors.solution"
         />
       </v-row>
       <v-row>
@@ -36,6 +38,8 @@
           label="Solution Attachment"
           density="compact"
           variant="outlined"
+          :error="v$.file.$error"
+          :error-messages="errors.file"
         />
       </v-row>
     </v-card-text>
@@ -44,6 +48,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { useValidationErrors } from "@/services/handlers";
+
+import VSolution from "@/helpers/validations/v_solutions";
+import rules from "@/helpers/rules/rules_solutions";
 
 const props = defineProps<{
   solution: string;
@@ -53,6 +62,9 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits(["update:solution", "update:file", "remove"]);
+
+const v$ = useVuelidate(rules, props);
+const errors = computed(() => useValidationErrors<VSolution>(v$.value.$errors));
 
 const solution = computed({
   get: () => props.solution,
@@ -71,6 +83,14 @@ const file = computed({
 const remove = () => {
   emit("remove");
 };
+
+const validate = async () => {
+  return await v$.value.$validate();
+};
+
+defineExpose({
+  validate,
+});
 </script>
 
 <style scoped>

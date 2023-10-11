@@ -27,10 +27,12 @@
     <v-card-text class="ma-4">
       <v-row>
         <v-text-field
-          v-model="content"
+          v-model.trim="content"
           label="Option Content"
           density="compact"
           variant="outlined"
+          :error="v$.content.$error"
+          :error-messages="errors.content"
         />
       </v-row>
       <v-row>
@@ -40,6 +42,8 @@
           label="Option Attachment"
           density="compact"
           variant="outlined"
+          :error="v$.file.$error"
+          :error-messages="errors.file"
         />
       </v-row>
     </v-card-text>
@@ -48,6 +52,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { useValidationErrors } from "@/services/handlers";
+
+import VOption from "@/helpers/validations/v_options";
+import rules from "@/helpers/rules/rules_options";
 
 const props = defineProps<{
   content: string;
@@ -58,15 +67,18 @@ const props = defineProps<{
 
 const emit = defineEmits(["update:content", "update:file", "remove"]);
 
+const v$ = useVuelidate(rules, props);
+const errors = computed(() => useValidationErrors<VOption>(v$.value.$errors));
+
 const content = computed({
-  get: () => props.content,
+  get: () => v$.value.content.$model,
   set: (value: string) => {
     emit("update:content", value);
   },
 });
 
 const file = computed({
-  get: () => props.file,
+  get: () => v$.value.file.$model,
   set: (value: File[]) => {
     emit("update:file", value);
   },
@@ -75,6 +87,14 @@ const file = computed({
 const remove = () => {
   emit("remove");
 };
+
+const validate = async () => {
+  return await v$.value.$validate();
+};
+
+defineExpose({
+  validate,
+});
 </script>
 
 <style scoped>

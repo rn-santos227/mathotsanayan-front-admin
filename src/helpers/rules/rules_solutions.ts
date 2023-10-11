@@ -3,7 +3,7 @@ import { computed } from "vue";
 
 const rules = computed(() => {
   return {
-    solutions: { required },
+    solution: { required },
     file: { required },
   };
 });
