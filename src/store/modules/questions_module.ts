@@ -18,6 +18,11 @@ export const useQuestionModule = defineStore("questions", {
     ): Promise<Question[] | null> {
       try {
         this.isLoading = true;
+        const formData = new FormData();
+        formData.append("module", JSON.stringify(module));
+
+        formData.append("questions", JSON.stringify(payload));
+
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
           {
