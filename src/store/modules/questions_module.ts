@@ -27,13 +27,7 @@ export const useQuestionModule = defineStore("questions", {
           `${api.QUESTIONS.CREATEALL}${module.id}`,
           {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              questions: payload,
-              module: module,
-            }),
+            body: formData,
           }
         );
         const data = await response.json();
