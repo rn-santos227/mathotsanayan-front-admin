@@ -269,6 +269,16 @@ const removeCorrect = (index_1: number, index_2: number) => {
   questions[index_1].corrects?.splice(index_2, 1);
 };
 
+const handleFileUpload = (event: Event, index: number) => {
+  const fileInput = event.target as HTMLInputElement;
+  if (fileInput.files && fileInput.files.length > 0) {
+    const selectedFile: File | null = fileInput.files[0];
+    if (selectedFile) {
+      questions[index].file = selectedFile;
+    }
+  }
+};
+
 const submit = async () => {
   console.log(props.module);
   question.value.forEach(async (item) => {
