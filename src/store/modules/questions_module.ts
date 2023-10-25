@@ -12,12 +12,17 @@ export const useQuestionModule = defineStore("questions", {
   }),
 
   actions: {
-    async createAll(payload: Question[], module: Module) {
+    async createAll(questions: Question[], module: Module) {
       try {
         this.isLoading = true;
         const formData = new FormData();
         formData.append("module", JSON.stringify(module));
-        formData.append("questions", JSON.stringify(payload));
+        formData.append("questions", JSON.stringify(questions));
+        for (let index_0 = 0; index_0 < questions.length; index_0++) {
+          questions[index_0].file.forEach((content) => {
+            formData.append(`question_file_${index_0}`, content);
+          });
+        }
         console.log(formData);
 
         // const response = await authenticatedFetch(
