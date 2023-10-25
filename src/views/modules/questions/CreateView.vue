@@ -154,6 +154,8 @@ import QuestionComponent from "@/components/questions/QuestionComponent.vue";
 import SolutionComponent from "@/components/questions/SolutionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
+import { useQuestionModule } from "@/store";
+
 import Module from "@/types/Module";
 import Question from "@/types/Question";
 import Option from "@/types/Option";
@@ -270,10 +272,7 @@ const removeCorrect = (index_1: number, index_2: number) => {
 };
 
 const submit = async () => {
-  console.log(props.module);
-  question.value.forEach(async (item) => {
-    console.log(await item.validate());
-  });
+  await useQuestionModule().createAll(questions, props.module);
 };
 </script>
 
