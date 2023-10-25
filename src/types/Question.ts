@@ -14,8 +14,8 @@ interface Question {
   deleted_at?: string;
   module?: number | Module;
   subject?: number | Subject;
-  options?: Option[];
-  solutions?: Solution[];
-  corrects?: Correct[];
+  options: Option[];
+  solutions: Solution[];
+  corrects: Correct[];
 }
 export default Question;
