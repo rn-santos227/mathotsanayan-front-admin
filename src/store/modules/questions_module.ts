@@ -49,8 +49,6 @@ export const useQuestionModule = defineStore("questions", {
             });
           }
         }
-        console.log(formData);
-
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
           {
