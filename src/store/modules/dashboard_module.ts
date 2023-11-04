@@ -5,4 +5,6 @@ export const useQuestionModule = defineStore("dashboard", {
     isLoading: false as boolean,
     isTableLoading: false,
   }),
+
+  actions: {},
 });
