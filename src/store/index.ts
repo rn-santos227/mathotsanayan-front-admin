@@ -1,6 +1,7 @@
 import { createPinia } from "pinia";
 import { useAuthModule } from "./modules/auth_module";
 import { useCourseModule } from "./modules/courses_module";
+import { useDasboardModule } from "./modules/dashboard_module";
 import { useModuleModule } from "./modules/modules_module";
 import { useQuestionModule } from "./modules/questions_module";
 import { useSchoolModule } from "./modules/schools_module";
@@ -14,6 +15,7 @@ export {
   pinia,
   useAuthModule,
   useCourseModule,
+  useDasboardModule,
   useModuleModule,
   useQuestionModule,
   useSchoolModule,
