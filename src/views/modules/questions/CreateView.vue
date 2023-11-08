@@ -222,13 +222,6 @@ const addOption = (index: number) => {
   });
 };
 
-// const addSolution = (index: number) => {
-//   questions[index].solutions?.push({
-//     solution: "",
-//     file: [],
-//   });
-// };
-
 const addCorrect = (index: number) => {
   questions[index].corrects?.push({
     content: "",
@@ -252,10 +245,6 @@ const removeQuestion = (index: number) => {
 const removeOption = (index_1: number, index_2: number) => {
   questions[index_1].options?.splice(index_2, 1);
 };
-
-// const removeSolution = (index_1: number, index_2: number) => {
-//   questions[index_1].solutions?.splice(index_2, 1);
-// };
 
 const removeCorrect = (index_1: number, index_2: number) => {
   questions[index_1].corrects?.splice(index_2, 1);
