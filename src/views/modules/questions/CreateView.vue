@@ -158,7 +158,6 @@ import { useQuestionModule } from "@/store";
 import Module from "@/types/Module";
 import Question from "@/types/Question";
 import Option from "@/types/Option";
-import Solution from "@/types/Solution";
 import Correct from "@/types/Correct";
 
 const question = ref([
@@ -188,6 +187,8 @@ const questions = reactive<Question[]>([
     corrects: [
       {
         content: "",
+        solution: "",
+        file: [],
       },
     ],
   },
@@ -207,6 +208,8 @@ const addQuestion = () => {
     corrects: [
       {
         content: "",
+        solution: "",
+        file: [],
       },
     ],
   });
@@ -229,12 +232,12 @@ const addOption = (index: number) => {
 const addCorrect = (index: number) => {
   questions[index].corrects?.push({
     content: "",
+    solution: "",
+    file: [],
   });
 };
 
-const checkList = (
-  list: Option[] | Solution[] | Correct[] | null | undefined
-): boolean => {
+const checkList = (list: Option[] | Correct[] | null | undefined): boolean => {
   if (list) {
     if (list.length > 1) {
       return true;

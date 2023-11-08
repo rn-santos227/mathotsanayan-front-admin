@@ -5,6 +5,8 @@ import Subject from "./Subject";
 interface Correct {
   id?: number;
   content: string;
+  solution: string;
+  file: File[];
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
