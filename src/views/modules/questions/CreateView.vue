@@ -66,34 +66,6 @@
               </v-col>
             </v-row>
           </v-col>
-          <!-- <v-col>
-            <v-row>
-              <v-col class="mt-4">
-                <v-btn
-                  color="cyan-darken-2"
-                  prepend-icon="mdi-plus"
-                  block
-                  @click.prevent="addSolution(index_1)"
-                >
-                  Add Solutions
-                </v-btn>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <SolutionComponent
-                  v-for="(solution, index_3) in question.solutions"
-                  v-model:solution="solution.solution"
-                  v-model:file="solution.file"
-                  :index="index_3"
-                  :check="checkList(question.solutions)"
-                  :key="index_3"
-                  @remove="removeSolution(index_1, index_3)"
-                  ref="solution"
-                />
-              </v-col>
-            </v-row>
-          </v-col> -->
           <v-col>
             <v-row>
               <v-col class="mt-4">
