@@ -66,7 +66,7 @@
               </v-col>
             </v-row>
           </v-col>
-          <v-col>
+          <!-- <v-col>
             <v-row>
               <v-col class="mt-4">
                 <v-btn
@@ -93,7 +93,7 @@
                 />
               </v-col>
             </v-row>
-          </v-col>
+          </v-col> -->
           <v-col>
             <v-row>
               <v-col class="mt-4">
@@ -186,12 +186,6 @@ const questions = reactive<Question[]>([
         file: [],
       },
     ],
-    solutions: [
-      {
-        solution: "",
-        file: [],
-      },
-    ],
     corrects: [
       {
         content: "",
@@ -211,12 +205,6 @@ const addQuestion = () => {
         file: [],
       },
     ],
-    solutions: [
-      {
-        solution: "",
-        file: [],
-      },
-    ],
     corrects: [
       {
         content: "",
@@ -232,12 +220,12 @@ const addOption = (index: number) => {
   });
 };
 
-const addSolution = (index: number) => {
-  questions[index].solutions?.push({
-    solution: "",
-    file: [],
-  });
-};
+// const addSolution = (index: number) => {
+//   questions[index].solutions?.push({
+//     solution: "",
+//     file: [],
+//   });
+// };
 
 const addCorrect = (index: number) => {
   questions[index].corrects?.push({
@@ -263,9 +251,9 @@ const removeOption = (index_1: number, index_2: number) => {
   questions[index_1].options?.splice(index_2, 1);
 };
 
-const removeSolution = (index_1: number, index_2: number) => {
-  questions[index_1].solutions?.splice(index_2, 1);
-};
+// const removeSolution = (index_1: number, index_2: number) => {
+//   questions[index_1].solutions?.splice(index_2, 1);
+// };
 
 const removeCorrect = (index_1: number, index_2: number) => {
   questions[index_1].corrects?.splice(index_2, 1);
