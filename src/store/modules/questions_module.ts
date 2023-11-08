@@ -35,19 +35,6 @@ export const useQuestionModule = defineStore("questions", {
               );
             });
           }
-
-          for (
-            let index_2 = 0;
-            index_2 < payload[index_0].options.length;
-            index_2++
-          ) {
-            payload[index_0].solutions[index_2].file.forEach((content) => {
-              formData.append(
-                `${index_2}_solution_${index_0}_question_file`,
-                content
-              );
-            });
-          }
         }
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,

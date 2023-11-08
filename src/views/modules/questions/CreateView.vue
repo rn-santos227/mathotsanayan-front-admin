@@ -151,7 +151,6 @@ import { ref, reactive } from "vue";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
-import SolutionComponent from "@/components/questions/SolutionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
 import { useQuestionModule } from "@/store";
