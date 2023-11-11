@@ -84,6 +84,8 @@
                 <CorrectComponent
                   v-for="(correct, index_4) in question.corrects"
                   v-model:content="correct.content"
+                  v-model:solution="correct.solution"
+                  v-model:file="correct.file"
                   :index="index_4"
                   :check="checkList(question.corrects)"
                   :key="index_4"

@@ -46,6 +46,8 @@ import rules from "@/helpers/rules/rules_corrects";
 
 const props = defineProps<{
   content: string;
+  solution: string;
+  file: File[];
   index: number;
   check: boolean;
 }>();
