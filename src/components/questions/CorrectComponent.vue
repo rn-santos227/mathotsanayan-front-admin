@@ -22,6 +22,17 @@
     </v-card>
     <v-card-text class="ma-4">
       <v-row>
+        <v-file-input
+          v-model="file"
+          accept="image/*"
+          label="Option Attachment"
+          density="compact"
+          variant="outlined"
+          :error="v$.file.$error"
+          :error-messages="errors.file"
+        />
+      </v-row>
+      <v-row>
         <v-textarea
           rows="4"
           v-model="content"
@@ -52,7 +63,12 @@ const props = defineProps<{
   check: boolean;
 }>();
 
-const emit = defineEmits(["update:content", "remove"]);
+const emit = defineEmits([
+  "update:content",
+  "update:solution",
+  "update:file",
+  "remove",
+]);
 
 const v$ = useVuelidate(rules, props);
 const errors = computed(() => useValidationErrors<VCorrect>(v$.value.$errors));
@@ -61,6 +77,13 @@ const content = computed({
   get: () => props.content,
   set: (value: string) => {
     emit("update:content", value);
+  },
+});
+
+const file = computed({
+  get: () => v$.value.file.$model,
+  set: (value: File[]) => {
+    emit("update:file", value);
   },
 });
 
