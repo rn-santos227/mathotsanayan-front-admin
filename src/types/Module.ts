@@ -6,6 +6,7 @@ interface Module {
   name: string;
   description: string;
   step: number | string | null | undefined;
+  passing: number;
   active?: number;
   created_at?: string;
   updated_at?: string;

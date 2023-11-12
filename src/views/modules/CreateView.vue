@@ -8,7 +8,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="450">
+      <v-card height="550">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -57,6 +57,18 @@
                   :error="v$.step.$error"
                   :error-messages="errors.step"
                 />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <div class="mx-5">Passing Rate</div>
+                <v-slider
+                  class="mx-5"
+                  color="purple-darken-3"
+                  :thumb-size="32"
+                  v-model="state.passing"
+                  thumb-label
+                ></v-slider>
               </v-col>
             </v-row>
             <v-row>
@@ -157,6 +169,7 @@ const error = ref({
 const state = reactive<Module>({
   name: "",
   step: "",
+  passing: 50,
   description: "",
   subject: "",
 });
