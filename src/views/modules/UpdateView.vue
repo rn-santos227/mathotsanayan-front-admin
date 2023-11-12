@@ -65,6 +65,18 @@
             </v-row>
             <v-row>
               <v-col>
+                <div class="mx-5">Passing Rate</div>
+                <v-slider
+                  class="mx-5"
+                  color="purple-darken-3"
+                  :thumb-size="32"
+                  v-model="state.passing"
+                  thumb-label
+                ></v-slider>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
                 <v-autocomplete
                   class="mx-4"
                   v-model.trim="v$.subject.$model"
