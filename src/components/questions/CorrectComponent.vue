@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mb-4 outlined-border-corrects" variant="outlined">
+  <v-card height="400" class="mb-4 outlined-border-corrects" variant="outlined">
     <v-card class="rounded-0 rounded-t mb-6 py-2" color="teal-darken-2" flat>
       <v-card-title>
         <v-row>
@@ -22,6 +22,28 @@
     </v-card>
     <v-card-text class="ma-4">
       <v-row>
+        <v-textarea
+          rows="3"
+          v-model="content"
+          label="Correct Answer"
+          density="compact"
+          variant="outlined"
+          :error="v$.content.$error"
+          :error-messages="errors.content"
+        />
+      </v-row>
+      <v-row>
+        <v-textarea
+          rows="3"
+          v-model="solution"
+          label="Solution"
+          density="compact"
+          variant="outlined"
+          :error="v$.solution.$error"
+          :error-messages="errors.solution"
+        />
+      </v-row>
+      <v-row>
         <v-file-input
           v-model="file"
           accept="image/*"
@@ -30,17 +52,6 @@
           variant="outlined"
           :error="v$.file.$error"
           :error-messages="errors.file"
-        />
-      </v-row>
-      <v-row>
-        <v-textarea
-          rows="4"
-          v-model="content"
-          label="Correct Answer"
-          density="compact"
-          variant="outlined"
-          :error="v$.content.$error"
-          :error-messages="errors.content"
         />
       </v-row>
     </v-card-text>
@@ -77,6 +88,13 @@ const content = computed({
   get: () => props.content,
   set: (value: string) => {
     emit("update:content", value);
+  },
+});
+
+const solution = computed({
+  get: () => props.solution,
+  set: (value: string) => {
+    emit("update:solution", value);
   },
 });
 

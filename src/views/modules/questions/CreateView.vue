@@ -5,7 +5,7 @@
       v-for="(question, index_1) in questions"
       :key="index_1"
     >
-      <v-card class="mb-8 pb-8 question-border" elevation="4">
+      <v-card class="mb-8 pb-2 question-border" elevation="4">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"

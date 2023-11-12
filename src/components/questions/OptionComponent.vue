@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-4 mb-4 outlined-border-options" variant="outlined">
+  <v-card height="400" class="mb-4 outlined-border-options" variant="outlined">
     <v-card
       class="rounded-0 rounded-t mb-6 py-2"
       color="light-blue-darken-2"
@@ -26,8 +26,9 @@
     </v-card>
     <v-card-text class="ma-4">
       <v-row>
-        <v-text-field
-          v-model.trim="content"
+        <v-textarea
+          rows="5"
+          v-model="content"
           label="Option Content"
           density="compact"
           variant="outlined"
