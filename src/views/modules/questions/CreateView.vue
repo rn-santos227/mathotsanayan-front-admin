@@ -151,7 +151,7 @@ const questions = reactive<Question[]>([
   {
     content: "",
     type: "word problem",
-    file: [],
+    file: null,
     options: [
       {
         content: "",
@@ -172,7 +172,7 @@ const addQuestion = () => {
   questions.push({
     content: "",
     type: "word problem",
-    file: [],
+    file: null,
     options: [
       {
         content: "",

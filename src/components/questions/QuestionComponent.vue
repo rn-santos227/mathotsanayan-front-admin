@@ -21,13 +21,14 @@
     </v-col>
     <v-col>
       <v-file-input
-        v-model="file"
+        v-model="input_file"
         accept="image/*"
         label="Question Attachment"
         density="compact"
         variant="outlined"
         :error="v$.file.$error"
         :error-messages="errors.file"
+        @change="changeFile"
       />
     </v-col>
   </v-row>
@@ -42,10 +43,11 @@ const types = ref<string[]>(["multiple selection", "word problem"]);
 import VQuestion from "@/helpers/validations/v_questions";
 import rules from "@/helpers/rules/rules_questions";
 
+const input_file = ref<File[]>([]);
 const props = defineProps<{
   content: string;
   type: string;
-  file: File[];
+  file: File | null;
 }>();
 
 const emit = defineEmits([
@@ -72,12 +74,10 @@ const type = computed({
   },
 });
 
-const file = computed({
-  get: () => v$.value.file.$model,
-  set: (value: File[]) => {
-    emit("update:file", value);
-  },
-});
+const changeFile = () => {
+  const _file = input_file.value[0];
+  console.log(_file);
+};
 
 const validate = async () => {
   return await v$.value.$validate();
