@@ -75,8 +75,7 @@ const type = computed({
 });
 
 const changeFile = () => {
-  const _file = input_file.value[0];
-  console.log(_file);
+  emit("update:file", input_file.value[0]);
 };
 
 const validate = async () => {

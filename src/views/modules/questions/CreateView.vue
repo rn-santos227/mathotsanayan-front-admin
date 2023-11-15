@@ -155,14 +155,14 @@ const questions = reactive<Question[]>([
     options: [
       {
         content: "",
-        file: [],
+        file: null,
       },
     ],
     corrects: [
       {
         content: "",
         solution: "",
-        file: [],
+        file: null,
       },
     ],
   },
@@ -176,14 +176,14 @@ const addQuestion = () => {
     options: [
       {
         content: "",
-        file: [],
+        file: null,
       },
     ],
     corrects: [
       {
         content: "",
         solution: "",
-        file: [],
+        file: null,
       },
     ],
   });

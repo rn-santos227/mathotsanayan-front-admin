@@ -5,7 +5,7 @@ import Question from "./Question";
 interface Option {
   id?: number;
   content: string;
-  file: File[];
+  file: File | null;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;

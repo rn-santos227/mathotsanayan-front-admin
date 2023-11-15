@@ -45,13 +45,14 @@
       </v-row>
       <v-row>
         <v-file-input
-          v-model="file"
+          v-model="input_file"
           accept="image/*"
           label="Option Attachment"
           density="compact"
           variant="outlined"
           :error="v$.file.$error"
           :error-messages="errors.file"
+          @change="changeFile"
         />
       </v-row>
     </v-card-text>
@@ -59,17 +60,18 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 
 import VCorrect from "@/helpers/validations/v_corrects";
 import rules from "@/helpers/rules/rules_corrects";
 
+const input_file = ref<File[]>([]);
 const props = defineProps<{
   content: string;
   solution: string;
-  file: File[];
+  file: File | null;
   index: number;
   check: boolean;
 }>();
@@ -98,12 +100,9 @@ const solution = computed({
   },
 });
 
-const file = computed({
-  get: () => v$.value.file.$model,
-  set: (value: File[]) => {
-    emit("update:file", value);
-  },
-});
+const changeFile = () => {
+  emit("update:file", input_file.value[0]);
+};
 
 const remove = () => {
   emit("remove");

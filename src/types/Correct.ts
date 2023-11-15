@@ -6,7 +6,7 @@ interface Correct {
   id?: number;
   content: string;
   solution: string;
-  file: File[];
+  file: File | null;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
