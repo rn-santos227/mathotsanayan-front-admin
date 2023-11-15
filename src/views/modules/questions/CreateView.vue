@@ -192,7 +192,7 @@ const addQuestion = () => {
 const addOption = (index: number) => {
   questions[index].options?.push({
     content: "",
-    file: [],
+    file: null,
   });
 };
 
@@ -200,7 +200,7 @@ const addCorrect = (index: number) => {
   questions[index].corrects?.push({
     content: "",
     solution: "",
-    file: [],
+    file: null,
   });
 };
 
