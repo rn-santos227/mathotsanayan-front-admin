@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="450">
+      <v-card height="855">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -94,10 +94,35 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-text-field
+                <v-textarea
+                  rows="3"
                   class="mx-4"
                   v-model.trim="state.description"
                   label="Module Description/Notes"
+                  density="compact"
+                  variant="outlined"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-textarea
+                  rows="3"
+                  class="mx-4"
+                  v-model.trim="state.objective"
+                  label="Module Objective"
+                  density="compact"
+                  variant="outlined"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-textarea
+                  rows="3"
+                  class="mx-4"
+                  v-model.trim="state.direction"
+                  label="Module Direction/Instruction"
                   density="compact"
                   variant="outlined"
                 />
