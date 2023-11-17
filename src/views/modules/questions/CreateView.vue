@@ -35,7 +35,7 @@
           v-model:type="question.type"
           v-model:file="question.file"
           @changeType="changeQuestionType($event, index)"
-          ref="question"
+          ref="validate_questions"
         />
         <v-divider class="border-opacity-100" />
         <v-row class="mx-1">
@@ -62,7 +62,7 @@
                   :check="checkList(question.options)"
                   :key="index_2"
                   @remove="removeOption(index_1, index_2)"
-                  ref="option"
+                  ref="validate_options"
                 />
               </v-col>
             </v-row>
@@ -91,7 +91,7 @@
                   :check="checkList(question.corrects)"
                   :key="index_4"
                   @remove="removeCorrect(index_1, index_4)"
-                  ref="correct"
+                  ref="validate_corrects"
                 />
               </v-col>
             </v-row>
@@ -135,7 +135,23 @@ import Question from "@/types/Question";
 import Option from "@/types/Option";
 import Correct from "@/types/Correct";
 
-const question = ref([
+const validate_questions = ref([
+  {
+    validate: () => {
+      return null;
+    },
+  },
+]);
+
+const validate_corrects = ref([
+  {
+    validate: () => {
+      return null;
+    },
+  },
+]);
+
+const validate_options = ref([
   {
     validate: () => {
       return null;
@@ -232,6 +248,25 @@ const changeQuestionType = (type: string, index: number) => {
 };
 
 const submit = async () => {
+  let errors = false;
+  validate_questions.value.forEach((v) => {
+    if (v.validate()) {
+      errors = true;
+    }
+  });
+
+  validate_options.value.forEach((v) => {
+    if (v.validate()) {
+      errors = true;
+    }
+  });
+
+  validate_corrects.value.forEach((v) => {
+    if (v.validate()) {
+      errors = true;
+    }
+  });
+  if (errors) return;
   await useQuestionModule().createAll(questions, props.module);
 };
 </script>

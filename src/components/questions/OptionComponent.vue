@@ -1,5 +1,5 @@
 <template>
-  <v-card height="400" class="mb-4 outlined-border-options" variant="outlined">
+  <v-card height="410" class="mb-4 outlined-border-options" variant="outlined">
     <v-card
       class="rounded-0 rounded-t mb-6 py-2"
       color="light-blue-darken-2"
@@ -27,6 +27,7 @@
     <v-card-text class="ma-4">
       <v-row>
         <v-textarea
+          class="mt-2"
           rows="5"
           v-model="content"
           label="Option Content"
@@ -38,6 +39,7 @@
       </v-row>
       <v-row>
         <v-file-input
+          class="mt-2"
           v-model="input_file"
           accept="image/*"
           label="Option Attachment"

@@ -86,7 +86,7 @@ const changeQuestionType = (event: Event) => {
   emit("changeType", event);
 };
 
-const validate = async () => {
+const validate = async (): Promise<boolean> => {
   return await v$.value.$validate();
 };
 
