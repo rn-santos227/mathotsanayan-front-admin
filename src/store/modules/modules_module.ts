@@ -79,7 +79,7 @@ export const useModuleModule = defineStore("modules", {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
-          `${api.COURSES.UPDATE}${payload.id}`,
+          `${api.MODULES.UPDATE}${payload.id}`,
           {
             method: "PATCH",
             headers: {
@@ -104,7 +104,7 @@ export const useModuleModule = defineStore("modules", {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
-          `${api.TEACHERS.DELETE}${payload.id}`,
+          `${api.MODULES.DELETE}${payload.id}`,
           {
             method: "DELETE",
             headers: {

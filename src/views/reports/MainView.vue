@@ -9,7 +9,7 @@
         <v-card-title>
           <v-row>
             <v-col>
-              <span class="text-h5 font-weight-bold"> Reports Page </span>
+              <span class="text-h5 font-weight-bold"> Reports Manager </span>
             </v-col>
             <v-col class="d-flex">
               <v-spacer />

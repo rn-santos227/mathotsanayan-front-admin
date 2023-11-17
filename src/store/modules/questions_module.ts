@@ -18,24 +18,12 @@ export const useQuestionModule = defineStore("questions", {
         const formData = new FormData();
         formData.append("module", JSON.stringify(module));
         formData.append("questions", JSON.stringify(payload));
-        // for (let index_0 = 0; index_0 < payload.length; index_0++) {
-        //   payload[index_0].file.forEach((content) => {
-        //     formData.append(`question_file_${index_0}`, content);
-        //   });
-
-        //   for (
-        //     let index_1 = 0;
-        //     index_1 < payload[index_0].options.length;
-        //     index_1++
-        //   ) {
-        //     payload[index_0].options[index_1].file.forEach((content) => {
-        //       formData.append(
-        //         `${index_1}_option_${index_0}_question_file`,
-        //         content
-        //       );
-        //     });
-        //   }
-        // }
+        for (let index_0 = 0; index_0 < payload.length; index_0++) {
+          const question_file = payload[index_0].file;
+          if (question_file) {
+            formData.append(`question-file-${index_0}`, question_file);
+          }
+        }
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
           {
