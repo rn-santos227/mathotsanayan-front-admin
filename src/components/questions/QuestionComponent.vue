@@ -17,6 +17,7 @@
         label="Question Type"
         density="compact"
         variant="outlined"
+        @update:modelValue="changeQuestionType($event)"
       />
     </v-col>
     <v-col>
@@ -54,7 +55,7 @@ const emit = defineEmits([
   "update:content",
   "update:type",
   "update:file",
-  "remove",
+  "changeType",
 ]);
 
 const v$ = useVuelidate(rules, props);
@@ -76,6 +77,10 @@ const type = computed({
 
 const changeFile = () => {
   emit("update:file", input_file.value[0]);
+};
+
+const changeQuestionType = (event: Event) => {
+  emit("changeType", event);
 };
 
 const validate = async () => {

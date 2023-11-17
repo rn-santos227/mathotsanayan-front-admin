@@ -34,6 +34,7 @@
           v-model:content="question.content"
           v-model:type="question.type"
           v-model:file="question.file"
+          @changeType="changeQuestionType($event, index)"
           ref="question"
         />
         <v-divider class="border-opacity-100" />
@@ -152,12 +153,7 @@ const questions = reactive<Question[]>([
     content: "",
     type: "word problem",
     file: null,
-    options: [
-      {
-        content: "",
-        file: null,
-      },
-    ],
+    options: [],
     corrects: [
       {
         content: "",
@@ -222,6 +218,17 @@ const removeOption = (index_1: number, index_2: number) => {
 
 const removeCorrect = (index_1: number, index_2: number) => {
   questions[index_1].corrects?.splice(index_2, 1);
+};
+
+const changeQuestionType = (type: string, index: number) => {
+  if (type === "multiple selection") {
+    questions[index].options?.push({
+      content: "",
+      file: null,
+    });
+  } else {
+    questions[index].options = [];
+  }
 };
 
 const submit = async () => {
