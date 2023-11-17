@@ -31,7 +31,10 @@ export const useQuestionModule = defineStore("questions", {
           ) {
             const solution_file = payload[index_0].corrects[index_1].file;
             if (solution_file) {
-              formData.append(`solution-file-${index_0}`, solution_file);
+              formData.append(
+                `question-${index_0}-solution-file-${index_1}`,
+                solution_file
+              );
             }
           }
 
@@ -42,7 +45,10 @@ export const useQuestionModule = defineStore("questions", {
           ) {
             const option_file = payload[index_0].corrects[index_2].file;
             if (option_file) {
-              formData.append(`option-file-${index_0}`, option_file);
+              formData.append(
+                `question-${index_0}-option-file-${index_2}`,
+                option_file
+              );
             }
           }
         }
