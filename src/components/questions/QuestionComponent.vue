@@ -1,7 +1,8 @@
 <template>
-  <v-row class="my-1 mx-2">
+  <v-row class="mt-1 mx-2">
     <v-col>
-      <v-text-field
+      <v-textarea
+        rows="3"
         v-model.trim="content"
         label="Question Content/Instruction"
         density="compact"
@@ -10,6 +11,8 @@
         :error-messages="errors.content"
       />
     </v-col>
+  </v-row>
+  <v-row class="mb-1 mx-2">
     <v-col>
       <v-select
         v-model="type"

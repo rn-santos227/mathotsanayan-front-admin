@@ -23,6 +23,28 @@ export const useQuestionModule = defineStore("questions", {
           if (question_file) {
             formData.append(`question-file-${index_0}`, question_file);
           }
+
+          for (
+            let index_1 = 0;
+            index_1 < payload[index_0].corrects.length;
+            index_1++
+          ) {
+            const solution_file = payload[index_0].corrects[index_1].file;
+            if (solution_file) {
+              formData.append(`solution-file-${index_0}`, solution_file);
+            }
+          }
+
+          for (
+            let index_2 = 0;
+            index_2 < payload[index_0].options.length;
+            index_2++
+          ) {
+            const option_file = payload[index_0].corrects[index_2].file;
+            if (option_file) {
+              formData.append(`option-file-${index_0}`, option_file);
+            }
+          }
         }
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
