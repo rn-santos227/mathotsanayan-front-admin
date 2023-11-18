@@ -86,8 +86,9 @@ const changeQuestionType = (event: Event) => {
   emit("changeType", event);
 };
 
-const validate = async (): Promise<boolean> => {
-  return await v$.value.$validate();
+const validate = (): boolean => {
+  v$.value.$validate();
+  return v$.value.$error;
 };
 
 defineExpose({

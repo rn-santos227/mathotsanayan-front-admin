@@ -17,7 +17,7 @@ export const useModuleModule = defineStore("modules", {
       this.modules = modules;
     },
 
-    setQuestionModule(index: number, questions: Question[]) {
+    setQuestionsModule(index: number, questions: Question[]) {
       this.modules[index].questions = questions;
     },
 

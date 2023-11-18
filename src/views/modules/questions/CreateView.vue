@@ -129,6 +129,7 @@ import QuestionComponent from "@/components/questions/QuestionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
 import { useQuestionModule } from "@/store";
+import { useModuleModule } from "@/store";
 
 import Module from "@/types/Module";
 import Question from "@/types/Question";
@@ -137,24 +138,24 @@ import Correct from "@/types/Correct";
 
 const validate_questions = ref([
   {
-    validate: () => {
-      return null;
+    validate: (): boolean => {
+      return false;
     },
   },
 ]);
 
 const validate_corrects = ref([
   {
-    validate: () => {
-      return null;
+    validate: (): boolean => {
+      return false;
     },
   },
 ]);
 
 const validate_options = ref([
   {
-    validate: () => {
-      return null;
+    validate: (): boolean => {
+      return false;
     },
   },
 ]);
@@ -266,8 +267,13 @@ const submit = async () => {
       errors = true;
     }
   });
+
   if (errors) return;
-  await useQuestionModule().createAll(questions, props.module);
+  useQuestionModule()
+    .createAll(questions, props.module)
+    .then((response) => {
+      useModuleModule().setQuestionsModule(props.index, response);
+    });
 };
 </script>
 
