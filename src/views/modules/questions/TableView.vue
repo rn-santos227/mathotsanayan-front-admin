@@ -10,13 +10,13 @@
       <template v-slot:item="props">
         <tr>
           <td class="text-xs-left">
+            {{ props.item.raw.content }}
+          </td>
+          <td class="text-xs-left">
             {{ props.item.raw.type }}
           </td>
           <td class="text-xs-left">
-            {{ props.item.raw?.answers.length }}
-          </td>
-          <td class="text-xs-left">
-            {{ props.item.raw?.solutions.length }}
+            {{ props.item.raw?.corrects.length }}
           </td>
           <td class="text-xs-left">
             {{ formatDate(props.item.raw.created_at) }}

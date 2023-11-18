@@ -30,8 +30,6 @@
         label="Question Attachment"
         density="compact"
         variant="outlined"
-        :error="v$.file.$error"
-        :error-messages="errors.file"
         @change="changeFile"
       />
     </v-col>

@@ -5,7 +5,6 @@ const rules = computed(() => {
   return {
     content: { required },
     solution: { required },
-    file: { required },
   };
 });
 

@@ -1,5 +1,5 @@
 <template>
-  <v-card height="410" class="mb-4 outlined-border-options" variant="outlined">
+  <v-card height="380" class="mb-4 outlined-border-options" variant="outlined">
     <v-card
       class="rounded-0 rounded-t mb-6 py-2"
       color="light-blue-darken-2"
@@ -45,8 +45,6 @@
           label="Option Attachment"
           density="compact"
           variant="outlined"
-          :error="v$.file.$error"
-          :error-messages="errors.file"
           @change="changeFile"
         />
       </v-row>

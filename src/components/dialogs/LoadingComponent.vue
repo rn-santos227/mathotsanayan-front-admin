@@ -6,7 +6,7 @@
       max-width="550"
       rounded="lg"
       width="100%"
-      height="40vh"
+      height="35vh"
     >
       <v-card class="rounded-0 rounded-t mb-2" color="purple-darken-3" flat>
         <v-card-text class="text-left">
