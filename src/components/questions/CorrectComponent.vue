@@ -113,8 +113,14 @@ const validate = (): boolean => {
   v$.value.$validate();
   return v$.value.$error;
 };
+
+const reset = () => {
+  v$.value.$reset();
+};
+
 defineExpose({
   validate,
+  reset,
 });
 </script>
 

@@ -93,8 +93,13 @@ const validate = (): boolean => {
   return v$.value.$error;
 };
 
+const reset = () => {
+  v$.value.$reset();
+};
+
 defineExpose({
   validate,
+  reset,
 });
 </script>
 
