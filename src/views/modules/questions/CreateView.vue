@@ -266,6 +266,28 @@ const changeQuestionType = (type: string, index: number) => {
   }
 };
 
+const clearForm = () => {
+  questions.length = 0;
+  questions.push({
+    content: "",
+    type: "word problem",
+    file: null,
+    options: [
+      {
+        content: "",
+        file: null,
+      },
+    ],
+    corrects: [
+      {
+        content: "",
+        solution: "",
+        file: null,
+      },
+    ],
+  });
+};
+
 const submit = async () => {
   let errors = false;
   validate_questions.value.forEach((v) => {
@@ -293,6 +315,7 @@ const submit = async () => {
       .then((response) => {
         useModuleModule().setQuestionsModule(props.index, response);
         success.value.show("Question has been successfully added.");
+        clearForm();
       });
     tab();
   } catch (e) {

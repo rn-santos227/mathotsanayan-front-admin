@@ -87,10 +87,10 @@ const confirm = async () => {
   const response = await useCourseModule().delete(props.course);
   if (response) {
     success.value.show("Course has been successfully deleted.");
-    dialog.value = false;
   } else {
     error.value.show("The server has not able to process the request.");
   }
+  dialog.value = false;
 };
 
 const cancel = async () => {

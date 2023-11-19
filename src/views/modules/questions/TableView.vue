@@ -2,7 +2,7 @@
   <v-card-text class="question-height">
     <v-data-table
       class="w-100"
-      :items="props.questions"
+      :items="table_props.questions"
       :headers="headers"
       item-value="name"
       :loading="useQuestionModule().isTableLoading"
@@ -28,7 +28,7 @@
                 <v-list density="compact" variant="plain">
                   <DeleteView
                     v-bind:question="props.item.raw"
-                    v-bind:index="props.index"
+                    v-bind:index="table_props.index"
                   />
                 </v-list>
               </v-menu>
@@ -50,7 +50,7 @@ import DeleteView from "./DeleteView.vue";
 import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
 
-const props = defineProps<{
+const table_props = defineProps<{
   index: number;
   questions?: Question[];
 }>();
