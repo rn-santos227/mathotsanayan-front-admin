@@ -295,8 +295,8 @@ const submit = async () => {
         useModuleModule().setQuestionsModule(props.index, response);
         success.value.show("Question has been successfully added.");
         clearForm();
+        tab();
       });
-    tab();
   } catch (e) {
     error.value.show("The server has not able to process the request.");
   }
