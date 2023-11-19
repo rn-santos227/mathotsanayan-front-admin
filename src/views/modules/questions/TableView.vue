@@ -26,42 +26,19 @@
       </template>
     </v-data-table>
   </v-card-text>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useQuestionModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { VDataTable } from "vuetify/labs/VDataTable";
-import { provide, ref } from "vue";
 import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
-
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 
 import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
 
-const success = ref({
-  show: (message: string) => {
-    return message;
-  },
-});
-
-const error = ref({
-  show: (message: string) => {
-    return message;
-  },
-});
-
 const props = defineProps<{
   questions?: Question[];
 }>();
-
-provide("success", success);
-provide("error", error);
 </script>
 
 <style scoped>

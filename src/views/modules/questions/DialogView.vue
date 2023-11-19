@@ -55,12 +55,21 @@
       </v-card>
     </v-dialog>
   </v-list-item>
+  <SuccessComponent ref="success" />
+  <ErrorComponent ref="error" />
+  <LoadingComponent v-bind:activate="useQuestionModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { provide, ref } from "vue";
 import CreateView from "./CreateView.vue";
 import TableView from "./TableView.vue";
+
+import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
+import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+
+import { useQuestionModule } from "@/store";
 
 import Module from "@/types/Module";
 
@@ -71,7 +80,22 @@ const props = defineProps<{
   index: number;
 }>();
 
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
 const close = () => {
   dialog.value = !dialog.value;
 };
+
+provide("success", success);
+provide("error", error);
 </script>
