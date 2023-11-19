@@ -176,6 +176,8 @@ const validate_options = ref([
   },
 ]);
 
+const emit = defineEmits(["resetTab"]);
+
 const props = defineProps<{
   module: Module;
   index: number;
@@ -292,9 +294,14 @@ const submit = async () => {
         useModuleModule().setQuestionsModule(props.index, response);
         success.value.show("Question has been successfully added.");
       });
+    tab();
   } catch (e) {
     error.value.show("The server has not able to process the request.");
   }
+};
+
+const tab = () => {
+  emit("resetTab");
 };
 </script>
 

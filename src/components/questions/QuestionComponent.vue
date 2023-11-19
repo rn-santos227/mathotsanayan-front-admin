@@ -40,7 +40,11 @@
 import { ref, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-const types = ref<string[]>(["multiple selection", "word problem"]);
+const types = ref<string[]>([
+  "multiple selection",
+  "single correct",
+  "word problem",
+]);
 
 import VQuestion from "@/helpers/validations/v_questions";
 import rules from "@/helpers/rules/rules_questions";

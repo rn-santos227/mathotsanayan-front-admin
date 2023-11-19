@@ -49,7 +49,11 @@
             <TableView v-bind:questions="props.module.questions" />
           </v-window-item>
           <v-window-item value="1">
-            <CreateView v-bind:module="props.module" v-bind:index="index" />
+            <CreateView
+              v-bind:module="props.module"
+              v-bind:index="index"
+              @resetTab="resetTab"
+            />
           </v-window-item>
         </v-window>
       </v-card>
@@ -94,6 +98,10 @@ const error = ref({
 
 const close = () => {
   dialog.value = !dialog.value;
+};
+
+const resetTab = () => {
+  tabs.value = 0;
 };
 
 provide("success", success);
