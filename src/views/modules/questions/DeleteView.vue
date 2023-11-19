@@ -58,12 +58,13 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useModuleModule } from "@/store";
+import { useModuleModule, useQuestionModule } from "@/store";
 
-import Module from "@/types/Module";
+import Question from "@/types/Question";
 
 const props = defineProps<{
-  module: Module;
+  index: number;
+  question: Question;
 }>();
 
 const dialog = ref<boolean>(false);
@@ -84,8 +85,9 @@ const error = inject("error", {
 });
 
 const confirm = async () => {
-  const response = await useModuleModule().delete(props.module);
+  const response = await useQuestionModule().delete(props.question);
   if (response) {
+    useModuleModule().removeQuestionModule(props.index, response);
     success.value.show("Question has been successfully deleted.");
     dialog.value = false;
   } else {

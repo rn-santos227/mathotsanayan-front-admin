@@ -21,7 +21,19 @@
           <td class="text-xs-left">
             {{ formatDate(props.item.raw.created_at) }}
           </td>
-          <td></td>
+          <td>
+            <v-btn block color="purple-darken-3" variant="outlined">
+              <v-icon size="large">mdi-dots-horizontal</v-icon>
+              <v-menu activator="parent">
+                <v-list density="compact" variant="plain">
+                  <DeleteView
+                    v-bind:question="props.item.raw"
+                    v-bind:index="props.index"
+                  />
+                </v-list>
+              </v-menu>
+            </v-btn>
+          </td>
         </tr>
       </template>
     </v-data-table>
@@ -33,10 +45,13 @@ import { VDataTable } from "vuetify/labs/VDataTable";
 import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
+import DeleteView from "./DeleteView.vue";
+
 import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
 
 const props = defineProps<{
+  index: number;
   questions?: Question[];
 }>();
 </script>

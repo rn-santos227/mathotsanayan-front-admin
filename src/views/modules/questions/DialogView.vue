@@ -46,7 +46,10 @@
         </v-card>
         <v-window v-model="tabs">
           <v-window-item value="0">
-            <TableView v-bind:questions="props.module.questions" />
+            <TableView
+              v-bind:questions="props.module.questions"
+              v-bind:index="index"
+            />
           </v-window-item>
           <v-window-item value="1">
             <CreateView
