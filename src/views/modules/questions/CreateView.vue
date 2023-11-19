@@ -35,7 +35,7 @@
           v-model:type="question.type"
           v-model:file="question.file"
           @changeType="changeQuestionType($event, index)"
-          ref="validate_questions"
+          ref="validate"
         />
         <v-divider class="border-opacity-100" />
         <v-row class="mx-1">
@@ -62,7 +62,7 @@
                   :check="checkList(question.options)"
                   :key="index_2"
                   @remove="removeOption(index_1, index_2)"
-                  ref="validate_options"
+                  ref="validate"
                 />
               </v-col>
             </v-row>
@@ -91,7 +91,7 @@
                   :check="checkList(question.corrects)"
                   :key="index_4"
                   @remove="removeCorrect(index_1, index_4)"
-                  ref="validate_corrects"
+                  ref="validate"
                 />
               </v-col>
             </v-row>
@@ -152,26 +152,13 @@ const error = inject("error", {
   },
 });
 
-const validate_questions = ref([
+const validate = ref([
   {
     validate: (): boolean => {
       return false;
     },
-  },
-]);
-
-const validate_corrects = ref([
-  {
-    validate: (): boolean => {
-      return false;
-    },
-  },
-]);
-
-const validate_options = ref([
-  {
-    validate: (): boolean => {
-      return false;
+    reset: () => {
+      return null;
     },
   },
 ]);
@@ -286,23 +273,15 @@ const clearForm = () => {
       },
     ],
   });
+
+  validate.value.forEach((v) => {
+    v.reset();
+  });
 };
 
 const submit = async () => {
   let errors = false;
-  validate_questions.value.forEach((v) => {
-    if (v.validate()) {
-      errors = true;
-    }
-  });
-
-  validate_options.value.forEach((v) => {
-    if (v.validate()) {
-      errors = true;
-    }
-  });
-
-  validate_corrects.value.forEach((v) => {
+  validate.value.forEach((v) => {
     if (v.validate()) {
       errors = true;
     }
