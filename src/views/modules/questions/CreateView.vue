@@ -122,7 +122,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from "vue";
+import { inject, ref, reactive } from "vue";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
@@ -135,6 +135,22 @@ import Module from "@/types/Module";
 import Question from "@/types/Question";
 import Option from "@/types/Option";
 import Correct from "@/types/Correct";
+
+const success = inject("success", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
+  },
+});
+
+const error = inject("error", {
+  value: {
+    show: (message: string) => {
+      return message;
+    },
+  },
+});
 
 const validate_questions = ref([
   {
@@ -269,11 +285,16 @@ const submit = async () => {
   });
 
   if (errors) return;
-  useQuestionModule()
-    .createAll(questions, props.module)
-    .then((response) => {
-      useModuleModule().setQuestionsModule(props.index, response);
-    });
+  try {
+    useQuestionModule()
+      .createAll(questions, props.module)
+      .then((response) => {
+        useModuleModule().setQuestionsModule(props.index, response);
+        success.value.show("Question has been successfully added.");
+      });
+  } catch (e) {
+    error.value.show("The server has not able to process the request.");
+  }
 };
 </script>
 
