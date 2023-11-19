@@ -69,5 +69,30 @@ export const useQuestionModule = defineStore("questions", {
         this.isLoading = false;
       }
     },
+
+    async delete(payload: Question): Promise<Question | null> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.QUESTIONS.DELETE}${payload.id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { question } = data;
+        return question;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return null;
+      } finally {
+        this.isLoading = false;
+      }
+    },
   },
 });

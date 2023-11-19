@@ -21,6 +21,29 @@ export const useModuleModule = defineStore("modules", {
       this.modules[index].questions = questions;
     },
 
+    updateQuestionModule(index: number, question: Question) {
+      const moduleQuestions = this.modules[index].questions;
+      if (moduleQuestions) {
+        const q_index = moduleQuestions.findIndex(
+          (item) => item.id === question.id
+        );
+        if (index !== -1) {
+          moduleQuestions[q_index] = question;
+        }
+        this.modules[index].questions = moduleQuestions;
+      }
+    },
+
+    removeQuestionModule(index: number, question: Question) {
+      const moduleQuestions = this.modules[index].questions;
+      if (moduleQuestions) {
+        const questions = moduleQuestions.filter(
+          (item) => item.id !== question.id
+        );
+        this.modules[index].questions = questions;
+      }
+    },
+
     addModule(module: Module) {
       this.modules.push(module);
     },
