@@ -72,9 +72,38 @@
                       v-model:content="option.content"
                       v-model:file="option.file"
                       :index="index_1"
-                      :check="checkList(question.options)"
+                      :check="checkList(state.options)"
                       :key="index_1"
                       @remove="removeOption(index_1)"
+                      ref="validate"
+                    />
+                  </v-col>
+                </v-row>
+              </v-col>
+              <v-col>
+                <v-row>
+                  <v-col class="mt-4">
+                    <v-btn
+                      color="teal-darken-2"
+                      prepend-icon="mdi-plus"
+                      block
+                      @click.prevent="addCorrect()"
+                    >
+                      Add Correct Answers
+                    </v-btn>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col>
+                    <CorrectComponent
+                      v-for="(correct, index_2) in state.corrects"
+                      v-model:content="correct.content"
+                      v-model:solution="correct.solution"
+                      v-model:file="correct.file"
+                      :index="index_2"
+                      :check="checkList(state.corrects)"
+                      :key="index_2"
+                      @remove="removeCorrect(index_2)"
                       ref="validate"
                     />
                   </v-col>
@@ -189,10 +218,12 @@ const removeCorrect = (index: number) => {
 
 const changeQuestionType = (type: string) => {
   if (type === "multiple selection") {
-    state.options?.push({
+    const _options = [] as Option[];
+    _options.push({
       content: "",
       file: null,
     });
+    state.options = _options;
   } else {
     state.options = [];
   }
