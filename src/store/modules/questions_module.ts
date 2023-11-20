@@ -74,6 +74,13 @@ export const useQuestionModule = defineStore("questions", {
       try {
         this.isLoading = true;
         const formData = new FormData();
+        const file = payload.file;
+
+        formData.append("question", JSON.stringify(payload));
+        if (file) {
+          formData.append("question_file", file);
+        }
+
         const response = await authenticatedFetch(
           `${api.QUESTIONS.UPDATE}${payload.id}`,
           {
