@@ -112,6 +112,8 @@ router.beforeEach((to, from, next) => {
   const authStore = useAuthModule();
   if (to.meta.forAuth && !authStore.isAuthenticated) {
     next("/login");
+  } else if (to.meta.forVisitors && authStore.isAuthenticated) {
+    next("/login");
   } else {
     next();
   }

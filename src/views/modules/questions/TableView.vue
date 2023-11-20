@@ -26,6 +26,10 @@
               <v-icon size="large">mdi-dots-horizontal</v-icon>
               <v-menu activator="parent">
                 <v-list density="compact" variant="plain">
+                  <UpdateView
+                    v-bind:question="props.item.raw"
+                    v-bind:index="table_props.index"
+                  />
                   <DeleteView
                     v-bind:question="props.item.raw"
                     v-bind:index="table_props.index"
@@ -46,6 +50,7 @@ import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
 import DeleteView from "./DeleteView.vue";
+import UpdateView from "./UpdateView.vue";
 
 import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
