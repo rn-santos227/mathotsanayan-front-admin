@@ -39,7 +39,12 @@
         />
         <v-divider class="border-opacity-100" />
         <v-row class="mx-1">
-          <v-col v-if="question.type == 'multiple selection'">
+          <v-col
+            v-if="
+              question.type == 'multiple selection' ||
+              question.type == 'single correct'
+            "
+          >
             <v-row>
               <v-col class="mt-4">
                 <v-btn
