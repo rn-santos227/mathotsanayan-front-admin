@@ -126,7 +126,9 @@
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn class="mb-2" color="success" block> Submit </v-btn>
+            <v-btn class="mb-2" @click.prevent="submit" color="success" block>
+              Submit
+            </v-btn>
           </v-col>
         </v-row>
       </v-card>
@@ -145,6 +147,7 @@ import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 import Question from "@/types/Question";
 import Option from "@/types/Option";
 import Correct from "@/types/Correct";
+import { useModuleModule, useQuestionModule } from "@/store";
 
 const dialog = ref<boolean>(false);
 
@@ -184,6 +187,9 @@ const state = reactive<Question>({ ...props.question });
 
 const close = () => {
   dialog.value = !dialog.value;
+  validate.value.forEach((v) => {
+    v.reset();
+  });
 };
 
 const checkList = (list: Option[] | Correct[] | null | undefined): boolean => {
@@ -239,6 +245,30 @@ const resetForm = () => {
   validate.value.forEach((v) => {
     v.reset();
   });
+};
+
+const submit = async () => {
+  let errors = false;
+  validate.value.forEach((v) => {
+    if (v.validate()) {
+      errors = true;
+    }
+  });
+  if (errors) return;
+  try {
+    useQuestionModule()
+      .update(state)
+      .then((response) => {
+        const _question = response;
+        if (_question) {
+          useModuleModule().updateQuestionModule(props.index, _question);
+          success.value.show("Question has been successfully updated.");
+          close();
+        }
+      });
+  } catch (e) {
+    error.value.show("The server has not able to process the request.");
+  }
 };
 </script>
 

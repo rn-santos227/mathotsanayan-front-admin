@@ -70,6 +70,29 @@ export const useQuestionModule = defineStore("questions", {
       }
     },
 
+    async update(payload: Question): Promise<Question | null> {
+      try {
+        this.isLoading = true;
+        const formData = new FormData();
+        const response = await authenticatedFetch(
+          `${api.QUESTIONS.UPDATE}${payload.id}`,
+          {
+            method: "UPDATE",
+            body: formData,
+          }
+        );
+
+        const data = await response.json();
+        const { question } = data;
+        return question;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return null;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
     async delete(payload: Question): Promise<Question | null> {
       try {
         this.isLoading = true;
