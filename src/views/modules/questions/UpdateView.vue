@@ -117,6 +117,7 @@
           <v-col>
             <v-btn
               class="mb-2"
+              @click.prevent="resetForm"
               prepend-icon="mdi-plus"
               color="purple-darken-3"
               block
@@ -217,7 +218,7 @@ const removeCorrect = (index: number) => {
 };
 
 const changeQuestionType = (type: string) => {
-  if (type === "multiple selection") {
+  if (type === "multiple selection" || type === "single correct") {
     const _options = [] as Option[];
     _options.push({
       content: "",
@@ -227,6 +228,17 @@ const changeQuestionType = (type: string) => {
   } else {
     state.options = [];
   }
+};
+
+const resetForm = () => {
+  state.content = props.question.content;
+  state.type = props.question.type;
+  state.file = props.question.file;
+  state.options = props.question.options;
+  state.corrects = props.question.corrects;
+  validate.value.forEach((v) => {
+    v.reset();
+  });
 };
 </script>
 

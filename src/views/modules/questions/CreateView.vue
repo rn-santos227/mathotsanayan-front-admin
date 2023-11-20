@@ -248,7 +248,7 @@ const removeCorrect = (index_1: number, index_2: number) => {
 };
 
 const changeQuestionType = (type: string, index: number) => {
-  if (type === "multiple selection") {
+  if (type === "multiple selection" || type === "single correct") {
     questions[index].options?.push({
       content: "",
       file: null,
