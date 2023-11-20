@@ -84,8 +84,8 @@ const emit = defineEmits([
   "remove",
 ]);
 
-const v$ = useVuelidate(rules, props);
 const errors = computed(() => useValidationErrors<VCorrect>(v$.value.$errors));
+const v$ = useVuelidate(rules, props);
 
 const content = computed({
   get: () => props.content,

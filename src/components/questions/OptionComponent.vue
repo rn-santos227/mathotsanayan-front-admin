@@ -70,8 +70,8 @@ const props = defineProps<{
 
 const emit = defineEmits(["update:content", "update:file", "remove"]);
 
-const v$ = useVuelidate(rules, props);
 const errors = computed(() => useValidationErrors<VOption>(v$.value.$errors));
+const v$ = useVuelidate(rules, props);
 
 const content = computed({
   get: () => v$.value.content.$model,

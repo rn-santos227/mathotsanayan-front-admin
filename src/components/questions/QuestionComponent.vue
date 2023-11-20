@@ -63,8 +63,8 @@ const emit = defineEmits([
   "changeType",
 ]);
 
-const v$ = useVuelidate(rules, props);
 const errors = computed(() => useValidationErrors<VQuestion>(v$.value.$errors));
+const v$ = useVuelidate(rules, props);
 
 const content = computed({
   get: () => v$.value.content.$model,
