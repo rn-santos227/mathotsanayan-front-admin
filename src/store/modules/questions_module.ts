@@ -16,15 +16,16 @@ export const useQuestionModule = defineStore("questions", {
       try {
         this.isLoading = true;
         const formData = new FormData();
-        formData.append("module", JSON.stringify(module));
-        formData.append("questions", JSON.stringify(payload));
+        formData.append("module", JSON.stringify(module.id));
+        formData.append("subject", JSON.stringify(module.subject));
         payload.forEach((item) => {
           const file = item.file;
           item.has_file = 1;
           if (file) {
-            formData.append("question_files", file);
+            formData.append("question_files[]", file);
           }
         });
+        formData.append("questions", JSON.stringify(payload));
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
           {
