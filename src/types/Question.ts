@@ -13,6 +13,7 @@ interface Question {
   deleted_at?: string;
   module?: number | Module;
   subject?: number | Subject;
+  has_file?: number;
   options: Option[];
   corrects: Correct[];
 }

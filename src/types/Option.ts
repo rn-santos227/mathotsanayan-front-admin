@@ -9,6 +9,7 @@ interface Option {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
+  has_file?: number;
   course?: number | Course;
   module?: number | Module;
   question?: number | Question;
