@@ -180,11 +180,13 @@ const questions = reactive<Question[]>([
     content: "",
     type: "word problem",
     file: null,
+    has_file: 0,
     options: [],
     corrects: [
       {
         content: "",
         solution: "",
+        has_file: 0,
         file: null,
       },
     ],
@@ -196,16 +198,13 @@ const addQuestion = () => {
     content: "",
     type: "word problem",
     file: null,
-    options: [
-      {
-        content: "",
-        file: null,
-      },
-    ],
+    has_file: 0,
+    options: [],
     corrects: [
       {
         content: "",
         solution: "",
+        has_file: 0,
         file: null,
       },
     ],
@@ -215,6 +214,7 @@ const addQuestion = () => {
 const addOption = (index: number) => {
   questions[index].options?.push({
     content: "",
+    has_file: 0,
     file: null,
   });
 };
@@ -223,6 +223,7 @@ const addCorrect = (index: number) => {
   questions[index].corrects?.push({
     content: "",
     solution: "",
+    has_file: 0,
     file: null,
   });
 };
@@ -251,6 +252,7 @@ const changeQuestionType = (type: string, index: number) => {
   if (type === "multiple selection" || type === "single correct") {
     questions[index].options?.push({
       content: "",
+      has_file: 0,
       file: null,
     });
   } else {
@@ -264,16 +266,13 @@ const clearForm = () => {
     content: "",
     type: "word problem",
     file: null,
-    options: [
-      {
-        content: "",
-        file: null,
-      },
-    ],
+    has_file: 0,
+    options: [],
     corrects: [
       {
         content: "",
         solution: "",
+        has_file: 0,
         file: null,
       },
     ],

@@ -20,6 +20,7 @@ export const useQuestionModule = defineStore("questions", {
         formData.append("questions", JSON.stringify(payload));
         payload.forEach((item) => {
           const file = item.file;
+          item.has_file = 1;
           if (file) {
             formData.append("question_files", file);
           }

@@ -203,6 +203,7 @@ const checkList = (list: Option[] | Correct[] | null | undefined): boolean => {
 const addOption = () => {
   state.options?.push({
     content: "",
+    has_file: 0,
     file: null,
   });
 };
@@ -211,6 +212,7 @@ const addCorrect = () => {
   state.corrects?.push({
     content: "",
     solution: "",
+    has_file: 0,
     file: null,
   });
 };
@@ -228,6 +230,7 @@ const changeQuestionType = (type: string) => {
     const _options = [] as Option[];
     _options.push({
       content: "",
+      has_file: 0,
       file: null,
     });
     state.options = _options;
