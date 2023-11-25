@@ -9,6 +9,7 @@
     >
       <template v-slot:item="props">
         <tr>
+          <td class="text-xs-left"></td>
           <td class="text-xs-left">
             {{ props.item.raw.content }}
           </td>
@@ -64,5 +65,6 @@ const table_props = defineProps<{
 <style scoped>
 .question-height {
   height: calc(100vh - 200px);
+  overflow-y: auto;
 }
 </style>
