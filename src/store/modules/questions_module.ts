@@ -47,6 +47,9 @@ export const useQuestionModule = defineStore("questions", {
           {
             method: "POST",
             body: formData,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
           }
         );
         const data = await response.json();
@@ -76,6 +79,9 @@ export const useQuestionModule = defineStore("questions", {
           {
             method: "UPDATE",
             body: formData,
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
           }
         );
 
