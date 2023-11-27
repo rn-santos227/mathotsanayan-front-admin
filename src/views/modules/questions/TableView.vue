@@ -9,7 +9,9 @@
     >
       <template v-slot:item="props">
         <tr>
-          <td class="text-xs-left"></td>
+          <td class="text-xs-left">
+            <ImageComponent v-bind:file="props.item.raw.file" />
+          </td>
           <td class="text-xs-left">
             {{ props.item.raw.content }}
           </td>
@@ -46,6 +48,8 @@
 </template>
 
 <script setup lang="ts">
+import ImageComponent from "@/components/ImageComponent.vue";
+
 import { VDataTable } from "vuetify/labs/VDataTable";
 import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";

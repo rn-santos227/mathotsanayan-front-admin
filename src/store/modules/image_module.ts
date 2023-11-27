@@ -9,7 +9,7 @@ export const useImageModule = defineStore("image", {
   }),
 
   actions: {
-    async create(image: string): Promise<string> {
+    async image(image: string): Promise<string> {
       try {
         this.isLoading = true;
         const payload = {

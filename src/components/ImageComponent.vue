@@ -7,12 +7,22 @@
 
 <script setup lang="ts">
 import { useImageModule } from "@/store";
+import { onMounted, ref } from "vue";
 
 const imageModule = useImageModule();
 const props = defineProps({
-  image: {
+  file: {
     type: String,
-    required: true,
   },
+});
+const url = ref<string>("");
+
+onMounted(async () => {
+  if (props.file) {
+    imageModule.image(props.file).then((response) => {
+      url.value = response;
+    });
+    console.log(props.file);
+  }
 });
 </script>
