@@ -1,6 +1,5 @@
 import api from "@/helpers/api";
 
-
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
