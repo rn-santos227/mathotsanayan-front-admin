@@ -15,6 +15,10 @@ export default {
     DELETE: `${BACKEND}courses/`,
   },
 
+  IMAGE: {
+    IMAGE: `${BACKEND}image`,
+  },
+
   MODULES: {
     CREATE: `${BACKEND}modules/create`,
     READ: `${BACKEND}modules`,
