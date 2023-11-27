@@ -18,7 +18,7 @@
         width="150"
         class="d-flex align-center justify-center"
       >
-        <v-img cover v-if="url" :src="url" />
+        <v-img cover :src="checkImage(url)" />
       </v-card>
     </div>
   </v-sheet>
@@ -44,4 +44,9 @@ onMounted(async () => {
     console.log(props.file);
   }
 });
+
+const checkImage = (url: string) => {
+  if (url) return url;
+  else return require("@/assets/images/ui/no-file-available.png");
+};
 </script>
