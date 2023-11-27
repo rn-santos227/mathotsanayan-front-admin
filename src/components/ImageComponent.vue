@@ -1,7 +1,26 @@
 <template>
-  <v-sheet :height="150" :width="150">
-    <div v-if="imageModule.isLoading"></div>
-    <div v-else></div>
+  <v-sheet height="150" width="150" class="my-6">
+    <div v-if="imageModule.isLoading">
+      <v-card height="150" width="150" class="ma-auto text-center pa-4">
+        <v-progress-circular
+          width="16"
+          size="120"
+          color="purple-darken-3"
+          indeterminate
+        >
+          Loading
+        </v-progress-circular>
+      </v-card>
+    </div>
+    <div v-else>
+      <v-card
+        height="150"
+        width="150"
+        class="d-flex align-center justify-center"
+      >
+        <v-img cover v-if="url" :src="url" />
+      </v-card>
+    </div>
   </v-sheet>
 </template>
 
