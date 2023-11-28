@@ -16,5 +16,6 @@ interface Question {
   has_file?: number;
   options: Option[];
   corrects: Correct[];
+  trigger?: boolean;
 }
 export default Question;

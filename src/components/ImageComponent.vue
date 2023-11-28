@@ -26,19 +26,39 @@
 
 <script setup lang="ts">
 import { useImageModule } from "@/store";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 const imageModule = useImageModule();
 const props = defineProps({
   file: {
     type: String,
   },
+
+  trigger: {
+    type: Boolean,
+  },
 });
 const url = ref<string>("");
 
+const emit = defineEmits(["update:trigger"]);
+
+watch(
+  () => props.trigger,
+  async (_url) => {
+    if (_url) {
+      if (props.file) {
+        await imageModule.image(props.file).then((response) => {
+          url.value = response;
+          emit("update:trigger", false);
+        });
+      }
+    }
+  }
+);
+
 onMounted(async () => {
   if (props.file) {
-    imageModule.image(props.file).then((response) => {
+    await imageModule.image(props.file).then((response) => {
       url.value = response;
     });
   }

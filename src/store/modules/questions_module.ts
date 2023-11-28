@@ -81,6 +81,7 @@ export const useQuestionModule = defineStore("questions", {
 
         const data = await response.json();
         const { question } = data;
+        question.trigger = true;
         return question;
       } catch (error) {
         console.error("Error Question in:", error);

@@ -10,7 +10,10 @@
       <template v-slot:item="props">
         <tr>
           <td class="text-xs-left">
-            <ImageComponent v-bind:file="props.item.raw.file" />
+            <ImageComponent
+              v-bind:file="props.item.raw.file"
+              v-model:trigger="props.item.raw.trigger"
+            />
           </td>
           <td class="text-xs-left">
             {{ props.item.raw.content }}
