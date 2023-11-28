@@ -41,7 +41,6 @@ onMounted(async () => {
     imageModule.image(props.file).then((response) => {
       url.value = response;
     });
-    console.log(props.file);
   }
 });
 

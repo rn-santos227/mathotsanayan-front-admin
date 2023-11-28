@@ -53,7 +53,7 @@ export const useQuestionModule = defineStore("questions", {
         const { questions } = data;
         return questions;
       } catch (error) {
-        console.error("Error Module in:", error);
+        console.error("Error Question in:", error);
         return null;
       } finally {
         this.isLoading = false;
@@ -63,10 +63,10 @@ export const useQuestionModule = defineStore("questions", {
     async update(payload: Question): Promise<Question | null> {
       try {
         this.isLoading = true;
+        this.isTableLoading = true;
         const formData = new FormData();
-        const file = payload.file;
-
         formData.append("question", JSON.stringify(payload));
+        const file = payload.file;
         if (file) {
           formData.append("question_file", file);
         }
@@ -74,7 +74,7 @@ export const useQuestionModule = defineStore("questions", {
         const response = await authenticatedFetch(
           `${api.QUESTIONS.UPDATE}${payload.id}`,
           {
-            method: "UPDATE",
+            method: "POST",
             body: formData,
           }
         );
@@ -83,10 +83,11 @@ export const useQuestionModule = defineStore("questions", {
         const { question } = data;
         return question;
       } catch (error) {
-        console.error("Error Teacher in:", error);
+        console.error("Error Question in:", error);
         return null;
       } finally {
         this.isLoading = false;
+        this.isTableLoading = false;
       }
     },
 
@@ -108,7 +109,7 @@ export const useQuestionModule = defineStore("questions", {
         const { question } = data;
         return question;
       } catch (error) {
-        console.error("Error Teacher in:", error);
+        console.error("Error Question in:", error);
         return null;
       } finally {
         this.isLoading = false;
