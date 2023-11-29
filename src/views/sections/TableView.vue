@@ -12,10 +12,10 @@
           {{ props.item.raw.name }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.level }}
+          {{ props.item.raw?.students.length }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw?.teacher_id }}
+          {{ props.item.raw?.teacher.full_name }}
         </td>
         <td class="text-xs-left">
           {{ formatDate(props.item.raw.created_at) }}

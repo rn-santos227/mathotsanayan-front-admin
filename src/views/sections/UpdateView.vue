@@ -169,7 +169,6 @@ const resetForm = () => {
   state.description = props.section.description;
   state.school = props.section.school;
   state.teacher = props.section.teacher;
-  dialog.value = !dialog.value;
   v$.value.$reset();
 };
 

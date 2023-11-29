@@ -39,7 +39,7 @@
                 <v-text-field
                   class="mx-4"
                   v-model.trim="v$.name.$model"
-                  label="Course Name"
+                  label="Section Name"
                   density="compact"
                   variant="outlined"
                   :error="v$.name.$error"
@@ -86,7 +86,7 @@
                 <v-text-field
                   class="mx-4"
                   v-model.trim="state.description"
-                  label="Course Description/Notes"
+                  label="Sectopm Description/Notes"
                   density="compact"
                   variant="outlined"
                 />

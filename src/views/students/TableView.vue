@@ -9,7 +9,7 @@
     <template v-slot:item="props">
       <tr>
         <td class="text-xs-left">
-          {{ props.item.raw.fullname }}
+          {{ props.item.raw.full_name }}
         </td>
         <td class="text-xs-left">
           {{ props.item.raw.email }}

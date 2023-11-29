@@ -1,5 +1,6 @@
 import School from "./School";
 import Teacher from "./Teacher";
+import Student from "./Student";
 
 interface Section {
   id?: number;
@@ -10,5 +11,6 @@ interface Section {
   deleted_at?: string;
   school: number | string | School;
   teacher: number | string | Teacher;
+  students?: Student[];
 }
 export default Section;
