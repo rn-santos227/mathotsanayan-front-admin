@@ -137,7 +137,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive } from "vue";
+import { inject, reactive, ref } from "vue";
 import { padLeft } from "@/helpers/utils";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";

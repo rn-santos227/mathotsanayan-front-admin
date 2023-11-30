@@ -6,24 +6,24 @@
     :loading="schoolModule.isTableLoading"
     item-value="name"
   >
-    <template v-slot:item="props">
+    <template v-slot:item="{ item }">
       <tr>
         <td class="text-xs-left">
-          {{ props.item.raw.name }}
+          {{ item.name }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.contact_number }}
+          {{ item.contact_number }}
         </td>
         <td class="text-xs-left">
-          {{ formatDate(props.item.raw.created_at) }}
+          {{ formatDate(item.created_at) }}
         </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
-                <UpdateView v-bind:school="props.item.raw" />
-                <DeleteView v-bind:school="props.item.raw" />
+                <UpdateView v-bind:school="item" />
+                <DeleteView v-bind:school="item" />
               </v-list>
             </v-menu>
           </v-btn>
@@ -37,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import { VDataTable } from "vuetify/labs/VDataTable";
 import { computed, onMounted, provide, ref } from "vue";
 import { useSchoolModule } from "@/store";
 import { formatDate } from "@/helpers/utils";

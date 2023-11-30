@@ -6,27 +6,27 @@
     :loading="sectionModule.isTableLoading"
     item-value="name"
   >
-    <template v-slot:item="props">
+    <template v-slot:item="{ item }">
       <tr>
         <td class="text-xs-left">
-          {{ props.item.raw.name }}
+          {{ item.name }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw?.students.length }}
+          {{ item?.students?.length }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw?.teacher.full_name }}
+          {{ getTeacherName(item?.teacher) }}
         </td>
         <td class="text-xs-left">
-          {{ formatDate(props.item.raw.created_at) }}
+          {{ formatDate(item.created_at) }}
         </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
-                <UpdateView v-bind:section="props.item.raw" />
-                <DeleteView v-bind:section="props.item.raw" />
+                <UpdateView v-bind:section="item" />
+                <DeleteView v-bind:section="item" />
               </v-list>
             </v-menu>
           </v-btn>
@@ -40,10 +40,10 @@
 </template>
 
 <script setup lang="ts">
-import { VDataTable } from "vuetify/labs/VDataTable";
 import { computed, onMounted, provide, ref } from "vue";
 import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
+import { getTeacherName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";

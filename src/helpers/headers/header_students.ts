@@ -13,10 +13,10 @@ const headers: Array<any> = [
     key: "email",
   },
   {
-    title: "Studet Section",
+    title: "Student Teacher",
     align: "start",
     sortable: true,
-    key: "section.name",
+    key: "teacher.full_name",
   },
   {
     title: "Date Created",

@@ -7,26 +7,26 @@
       item-value="name"
       :loading="useQuestionModule().isTableLoading"
     >
-      <template v-slot:item="props">
+      <template v-slot:item="{ item }">
         <tr>
           <td class="text-xs-left">
             <ImageComponent
-              v-bind:id="props.item.raw.id"
-              v-bind:file="props.item.raw.file"
-              v-model:trigger="props.item.raw.trigger"
+              v-bind:id="item.id"
+              v-bind:file="item.file"
+              v-model:trigger="item.trigger"
             />
           </td>
           <td class="text-xs-left">
-            {{ props.item.raw.content }}
+            {{ item.content }}
           </td>
           <td class="text-xs-left">
-            {{ props.item.raw.type }}
+            {{ item.type }}
           </td>
           <td class="text-xs-left">
-            {{ props.item.raw?.corrects.length }}
+            {{ item?.corrects.length }}
           </td>
           <td class="text-xs-left">
-            {{ formatDate(props.item.raw.created_at) }}
+            {{ formatDate(item?.created_at) }}
           </td>
           <td>
             <v-btn block color="purple-darken-3" variant="outlined">
@@ -34,11 +34,11 @@
               <v-menu activator="parent">
                 <v-list density="compact" variant="plain">
                   <UpdateView
-                    v-bind:question="props.item.raw"
+                    v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
                   <DeleteView
-                    v-bind:question="props.item.raw"
+                    v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
                 </v-list>
@@ -54,7 +54,6 @@
 <script setup lang="ts">
 import ImageComponent from "@/components/ImageComponent.vue";
 
-import { VDataTable } from "vuetify/labs/VDataTable";
 import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 

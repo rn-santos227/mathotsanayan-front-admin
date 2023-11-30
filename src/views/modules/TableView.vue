@@ -6,31 +6,28 @@
     :loading="moduleModule.isTableLoading"
     item-value="name"
   >
-    <template v-slot:item="props">
+    <template v-slot:item="{ item, index }">
       <tr>
         <td class="text-xs-left">
-          {{ props.item.raw.name }}
+          {{ item.name }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.questions.length }}
+          {{ item?.questions?.length }}
         </td>
         <td class="text-xs-left">
-          {{ props.item.raw.subject.name }}
+          {{ getSubjectName(item?.subject) }}
         </td>
         <td class="text-xs-left">
-          {{ formatDate(props.item.raw.created_at) }}
+          {{ formatDate(item.created_at) }}
         </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
-                <QuestionView
-                  v-bind:module="props.item.raw"
-                  v-bind:index="props.index"
-                />
-                <UpdateView v-bind:module="props.item.raw" />
-                <DeleteView v-bind:module="props.item.raw" />
+                <QuestionView v-bind:module="item" v-bind:index="index" />
+                <UpdateView v-bind:module="item" />
+                <DeleteView v-bind:module="item" />
               </v-list>
             </v-menu>
           </v-btn>
@@ -44,10 +41,10 @@
 </template>
 
 <script setup lang="ts">
-import { VDataTable } from "vuetify/labs/VDataTable";
 import { computed, onMounted, provide, ref } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
+import { getSubjectName } from "@/helpers/instance";
 
 import QuestionView from "./questions/DialogView.vue";
 import UpdateView from "./UpdateView.vue";

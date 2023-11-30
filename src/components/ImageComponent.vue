@@ -29,18 +29,11 @@ import { useImageModule } from "@/store";
 import { onMounted, ref, watch } from "vue";
 
 const imageModule = useImageModule();
-const props = defineProps({
-  id: {
-    type: Number,
-    required: true,
-  },
-  file: {
-    type: String,
-  },
-  trigger: {
-    type: Boolean,
-  },
-});
+const props = defineProps<{
+  trigger: boolean | undefined;
+  id: number | undefined;
+  file: string | File | null;
+}>();
 const url = ref<string>("");
 
 const emit = defineEmits(["update:trigger"]);
@@ -49,7 +42,7 @@ watch(
   () => props.trigger,
   async (_url) => {
     if (_url) {
-      if (props.file) {
+      if (typeof props.file === "string") {
         await imageModule.image(props.file).then((response) => {
           url.value = response;
           emit("update:trigger", false);
@@ -62,7 +55,7 @@ watch(
 watch(
   () => props.id,
   async () => {
-    if (props.file) {
+    if (typeof props.file === "string") {
       await imageModule.image(props.file).then((response) => {
         url.value = response;
         emit("update:trigger", false);
@@ -72,7 +65,7 @@ watch(
 );
 
 onMounted(async () => {
-  if (props.file) {
+  if (typeof props.file === "string") {
     await imageModule.image(props.file).then((response) => {
       url.value = response;
     });
