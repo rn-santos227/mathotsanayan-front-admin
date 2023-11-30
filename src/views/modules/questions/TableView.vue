@@ -11,6 +11,7 @@
         <tr>
           <td class="text-xs-left">
             <ImageComponent
+              v-bind:id="props.item.raw.id"
               v-bind:file="props.item.raw.file"
               v-model:trigger="props.item.raw.trigger"
             />

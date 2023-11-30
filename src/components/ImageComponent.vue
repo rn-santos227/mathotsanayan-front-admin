@@ -30,10 +30,13 @@ import { onMounted, ref, watch } from "vue";
 
 const imageModule = useImageModule();
 const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
   file: {
     type: String,
   },
-
   trigger: {
     type: Boolean,
   },
@@ -52,6 +55,18 @@ watch(
           emit("update:trigger", false);
         });
       }
+    }
+  }
+);
+
+watch(
+  () => props.id,
+  async () => {
+    if (props.file) {
+      await imageModule.image(props.file).then((response) => {
+        url.value = response;
+        emit("update:trigger", false);
+      });
     }
   }
 );
