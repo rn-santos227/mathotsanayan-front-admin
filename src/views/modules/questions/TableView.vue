@@ -33,6 +33,7 @@
               <v-icon size="large">mdi-dots-horizontal</v-icon>
               <v-menu activator="parent">
                 <v-list density="compact" variant="plain">
+                  <TestView v-bind:question="item" />
                   <UpdateView
                     v-bind:question="item"
                     v-bind:index="table_props.index"
@@ -57,6 +58,7 @@ import ImageComponent from "@/components/ImageComponent.vue";
 import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
+import TestView from "./TestView.vue";
 import DeleteView from "./DeleteView.vue";
 import UpdateView from "./UpdateView.vue";
 

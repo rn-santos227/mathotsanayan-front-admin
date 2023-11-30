@@ -1,14 +1,14 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-update"></v-icon> Update
+      <v-icon icon="mdi-check-circle-outline"></v-icon> Test
     </v-list-item-title>
     <v-dialog
       class="ma-auto"
       persistent
       v-model="dialog"
       activator="parent"
-      width="80%"
+      width="50%"
     >
       <v-card>
         <v-card
@@ -49,7 +49,6 @@ import Question from "@/types/Question";
 
 const dialog = ref<boolean>(false);
 const props = defineProps<{
-  index: number;
   question: Question;
 }>();
 const state = reactive<Question>({ ...props.question });
