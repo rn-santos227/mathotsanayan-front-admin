@@ -36,7 +36,7 @@
             <v-divider class="mt-4" />
             <v-row>
               <v-col>
-                <v-tabs v-model="tabs" fixed-tabs bg-color="purple-darken-3">
+                <v-tabs v-model="tabs" grow bg-color="purple-darken-3">
                   <v-tab value="0"> Questions List </v-tab>
                   <v-tab value="1"> Create Question </v-tab>
                 </v-tabs>
