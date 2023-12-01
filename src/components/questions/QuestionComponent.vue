@@ -1,7 +1,7 @@
 <template>
   <v-row class="mt-1 mx-2">
     <v-col>
-      <v-textarea
+      <EditorComponent
         rows="3"
         v-model.trim="content"
         label="Question Content/Instruction"
@@ -40,6 +40,7 @@
 import { ref, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
+
 const types = ref<string[]>([
   "multiple selection",
   "single correct",
