@@ -1,7 +1,11 @@
 <template>
-  <v-sheet height="150" width="150" class="my-6">
+  <v-sheet :height="props.height" :width="props.width">
     <div v-if="imageModule.isLoading">
-      <v-card height="150" width="150" class="ma-auto text-center pa-4">
+      <v-card
+        :height="props.height"
+        :width="props.width"
+        class="ma-auto text-center pa-4"
+      >
         <v-progress-circular
           width="16"
           size="120"

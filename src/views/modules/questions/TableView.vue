@@ -11,6 +11,7 @@
         <tr>
           <td class="text-xs-left">
             <ImageComponent
+              class="my-4"
               v-bind:id="item.id"
               v-bind:file="item.file"
               v-bind:height="150"

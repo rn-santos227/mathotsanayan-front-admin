@@ -42,6 +42,17 @@
               <div class="text-body-1">{{ props.question.content }}</div>
             </v-col>
           </v-row>
+          <v-row v-if="props.question.file">
+            <v-col class="d-flex justify-center align-center">
+              <ImageComponent
+                v-bind:id="props.question.id"
+                v-bind:file="props.question.file"
+                v-bind:height="300"
+                v-bind:width="300"
+                v-model:trigger="dialog"
+              />
+            </v-col>
+          </v-row>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -52,9 +63,12 @@
 import { reactive, ref } from "vue";
 import { padLeft } from "@/helpers/utils";
 
+import ImageComponent from "@/components/ImageComponent.vue";
+
 import Question from "@/types/Question";
 
 const dialog = ref<boolean>(false);
+
 const props = defineProps<{
   question: Question;
 }>();
