@@ -8,8 +8,8 @@ interface Answer {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  module: number | Module;
+  module?: number | Module;
   question: number | Question;
-  student: number | Student;
+  student?: number | Student;
 }
 export default Answer;

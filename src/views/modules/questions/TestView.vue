@@ -20,7 +20,7 @@
             <v-row>
               <v-col>
                 <span class="text-h6">
-                  Test Question ID: {{ padLeft(state.id) }}
+                  Test Question ID: {{ padLeft(props.question.id) }}
                 </span>
               </v-col>
               <v-col class="d-flex">
@@ -53,7 +53,17 @@
               />
             </v-col>
           </v-row>
-          <v-row v-if="props.question.type == 'word problem'"> </v-row>
+          <v-row v-if="props.question.type == 'word problem'">
+            <v-col>
+              <v-text-field
+                class="mx-4"
+                v-model.trim="state.content"
+                label="Provide your answer here."
+                density="compact"
+                variant="outlined"
+              />
+            </v-col>
+          </v-row>
           <v-row v-if="props.question.type == 'multiple selection'"> </v-row>
           <v-row v-if="props.question.type == 'single correct'"> </v-row>
         </v-card-text>
@@ -69,13 +79,19 @@ import { padLeft } from "@/helpers/utils";
 import ImageComponent from "@/components/ImageComponent.vue";
 
 import Question from "@/types/Question";
+import Answer from "@/types/Answer";
 
 const dialog = ref<boolean>(false);
 
 const props = defineProps<{
   question: Question;
 }>();
-const state = reactive<Question>({ ...props.question });
+
+const state = reactive<Answer>({
+  content: "",
+  module: props.question.module,
+  question: props.question,
+});
 
 const close = () => {
   dialog.value = !dialog.value;
