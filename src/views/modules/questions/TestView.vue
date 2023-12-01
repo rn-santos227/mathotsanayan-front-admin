@@ -53,6 +53,9 @@
               />
             </v-col>
           </v-row>
+          <v-row v-if="props.question.type == 'word problem'"> </v-row>
+          <v-row v-if="props.question.type == 'multiple selection'"> </v-row>
+          <v-row v-if="props.question.type == 'single correct'"> </v-row>
         </v-card-text>
       </v-card>
     </v-dialog>
