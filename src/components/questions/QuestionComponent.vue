@@ -84,7 +84,7 @@ const changeFile = () => {
   emit("update:file", input_file.value[0]);
 };
 
-const changeQuestionType = (event: Event) => {
+const changeQuestionType = (event: string) => {
   emit("changeType", event);
 };
 
