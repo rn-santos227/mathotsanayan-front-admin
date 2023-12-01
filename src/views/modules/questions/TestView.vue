@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card>
+      <v-card class="question-height">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -20,7 +20,7 @@
             <v-row>
               <v-col>
                 <span class="text-h6">
-                  Update Question ID: {{ padLeft(state.id) }}
+                  Test Question ID: {{ padLeft(state.id) }}
                 </span>
               </v-col>
               <v-col class="d-flex">
@@ -36,6 +36,13 @@
             </v-row>
           </v-card-title>
         </v-card>
+        <v-card-text>
+          <v-row>
+            <v-col class="mx-4">
+              <div class="text-body-1">{{ props.question.content }}</div>
+            </v-col>
+          </v-row>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -57,3 +64,10 @@ const close = () => {
   dialog.value = !dialog.value;
 };
 </script>
+
+<style scoped>
+.question-height {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+</style>
