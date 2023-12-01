@@ -1,6 +1,6 @@
 <template>
   <v-sheet :height="props.height" :width="props.width">
-    <div v-if="imageModule.isLoading">
+    <div v-if="loading">
       <v-card
         :height="props.height"
         :width="props.width"
@@ -29,8 +29,8 @@
 </template>
 
 <script setup lang="ts">
-import { useImageModule } from "@/store";
 import { onMounted, ref, watch } from "vue";
+import { useImageModule } from "@/store";
 
 const imageModule = useImageModule();
 const props = defineProps<{
@@ -40,43 +40,53 @@ const props = defineProps<{
   height: number;
   width: number;
 }>();
+
 const url = ref<string>("");
+
+const id = ref<number | undefined>(props.id);
+const trigger = ref<boolean>(props.trigger);
+const loading = ref<boolean>(false);
 
 const emit = defineEmits(["update:trigger"]);
 
 watch(
-  () => props.trigger,
-  async (_url) => {
-    if (_url) {
-      if (typeof props.file === "string") {
-        await imageModule.image(props.file).then((response) => {
-          url.value = response;
-          emit("update:trigger", false);
-        });
-      }
-    }
+  () => trigger.value,
+  async () => {
+    getImage();
   }
 );
 
 watch(
-  () => props.id,
+  () => id.value,
   async () => {
-    if (typeof props.file === "string") {
-      await imageModule.image(props.file).then((response) => {
-        url.value = response;
-        emit("update:trigger", false);
-      });
-    }
+    getImage();
   }
 );
 
 onMounted(async () => {
+  loading.value = true;
   if (typeof props.file === "string") {
     await imageModule.image(props.file).then((response) => {
+      loading.value = false;
       url.value = response;
     });
+  } else {
+    loading.value = false;
   }
 });
+
+const getImage = async () => {
+  loading.value = true;
+  if (typeof props.file === "string") {
+    await imageModule.image(props.file).then((response) => {
+      loading.value = false;
+      url.value = response;
+      emit("update:trigger", false);
+    });
+  } else {
+    loading.value = false;
+  }
+};
 
 const checkImage = (url: string) => {
   if (url) return url;
