@@ -13,6 +13,8 @@
             <ImageComponent
               v-bind:id="item.id"
               v-bind:file="item.file"
+              v-bind:height="150"
+              v-bind:width="150"
               v-model:trigger="item.trigger"
             />
           </td>

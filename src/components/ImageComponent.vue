@@ -14,8 +14,8 @@
     </div>
     <div v-else>
       <v-card
-        height="150"
-        width="150"
+        :height="props.height"
+        :width="props.width"
         class="d-flex align-center justify-center"
       >
         <v-img cover :src="checkImage(url)" />
@@ -33,6 +33,8 @@ const props = defineProps<{
   trigger: boolean | undefined;
   id: number | undefined;
   file: string | File | null;
+  height: number;
+  width: number;
 }>();
 const url = ref<string>("");
 
