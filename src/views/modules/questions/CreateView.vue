@@ -34,7 +34,7 @@
           v-model:content="question.content"
           v-model:type="question.type"
           v-model:file="question.file"
-          @changeType="changeQuestionType($event, index)"
+          @changeType="changeQuestionType($event, index_1)"
           ref="validate"
         />
         <v-divider class="border-opacity-100" />

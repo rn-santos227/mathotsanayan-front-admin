@@ -25,14 +25,6 @@ export const useQuestionModule = defineStore("questions", {
             formData.append("question_files[]", file);
           }
 
-          item.options.forEach((option) => {
-            option.has_file = 1;
-            const option_file = option.file;
-            if (option_file) {
-              formData.append("option_files[]", option_file);
-            }
-          });
-
           item.corrects.forEach((correct) => {
             correct.has_file = 1;
             const correct_file = correct.file;
@@ -40,7 +32,18 @@ export const useQuestionModule = defineStore("questions", {
               formData.append("correct_files[]", correct_file);
             }
           });
+
+          if (item.type != "word problem") {
+            item.options.forEach((option) => {
+              option.has_file = 1;
+              const option_file = option.file;
+              if (option_file) {
+                formData.append("option_files[]", option_file);
+              }
+            });
+          }
         });
+
         formData.append("questions", JSON.stringify(payload));
         const response = await authenticatedFetch(
           `${api.QUESTIONS.CREATEALL}${module.id}`,
