@@ -10,7 +10,7 @@ export const useTestModule = defineStore("test", {
   }),
 
   actions: {
-    async submit(payload: Answer) {
+    async submit(payload: Answer): Promise<boolean> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(api.TEST.SUBMIT, {
@@ -20,6 +20,10 @@ export const useTestModule = defineStore("test", {
           },
           body: JSON.stringify(payload),
         });
+        const data = await response.json();
+        const { correct } = data;
+
+        return correct as boolean;
       } catch (error) {
         console.error("Error Test in:", error);
         return false;
