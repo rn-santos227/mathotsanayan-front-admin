@@ -80,6 +80,7 @@
                   prepend-icon="mdi-plus"
                   block
                   @click.prevent="addCorrect(index_1)"
+                  :disabled="question.type == 'single correct'"
                 >
                   Add Correct Answers
                 </v-btn>
@@ -257,6 +258,11 @@ const changeQuestionType = (type: string, index: number) => {
         file: null,
       },
     ];
+    if (type === "single correct") {
+      const _corrects = [] as Correct[];
+      _corrects.push(questions[index].corrects[0]);
+      questions[index].corrects = _corrects;
+    }
   } else {
     questions[index].options = [];
   }
