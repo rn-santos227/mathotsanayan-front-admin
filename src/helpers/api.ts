@@ -62,6 +62,10 @@ export default {
     DELETE: `${BACKEND}subjects/`,
   },
 
+  TEST: {
+    SUBMIT: `${BACKEND}test`,
+  },
+
   TEACHERS: {
     CREATE: `${BACKEND}teachers/create`,
     READ: `${BACKEND}teachers`,
