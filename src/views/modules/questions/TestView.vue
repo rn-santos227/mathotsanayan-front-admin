@@ -120,7 +120,7 @@ const close = () => {
 
 <style scoped>
 .question-height {
-  height: calc(100vh - 280px);
+  height: calc(100vh - 310px);
   overflow-y: auto;
 }
 </style>
