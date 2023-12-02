@@ -1,7 +1,7 @@
 <template>
   <v-row class="mt-1 mx-2">
     <v-col>
-      <EditorComponent
+      <v-textarea
         rows="3"
         v-model.trim="content"
         label="Question Content/Instruction"

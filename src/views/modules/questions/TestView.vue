@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="690">
+      <v-card height="700">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -120,7 +120,7 @@ const close = () => {
 
 <style scoped>
 .question-height {
-  height: calc(100vh - 400px);
+  height: calc(100vh - 665px);
   overflow-y: auto;
 }
 </style>
