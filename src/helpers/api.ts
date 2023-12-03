@@ -63,7 +63,7 @@ export default {
   },
 
   TEST: {
-    SUBMIT: `${BACKEND}test`,
+    SUBMIT: `${BACKEND}test/`,
   },
 
   TEACHERS: {

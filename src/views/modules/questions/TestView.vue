@@ -112,7 +112,10 @@
       </v-card>
     </v-dialog>
   </v-list-item>
+  <CorrectComponent ref="correct" />
   <InformationComponent ref="info" />
+  <LoadingComponent :activate="useTestModule().isLoading" />
+  <WrongComponent ref="wrong" />
 </template>
 
 <script setup lang="ts">
@@ -121,13 +124,29 @@ import { useTestModule } from "@/store/modules/test_module";
 import { padLeft } from "@/helpers/utils";
 
 import ImageComponent from "@/components/ImageComponent.vue";
+
+import CorrectComponent from "@/components/dialogs/CorrectComponent.vue";
+import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
 import InformationComponent from "@/components/dialogs/InformationComponent.vue";
+import WrongComponent from "@/components/dialogs/WrongComponent.vue";
 
 import Question from "@/types/Question";
 import Answer from "@/types/Answer";
 
 const dialog = ref<boolean>(false);
 const info = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const correct = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
+const wrong = ref({
   show: (message: string) => {
     return message;
   },
@@ -140,7 +159,7 @@ const props = defineProps<{
 const state = reactive<Answer>({
   content: "",
   module: props.question.module,
-  question: props.question,
+  question: props.question.id,
 });
 
 const close = () => {
@@ -149,12 +168,15 @@ const close = () => {
 
 const submit = async () => {
   if (state.content) {
-    const correct = await useTestModule().submit(state);
-    if (correct) {
-      //
-    } else {
-      //
-    }
+    useTestModule()
+      .submit(state)
+      .then((response) => {
+        if (response?.correct) {
+          correct.value.show(response?.solution);
+        } else {
+          wrong.value.show(response?.solution);
+        }
+      });
   } else {
     info.value.show("You have not provided an answer.");
   }

@@ -9,7 +9,7 @@ interface Answer {
   updated_at?: string;
   deleted_at?: string;
   module?: number | Module;
-  question: number | Question;
+  question?: number | Question;
   student?: number | Student;
 }
 export default Answer;

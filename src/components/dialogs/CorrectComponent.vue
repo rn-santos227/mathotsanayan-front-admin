@@ -21,8 +21,10 @@
         icon="mdi-check-circle"
         size="112"
       ></v-icon>
-      <h2 class="text-h4 mb-6 text-green-darken-4">CORRECT</h2>
-
+      <h2 class="text-h4 mb-6 text-green-darken-4">THE ANSWER IS CORRECT</h2>
+      <span class="ma-4">
+        {{ text }}
+      </span>
       <v-divider class="mb-2 mt-6" />
       <v-card-actions>
         <v-spacer></v-spacer>

@@ -10,23 +10,25 @@ export const useTestModule = defineStore("test", {
   }),
 
   actions: {
-    async submit(payload: Answer): Promise<boolean> {
+    async submit(payload: Answer) {
       try {
         this.isLoading = true;
-        const response = await authenticatedFetch(api.TEST.SUBMIT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
+        const response = await authenticatedFetch(
+          api.TEST.SUBMIT + payload.question,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
         const data = await response.json();
-        const { correct } = data;
+        const { correct, solution } = data;
 
-        return correct as boolean;
+        return { correct, solution };
       } catch (error) {
         console.error("Error Test in:", error);
-        return false;
       } finally {
         this.isLoading = false;
       }
