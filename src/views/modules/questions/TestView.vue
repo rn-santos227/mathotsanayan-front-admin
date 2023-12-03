@@ -73,9 +73,19 @@
                 <v-card
                   v-for="(option, index) in props.question.options"
                   :key="index"
-                  class="ma-2 pa-4"
+                  class="ma-2"
+                  :color="changeColor(option.content)"
                 >
-                  <v-radio :label="option.content" :value="option.content" />
+                  <v-card-text>
+                    <v-row>
+                      <v-col v-if="option.file" cols="1"></v-col>
+                      <v-col>
+                        <v-radio
+                          :label="option.content"
+                          :value="option.content"
+                      /></v-col>
+                    </v-row>
+                  </v-card-text>
                 </v-card>
               </v-radio-group>
             </v-row>
@@ -91,6 +101,7 @@
                   dark
                   color="success"
                   prepend-icon="mdi-check"
+                  @click.prevent="submit"
                 >
                   Submit
                 </v-btn>
@@ -126,6 +137,14 @@ const state = reactive<Answer>({
 
 const close = () => {
   dialog.value = !dialog.value;
+};
+
+const submit = async () => {
+  console.log(state.content);
+};
+
+const changeColor = (content: string) => {
+  return content === state.content ? "purple-darken-3" : "white";
 };
 </script>
 
