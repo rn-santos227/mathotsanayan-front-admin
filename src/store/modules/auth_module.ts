@@ -45,8 +45,10 @@ export const useAuthModule = defineStore("auth", {
 
         const data = await response.json();
         const { token, admin } = data;
-        this.setAdmin(admin);
-        this.setToken(token);
+        if (token) {
+          this.setAdmin(admin);
+          this.setToken(token);
+        }
       } catch (error) {
         console.error("Error logging in:", error);
         throw error;
