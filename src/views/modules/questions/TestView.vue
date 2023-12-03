@@ -112,18 +112,26 @@
       </v-card>
     </v-dialog>
   </v-list-item>
+  <InformationComponent ref="info" />
 </template>
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+import { useTestModule } from "@/store/modules/test_module";
 import { padLeft } from "@/helpers/utils";
 
 import ImageComponent from "@/components/ImageComponent.vue";
+import InformationComponent from "@/components/dialogs/InformationComponent.vue";
 
 import Question from "@/types/Question";
 import Answer from "@/types/Answer";
 
 const dialog = ref<boolean>(false);
+const info = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 
 const props = defineProps<{
   question: Question;
@@ -140,7 +148,16 @@ const close = () => {
 };
 
 const submit = async () => {
-  console.log(state.content);
+  if (state.content) {
+    const correct = await useTestModule().submit(state);
+    if (correct) {
+      //
+    } else {
+      //
+    }
+  } else {
+    info.value.show("You have not provided an answer.");
+  }
 };
 
 const changeColor = (content: string) => {

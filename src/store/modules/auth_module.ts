@@ -1,4 +1,3 @@
-import User from "@/types/User";
 import Admin from "@/types/Admin";
 import api from "@/helpers/api";
 
@@ -6,10 +5,9 @@ import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
 export const useAuthModule = defineStore("auth", {
-  state: (): User => ({
-    id: 0,
+  state: () => ({
     type: 1 as number,
-    admin: null,
+    admin: <Admin>{},
     accessToken: localStorage.getItem("accessToken") || null,
     isAuthenticated: !!localStorage.getItem("accessToken"),
     isLoading: false,
@@ -17,13 +15,7 @@ export const useAuthModule = defineStore("auth", {
 
   actions: {
     setAdmin(admin: Admin): void {
-      this.id = admin.id;
-      this.admin = {
-        id: admin.id,
-        email: admin.email,
-        name: admin.name,
-        contact_number: admin.contact_number,
-      };
+      this.admin = admin;
     },
 
     setToken(token: string): void {
@@ -63,8 +55,8 @@ export const useAuthModule = defineStore("auth", {
         this.isLoading = true;
         const response = await authenticatedFetch(api.AUTH.USER);
         const data = await response.json();
-        const { user } = data;
-        this.setAdmin(user);
+        const { admin } = data;
+        this.setAdmin(admin);
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;
@@ -79,7 +71,7 @@ export const useAuthModule = defineStore("auth", {
         await authenticatedFetch(api.AUTH.LOGOUT);
         this.accessToken = null;
         this.isAuthenticated = false;
-        this.admin = null;
+        this.admin = <Admin>{};
         localStorage.removeItem("accessToken");
       } catch (error) {
         console.error("Error fetching user data:", error);
