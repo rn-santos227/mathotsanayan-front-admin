@@ -54,6 +54,7 @@
                 />
               </v-col>
             </v-row>
+            <v-divider class="my-4" />
             <v-row v-if="props.question.type == 'word problem'">
               <v-col>
                 <v-text-field
@@ -67,7 +68,17 @@
             </v-row>
             <v-row v-else-if="props.question.type == 'multiple selection'">
             </v-row>
-            <v-row v-else-if="props.question.type == 'single correct'"> </v-row>
+            <v-row v-else-if="props.question.type == 'single correct'">
+              <v-radio-group class="ma-6" v-model.trim="state.content">
+                <v-card
+                  v-for="(option, index) in props.question.options"
+                  :key="index"
+                  class="ma-2 pa-4"
+                >
+                  <v-radio :label="option.content" :value="option.content" />
+                </v-card>
+              </v-radio-group>
+            </v-row>
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
