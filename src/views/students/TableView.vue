@@ -15,7 +15,7 @@
           {{ item.email }}
         </td>
         <td class="text-xs-left">
-          {{ item?.school }}
+          {{ getSchoolName(item?.school) }}
         </td>
         <td class="text-xs-left">
           {{ formatDate(item.created_at) }}
@@ -48,6 +48,7 @@ import {
   useSectionModule,
 } from "@/store";
 import { formatDate } from "@/helpers/utils";
+import { getSchoolName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
