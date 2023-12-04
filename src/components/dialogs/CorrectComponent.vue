@@ -22,9 +22,11 @@
         size="112"
       ></v-icon>
       <h2 class="text-h4 mb-6 text-green-darken-4">THE ANSWER IS CORRECT</h2>
-      <span class="ma-4">
-        {{ text }}
-      </span>
+      <div class="mx-6">
+        <span>
+          {{ text }}
+        </span>
+      </div>
       <v-divider class="mb-2 mt-6" />
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -37,6 +39,7 @@
 </template>
 
 <script setup lang="ts">
+import Correct from "@/types/Correct";
 import { ref } from "vue";
 
 const dialog = ref<boolean>(false);
@@ -46,8 +49,8 @@ const confirm = () => {
   dialog.value = false;
 };
 
-const show = (message: string) => {
-  text.value = message;
+const show = (correct: Correct) => {
+  text.value = correct.solution;
   dialog.value = true;
 };
 

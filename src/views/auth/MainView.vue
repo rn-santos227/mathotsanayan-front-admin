@@ -84,8 +84,8 @@ const info = ref({
 
 const show = ref<boolean>(false);
 const state = reactive<Login>({
-  email: "mathotsanayan@gmail.com",
-  password: "Test@12345",
+  email: "",
+  password: "",
 });
 
 const errors = computed(() => useValidationErrors<Login>(v$.value.$errors));
