@@ -88,6 +88,12 @@ export const useModuleModule = defineStore("modules", {
         const response = await authenticatedFetch(api.MODULES.READ);
         const data = await response.json();
         const { modules } = data;
+        if (modules) {
+          modules.forEach((item: Module) => {
+            if (item.active) item.active = true;
+            else item.active = false;
+          });
+        }
         this.setModules(modules);
         return true;
       } catch (error) {
