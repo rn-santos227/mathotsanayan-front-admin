@@ -1,7 +1,7 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-checkbox-marked-circle-outline"></v-icon> Test
+      <v-icon icon="mdi-lead-pencil"></v-icon> Test
     </v-list-item-title>
     <v-dialog
       class="ma-auto"

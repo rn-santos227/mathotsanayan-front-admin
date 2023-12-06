@@ -37,6 +37,15 @@
               <v-menu activator="parent">
                 <v-list density="compact" variant="plain">
                   <TestView v-bind:question="item" />
+                  <CorrectsView
+                    v-bind:question="item"
+                    v-bind:index="table_props.index"
+                  />
+                  <OptionsView
+                    v-if="item.type !== 'word problem'"
+                    v-bind:question="item"
+                    v-bind:index="table_props.index"
+                  />
                   <UpdateView
                     v-bind:question="item"
                     v-bind:index="table_props.index"
@@ -62,6 +71,8 @@ import { useQuestionModule } from "@/store";
 import { formatDate } from "@/helpers/utils";
 
 import TestView from "./TestView.vue";
+import CorrectsView from "./corrects/CorrectsView.vue";
+import OptionsView from "./options/OptionsView.vue";
 import DeleteView from "./DeleteView.vue";
 import UpdateView from "./UpdateView.vue";
 

@@ -8,6 +8,12 @@ export default {
     USER: `${BACKEND}user/1`,
   },
 
+  CORRECTS: {
+    CREATE: `${BACKEND}corrects/create/`,
+    UPDATE: `${BACKEND}corrects/`,
+    DELETE: `${BACKEND}corrects/`,
+  },
+
   COURSES: {
     CREATE: `${BACKEND}courses/create`,
     READ: `${BACKEND}courses`,
@@ -24,6 +30,12 @@ export default {
     READ: `${BACKEND}modules`,
     UPDATE: `${BACKEND}modules/`,
     DELETE: `${BACKEND}modules/`,
+  },
+
+  OPTIONS: {
+    CREATE: `${BACKEND}options/create/`,
+    UPDATE: `${BACKEND}options/`,
+    DELETE: `${BACKEND}options/`,
   },
 
   QUESTIONS: {
