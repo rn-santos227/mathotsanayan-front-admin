@@ -60,6 +60,7 @@
                       prepend-icon="mdi-plus"
                       block
                       @click.prevent="addOption()"
+                      ref="validate"
                     >
                       Add Options
                     </v-btn>
@@ -187,9 +188,6 @@ const state = reactive<Question>({ ...props.question });
 
 const close = () => {
   dialog.value = !dialog.value;
-  validate.value.forEach((v) => {
-    v.reset();
-  });
 };
 
 const checkList = (list: Option[] | Correct[] | null | undefined): boolean => {
