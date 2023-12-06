@@ -34,6 +34,7 @@
           v-model:content="question.content"
           v-model:type="question.type"
           v-model:file="question.file"
+          v-bind:row="3"
           @changeType="changeQuestionType($event, index_1)"
           ref="validate"
         />
@@ -325,7 +326,7 @@ const tab = () => {
 }
 
 .question-height {
-  height: calc(100vh - 300px);
+  height: calc(100vh - 400px);
   overflow-y: auto;
 }
 </style>

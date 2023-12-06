@@ -2,7 +2,7 @@
   <v-row class="mt-1 mx-2">
     <v-col>
       <v-textarea
-        rows="3"
+        :rows="row"
         v-model.trim="content"
         label="Question Content/Instruction"
         density="compact"
@@ -55,6 +55,7 @@ const props = defineProps<{
   content: string;
   type: string;
   file: File | null;
+  row: number;
 }>();
 
 const emit = defineEmits([
