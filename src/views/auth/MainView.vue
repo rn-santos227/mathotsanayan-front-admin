@@ -51,8 +51,8 @@
       </form>
     </v-card>
   </v-container>
-  <ErrorComponent ref="error" />
-  <InformationComponent ref="info" />
+  <ErrorDialogComponent ref="error" />
+  <InformationDialogComponent ref="info" />
 </template>
 
 <script setup lang="ts">
@@ -62,8 +62,8 @@ import { useValidationErrors } from "@/services/handlers";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import InformationComponent from "@/components/dialogs/InformationComponent.vue";
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
+import InformationDialogComponent from "@/components/dialogs/InformationDialogComponent.vue";
 import Login from "@/types/Login";
 import rules from "@/helpers/rules/rules_login";
 

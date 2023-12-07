@@ -190,9 +190,9 @@
       </v-card>
     </v-dialog>
   </v-btn>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useTeacherModule().isLoading" />
+  <SuccessDialogComponent ref="success" />
+  <ErrorDialogComponent ref="error" />
+  <LoadingDialogComponent v-bind:activate="useTeacherModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -201,9 +201,9 @@ import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeacherModule, useSchoolModule } from "@/store";
 
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
+import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";

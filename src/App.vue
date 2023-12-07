@@ -5,7 +5,7 @@
     <v-main app>
       <router-view />
     </v-main>
-    <LoadingComponent v-bind:activate="authModule.isLoading" />
+    <LoadingDialogComponent v-bind:activate="authModule.isLoading" />
   </v-app>
 </template>
 
@@ -15,7 +15,7 @@ import { useAuthModule } from "./store";
 
 import HeaderComponent from "./components/HeaderComponent.vue";
 import NavigationComponent from "./components/NavigationComponent.vue";
-import LoadingComponent from "./components/dialogs/LoadingComponent.vue";
+import LoadingDialogComponent from "./components/dialogs/LoadingDialogComponent.vue";
 
 const authModule = useAuthModule();
 const title = ref<string>("Mathotsanayan Admin");

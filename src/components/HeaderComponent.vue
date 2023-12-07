@@ -44,7 +44,7 @@
       </v-menu>
     </div>
   </v-app-bar>
-  <QuestionComponent ref="confirm" @confirm="handeConfirm" />
+  <QuestionDialogComponent ref="confirm" @confirm="handeConfirm" />
 </template>
 
 <script setup lang="ts">
@@ -52,7 +52,7 @@ import { ref } from "vue";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
-import QuestionComponent from "./dialogs/QuestionComponent.vue";
+import QuestionDialogComponent from "./dialogs/QuestionDialogComponent.vue";
 
 const confirm = ref({
   show: (message: string) => {

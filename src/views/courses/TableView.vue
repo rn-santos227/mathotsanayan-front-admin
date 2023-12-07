@@ -29,9 +29,9 @@
       </tr>
     </template>
   </v-data-table>
-  <SuccessComponent ref="success" />
-  <ErrorComponent ref="error" />
-  <LoadingComponent v-bind:activate="useCourseModule().isLoading" />
+  <SuccessDialogComponent ref="success" />
+  <ErrorDialogComponent ref="error" />
+  <LoadingDialogComponent v-bind:activate="useCourseModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -41,9 +41,9 @@ import { formatDate } from "@/helpers/utils";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
-import SuccessComponent from "@/components/dialogs/SuccessComponent.vue";
-import ErrorComponent from "@/components/dialogs/ErrorComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
+import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
+import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
 import headers from "@/helpers/headers/header_courses";
 import Course from "@/types/Course";

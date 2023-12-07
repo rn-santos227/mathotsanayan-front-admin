@@ -112,10 +112,10 @@
       </v-card>
     </v-dialog>
   </v-list-item>
-  <CorrectComponent ref="correct" />
-  <InformationComponent ref="info" />
-  <LoadingComponent :activate="useTestModule().isLoading" />
-  <WrongComponent ref="wrong" />
+  <CorrectDialogComponent ref="correct" />
+  <InformationDialogComponent ref="info" />
+  <LoadingDialogComponent :activate="useTestModule().isLoading" />
+  <WrongDialogComponent ref="wrong" />
 </template>
 
 <script setup lang="ts">
@@ -125,10 +125,10 @@ import { padLeft } from "@/helpers/utils";
 
 import ImageComponent from "@/components/ImageComponent.vue";
 
-import CorrectComponent from "@/components/dialogs/CorrectComponent.vue";
-import LoadingComponent from "@/components/dialogs/LoadingComponent.vue";
-import InformationComponent from "@/components/dialogs/InformationComponent.vue";
-import WrongComponent from "@/components/dialogs/WrongComponent.vue";
+import CorrectDialogComponent from "@/components/dialogs/CorrectDialogComponent.vue";
+import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
+import InformationDialogComponent from "@/components/dialogs/InformationDialogComponent.vue";
+import WrongDialogComponent from "@/components/dialogs/WrongDialogComponent.vue";
 
 import Question from "@/types/Question";
 import Answer from "@/types/Answer";
