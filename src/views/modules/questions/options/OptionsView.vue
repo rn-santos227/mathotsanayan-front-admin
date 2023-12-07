@@ -33,14 +33,37 @@
             </v-row>
           </v-card-title>
         </v-card>
+        <v-card-text class="option-height pa-8">
+          <form>
+            <CreateView
+              v-bind:question="props.question"
+              v-bind:index="props.index"
+              @close="close"
+            />
+          </form>
+          <form>
+            <UpdateView
+              class="my-4"
+              v-for="(option, index) in props.question.options"
+              v-bind:key="index"
+              v-bind:question="props.question"
+              v-bind:option="option"
+              v-bind:index="props.index"
+              @close="close"
+            />
+          </form>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-list-item>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { padLeft } from "@/helpers/utils";
+
+import CreateView from "./CreateView.vue";
+import UpdateView from "./UpdateView.vue";
 
 import Question from "@/types/Question";
 
@@ -49,9 +72,23 @@ const props = defineProps<{
   question: Question;
 }>();
 
+watch(
+  () => props.question.options,
+  () => {
+    return props.question.options;
+  }
+);
+
 const dialog = ref<boolean>(false);
 
 const close = () => {
   dialog.value = !dialog.value;
 };
 </script>
+
+<style scoped>
+.option-height {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+</style>

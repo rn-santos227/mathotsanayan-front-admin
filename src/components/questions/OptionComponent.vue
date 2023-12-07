@@ -8,7 +8,7 @@
       <v-card-title>
         <v-row>
           <v-col>
-            <span class="text-h6"> Option # {{ index + 1 }} </span>
+            <span class="text-h6"> {{ displayTitle() }} </span>
           </v-col>
           <v-col class="d-flex">
             <v-spacer />
@@ -63,6 +63,7 @@ import rules from "@/helpers/rules/rules_options";
 const input_file = ref<File[]>([]);
 const props = defineProps<{
   content: string;
+  title: string | undefined;
   file: File | null;
   index: number;
   check: boolean;
@@ -95,6 +96,14 @@ const validate = (): boolean => {
 
 const reset = () => {
   v$.value.$reset();
+};
+
+const displayTitle = () => {
+  if (props.title) {
+    return props.title;
+  } else {
+    return "Option # " + (props.index + 1);
+  }
 };
 
 defineExpose({

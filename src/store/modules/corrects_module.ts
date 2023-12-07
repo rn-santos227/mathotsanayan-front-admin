@@ -12,10 +12,7 @@ export const useCorrectModule = defineStore("corrects", {
   }),
 
   actions: {
-    async create(
-      payload: Correct,
-      question: Question
-    ): Promise<Correct[] | null> {
+    async create(payload: Correct, question: Question): Promise<Question[]> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -34,17 +31,17 @@ export const useCorrectModule = defineStore("corrects", {
           }
         );
         const data = await response.json();
-        const { corrects } = data;
-        return corrects;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Correct in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
       }
     },
 
-    async update(payload: Correct): Promise<Correct[] | null> {
+    async update(payload: Correct): Promise<Question[]> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -64,18 +61,18 @@ export const useCorrectModule = defineStore("corrects", {
         );
 
         const data = await response.json();
-        const { corrects } = data;
-        return corrects;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Correct in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
         this.isTableLoading = false;
       }
     },
 
-    async delete(payload: Correct): Promise<Correct[] | null> {
+    async delete(payload: Correct): Promise<Question[]> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
@@ -90,11 +87,11 @@ export const useCorrectModule = defineStore("corrects", {
         );
 
         const data = await response.json();
-        const { corrects } = data;
-        return corrects;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Correct in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
       }

@@ -12,10 +12,7 @@ export const useOptionModule = defineStore("options", {
   }),
 
   actions: {
-    async create(
-      payload: Option,
-      question: Question
-    ): Promise<Option[] | null> {
+    async create(payload: Option, question: Question): Promise<Question[]> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -34,17 +31,17 @@ export const useOptionModule = defineStore("options", {
           }
         );
         const data = await response.json();
-        const { options } = data;
-        return options;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Question in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
       }
     },
 
-    async update(payload: Option): Promise<Option[] | null> {
+    async update(payload: Option): Promise<Question[]> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -64,18 +61,18 @@ export const useOptionModule = defineStore("options", {
         );
 
         const data = await response.json();
-        const { options } = data;
-        return options;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Question in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
         this.isTableLoading = false;
       }
     },
 
-    async delete(payload: Option): Promise<Option[] | null> {
+    async delete(payload: Option): Promise<Question[]> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
@@ -90,11 +87,11 @@ export const useOptionModule = defineStore("options", {
         );
 
         const data = await response.json();
-        const { options } = data;
-        return options;
+        const { questions } = data;
+        return questions;
       } catch (error) {
         console.error("Error Option in:", error);
-        return null;
+        return [];
       } finally {
         this.isLoading = false;
       }

@@ -22,6 +22,15 @@
         size="112"
       ></v-icon>
       <h2 class="text-h4 mb-6 text-green-darken-4">THE ANSWER IS CORRECT</h2>
+      <ImageComponent
+        class="mx-auto my-12"
+        v-if="url"
+        v-bind:id="id"
+        v-bind:height="250"
+        v-bind:width="250"
+        v-bind:file="url"
+        v-bind:trigger="dialog"
+      />
       <div class="mx-6">
         <span>
           {{ text }}
@@ -40,17 +49,22 @@
 
 <script setup lang="ts">
 import Correct from "@/types/Correct";
+import ImageComponent from "../ImageComponent.vue";
 import { ref } from "vue";
 
 const dialog = ref<boolean>(false);
+const id = ref<number | undefined>(0);
 const text = ref<string>("");
+const url = ref<string | File | null>(null);
 
 const confirm = () => {
   dialog.value = false;
 };
 
 const show = (correct: Correct) => {
+  id.value = correct.id;
   text.value = correct.solution;
+  url.value = correct.file;
   dialog.value = true;
 };
 

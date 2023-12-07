@@ -4,7 +4,7 @@
       <v-card-title>
         <v-row>
           <v-col>
-            <span class="text-h6"> Correct Answer # {{ index + 1 }} </span>
+            <span class="text-h6"> {{ displayTitle() }} </span>
           </v-col>
           <v-col class="d-flex">
             <v-spacer />
@@ -73,6 +73,7 @@ const props = defineProps<{
   content: string;
   solution: string;
   file: File | null;
+  title: string | undefined;
   index: number;
   check: boolean;
 }>();
@@ -116,6 +117,14 @@ const validate = (): boolean => {
 
 const reset = () => {
   v$.value.$reset();
+};
+
+const displayTitle = () => {
+  if (props.title) {
+    return props.title;
+  } else {
+    return "Correct # " + (props.index + 1);
+  }
 };
 
 defineExpose({
