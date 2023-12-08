@@ -1,16 +1,27 @@
 <template>
   <div>
-    <CorrectComponent
-      v-model:content="state.content"
-      v-model:file="state.file"
-      v-model:solution="state.solution"
-      v-bind:title="'Update Option'"
-      :index="index"
-      :check="true"
-      @remove="remove"
-      ref="validate"
-    />
-    <v-divider class="mb-2"></v-divider>
+    <div class="d-flex flex-row">
+      <ImageComponent
+        class="ma-4 flex-1-0"
+        v-bind:id="state.id"
+        v-bind:file="state.file"
+        v-bind:height="350"
+        v-bind:width="350"
+        v-model:trigger="trigger"
+      />
+      <CorrectComponent
+        class="flex-1-1-100"
+        v-model:content="state.content"
+        v-model:file="state.file"
+        v-model:solution="state.solution"
+        v-bind:title="'Update Option'"
+        :index="index"
+        :check="true"
+        @remove="remove"
+        ref="validate"
+      />
+    </div>
+    <v-divider class="mb-2" />
     <v-btn color="teal-darken-2" block @click.prevent="submit">
       Submit Update Correct Answer
     </v-btn>
@@ -22,11 +33,13 @@ import { inject, ref, reactive } from "vue";
 import { useModuleModule } from "@/store";
 import { useCorrectModule } from "@/store";
 
+import ImageComponent from "@/components/ImageComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
 import Question from "@/types/Question";
 import Correct from "@/types/Correct";
 
+const trigger = ref<boolean>(false);
 const validate = ref({
   validate: (): boolean => {
     return false;
