@@ -28,9 +28,6 @@
           <td class="text-xs-left">
             {{ item?.corrects.length }}
           </td>
-          <td class="text-xs-left">
-            {{ formatDate(item?.created_at) }}
-          </td>
           <td>
             <v-btn block color="purple-darken-3" variant="outlined">
               <v-icon size="large">mdi-dots-horizontal</v-icon>
@@ -68,7 +65,6 @@
 import ImageComponent from "@/components/ImageComponent.vue";
 
 import { useQuestionModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
 
 import TestView from "./TestView.vue";
 import CorrectsView from "./corrects/CorrectsView.vue";

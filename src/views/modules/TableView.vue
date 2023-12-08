@@ -17,9 +17,6 @@
         <td class="text-xs-left">
           {{ getSubjectName(item?.subject) }}
         </td>
-        <td class="text-xs-left">
-          {{ formatDate(item.created_at) }}
-        </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
@@ -43,7 +40,6 @@
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
 import { getSubjectName } from "@/helpers/instance";
 
 import QuestionView from "./questions/DialogView.vue";

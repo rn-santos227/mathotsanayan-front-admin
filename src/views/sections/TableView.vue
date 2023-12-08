@@ -17,9 +17,6 @@
         <td class="text-xs-left">
           {{ getTeacherName(item?.teacher) }}
         </td>
-        <td class="text-xs-left">
-          {{ formatDate(item.created_at) }}
-        </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
@@ -42,7 +39,6 @@
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
 import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
 import { getTeacherName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";

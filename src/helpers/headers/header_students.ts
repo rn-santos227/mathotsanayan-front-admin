@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const headers: Array<any> = [
   {
-    title: "Studet Name",
+    title: "Student Name",
     align: "start",
     sortable: true,
     key: "fullname",
   },
   {
-    title: "Studet Email",
+    title: "Student Email",
     align: "start",
     sortable: true,
     key: "email",
@@ -17,12 +17,6 @@ const headers: Array<any> = [
     align: "start",
     sortable: true,
     key: "school.name",
-  },
-  {
-    title: "Date Created",
-    align: "start",
-    sortable: true,
-    key: "created_at",
   },
   {
     title: "Action",

@@ -7,12 +7,6 @@ const headers: Array<any> = [
     key: "full_name",
   },
   {
-    title: "Date Created",
-    align: "start",
-    sortable: true,
-    key: "created_at",
-  },
-  {
     title: "Action",
     align: "end",
     sortable: false,

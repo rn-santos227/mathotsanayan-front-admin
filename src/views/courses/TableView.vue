@@ -11,10 +11,6 @@
         <td class="text-xs-left">
           {{ item.name }}
         </td>
-
-        <td class="text-xs-left">
-          {{ formatDate(item.created_at) }}
-        </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
@@ -37,7 +33,6 @@
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
 import { useCourseModule } from "@/store";
-import { formatDate } from "@/helpers/utils";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
