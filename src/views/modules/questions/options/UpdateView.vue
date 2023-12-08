@@ -15,7 +15,7 @@
         v-model:file="state.file"
         v-bind:title="'Update Option'"
         :index="index"
-        :check="true"
+        :check="checkCount()"
         @remove="remove"
         ref="validate"
       />
@@ -74,6 +74,10 @@ const props = defineProps<{
 }>();
 
 const state = reactive<Option>({ ...props.option });
+
+const checkCount = (): boolean => {
+  return props.question.corrects.length > 1;
+};
 
 const submit = async () => {
   let errors = false;
