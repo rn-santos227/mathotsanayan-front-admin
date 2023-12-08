@@ -99,16 +99,14 @@ const error = inject("error", {
   },
 });
 
-const validate = ref([
-  {
-    validate: (): boolean => {
-      return false;
-    },
-    reset: () => {
-      return null;
-    },
+const validate = ref({
+  validate: (): boolean => {
+    return false;
   },
-]);
+  reset: () => {
+    return null;
+  },
+});
 
 const props = defineProps<{
   index: number;
@@ -141,18 +139,12 @@ const resetForm = () => {
   state.file = props.question.file;
   state.options = props.question.options;
   state.corrects = props.question.corrects;
-  validate.value.forEach((v) => {
-    v.reset();
-  });
+  validate.value.reset();
 };
 
 const submit = async () => {
   let errors = false;
-  validate.value.forEach((v) => {
-    if (v.validate()) {
-      errors = true;
-    }
-  });
+  if (validate.value.validate()) errors = true;
   if (errors) return;
   try {
     useQuestionModule()
