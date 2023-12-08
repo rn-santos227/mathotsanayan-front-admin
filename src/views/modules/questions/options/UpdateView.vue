@@ -1,14 +1,26 @@
 <template>
   <div>
-    <OptionComponent
-      v-model:content="state.content"
-      v-model:file="state.file"
-      v-bind:title="'Update Option'"
-      :index="index"
-      :check="true"
-      @remove="remove"
-      ref="validate"
-    />
+    <div class="d-flex flex-row">
+      <ImageComponent
+        class="ma-4 flex-1-0"
+        v-bind:id="state.id"
+        v-bind:file="state.file"
+        v-bind:height="350"
+        v-bind:width="350"
+        v-model:trigger="trigger"
+      />
+      <OptionComponent
+        class="flex-1-1-100"
+        v-model:content="state.content"
+        v-model:file="state.file"
+        v-bind:title="'Update Option'"
+        :index="index"
+        :check="true"
+        @remove="remove"
+        ref="validate"
+      />
+    </div>
+
     <v-divider class="mb-2"></v-divider>
     <v-btn color="light-blue-darken-2" block @click.prevent="submit">
       Submit Update Option
@@ -21,11 +33,13 @@ import { inject, ref, reactive } from "vue";
 import { useModuleModule } from "@/store";
 import { useOptionModule } from "@/store";
 
+import ImageComponent from "@/components/ImageComponent.vue";
 import OptionComponent from "@/components/questions/OptionComponent.vue";
 
 import Question from "@/types/Question";
 import Option from "@/types/Option";
 
+const trigger = ref<boolean>(false);
 const validate = ref({
   validate: (): boolean => {
     return false;
