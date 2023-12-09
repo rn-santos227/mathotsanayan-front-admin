@@ -76,7 +76,7 @@ const props = defineProps<{
 const state = reactive<Option>({ ...props.option });
 
 const checkCount = (): boolean => {
-  return props.question.corrects.length > 1;
+  return props.question.options.length > 1;
 };
 
 const submit = async () => {

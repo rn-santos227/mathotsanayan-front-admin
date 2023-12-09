@@ -4,7 +4,7 @@
       <v-card
         :height="props.height"
         :width="props.width"
-        class="ma-auto text-center pa-4"
+        class="d-flex align-center justify-center"
       >
         <v-progress-circular
           width="16"
