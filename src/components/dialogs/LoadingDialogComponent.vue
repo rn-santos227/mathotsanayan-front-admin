@@ -1,12 +1,12 @@
 <template>
   <v-dialog v-model="dialog">
     <v-sheet
-      class="ma-auto text-center mx-auto"
+      class="ma-auto"
       elevation="12"
       max-width="550"
       rounded="lg"
       width="100%"
-      height="40vh"
+      height="400px"
     >
       <v-card class="rounded-0 rounded-t mb-2" color="purple-darken-3" flat>
         <v-card-text class="text-left">
@@ -16,16 +16,18 @@
           </span>
         </v-card-text>
       </v-card>
-      <div class="py-12 my-3">
-        <v-progress-circular
-          color="purple-darken-3"
-          width="16"
-          size="160"
-          indeterminate
-        >
-          Loading
-        </v-progress-circular>
-      </div>
+      <v-card height="300px" elevation="0">
+        <div class="d-flex align-center justify-center fill-height">
+          <v-progress-circular
+            color="purple-darken-3"
+            width="16"
+            size="160"
+            indeterminate
+          >
+            Loading
+          </v-progress-circular>
+        </div>
+      </v-card>
     </v-sheet>
   </v-dialog>
 </template>
