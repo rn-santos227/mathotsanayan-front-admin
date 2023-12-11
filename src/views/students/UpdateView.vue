@@ -242,7 +242,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive, computed, watch } from "vue";
+import { inject, ref, reactive, computed, watch, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import {
@@ -254,7 +254,7 @@ import {
 
 import Student from "@/types/Student";
 import VStudent from "@/helpers/validations/v_students";
-import { rules, rules_password } from "@/helpers/rules/rules_students";
+import { rules, rules_password } from "@/helpers/rules/rules_update_student";
 import { padLeft } from "@/helpers/utils";
 
 const show = ref<boolean>(false);
@@ -283,6 +283,12 @@ const state = reactive<Student>({ ...props.student });
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VStudent>(v$.value.$errors));
 
+onMounted(() => {
+  state.password = "";
+  state.password_confirm = "";
+  rules_password.value = "";
+});
+
 watch(
   () => state.password,
   (pword: string) => {
@@ -303,6 +309,7 @@ const resetForm = () => {
   state.section = props.student.section;
   state.password = "";
   state.password_confirm = "";
+  rules_password.value = "";
   v$.value.$reset();
 };
 

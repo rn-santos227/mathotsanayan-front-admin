@@ -197,14 +197,14 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive, computed, watch } from "vue";
+import { inject, ref, reactive, computed, watch, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeacherModule, useSchoolModule } from "@/store";
 
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";
-import { rules, rules_password } from "@/helpers/rules/rules_teachers";
+import { rules, rules_password } from "@/helpers/rules/rules_update_teacher";
 import { padLeft } from "@/helpers/utils";
 
 const show = ref<boolean>(false);
@@ -233,6 +233,12 @@ const state = reactive<Teacher>({ ...props.teacher });
 
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VTeacher>(v$.value.$errors));
+
+onMounted(() => {
+  state.password = "";
+  state.password_confirm = "";
+  rules_password.value = "";
+});
 
 watch(
   () => state.password,

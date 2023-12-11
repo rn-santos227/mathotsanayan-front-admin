@@ -74,7 +74,7 @@ export const useTeacherModule = defineStore("teachers", {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
-          `${api.COURSES.UPDATE}${payload.id}`,
+          `${api.TEACHERS.UPDATE}${payload.id}`,
           {
             method: "PATCH",
             headers: {
