@@ -18,7 +18,7 @@ import NavigationComponent from "./components/NavigationComponent.vue";
 import LoadingDialogComponent from "./components/dialogs/LoadingDialogComponent.vue";
 
 const authModule = useAuthModule();
-const title = ref<string>("Mathotsanayan Admin");
+const title = ref<string>("MatHOTsanayan Admin");
 
 async function fetchUserData() {
   try {

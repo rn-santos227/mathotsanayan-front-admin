@@ -4,7 +4,7 @@
       <v-card class="rounded-0 rounded-t mb-6" color="purple-darken-3" flat>
         <v-card-text>
           <span class="text-subtitle-1 font-weight-bold">
-            Mathotsanayan Admin Login
+            MatHOTSanayan Admin Login
           </span>
         </v-card-text>
       </v-card>
