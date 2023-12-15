@@ -31,7 +31,7 @@
           <td>
             <v-btn block color="purple-darken-3" variant="outlined">
               <v-icon size="large">mdi-dots-horizontal</v-icon>
-              <v-menu activator="parent">
+              <v-menu activator="parent" persistent>
                 <v-list density="compact" variant="plain">
                   <TestView v-bind:question="item" />
                   <CorrectsView
