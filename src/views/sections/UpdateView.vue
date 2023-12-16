@@ -39,7 +39,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.name.$model"
                   label="Course Name"
                   density="compact"
@@ -52,7 +51,6 @@
             <v-row>
               <v-col>
                 <v-autocomplete
-                  class="mx-4"
                   v-model.trim="v$.school.$model"
                   prepend-inner-icon="mdi-school"
                   label="Section School Name"
@@ -69,7 +67,6 @@
             <v-row>
               <v-col>
                 <v-autocomplete
-                  class="mx-4"
                   v-model.trim="v$.teacher.$model"
                   prepend-inner-icon="mdi-human-male-board"
                   label="Teacher Assignment"
@@ -86,7 +83,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.description"
                   label="Course Description/Notes"
                   density="compact"

@@ -37,7 +37,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.name.$model"
                   label="Subject Name"
                   density="compact"
@@ -50,7 +49,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.description"
                   label="Subject Description/Notes"
                   density="compact"

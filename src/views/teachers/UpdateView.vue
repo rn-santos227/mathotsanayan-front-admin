@@ -41,7 +41,6 @@
             <v-row>
               <v-col cols="3">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.first_name.$model"
                   label="First Name"
                   density="compact"
@@ -52,7 +51,6 @@
               </v-col>
               <v-col cols="3">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.middle_name.$model"
                   label="Middle Name"
                   density="compact"
@@ -63,7 +61,6 @@
               </v-col>
               <v-col cols="3">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.last_name.$model"
                   label="Last Name"
                   density="compact"
@@ -74,7 +71,6 @@
               </v-col>
               <v-col cols="3">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.suffix.$model"
                   label="Suffix"
                   density="compact"
@@ -87,7 +83,6 @@
             <v-row>
               <v-col>
                 <v-autocomplete
-                  class="mx-4"
                   v-model.trim="v$.school.$model"
                   prepend-inner-icon="mdi-school"
                   label="School Name"
@@ -104,7 +99,6 @@
             <v-row>
               <v-col cols="6">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.email.$model"
                   autocomplete="email"
                   label="Email Address"
@@ -116,7 +110,6 @@
               </v-col>
               <v-col cols="6">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.contact_number.$model"
                   label="Contact Number (Optional)"
                   density="compact"
@@ -129,7 +122,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4 mt-4"
                   prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password.$model"
                   autocomplete="new-password"
@@ -145,7 +137,6 @@
               </v-col>
               <v-col>
                 <v-text-field
-                  class="mx-4 mt-4"
                   prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password_confirm.$model"
                   autocomplete="new-password"

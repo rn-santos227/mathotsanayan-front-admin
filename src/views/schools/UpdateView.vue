@@ -41,7 +41,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.name.$model"
                   label="School Name"
                   density="compact"
@@ -54,7 +53,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.email.$model"
                   label="School Email (Optional)"
                   density="compact"
@@ -67,7 +65,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.contact_number"
                   label="School Contact Number (Optional)"
                   density="compact"
@@ -78,7 +75,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.address"
                   label="School Address (Optional)"
                   density="compact"
@@ -89,7 +85,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.description"
                   label="School Description/Notes (Optional)"
                   density="compact"
