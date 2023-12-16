@@ -2,7 +2,7 @@ import School from "./School";
 import Teacher from "./Teacher";
 import Student from "./Student";
 
-interface Section {
+type Section = {
   id?: number;
   name: string;
   description: string;
@@ -12,5 +12,6 @@ interface Section {
   school: number | string | School;
   teacher: number | string | Teacher;
   students?: Student[];
-}
+};
+
 export default Section;

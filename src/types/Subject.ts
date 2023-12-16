@@ -1,6 +1,6 @@
 import Module from "./Module";
 
-interface Subject {
+type Subject = {
   id?: number;
   name: string;
   description: string;
@@ -8,5 +8,5 @@ interface Subject {
   updated_at?: string;
   deleted_at?: string;
   modules?: Module[] | null;
-}
+};
 export default Subject;

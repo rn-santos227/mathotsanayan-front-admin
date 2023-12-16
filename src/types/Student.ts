@@ -1,7 +1,7 @@
 import Course from "./Course";
 import School from "./School";
 import Section from "./Section";
-interface Student {
+type Student = {
   id?: number;
   full_name?: string;
   first_name: string;
@@ -19,5 +19,6 @@ interface Student {
   course: number | string | Course;
   school: number | string | School;
   section: number | string | Section;
-}
+};
+
 export default Student;

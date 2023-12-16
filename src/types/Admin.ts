@@ -1,4 +1,4 @@
-interface Admin {
+type Admin = {
   id?: number;
   email: string;
   name: string;
@@ -8,5 +8,5 @@ interface Admin {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-}
+};
 export default Admin;

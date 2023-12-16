@@ -1,6 +1,6 @@
 import School from "./School";
 
-interface Teacher {
+type Teacher = {
   id?: number;
   full_name?: string;
   first_name: string;
@@ -15,5 +15,6 @@ interface Teacher {
   updated_at?: string;
   deleted_at?: string;
   school: number | string | School;
-}
+};
+
 export default Teacher;

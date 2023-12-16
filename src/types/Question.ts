@@ -3,7 +3,7 @@ import Module from "./Module";
 import Option from "./Option";
 import Correct from "./Correct";
 
-interface Question {
+type Question = {
   id?: number;
   content: string;
   type: string;
@@ -17,5 +17,6 @@ interface Question {
   options: Option[];
   corrects: Correct[];
   trigger?: boolean;
-}
+};
+
 export default Question;

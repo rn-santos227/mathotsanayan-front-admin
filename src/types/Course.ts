@@ -1,4 +1,4 @@
-interface Course {
+type Course = {
   id?: number;
   name: string;
   abbreviation: string;
@@ -6,5 +6,5 @@ interface Course {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-}
+};
 export default Course;

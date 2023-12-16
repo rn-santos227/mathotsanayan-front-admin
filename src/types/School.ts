@@ -1,4 +1,4 @@
-interface School {
+type School = {
   id?: number;
   name: string;
   address?: string;
@@ -8,5 +8,5 @@ interface School {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-}
+};
 export default School;
