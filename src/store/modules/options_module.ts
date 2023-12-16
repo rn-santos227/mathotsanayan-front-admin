@@ -7,7 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 
 export const useOptionModule = defineStore("options", {
   state: () => ({
-    isLoading: false as boolean,
+    isLoading: false,
     isTableLoading: false,
   }),
 

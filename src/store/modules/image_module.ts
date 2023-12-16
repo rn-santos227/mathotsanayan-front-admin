@@ -5,7 +5,7 @@ import { authenticatedFetch } from "@/services/api";
 
 export const useImageModule = defineStore("image", {
   state: () => ({
-    isLoading: false as boolean,
+    isLoading: false,
   }),
 
   actions: {

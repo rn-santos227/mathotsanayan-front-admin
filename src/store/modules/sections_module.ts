@@ -7,7 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 export const useSectionModule = defineStore("sections", {
   state: () => ({
     sections: [] as Section[],
-    isLoading: false as boolean,
+    isLoading: false,
     isTableLoading: false,
   }),
 

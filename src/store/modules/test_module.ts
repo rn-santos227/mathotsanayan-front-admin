@@ -6,7 +6,7 @@ import { authenticatedFetch } from "@/services/api";
 
 export const useTestModule = defineStore("test", {
   state: () => ({
-    isLoading: false as boolean,
+    isLoading: false,
   }),
 
   actions: {

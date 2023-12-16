@@ -7,7 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 
 export const useQuestionModule = defineStore("questions", {
   state: () => ({
-    isLoading: false as boolean,
+    isLoading: false,
     isTableLoading: false,
   }),
 

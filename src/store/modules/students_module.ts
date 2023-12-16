@@ -7,7 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 export const useStudentModule = defineStore("student", {
   state: () => ({
     students: [] as Student[],
-    isLoading: false as boolean,
+    isLoading: false,
     isTableLoading: false,
   }),
 
