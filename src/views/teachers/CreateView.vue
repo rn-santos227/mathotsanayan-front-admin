@@ -8,7 +8,7 @@
       activator="parent"
       width="70%"
     >
-      <v-card height="560">
+      <v-card>
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -150,32 +150,29 @@
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
-            <v-row>
-              <v-col>
-                <v-btn
-                  class="mb-3"
-                  @click.prevent="clearForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="error"
-                  prepend-icon="mdi-close"
-                >
-                  Clear
-                </v-btn>
-                <v-btn
-                  class="mb-3"
-                  @click.prevent="submitForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="success"
-                  prepend-icon="mdi-check"
-                >
-                  Submit
-                </v-btn>
-              </v-col>
-            </v-row>
+            <v-spacer />
+            <v-btn
+              class="mb-3"
+              @click.prevent="clearForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="error"
+              prepend-icon="mdi-close"
+            >
+              Clear
+            </v-btn>
+            <v-btn
+              class="mb-3"
+              @click.prevent="submitForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="success"
+              prepend-icon="mdi-check"
+            >
+              Submit
+            </v-btn>
           </v-card-actions>
         </form>
       </v-card>

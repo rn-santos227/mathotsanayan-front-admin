@@ -4,13 +4,13 @@
       <v-icon icon="mdi-update"></v-icon> Update
     </v-list-item-title>
     <v-dialog
-      class="ma-auto"
+      class="ma-auto hide-scroll"
       persistent
       v-model="dialog"
       activator="parent"
       width="50%"
     >
-      <v-card class="hide-scroll">
+      <v-card>
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -131,43 +131,35 @@
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
-            <v-row>
-              <v-col cols="3">
-                <v-switch
-                  class="active ml-6"
-                  color="green-darken-3"
-                  inset
-                  hide-details
-                  label="Activate"
-                  v-model="state.active"
-                />
-              </v-col>
-              <v-col>
-                <v-btn
-                  class="mb-3"
-                  v-if="!$props.module.active"
-                  @click.prevent="resetForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="error"
-                  prepend-icon="mdi-close"
-                >
-                  Reset
-                </v-btn>
-                <v-btn
-                  class="mb-3"
-                  @click.prevent="submitForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="success"
-                  prepend-icon="mdi-check"
-                >
-                  Submit
-                </v-btn>
-              </v-col>
-            </v-row>
+            <v-switch
+              class="active ml-6"
+              color="green-darken-3"
+              inset
+              hide-details
+              label="Activate"
+              v-model="state.active"
+            />
+            <v-btn
+              v-if="!$props.module.active"
+              @click.prevent="resetForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="error"
+              prepend-icon="mdi-close"
+            >
+              Reset
+            </v-btn>
+            <v-btn
+              @click.prevent="submitForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="success"
+              prepend-icon="mdi-check"
+            >
+              Submit
+            </v-btn>
           </v-card-actions>
         </form>
       </v-card>
@@ -252,12 +244,8 @@ const submitForm = async () => {
 };
 </script>
 
-<style>
+<style scoped>
 .active {
   margin-top: -10px;
-}
-
-.hide-scroll {
-  overflow-y: hidden;
 }
 </style>

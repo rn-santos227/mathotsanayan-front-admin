@@ -44,4 +44,8 @@ fetchUserData();
 .v-data-table-header__content > span {
   font-weight: bolder;
 }
+
+.hide-scroll {
+  overflow-y: hidden;
+}
 </style>
