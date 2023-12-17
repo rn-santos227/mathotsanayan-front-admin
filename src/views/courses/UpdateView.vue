@@ -10,7 +10,7 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="450">
+      <v-card>
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
@@ -41,7 +41,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.name.$model"
                   label="Course Name"
                   density="compact"
@@ -54,7 +53,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.abbreviation.$model"
                   label="Course Abbreviation"
                   density="compact"
@@ -67,7 +65,6 @@
             <v-row>
               <v-col>
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="state.description"
                   label="Course Description/Notes"
                   density="compact"
@@ -78,32 +75,27 @@
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
-            <v-row>
-              <v-col>
-                <v-btn
-                  class="mb-3"
-                  @click.prevent="resetForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="error"
-                  prepend-icon="mdi-close"
-                >
-                  Reset
-                </v-btn>
-                <v-btn
-                  class="mb-3"
-                  @click.prevent="submitForm"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="success"
-                  prepend-icon="mdi-check"
-                >
-                  Submit
-                </v-btn>
-              </v-col>
-            </v-row>
+            <v-spacer />
+            <v-btn
+              @click.prevent="resetForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="error"
+              prepend-icon="mdi-close"
+            >
+              Reset
+            </v-btn>
+            <v-btn
+              @click.prevent="submitForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="success"
+              prepend-icon="mdi-check"
+            >
+              Submit
+            </v-btn>
           </v-card-actions>
         </form>
       </v-card>

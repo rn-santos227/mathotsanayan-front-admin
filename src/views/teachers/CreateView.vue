@@ -152,7 +152,6 @@
           <v-card-actions class="text-right">
             <v-spacer />
             <v-btn
-              class="mb-3"
               @click.prevent="clearForm"
               variant="elevated"
               width="200"
@@ -163,7 +162,6 @@
               Clear
             </v-btn>
             <v-btn
-              class="mb-3"
               @click.prevent="submitForm"
               variant="elevated"
               width="200"
