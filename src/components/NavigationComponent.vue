@@ -39,7 +39,7 @@
               :class="{ 'my-active-class': isActive(child.route) }"
               :key="key_2"
               :title="child.text"
-              :prepend-icon="child.icon"
+              :append-icon="child.icon"
               :to="child.route"
             >
             </v-list-item>
