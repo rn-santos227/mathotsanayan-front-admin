@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog">
     <v-sheet
-      class="ma-auto text-center mx-auto"
+      class="ma-auto mx-auto"
       elevation="12"
       max-width="550"
       rounded="lg"
@@ -15,27 +15,38 @@
           </span>
         </v-card-text>
       </v-card>
-      <v-icon
-        class="my-5"
-        color="success"
-        icon="mdi-check-circle"
-        size="112"
-      ></v-icon>
-      <h2 class="text-h4 mb-6 text-green-darken-4">THE ANSWER IS CORRECT</h2>
-      <ImageComponent
-        class="mx-auto my-12"
-        v-if="url"
-        v-bind:id="id"
-        v-bind:height="250"
-        v-bind:width="250"
-        v-bind:file="url"
-        v-bind:trigger="dialog"
-      />
-      <div class="mx-6">
+      <v-card-text>
+        <v-row class="text-center">
+          <v-col cols="12">
+            <v-icon
+              class="my-5 mx-auto"
+              color="success"
+              icon="mdi-check-circle"
+              size="112"
+            />
+
+            <h2 class="text-h5 mb-6 text-green-darken-4">
+              THE ANSWER IS CORRECT
+            </h2>
+            <ImageComponent
+              class="mx-auto my-12"
+              v-if="url"
+              v-bind:id="id"
+              v-bind:height="250"
+              v-bind:width="250"
+              v-bind:file="url"
+              v-bind:trigger="dialog"
+            />
+          </v-col>
+        </v-row>
+      </v-card-text>
+
+      <div class="mx-12">
         <span>
           {{ text }}
         </span>
       </div>
+
       <v-divider class="mb-2 mt-6" />
       <v-card-actions>
         <v-spacer></v-spacer>
@@ -48,17 +59,22 @@
 </template>
 
 <script setup lang="ts">
-import Correct from "@/types/Correct";
-import ImageComponent from "../ImageComponent.vue";
 import { ref } from "vue";
+
+import ImageComponent from "../ImageComponent.vue";
+
+import Correct from "@/types/Correct";
 
 const dialog = ref<boolean>(false);
 const id = ref<number | undefined>(0);
 const text = ref<string>("");
 const url = ref<string | File | null>(null);
 
+const emit = defineEmits(["confirm"]);
+
 const confirm = () => {
   dialog.value = false;
+  emit("confirm");
 };
 
 const show = (correct: Correct) => {

@@ -1,5 +1,5 @@
 <template>
-  <v-list-item @click.prevent>
+  <v-list-item @click.prevent v-if="!props.module.active">
     <v-list-item-title class="text-button">
       <v-icon icon="mdi-delete-circle-outline"></v-icon> Delete
       <v-dialog activator="parent" v-model="dialog">

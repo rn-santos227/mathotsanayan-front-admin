@@ -38,7 +38,9 @@
               <v-col>
                 <v-tabs v-model="tabs" grow bg-color="purple-darken-3">
                   <v-tab value="0"> Questions List </v-tab>
-                  <v-tab value="1"> Create Question </v-tab>
+                  <v-tab v-if="!props.module.active" value="1">
+                    Create Question
+                  </v-tab>
                 </v-tabs>
               </v-col>
             </v-row>
@@ -48,10 +50,11 @@
           <v-window-item value="0">
             <TableView
               v-bind:questions="props.module.questions"
+              v-bind:module="props.module"
               v-bind:index="index"
             />
           </v-window-item>
-          <v-window-item value="1">
+          <v-window-item v-if="!props.module.active" value="1">
             <CreateView
               v-bind:module="props.module"
               v-bind:index="index"

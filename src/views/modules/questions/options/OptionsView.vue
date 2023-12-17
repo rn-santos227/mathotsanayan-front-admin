@@ -1,5 +1,5 @@
 <template>
-  <v-list-item @click.prevent>
+  <v-list-item @click.prevent v-if="props.question.type !== 'word problems'">
     <v-list-item-title class="text-button">
       <v-icon icon="mdi-format-list-checks"></v-icon> Options
     </v-list-item-title>

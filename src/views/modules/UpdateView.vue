@@ -10,11 +10,11 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="855">
+      <v-card class="hide-scroll">
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
-          flat
+          variant="flat"
         >
           <v-card-title>
             <v-row>
@@ -37,7 +37,7 @@
           </v-card-title>
         </v-card>
         <form>
-          <v-card-text class="text--primary">
+          <v-card-text class="text--primary" v-if="!$props.module.active">
             <v-row>
               <v-col cols="9">
                 <v-text-field
@@ -145,6 +145,7 @@
               <v-col>
                 <v-btn
                   class="mb-3"
+                  v-if="!$props.module.active"
                   @click.prevent="resetForm"
                   variant="elevated"
                   width="200"
@@ -254,5 +255,9 @@ const submitForm = async () => {
 <style>
 .active {
   margin-top: -10px;
+}
+
+.hide-scroll {
+  overflow-y: hidden;
 }
 </style>

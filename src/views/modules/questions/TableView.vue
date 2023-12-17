@@ -35,19 +35,22 @@
                 <v-list density="compact" variant="plain">
                   <TestView v-bind:question="item" />
                   <CorrectsView
+                    v-if="!table_props.module.active"
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
                   <OptionsView
-                    v-if="item.type !== 'word problem'"
+                    v-if="!table_props.module.active"
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
                   <UpdateView
+                    v-if="!table_props.module.active"
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
                   <DeleteView
+                    v-if="!table_props.module.active"
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
@@ -74,9 +77,11 @@ import UpdateView from "./UpdateView.vue";
 
 import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
+import Module from "@/types/Module";
 
 const table_props = defineProps<{
   index: number;
+  module: Module;
   questions?: Question[];
 }>();
 </script>
