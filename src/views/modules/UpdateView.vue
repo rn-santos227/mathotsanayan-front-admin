@@ -41,7 +41,6 @@
             <v-row>
               <v-col cols="9">
                 <v-text-field
-                  class="mx-4"
                   v-model.trim="v$.name.$model"
                   label="Module Name"
                   density="compact"
@@ -53,7 +52,6 @@
               <v-col cols="3">
                 <v-select
                   :items="steps"
-                  class="mx-4"
                   v-model.trim="v$.step.$model"
                   label="Module Step"
                   density="compact"
@@ -65,9 +63,8 @@
             </v-row>
             <v-row>
               <v-col>
-                <div class="mx-5">Passing Rate</div>
                 <v-slider
-                  class="mx-5"
+                  label="Passing Rate:"
                   color="purple-darken-3"
                   :thumb-size="32"
                   v-model="state.passing"
@@ -78,7 +75,6 @@
             <v-row>
               <v-col>
                 <v-autocomplete
-                  class="mx-4"
                   v-model.trim="v$.subject.$model"
                   prepend-inner-icon="mdi-book"
                   label="Module Subject"
@@ -96,7 +92,6 @@
               <v-col>
                 <v-textarea
                   rows="3"
-                  class="mx-4"
                   v-model.trim="state.description"
                   label="Module Description/Notes"
                   density="compact"
@@ -108,7 +103,6 @@
               <v-col>
                 <v-textarea
                   rows="3"
-                  class="mx-4"
                   v-model.trim="state.objective"
                   label="Module Objective"
                   density="compact"
@@ -120,7 +114,6 @@
               <v-col>
                 <v-textarea
                   rows="3"
-                  class="mx-4"
                   v-model.trim="state.direction"
                   label="Module Direction/Instruction"
                   density="compact"
