@@ -7,4 +7,16 @@ export const useResultModule = defineStore("result", {
     isLoading: false,
     isTableLoading: false,
   }),
+
+  actions: {
+    setResults(results: Result[]) {
+      this.results = results;
+    },
+  },
+
+  getters: {
+    getResults(): Result[] {
+      return this.results;
+    },
+  },
 });

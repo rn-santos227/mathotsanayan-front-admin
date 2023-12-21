@@ -7,6 +7,7 @@ import { useImageModule } from "./modules/image_module";
 import { useModuleModule } from "./modules/modules_module";
 import { useOptionModule } from "./modules/options_module";
 import { useQuestionModule } from "./modules/questions_module";
+import { useResultModule } from "./modules/results_module";
 import { useSchoolModule } from "./modules/schools_module";
 import { useSectionModule } from "./modules/sections_module";
 import { useStudentModule } from "./modules/students_module";
@@ -26,6 +27,7 @@ export {
   useModuleModule,
   useOptionModule,
   useQuestionModule,
+  useResultModule,
   useSchoolModule,
   useSectionModule,
   useStudentModule,
