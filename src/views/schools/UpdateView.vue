@@ -84,7 +84,8 @@
             </v-row>
             <v-row>
               <v-col>
-                <v-text-field
+                <v-textarea
+                  rows="3"
                   v-model.trim="state.description"
                   label="School Description/Notes (Optional)"
                   density="compact"
