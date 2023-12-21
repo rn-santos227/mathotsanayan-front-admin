@@ -46,6 +46,10 @@ export default {
     DELETE: `${BACKEND}questions/`,
   },
 
+  RESULTS: {
+    READ: `${BACKEND}results`,
+  },
+
   SCHOOLS: {
     CREATE: `${BACKEND}schools/create`,
     READ: `${BACKEND}schools`,
