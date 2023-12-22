@@ -1,6 +1,19 @@
 <template>
+  <v-card>
+    <v-card-actions>
+      <v-spacer />
+      <v-text-field
+        v-model="search"
+        label="Search Student"
+        density="compact"
+        variant="outlined"
+        prepend-inner-icon="mdi-magnify"
+      />
+    </v-card-actions>
+  </v-card>
   <v-data-table
     class="w-100"
+    :search="search"
     :items="modules"
     :headers="headers"
     :loading="moduleModule.isTableLoading"
@@ -64,6 +77,7 @@ const error = ref({
   },
 });
 
+const search = ref<string>("");
 const moduleModule = useModuleModule();
 const modules = computed<Module[]>(() => moduleModule.getModules);
 
