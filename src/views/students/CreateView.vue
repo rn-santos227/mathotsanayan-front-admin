@@ -48,7 +48,7 @@
               <v-col cols="3">
                 <v-text-field
                   v-model.trim="v$.middle_name.$model"
-                  label="Middle Name"
+                  label="Middle Name (Optional)"
                   density="compact"
                   variant="outlined"
                   :error="v$.middle_name.$error"

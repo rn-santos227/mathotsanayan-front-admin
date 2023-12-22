@@ -1,11 +1,5 @@
-interface VTeacher {
-  first_name: string;
-  middle_name: string;
-  last_name: string;
-  suffix: string;
-  password: string;
-  password_confirm: string;
-  email: string;
+import VPerson from "./v_person";
+interface VTeacher extends VPerson {
   contact_number: string;
   school: string;
 }

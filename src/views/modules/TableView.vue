@@ -4,7 +4,7 @@
       <v-spacer />
       <v-text-field
         v-model="search"
-        label="Search Student"
+        label="Search Module"
         density="compact"
         variant="outlined"
         prepend-inner-icon="mdi-magnify"
