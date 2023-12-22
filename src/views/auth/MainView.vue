@@ -64,7 +64,7 @@ import { useRouter } from "vue-router";
 
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import InformationDialogComponent from "@/components/dialogs/InformationDialogComponent.vue";
-import Login from "@/types/Login";
+import Login from "@/interfaces/Login";
 import rules from "@/helpers/rules/rules_login";
 
 const authModule = useAuthModule();

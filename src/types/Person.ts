@@ -1,4 +1,6 @@
-type Student = {
+import Password from "@/interfaces/Password";
+
+type Student = Password & {
   id?: number;
   full_name?: string;
   first_name: string;
@@ -6,8 +8,6 @@ type Student = {
   last_name: string;
   suffix: string;
   email: string;
-  password: string;
-  password_confirm: string;
   contact_number: string;
   created_at?: string;
   updated_at?: string;
