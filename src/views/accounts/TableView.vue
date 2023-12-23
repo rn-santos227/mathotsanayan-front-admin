@@ -14,8 +14,17 @@
         <td class="text-xs-left">
           {{ item.type_name }}
         </td>
-        <td class="text-xs-left"></td>
-        <td></td>
+        <td class="text-xs-left">
+          {{ getOwnerName(item.owner) }}
+        </td>
+        <td>
+          <v-btn block color="purple-darken-3" variant="outlined">
+            <v-icon size="large">mdi-dots-horizontal</v-icon>
+            <v-menu activator="parent">
+              <v-list density="compact" variant="plain"> </v-list>
+            </v-menu>
+          </v-btn>
+        </td>
       </tr>
     </template>
   </v-data-table>
@@ -27,6 +36,7 @@
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
 import { useAccountModule } from "@/store";
+import { getOwnerName } from "@/helpers/instance";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";

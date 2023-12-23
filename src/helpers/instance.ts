@@ -1,3 +1,5 @@
+import Admin from "@/types/Admin";
+import Student from "@/types/Person";
 import School from "@/types/School";
 import Section from "@/types/Section";
 import Subject from "@/types/Subject";
@@ -31,6 +33,27 @@ export function getTeacherName(teacher: number | string | Teacher) {
     "full_name" in teacher
   ) {
     return (teacher as Teacher).full_name;
+  }
+  return "DefaultName";
+}
+
+export function getOwnerName(
+  owner: number | string | Teacher | Student | Admin
+) {
+  if (
+    typeof owner === "object" &&
+    owner !== null &&
+    "student_number" in owner
+  ) {
+    return (owner as Student).full_name;
+  } else if (typeof owner === "object" && owner !== null && "name" in owner) {
+    return (owner as Admin).name;
+  } else if (
+    typeof owner === "object" &&
+    owner !== null &&
+    "full_name" in owner
+  ) {
+    return (owner as Teacher).full_name;
   }
   return "DefaultName";
 }
