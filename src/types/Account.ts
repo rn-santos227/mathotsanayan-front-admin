@@ -2,7 +2,7 @@ import Admin from "./Admin";
 import Student from "./Person";
 import Teacher from "./Teacher";
 
-type User = {
+type Account = {
   id?: number;
   email: string;
   type_name: string;
@@ -12,4 +12,4 @@ type User = {
   deleted_at?: string;
 };
 
-export default User;
+export default Account;

@@ -48,6 +48,9 @@ import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
+import headers from "@/helpers/headers/header_teachers";
+import Teacher from "@/types/Teacher";
+
 const success = ref({
   show: (message: string) => {
     return message;
@@ -59,9 +62,6 @@ const error = ref({
     return message;
   },
 });
-
-import headers from "@/helpers/headers/header_teachers";
-import Teacher from "@/types/Teacher";
 
 const teacherModule = useTeacherModule();
 const teachers = computed<Teacher[]>(() => teacherModule.getTeachers);
