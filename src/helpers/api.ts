@@ -1,6 +1,11 @@
 const BACKEND = `${process.env.VUE_APP_BACKEND}/api/`;
 
 export default {
+  ACCOUNTS: {
+    READ: `${BACKEND}accounts`,
+    DELETE: `${BACKEND}accounts/`,
+  },
+
   AUTH: {
     AUTH: `${BACKEND}auth`,
     LOGIN: `${BACKEND}admin`,
