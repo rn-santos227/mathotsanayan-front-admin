@@ -41,6 +41,13 @@ export default [
     activator: false,
     children: [
       {
+        text: "Accounts",
+        icon: "mdi-account-circle",
+        route: "/accounts",
+        activator: false,
+        children: [],
+      },
+      {
         text: "Courses",
         icon: "mdi-certificate",
         route: "/courses",

@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+
+import AccountView from "../views/accounts/MainView.vue";
 import AuthView from "../views/auth/MainView.vue";
 import CoursesView from "../views/courses/MainView.vue";
 import DashboardView from "../views/dashboard/MainView.vue";
@@ -9,7 +11,6 @@ import SectionsView from "../views/sections/MainView.vue";
 import StudentsView from "../views/students/MainView.vue";
 import SubjectView from "../views/subjects/MainView.vue";
 import TeachersView from "../views/teachers/MainView.vue";
-import UserView from "../views/users/MainView.vue";
 
 import { useAuthModule } from "@/store";
 
@@ -18,6 +19,15 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "dashboard",
     component: DashboardView,
+    meta: {
+      forAuth: true,
+    },
+  },
+
+  {
+    path: "/accounts",
+    name: "accounts",
+    component: AccountView,
     meta: {
       forAuth: true,
     },
@@ -90,15 +100,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/teachers",
     name: "teachers",
     component: TeachersView,
-    meta: {
-      forAuth: true,
-    },
-  },
-
-  {
-    path: "/users",
-    name: "users",
-    component: UserView,
     meta: {
       forAuth: true,
     },
