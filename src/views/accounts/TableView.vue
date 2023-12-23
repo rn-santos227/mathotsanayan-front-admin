@@ -11,7 +11,9 @@
         <td class="text-xs-left">
           {{ item.email }}
         </td>
-        <td class="text-xs-left"></td>
+        <td class="text-xs-left">
+          {{ item.type_name }}
+        </td>
         <td class="text-xs-left"></td>
         <td></td>
       </tr>
