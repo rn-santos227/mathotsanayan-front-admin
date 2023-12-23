@@ -9,6 +9,7 @@ import SectionsView from "../views/sections/MainView.vue";
 import StudentsView from "../views/students/MainView.vue";
 import SubjectView from "../views/subjects/MainView.vue";
 import TeachersView from "../views/teachers/MainView.vue";
+import UserView from "../views/users/MainView.vue";
 
 import { useAuthModule } from "@/store";
 
@@ -89,6 +90,15 @@ const routes: Array<RouteRecordRaw> = [
     path: "/teachers",
     name: "teachers",
     component: TeachersView,
+    meta: {
+      forAuth: true,
+    },
+  },
+
+  {
+    path: "/users",
+    name: "users",
+    component: UserView,
     meta: {
       forAuth: true,
     },

@@ -7,7 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 export const useAuthModule = defineStore("auth", {
   state: () => ({
     type: 1 as number,
-    admin: <Admin>{},
+    admin: {} as Admin,
     accessToken: localStorage.getItem("accessToken") || null,
     isAuthenticated: !!localStorage.getItem("accessToken"),
     isLoading: false,
