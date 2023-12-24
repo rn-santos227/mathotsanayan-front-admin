@@ -66,9 +66,9 @@
               <div class="d-flex justify-space-around flex-wrap">
                 <v-card
                   width="400"
+                  class="ma-2"
                   v-for="(option, index) in props.question.options"
                   :key="index"
-                  class="ma-2"
                   :color="changeColor(option.content)"
                   @click.prevent="selectAnswer(option.content)"
                 >

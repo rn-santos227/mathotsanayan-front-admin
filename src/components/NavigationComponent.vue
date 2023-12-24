@@ -1,11 +1,7 @@
 <template>
   <div v-if="authModule.isAuthenticated">
     <v-navigation-drawer v-model="drawer" :rail="mini" permanent>
-      <v-list-item
-        title="ADMIN NAVIGATION"
-        :subtitle="authModule.admin?.email"
-        nav
-      >
+      <v-list-item title="ADMIN NAVIGATION" :subtitle="authModule.admin?.email">
         <template v-slot:append>
           <v-btn
             color="purple-darken-3"
@@ -39,6 +35,7 @@
               :class="{ 'my-active-class': isActive(child.route) }"
               :key="key_2"
               :title="child.text"
+              :prepend-icon="mini ? child.icon : ''"
               :append-icon="child.icon"
               :to="child.route"
             >

@@ -73,13 +73,13 @@
 
 <script setup lang="ts">
 import { inject, reactive, ref } from "vue";
+import { useModuleModule, useQuestionModule } from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
 
 import Question from "@/types/Question";
 import Option from "@/types/Option";
-import { useModuleModule, useQuestionModule } from "@/store";
 
 const dialog = ref<boolean>(false);
 

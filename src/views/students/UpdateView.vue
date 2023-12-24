@@ -234,11 +234,11 @@ import {
   useSchoolModule,
   useSectionModule,
 } from "@/store";
+import { rules, rules_password } from "@/helpers/rules/rules_update_student";
+import { padLeft } from "@/helpers/utils";
 
 import Student from "@/types/Student";
 import VStudent from "@/helpers/validations/v_students";
-import { rules, rules_password } from "@/helpers/rules/rules_update_student";
-import { padLeft } from "@/helpers/utils";
 
 const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
