@@ -252,15 +252,14 @@ const close = () => {
 
 const submitForm = async () => {
   const result = await v$.value.$validate();
-  if (result) {
-    const response = await useTeacherModule().update(state);
-    if (response) {
-      resetForm();
-      success.value.show("Teacher has been successfully updated.");
-      dialog.value = false;
-    } else {
-      error.value.show("The server has not able to process the request.");
-    }
+  if (!result) return;
+  const response = await useTeacherModule().update(state);
+  if (response) {
+    resetForm();
+    success.value.show("Teacher has been successfully updated.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process the request.");
   }
 };
 </script>

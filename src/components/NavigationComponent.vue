@@ -1,12 +1,16 @@
 <template>
   <div v-if="authModule.isAuthenticated">
     <v-navigation-drawer v-model="drawer" :rail="mini" permanent>
-      <v-list-item title="ADMIN NAVIGATION" :subtitle="authModule.admin?.email">
+      <v-list-item
+        title="ADMIN NAVIGATION"
+        :subtitle="authModule.admin?.email"
+        nav
+      >
         <template v-slot:append>
           <v-btn
             color="purple-darken-3"
             size="small"
-            variant="outlined"
+            variant="text"
             :icon="mini ? 'mdi-chevron-right' : 'mdi-chevron-left'"
             @click.stop="mini = !mini"
           ></v-btn>

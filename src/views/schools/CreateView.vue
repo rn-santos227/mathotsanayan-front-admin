@@ -177,15 +177,14 @@ const clearForm = () => {
 
 const submitForm = async () => {
   const result = await v$.value.$validate();
-  if (result) {
-    const response = await useSchoolModule().create(state);
-    if (response) {
-      clearForm();
-      success.value.show("School has been successfully recorded.");
-      dialog.value = false;
-    } else {
-      error.value.show("The server has not able to process request.");
-    }
+  if (!result) return;
+  const response = await useSchoolModule().create(state);
+  if (response) {
+    clearForm();
+    success.value.show("School has been successfully recorded.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process request.");
   }
 };
 </script>

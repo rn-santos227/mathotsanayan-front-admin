@@ -1,3 +1,4 @@
+import Password from "@/interfaces/Password";
 import Admin from "@/types/Admin";
 import api from "@/helpers/api";
 
@@ -60,6 +61,25 @@ export const useAuthModule = defineStore("auth", {
       } catch (error) {
         console.error("Error fetching user data:", error);
         throw error;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async changePassword(payload: Password): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        await authenticatedFetch(`${api.AUTH.PASSWORD}${this.admin.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        return true;
+      } catch (error) {
+        console.error("Error Course in:", error);
+        return false;
       } finally {
         this.isLoading = false;
       }

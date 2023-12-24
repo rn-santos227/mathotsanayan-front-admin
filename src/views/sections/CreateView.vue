@@ -174,15 +174,14 @@ const close = () => {
 
 const submitForm = async () => {
   const result = await v$.value.$validate();
-  if (result) {
-    const response = await useSectionModule().create(state);
-    if (response) {
-      clearForm();
-      success.value.show("Section has been successfully recorded.");
-      dialog.value = false;
-    } else {
-      error.value.show("The server has not able to process the request.");
-    }
+  if (!result) return;
+  const response = await useSectionModule().create(state);
+  if (response) {
+    clearForm();
+    success.value.show("Section has been successfully recorded.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process the request.");
   }
 };
 </script>

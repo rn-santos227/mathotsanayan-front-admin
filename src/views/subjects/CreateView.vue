@@ -138,15 +138,14 @@ const clearForm = () => {
 
 const submitForm = async () => {
   const result = await v$.value.$validate();
-  if (result) {
-    const response = await useSubjectModule().create(state);
-    if (response) {
-      clearForm();
-      success.value.show("Subject has been successfully recorded.");
-      dialog.value = false;
-    } else {
-      error.value.show("The server has not able to process the request.");
-    }
+  if (!result) return;
+  const response = await useSubjectModule().create(state);
+  if (response) {
+    clearForm();
+    success.value.show("Subject has been successfully recorded.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process the request.");
   }
 };
 </script>

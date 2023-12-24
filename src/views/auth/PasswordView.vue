@@ -94,17 +94,37 @@
       </v-card>
     </v-dialog>
   </v-list-item>
+  <SuccessDialogComponent ref="success" />
+  <ErrorDialogComponent ref="error" />
+  <LoadingDialogComponent v-bind:activate="useAuthModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref, reactive, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { rules, rules_password } from "@/helpers/rules/rules_password";
+import { useAuthModule } from "@/store";
+
+import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
+import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
+
 import Password from "@/interfaces/Password";
+import VPassword from "@/helpers/validations/v_password";
+import { rules, rules_password } from "@/helpers/rules/rules_password";
 
 const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
+const success = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
 
 const state = reactive<Password>({
   password: "",
@@ -112,7 +132,7 @@ const state = reactive<Password>({
 });
 
 const v$ = useVuelidate(rules, state);
-const errors = computed(() => useValidationErrors<Password>(v$.value.$errors));
+const errors = computed(() => useValidationErrors<VPassword>(v$.value.$errors));
 
 watch(
   () => state.password,
@@ -134,8 +154,14 @@ const close = () => {
 
 const submitForm = async () => {
   const result = await v$.value.$validate();
-  if (result) {
-    //
+  if (!result) return;
+  const response = await useAuthModule().changePassword(state);
+  if (response) {
+    clearForm();
+    success.value.show("Password has been changed successfully.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process the request.");
   }
 };
 </script>
