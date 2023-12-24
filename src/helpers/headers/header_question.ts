@@ -12,7 +12,7 @@ const headers: ReadonlyHeaders = [
     align: "start",
     sortable: true,
     key: "content",
-    width: "50%",
+    width: "45%",
   },
   {
     title: "Question Type",
@@ -25,6 +25,12 @@ const headers: ReadonlyHeaders = [
     align: "start",
     sortable: true,
     key: "corrects.length",
+  },
+  {
+    title: "Options",
+    align: "start",
+    sortable: true,
+    key: "options.length",
   },
   {
     title: "Action",

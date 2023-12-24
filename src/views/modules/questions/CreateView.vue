@@ -324,7 +324,7 @@ const tab = () => {
 
 <style scoped>
 .question-border {
-  border: 3px solid #6a1b9a;
+  border: solid #6a1b9a;
 }
 
 .question-height {

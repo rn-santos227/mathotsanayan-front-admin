@@ -1,5 +1,5 @@
 <template>
-  <v-card height="380" class="mb-4 outlined-border-options" variant="outlined">
+  <v-card class="mb-4 outlined-border-options" variant="outlined">
     <v-card
       class="rounded-0 rounded-xs-t mb-6 py-2"
       color="light-blue-darken-2"
@@ -24,10 +24,9 @@
         </v-row>
       </v-card-title>
     </v-card>
-    <v-card-text class="ma-4">
+    <v-card-text class="pa-6">
       <v-row>
         <v-textarea
-          class="mt-2"
           rows="5"
           v-model="content"
           label="Option Content"
@@ -39,7 +38,7 @@
       </v-row>
       <v-row>
         <v-file-input
-          class="mt-2"
+          class="file-based"
           v-model="input_file"
           accept="image/*"
           label="Option Attachment"
@@ -114,6 +113,10 @@ defineExpose({
 
 <style scoped>
 .outlined-border-options {
-  border: 3px solid #0288d1;
+  border: solid #0288d1;
+}
+
+.file-based {
+  margin-bottom: 15px;
 }
 </style>

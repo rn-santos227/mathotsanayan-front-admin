@@ -7,7 +7,11 @@
       rounded="lg"
       width="100%"
     >
-      <v-card class="rounded-0 rounded-t mb-2" color="purple-darken-3" flat>
+      <v-card
+        class="rounded-0 rounded-t mb-2"
+        color="purple-darken-3"
+        variant="flat"
+      >
         <v-card-text class="text-left">
           <span class="text-subtitle-1 font-weight-bold">
             <v-icon class="mr-2" icon="mdi-information-outline"></v-icon>

@@ -11,7 +11,7 @@
       width="60%"
     >
       <v-card>
-        <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3" flat>
+        <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3">
           <v-card-title>
             <v-row>
               <v-col>

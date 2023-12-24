@@ -1,5 +1,5 @@
 <template>
-  <v-card height="380" class="mb-4 outlined-border-corrects" variant="outlined">
+  <v-card class="mb-4 outlined-border-corrects" variant="outlined">
     <v-card
       class="rounded-0 rounded-xs-t mb-6 py-2"
       color="teal-darken-2"
@@ -24,10 +24,9 @@
         </v-row>
       </v-card-title>
     </v-card>
-    <v-card-text class="ma-4">
+    <v-card-text class="pa-6">
       <v-row>
         <v-text-field
-          class="mt-2"
           rows="3"
           v-model="content"
           label="Correct Answer"
@@ -39,7 +38,6 @@
       </v-row>
       <v-row>
         <v-textarea
-          class="mt-2"
           rows="3"
           v-model="solution"
           label="Solution"
@@ -51,7 +49,6 @@
       </v-row>
       <v-row>
         <v-file-input
-          class="mt-2"
           v-model="input_file"
           accept="image/*"
           label="Option Attachment"
@@ -139,6 +136,6 @@ defineExpose({
 
 <style scoped>
 .outlined-border-corrects {
-  border: 3px solid #00796b;
+  border: solid #00796b;
 }
 </style>

@@ -10,105 +10,101 @@
       activator="parent"
       width="50%"
     >
-      <v-card height="800">
+      <v-card>
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
           flat
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6">
-                  Test Question ID: {{ padLeft(props.question.id) }}
-                </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4 mb-2">
+            <span class="text-h6">
+              Test Question ID: {{ padLeft(props.question.id) }}
+            </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
-        <form>
-          <v-card-text class="question-height">
-            <v-row>
-              <v-col class="mx-4">
-                <div class="text-body-1">{{ props.question.content }}</div>
-              </v-col>
-            </v-row>
-            <v-row v-if="props.question.file">
-              <v-col class="d-flex justify-center align-center">
-                <ImageComponent
-                  v-bind:id="props.question.id"
-                  v-bind:file="props.question.file"
-                  v-bind:height="350"
-                  v-bind:width="350"
-                  v-model:trigger="dialog"
-                />
-              </v-col>
-            </v-row>
-            <v-divider class="my-4" />
-            <v-row v-if="props.question.type == 'word problem'">
-              <v-col>
-                <v-text-field
-                  class="mx-4"
-                  v-model.trim="state.content"
-                  label="Provide your answer here."
-                  density="compact"
-                  variant="outlined"
-                />
-              </v-col>
-            </v-row>
-            <v-row v-else-if="props.question.type == 'multiple selection'">
-            </v-row>
-            <v-row v-else-if="props.question.type == 'single correct'">
-              <v-radio-group class="ma-6" v-model.trim="state.content">
+        <v-card-text class="question-height">
+          <v-row>
+            <v-col class="mx-4">
+              <div class="text-body-1">{{ props.question.content }}</div>
+            </v-col>
+          </v-row>
+          <v-row v-if="props.question.file">
+            <v-col class="d-flex justify-center align-center">
+              <ImageComponent
+                v-bind:id="props.question.id"
+                v-bind:file="props.question.file"
+                v-bind:height="350"
+                v-bind:width="350"
+                v-model:trigger="dialog"
+              />
+            </v-col>
+          </v-row>
+          <v-divider class="my-4" />
+          <v-row v-if="props.question.type == 'word problem'">
+            <v-col>
+              <v-text-field
+                class="mx-4"
+                v-model.trim="state.content"
+                label="Provide your answer here."
+                density="compact"
+                variant="outlined"
+              />
+            </v-col>
+          </v-row>
+          <v-row v-else-if="props.question.type == 'multiple selection'">
+          </v-row>
+          <v-row v-else-if="props.question.type == 'single correct'">
+            <v-radio-group class="ma-6" v-model.trim="state.content">
+              <div class="d-flex justify-space-around flex-wrap">
                 <v-card
+                  width="400"
                   v-for="(option, index) in props.question.options"
                   :key="index"
                   class="ma-2"
                   :color="changeColor(option.content)"
+                  @click.prevent="selectAnswer(option.content)"
                 >
-                  <v-card-text>
-                    <v-row>
-                      <v-col v-if="option.file" cols="1"></v-col>
-                      <v-col>
-                        <v-radio
-                          :label="option.content"
-                          :value="option.content"
-                      /></v-col>
-                    </v-row>
+                  <v-radio :value="option.content" />
+                  <ImageComponent
+                    class="mx-auto"
+                    v-if="option.file"
+                    v-bind:id="state.id"
+                    v-bind:file="option.file"
+                    v-bind:height="200"
+                    v-bind:width="250"
+                    v-model:trigger="dialog"
+                  />
+                  <v-card-text class="mx-4 mb-4">
+                    {{ option.content }}
                   </v-card-text>
                 </v-card>
-              </v-radio-group>
-            </v-row>
-          </v-card-text>
-          <v-divider class="mb-2 mt-auto" />
-          <v-card-actions class="text-right">
-            <v-row>
-              <v-col>
-                <v-btn
-                  class="mb-1 mr-4"
-                  variant="elevated"
-                  width="200"
-                  dark
-                  color="success"
-                  prepend-icon="mdi-check"
-                  @click.prevent="submit"
-                >
-                  Submit
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-actions>
-        </form>
+              </div>
+            </v-radio-group>
+          </v-row>
+        </v-card-text>
+        <v-divider class="mb-2 mt-auto" />
+        <v-card-actions class="text-right">
+          <v-spacer />
+          <v-btn
+            class="mb-1 mr-4"
+            variant="elevated"
+            width="200"
+            dark
+            color="success"
+            prepend-icon="mdi-check"
+            @click.prevent="submit"
+          >
+            Submit
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -185,11 +181,14 @@ const submit = async () => {
 const changeColor = (content: string) => {
   return content === state.content ? "purple-darken-3" : "white";
 };
+
+const selectAnswer = (answer: string) => {
+  state.content = answer;
+};
 </script>
 
 <style scoped>
 .question-height {
-  height: calc(100vh - 310px);
   overflow-y: auto;
 }
 </style>

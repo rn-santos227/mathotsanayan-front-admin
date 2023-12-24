@@ -1,7 +1,7 @@
 <template>
   <v-container class="base fill-height" fluid>
     <v-card elevation="8" width="35%" class="ma-auto">
-      <v-card class="rounded-0 rounded-t mb-6" color="purple-darken-3" flat>
+      <v-card class="rounded-0 rounded-t mb-6" color="purple-darken-3">
         <v-card-text>
           <span class="text-subtitle-1 font-weight-bold">
             MatHOTSanayan Admin Login

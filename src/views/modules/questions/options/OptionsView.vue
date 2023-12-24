@@ -11,7 +11,11 @@
       width="60%"
     >
       <v-card>
-        <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3" flat>
+        <v-card
+          class="rounded-0 rounded-t py-2"
+          color="purple-darken-3"
+          variant="flat"
+        >
           <v-card-title>
             <v-row>
               <v-col>
@@ -34,24 +38,20 @@
           </v-card-title>
         </v-card>
         <v-card-text class="option-height pa-8">
-          <form>
-            <CreateView
-              v-bind:question="props.question"
-              v-bind:index="props.index"
-              @close="close"
-            />
-          </form>
-          <form>
-            <UpdateView
-              class="my-4"
-              v-for="(option, index) in props.question.options"
-              v-bind:key="index"
-              v-bind:question="props.question"
-              v-bind:option="option"
-              v-bind:index="props.index"
-              @close="close"
-            />
-          </form>
+          <CreateView
+            v-bind:question="props.question"
+            v-bind:index="props.index"
+            @close="close"
+          />
+          <UpdateView
+            class="my-4"
+            v-for="(option, index) in props.question.options"
+            v-bind:key="index"
+            v-bind:question="props.question"
+            v-bind:option="option"
+            v-bind:index="props.index"
+            @close="close"
+          />
         </v-card-text>
       </v-card>
     </v-dialog>
