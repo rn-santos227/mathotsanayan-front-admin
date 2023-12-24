@@ -1,6 +1,10 @@
 <template>
   <v-card height="380" class="mb-4 outlined-border-corrects" variant="outlined">
-    <v-card class="rounded-0 rounded-t mb-6 py-2" color="teal-darken-2" flat>
+    <v-card
+      class="rounded-0 rounded-xs-t mb-6 py-2"
+      color="teal-darken-2"
+      variant="flat"
+    >
       <v-card-title>
         <v-row>
           <v-col>
@@ -135,6 +139,6 @@ defineExpose({
 
 <style scoped>
 .outlined-border-corrects {
-  border: 2px solid #00796b;
+  border: 3px solid #00796b;
 }
 </style>

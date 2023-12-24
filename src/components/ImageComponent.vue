@@ -22,7 +22,7 @@
         :width="props.width"
         class="d-flex align-center justify-center"
       >
-        <v-img cover :src="checkImage(url)" />
+        <v-img aspect-ratio="1" cover :src="checkImage(url)" />
       </v-card>
     </div>
   </v-sheet>

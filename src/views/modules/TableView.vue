@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card variant="flat">
     <v-card-actions>
       <v-spacer />
       <v-text-field
@@ -11,6 +11,7 @@
       />
     </v-card-actions>
   </v-card>
+  <v-divider />
   <v-data-table
     class="w-100"
     :search="search"

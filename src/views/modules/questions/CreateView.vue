@@ -7,9 +7,9 @@
     >
       <v-card class="mb-8 pb-2 question-border" elevation="4">
         <v-card
-          class="rounded-0 rounded-t mb-6 py-2"
+          class="rounded-0 rounded-xs-t mb-6 py-2"
           color="purple-darken-3"
-          flat
+          variant="flat"
         >
           <v-card-title>
             <v-row>
@@ -324,7 +324,7 @@ const tab = () => {
 
 <style scoped>
 .question-border {
-  border: 2px solid #6a1b9a;
+  border: 3px solid #6a1b9a;
 }
 
 .question-height {
