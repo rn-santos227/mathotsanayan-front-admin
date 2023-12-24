@@ -35,6 +35,23 @@
               <v-col>
                 <v-text-field
                   prepend-inner-icon="mdi-lock"
+                  v-model.trim="v$.current_password.$model"
+                  autocomplete="new-password"
+                  label="Current Password"
+                  density="compact"
+                  variant="outlined"
+                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  :error="v$.password.$error"
+                  :error-messages="errors.password"
+                  @click:append-inner="show = !show"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password.$model"
                   autocomplete="new-password"
                   label="Password"
@@ -54,7 +71,7 @@
                   prepend-inner-icon="mdi-lock"
                   v-model.trim="v$.password_confirm.$model"
                   autocomplete="new-password"
-                  label="Password"
+                  label="Contirm Password"
                   density="compact"
                   variant="outlined"
                   :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
@@ -127,6 +144,7 @@ const error = ref({
 });
 
 const state = reactive<Password>({
+  current_password: "",
   password: "",
   password_confirm: "",
 });
@@ -144,12 +162,12 @@ watch(
 const clearForm = () => {
   state.password = "";
   state.password_confirm = "";
-
   v$.value.$reset();
 };
 
 const close = () => {
   dialog.value = false;
+  clearForm();
 };
 
 const submitForm = async () => {
@@ -161,7 +179,7 @@ const submitForm = async () => {
     success.value.show("Password has been changed successfully.");
     dialog.value = false;
   } else {
-    error.value.show("The server has not able to process the request.");
+    error.value.show("Invalid Credentials.");
   }
 };
 </script>

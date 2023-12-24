@@ -69,8 +69,8 @@ export const useAuthModule = defineStore("auth", {
     async changePassword(payload: Password): Promise<boolean> {
       try {
         this.isLoading = true;
-        await authenticatedFetch(`${api.AUTH.PASSWORD}${this.admin.id}`, {
-          method: "PATCH",
+        await authenticatedFetch(api.AUTH.PASSWORD, {
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },

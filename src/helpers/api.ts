@@ -10,7 +10,7 @@ export default {
     AUTH: `${BACKEND}auth`,
     LOGIN: `${BACKEND}admin`,
     LOGOUT: `${BACKEND}logout`,
-    PASSWORD: `${BACKEND}password/`,
+    PASSWORD: `${BACKEND}password`,
     USER: `${BACKEND}user/1`,
   },
 

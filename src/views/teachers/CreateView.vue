@@ -215,6 +215,7 @@ const state = reactive<Teacher>({
   suffix: "",
   password: "",
   password_confirm: "",
+  current_password: "",
   email: "",
   contact_number: "",
   school: "",
