@@ -27,12 +27,7 @@
           </v-btn>
         </template>
         <v-list density="compact" variant="plain">
-          <v-list-item>
-            <template v-slot:prepend>
-              <v-icon icon="mdi-key"></v-icon>
-            </template>
-            <v-list-item-title>Change Password</v-list-item-title>
-          </v-list-item>
+          <PasswordView />
           <v-divider></v-divider>
           <v-list-item @click.prevent="logout()">
             <template v-slot:prepend>
@@ -53,6 +48,7 @@ import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
 import QuestionDialogComponent from "./dialogs/QuestionDialogComponent.vue";
+import PasswordView from "@/views/auth/PasswordView.vue";
 
 const confirm = ref({
   show: (message: string) => {

@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, watch } from "vue";
+import { computed, ref, reactive, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeacherModule, useSchoolModule } from "@/store";
