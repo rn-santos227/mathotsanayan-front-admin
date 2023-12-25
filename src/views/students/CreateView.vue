@@ -14,23 +14,17 @@
           color="purple-darken-3"
           flat
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6"> Create New Student </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4">
+            <span class="text-h6"> Create New Student </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
         <form>
           <v-card-text class="text--primary pa-6">
