@@ -17,35 +17,29 @@
           color="purple-darken-3"
           flat
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6"> Module Questions </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-            <v-divider class="mt-4" />
-            <v-row>
-              <v-col>
-                <v-tabs v-model="tabs" grow bg-color="purple-darken-3">
-                  <v-tab value="0"> Questions List </v-tab>
-                  <v-tab v-if="!props.module.active" value="1">
-                    Create Question
-                  </v-tab>
-                </v-tabs>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4">
+            <span class="text-h6"> Module Question </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
+        <v-divider />
+        <v-row>
+          <v-col>
+            <v-tabs v-model="tabs" grow bg-color="purple-darken-3">
+              <v-tab value="0"> Questions List </v-tab>
+              <v-tab v-if="!props.module.active" value="1">
+                Create Question
+              </v-tab>
+            </v-tabs>
+          </v-col>
+        </v-row>
         <v-window v-model="tabs">
           <v-window-item value="0">
             <TableView

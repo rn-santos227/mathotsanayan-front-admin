@@ -12,26 +12,20 @@
     >
       <v-card>
         <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3">
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6">
-                  Update Solutions for Question ID:
-                  {{ padLeft(props.question.id) }}
-                </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4 mb-2">
+            <span class="text-h6">
+              Update Solutions for Question ID:
+              {{ padLeft(props.question.id) }}
+            </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
         <v-card-text class="option-height pa-8">
           <form>
