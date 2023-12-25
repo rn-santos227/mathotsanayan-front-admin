@@ -16,23 +16,19 @@
           color="purple-darken-3"
           flat
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6"> Create New Section </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4">
+            <span class="text-h6">
+              Update Section ID: {{ padLeft(state.id) }}
+            </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
         <form>
           <v-card-text class="text--primary">
@@ -129,6 +125,7 @@ import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
+import { padLeft } from "@/helpers/utils";
 
 import Section from "@/types/Section";
 import VSection from "@/helpers/validations/v_sections";

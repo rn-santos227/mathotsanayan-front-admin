@@ -16,25 +16,19 @@
           color="purple-darken-3"
           flat
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h5">
-                  Update Course ID: {{ padLeft(state.id) }}
-                </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click.prevent="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4">
+            <span class="text-h6">
+              Update School ID: {{ padLeft(state.id) }}
+            </span>
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
         <form>
           <v-card-text class="text--primary">
