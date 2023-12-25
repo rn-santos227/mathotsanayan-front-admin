@@ -176,6 +176,7 @@ const error = ref({
 const state = reactive<Module>({
   name: "",
   step: "",
+  active: true,
   passing: 50,
   objective: "",
   description: "",

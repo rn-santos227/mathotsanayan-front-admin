@@ -110,24 +110,25 @@
     </form>
   </v-card-text>
   <v-divider />
-  <v-row class="mx-6 my-3">
-    <v-col>
-      <v-btn
-        class="mb-2"
-        prepend-icon="mdi-plus"
-        color="purple-darken-3"
-        block
-        @click.prevent="addQuestion"
-      >
-        Add Question
-      </v-btn>
-    </v-col>
-    <v-col>
-      <v-btn class="mb-2" color="success" block @click.prevent="submit">
-        Submit
-      </v-btn>
-    </v-col>
-  </v-row>
+  <v-card-actions class="d-flex justify-center">
+    <v-btn
+      prepend-icon="mdi-plus"
+      color="purple-darken-3"
+      variant="elevated"
+      class="flex-grow-1 mx-2"
+      @click.prevent="addQuestion"
+    >
+      Add Question
+    </v-btn>
+    <v-btn
+      color="success"
+      class="flex-grow-1 mx-2"
+      @click.prevent="submit"
+      variant="elevated"
+    >
+      Submit
+    </v-btn>
+  </v-card-actions>
 </template>
 
 <script setup lang="ts">
@@ -328,7 +329,7 @@ const tab = () => {
 }
 
 .question-height {
-  height: calc(100vh - 400px);
+  height: calc(100vh - 250px);
   overflow-y: auto;
 }
 </style>

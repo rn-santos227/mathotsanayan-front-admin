@@ -9,7 +9,7 @@ type Module = {
   direction: string;
   step: number | string | null | undefined;
   passing: number;
-  active?: boolean;
+  active: boolean;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
