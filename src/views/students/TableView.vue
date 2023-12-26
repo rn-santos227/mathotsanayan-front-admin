@@ -17,7 +17,7 @@
     :search="search"
     :items="students"
     :headers="headers"
-    :loading="studentModule.isTableLoading"
+    :loading="useStudentModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">

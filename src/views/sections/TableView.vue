@@ -3,7 +3,7 @@
     class="w-100"
     :items="sections"
     :headers="headers"
-    :loading="sectionModule.isTableLoading"
+    :loading="useSectionModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">

@@ -3,7 +3,7 @@
     class="w-100"
     :items="courses"
     :headers="headers"
-    :loading="courseModule.isTableLoading"
+    :loading="useCourseModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">
