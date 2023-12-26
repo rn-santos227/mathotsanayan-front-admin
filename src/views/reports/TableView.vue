@@ -29,7 +29,11 @@
         <td class="text-left">
           {{ item.module?.name }}
         </td>
-        <td class="text-left">Stage {{ item.module.step }}</td>
+        <td class="text-center">Stage {{ item.module.step }}</td>
+        <td class="text-center">
+          {{ item.total_score }} /
+          {{ item.items }}
+        </td>
       </tr>
     </template>
   </v-data-table>

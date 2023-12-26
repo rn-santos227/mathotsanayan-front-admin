@@ -24,6 +24,7 @@ const headers: ReadonlyHeaders = [
     align: "start",
     sortable: true,
     key: "module.step",
+    width: "150",
   },
   {
     title: "Score Result",
