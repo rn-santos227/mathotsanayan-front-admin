@@ -46,7 +46,9 @@
         <td class="text-center">
           {{ secondsToMinutes(item.timer) }}
         </td>
-        <td class="text-left"></td>
+        <td class="text-left">
+          <ResultView v-bind:result="item" />
+        </td>
       </tr>
     </template>
   </v-data-table>
@@ -56,6 +58,8 @@
 import { computed, onMounted, ref } from "vue";
 import { useResultModule } from "@/store";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
+
+import ResultView from "./result/DialogView.vue";
 
 import headers from "@/helpers/headers/header_results";
 import Result from "@/types/Result";
