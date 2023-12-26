@@ -9,7 +9,7 @@
     >
       <template v-slot:item="{ item }">
         <tr>
-          <td class="text-xs-left">
+          <td class="text-left">
             <ImageComponent
               class="my-4"
               v-bind:id="item.id"
@@ -19,16 +19,16 @@
               v-model:trigger="item.trigger"
             />
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ item.content }}
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ item.type }}
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ item?.corrects.length }}
           </td>
-          <td class="text-xs-left">
+          <td class="text-left">
             {{ item?.options.length }}
           </td>
           <td>

@@ -8,10 +8,10 @@
   >
     <template v-slot:item="{ item }">
       <tr>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ item.name }}
         </td>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ item.contact_number }}
         </td>
         <td>

@@ -8,13 +8,13 @@
   >
     <template v-slot:item="{ item }">
       <tr>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ item.email }}
         </td>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ item.type_name }}
         </td>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ getOwnerName(item.owner) }}
         </td>
         <td>

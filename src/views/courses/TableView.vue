@@ -8,7 +8,7 @@
   >
     <template v-slot:item="{ item }">
       <tr>
-        <td class="text-xs-left">
+        <td class="text-left">
           {{ item.name }}
         </td>
         <td>
