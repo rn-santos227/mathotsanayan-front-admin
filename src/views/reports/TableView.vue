@@ -43,6 +43,10 @@
             {{ evaluateExam(item) }}</span
           >
         </td>
+        <td class="text-center">
+          {{ secondsToMinutes(item.timer) }}
+        </td>
+        <td class="text-left"></td>
       </tr>
     </template>
   </v-data-table>
@@ -51,7 +55,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { useResultModule } from "@/store";
-import { evaluateExam } from "@/helpers/evaluation";
+import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 
 import headers from "@/helpers/headers/header_results";
 import Result from "@/types/Result";
