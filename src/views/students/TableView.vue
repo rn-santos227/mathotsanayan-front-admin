@@ -26,6 +26,9 @@
           {{ item.full_name }}
         </td>
         <td class="text-left">
+          {{ getSectionName(item.section) }}
+        </td>
+        <td class="text-left">
           {{ item.email }}
         </td>
         <td class="text-left">
@@ -58,7 +61,7 @@ import {
   useSchoolModule,
   useSectionModule,
 } from "@/store";
-import { getSchoolName } from "@/helpers/instance";
+import { getSchoolName, getSectionName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";

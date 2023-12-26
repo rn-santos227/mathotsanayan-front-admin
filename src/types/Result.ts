@@ -10,8 +10,8 @@ interface Result {
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
-  module?: Module;
-  student?: Student;
+  module: Module;
+  student: Student;
   answers?: Answer[];
 }
 export default Result;
