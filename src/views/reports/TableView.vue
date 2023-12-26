@@ -34,6 +34,15 @@
           {{ item.total_score }} /
           {{ item.items }}
         </td>
+        <td class="text-left">
+          <span
+            :class="`font-weight-bold text-${
+              evaluateExam(item) === 'Passed' ? 'green' : 'red'
+            }`"
+          >
+            {{ evaluateExam(item) }}</span
+          >
+        </td>
       </tr>
     </template>
   </v-data-table>
@@ -42,6 +51,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { useResultModule } from "@/store";
+import { evaluateExam } from "@/helpers/evaluation";
 
 import headers from "@/helpers/headers/header_results";
 import Result from "@/types/Result";
