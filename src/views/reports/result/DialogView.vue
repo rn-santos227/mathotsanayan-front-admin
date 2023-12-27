@@ -45,6 +45,22 @@
                 v-bind:value="grade(props.result)"
               />
             </div>
+            <div class="ma-2">
+              <ResultComponent
+                v-bind:color="'green'"
+                v-bind:title="'Total Attempts'"
+                v-bind:data="`${props.result.answers?.length}`"
+                v-bind:value="accuracy(props.result)"
+              />
+            </div>
+            <div class="ma-2">
+              <ResultComponent
+                v-bind:color="'light-green'"
+                v-bind:title="'Accuracy'"
+                v-bind:data="`${accuracy(props.result).toFixed(2)}%`"
+                v-bind:value="accuracy(props.result)"
+              />
+            </div>
           </div>
         </v-card-text>
       </v-card>
