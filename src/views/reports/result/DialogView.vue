@@ -27,6 +27,8 @@
         </v-card>
         <v-card-text class="answers-height">
           <FormView v-bind:result="props.result" />
+          <v-divider class="my-4" />
+          <div class="d-flex justify-space-around flex-wrap"></div>
         </v-card-text>
       </v-card>
     </v-dialog>
