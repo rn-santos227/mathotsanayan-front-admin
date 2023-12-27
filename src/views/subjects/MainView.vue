@@ -4,7 +4,7 @@
       <v-card
         class="rounded-0 rounded-t mb-3 py-2"
         color="purple-darken-3"
-        flat
+        variant="flat"
       >
         <v-card-title>
           <v-row>
