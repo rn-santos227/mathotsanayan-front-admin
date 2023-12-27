@@ -25,6 +25,9 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <v-card-text class="answers-height">
+          <FormView v-bind:result="props.result" />
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-btn>
@@ -32,6 +35,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+
+import FormView from "./FormView.vue";
 
 import Result from "@/types/Result";
 
