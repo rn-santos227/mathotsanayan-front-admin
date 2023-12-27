@@ -28,7 +28,24 @@
         <v-card-text class="answers-height">
           <FormView v-bind:result="props.result" />
           <v-divider class="my-4" />
-          <div class="d-flex justify-space-around flex-wrap"></div>
+          <div class="d-flex justify-space-around flex-wrap">
+            <div class="ma-2">
+              <ResultComponent
+                v-bind:color="'cyan'"
+                v-bind:title="'Score'"
+                v-bind:data="`${props.result.total_score} / ${props.result.items}`"
+                v-bind:value="grade(props.result)"
+              />
+            </div>
+            <div class="ma-2">
+              <ResultComponent
+                v-bind:color="'teal'"
+                v-bind:title="'Grade'"
+                v-bind:data="`${grade(props.result).toFixed(2)}%`"
+                v-bind:value="grade(props.result)"
+              />
+            </div>
+          </div>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -37,6 +54,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { grade, accuracy } from "@/helpers/evaluation";
+
+import ResultComponent from "@/components/ResultComponent.vue";
 
 import FormView from "./FormView.vue";
 
