@@ -1,5 +1,6 @@
 import { createPinia } from "pinia";
 import { useAccountModule } from "./modules/accounts_module";
+import { useAdminsModule } from "./modules/admins_module";
 import { useAuthModule } from "./modules/auth_module";
 import { useCorrectModule } from "./modules/corrects_module";
 import { useCourseModule } from "./modules/courses_module";
@@ -21,6 +22,7 @@ const pinia = createPinia();
 export {
   pinia,
   useAccountModule,
+  useAdminsModule,
   useAuthModule,
   useCorrectModule,
   useCourseModule,

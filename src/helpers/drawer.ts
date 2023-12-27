@@ -48,6 +48,13 @@ export default [
         children: [],
       },
       {
+        text: "Administrators",
+        icon: "mdi-cog",
+        route: "/admins",
+        activator: false,
+        children: [],
+      },
+      {
         text: "Courses",
         icon: "mdi-certificate",
         route: "/courses",
