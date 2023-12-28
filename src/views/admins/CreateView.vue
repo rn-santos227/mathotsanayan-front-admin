@@ -136,6 +136,7 @@ import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useAdminsModule } from "@/store";
+import { rules, rules_password } from "@/helpers/rules/rules_admins";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
@@ -143,7 +144,6 @@ import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.
 
 import Admin from "@/types/Admin";
 import VAdmin from "@/helpers/validations/v_admins";
-import { rules, rules_password } from "@/helpers/rules/rules_admins";
 
 const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);

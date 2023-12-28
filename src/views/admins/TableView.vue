@@ -22,6 +22,7 @@
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
+                <UpdateView v-bind:admin="item" />
                 <DeleteView v-bind:admin="item" />
               </v-list>
             </v-menu>
@@ -39,6 +40,7 @@
 import { computed, onMounted, provide, ref } from "vue";
 import { useAdminsModule } from "@/store";
 
+import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
