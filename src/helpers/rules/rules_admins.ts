@@ -19,6 +19,10 @@ const rules = computed(() => {
       email,
       maxLength: maxLength(100),
     },
+    contact_number: {
+      required,
+      maxLength: maxLength(50),
+    },
     password: {
       required,
       maxLength: maxLength(50),
