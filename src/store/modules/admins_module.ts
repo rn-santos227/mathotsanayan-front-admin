@@ -31,6 +31,29 @@ export const useAdminsModule = defineStore("admins", {
       this.admins = this.admins.filter((item) => item.id !== admin.id);
     },
 
+    async create(payload: Admin): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(api.ADMINS.CREATE, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        const { admin } = data;
+        this.addAdmin(admin);
+        return true;
+      } catch (error) {
+        console.error("Error Admin in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
     async read(): Promise<boolean> {
       try {
         this.isTableLoading = true;
@@ -44,6 +67,58 @@ export const useAdminsModule = defineStore("admins", {
         return false;
       } finally {
         this.isTableLoading = false;
+      }
+    },
+
+    async update(payload: Admin): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.ADMINS.UPDATE}${payload.id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { admin } = data;
+        this.updateAdmin(admin);
+        return true;
+      } catch (error) {
+        console.error("Error Admin in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async delete(payload: Admin): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.ADMINS.DELETE}${payload.id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { admin } = data;
+        this.deleteAdmin(admin);
+        return true;
+      } catch (error) {
+        console.error("Error Admin in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
       }
     },
   },
