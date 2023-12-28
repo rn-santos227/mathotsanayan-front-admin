@@ -1,9 +1,9 @@
-type Admin = {
+import Password from "@/interfaces/Password";
+
+type Admin = Password & {
   id?: number;
   email: string;
   name: string;
-  password?: string;
-  password_confirm?: string;
   contact_number: string;
   created_at?: string;
   updated_at?: string;

@@ -1,6 +1,6 @@
 import Password from "@/interfaces/Password";
 
-type Student = Password & {
+type Person = Password & {
   id?: number;
   full_name?: string;
   first_name: string;
@@ -14,4 +14,4 @@ type Student = Password & {
   deleted_at?: string;
 };
 
-export default Student;
+export default Person;
