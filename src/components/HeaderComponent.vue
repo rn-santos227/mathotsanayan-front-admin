@@ -4,7 +4,7 @@
       {{ props.title }}
     </v-toolbar-title>
     <v-spacer></v-spacer>
-    <div v-if="authModule.isAuthenticated" class="mr-10">
+    <div v-if="authModule.isAuthenticated" class="mr-2">
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-btn
