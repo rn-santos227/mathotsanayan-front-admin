@@ -6,6 +6,13 @@ export default {
     DELETE: `${BACKEND}accounts/`,
   },
 
+  ADMINS: {
+    CREATE: `${BACKEND}admins/create`,
+    READ: `${BACKEND}admins`,
+    UPDATE: `${BACKEND}admins/`,
+    DELETE: `${BACKEND}admins/`,
+  },
+
   AUTH: {
     AUTH: `${BACKEND}auth`,
     LOGIN: `${BACKEND}admin`,
