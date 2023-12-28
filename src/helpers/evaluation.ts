@@ -39,7 +39,17 @@ export function secondsToMinutes(seconds: number | undefined): string {
 
   const formattedHours = String(hours).padStart(2, "0");
   const formattedMinutes = String(minutes).padStart(2, "0");
-  const formattedSeconds = String(seconds % 60).padStart(2, "0");
+  const formattedSeconds = (seconds % 60).toFixed(1).padStart(4, "0");
 
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
+export function getAverageTime(
+  timer: number | undefined,
+  items: number | undefined
+): string {
+  if (timer && items) {
+    const average = timer / items;
+    return secondsToMinutes(average);
+  } else return "Invalid Time";
 }

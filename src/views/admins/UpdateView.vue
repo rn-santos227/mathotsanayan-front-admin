@@ -137,7 +137,7 @@ import { inject, ref, reactive, computed, watch, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useAdminsModule } from "@/store";
-import { rules, rules_password } from "@/helpers/rules/rules_admins";
+import { rules, rules_password } from "@/helpers/rules/rules_update_admin";
 import { padLeft } from "@/helpers/utils";
 
 import Admin from "@/types/Admin";
