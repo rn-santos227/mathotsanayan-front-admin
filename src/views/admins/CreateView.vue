@@ -15,7 +15,7 @@
           variant="flat"
         >
           <v-card-actions class="mx-4">
-            <span class="text-h6"> Create New Course </span>
+            <span class="text-h6"> Create New Admin </span>
             <v-spacer />
             <v-btn
               density="comfortable"
@@ -65,7 +65,63 @@
                 />
               </v-col>
             </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  prepend-inner-icon="mdi-lock"
+                  v-model.trim="v$.password.$model"
+                  autocomplete="new-password"
+                  label="Password"
+                  density="compact"
+                  variant="outlined"
+                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  :error="v$.password.$error"
+                  :error-messages="errors.password"
+                  @click:append-inner="show = !show"
+                />
+              </v-col>
+              <v-col>
+                <v-text-field
+                  prepend-inner-icon="mdi-lock"
+                  v-model.trim="v$.password_confirm.$model"
+                  autocomplete="new-password"
+                  label="Password"
+                  density="compact"
+                  variant="outlined"
+                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  :error="v$.password_confirm.$error"
+                  :error-messages="errors.password_confirm"
+                  @click:append-inner="show = !show"
+                />
+              </v-col>
+            </v-row>
           </v-card-text>
+          <v-divider class="mb-2 mt-auto" />
+          <v-card-actions class="text-right">
+            <v-spacer />
+            <v-btn
+              @click.prevent="clearForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="error"
+              prepend-icon="mdi-close"
+            >
+              Clear
+            </v-btn>
+            <v-btn
+              @click.prevent="submitForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="success"
+              prepend-icon="mdi-check"
+            >
+              Submit
+            </v-btn>
+          </v-card-actions>
         </form>
       </v-card>
     </v-dialog>
@@ -89,6 +145,7 @@ import Admin from "@/types/Admin";
 import VAdmin from "@/helpers/validations/v_admins";
 import { rules, rules_password } from "@/helpers/rules/rules_admins";
 
+const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
 const success = ref({
   show: (message: string) => {
@@ -132,5 +189,10 @@ const clearForm = () => {
 const close = () => {
   dialog.value = !dialog.value;
   clearForm();
+};
+
+const submitForm = async () => {
+  const result = await v$.value.$validate();
+  if (!result) return;
 };
 </script>

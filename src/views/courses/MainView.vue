@@ -13,19 +13,19 @@
             </v-col>
             <v-col class="d-flex">
               <v-spacer />
-              <CreateViewVue />
+              <CreateView />
             </v-col>
           </v-row>
         </v-card-title>
       </v-card>
       <v-card-text>
-        <TableViewVue />
+        <TableView />
       </v-card-text>
     </v-card>
   </v-container>
 </template>
 
 <script setup lang="ts">
-import CreateViewVue from "./CreateView.vue";
-import TableViewVue from "./TableView.vue";
+import CreateView from "./CreateView.vue";
+import TableView from "./TableView.vue";
 </script>

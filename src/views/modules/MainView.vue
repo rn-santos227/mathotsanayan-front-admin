@@ -19,7 +19,7 @@
         </v-card-title>
       </v-card>
       <v-card-text>
-        <TableViewVue />
+        <TableView />
       </v-card-text>
     </v-card>
   </v-container>
@@ -27,5 +27,5 @@
 
 <script setup lang="ts">
 import CreateView from "./CreateView.vue";
-import TableViewVue from "./TableView.vue";
+import TableView from "./TableView.vue";
 </script>
