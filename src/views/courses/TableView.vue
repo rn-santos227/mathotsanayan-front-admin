@@ -36,6 +36,7 @@ import { useCourseModule } from "@/store";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
+
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
