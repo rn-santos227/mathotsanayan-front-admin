@@ -30,6 +30,103 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <form>
+          <v-card-text class="text--primary pa-6">
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model.trim="v$.name.$model"
+                  label="Admin Name"
+                  density="compact"
+                  variant="outlined"
+                  :error="v$.name.$error"
+                  :error-messages="errors.name"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model.trim="v$.contact_number.$model"
+                  label="Contact Number"
+                  density="compact"
+                  variant="outlined"
+                  :error="v$.contact_number.$error"
+                  :error-messages="errors.contact_number"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  v-model.trim="v$.email.$model"
+                  autocomplete="email"
+                  label="Admin Email Address"
+                  density="compact"
+                  variant="outlined"
+                  :error="v$.email.$error"
+                  :error-messages="errors.email"
+                />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  prepend-inner-icon="mdi-lock"
+                  v-model.trim="v$.password.$model"
+                  autocomplete="new-password"
+                  label="Password"
+                  density="compact"
+                  variant="outlined"
+                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  :error="v$.password.$error"
+                  :error-messages="errors.password"
+                  @click:append-inner="show = !show"
+                />
+              </v-col>
+              <v-col>
+                <v-text-field
+                  prepend-inner-icon="mdi-lock"
+                  v-model.trim="v$.password_confirm.$model"
+                  autocomplete="new-password"
+                  label="Password"
+                  density="compact"
+                  variant="outlined"
+                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  :type="show ? 'text' : 'password'"
+                  :error="v$.password_confirm.$error"
+                  :error-messages="errors.password_confirm"
+                  @click:append-inner="show = !show"
+                />
+              </v-col>
+            </v-row>
+          </v-card-text>
+          <v-divider class="mb-2 mt-auto" />
+          <v-card-actions class="text-right">
+            <v-spacer />
+            <v-btn
+              @click.prevent="resetForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="error"
+              prepend-icon="mdi-close"
+            >
+              Reset
+            </v-btn>
+            <v-btn
+              @click.prevent="submitForm"
+              variant="elevated"
+              width="200"
+              dark
+              color="success"
+              prepend-icon="mdi-check"
+            >
+              Submit
+            </v-btn>
+          </v-card-actions>
+        </form>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -103,5 +200,13 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
+  const response = await useAdminsModule().update(state);
+  if (response) {
+    resetForm();
+    success.value.show("Admin has been successfully updated.");
+    dialog.value = false;
+  } else {
+    error.value.show("The server has not able to process the request.");
+  }
 };
 </script>
