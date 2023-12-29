@@ -42,6 +42,16 @@ export function skips(answers: Answer[]): number {
   return skips;
 }
 
+export function skipAverage(
+  answers: Answer[],
+  items: number | undefined
+): number {
+  if (!items) return 0;
+  const totalSkips = skips(answers);
+  const average = (totalSkips / items) * 100;
+  return average <= 100 ? average : 100;
+}
+
 export function secondsToMinutes(seconds: number | undefined): string {
   if (!seconds) return "Invalid Time";
   const totalMinutes = Math.floor(seconds / 60);
