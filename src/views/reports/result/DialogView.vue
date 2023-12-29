@@ -62,6 +62,10 @@
               />
             </div>
           </div>
+          <v-divider class="mt-4" />
+          <div>
+            <TableView v-bind:answers="result.answers" />
+          </div>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -74,6 +78,7 @@ import { grade, accuracy } from "@/helpers/evaluation";
 
 import ResultComponent from "@/components/ResultComponent.vue";
 
+import TableView from "./TableView.vue";
 import FormView from "./FormView.vue";
 
 import Result from "@/types/Result";
