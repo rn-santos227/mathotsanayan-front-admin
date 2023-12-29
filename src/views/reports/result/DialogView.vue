@@ -61,6 +61,14 @@
                 v-bind:value="accuracy(props.result)"
               />
             </div>
+            <div class="ma-2">
+              <ResultComponent
+                v-bind:color="'red'"
+                v-bind:title="'Skips'"
+                v-bind:data="`${skips(props.result.answers)}`"
+                v-bind:value="100"
+              />
+            </div>
           </div>
           <v-divider class="mt-4" />
           <div>
@@ -74,7 +82,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { grade, accuracy } from "@/helpers/evaluation";
+import { grade, accuracy, skips } from "@/helpers/evaluation";
 
 import ResultComponent from "@/components/ResultComponent.vue";
 

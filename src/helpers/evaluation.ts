@@ -1,3 +1,4 @@
+import Answer from "@/types/Answer";
 import Result from "@/types/Result";
 
 export function evaluateExam(result: Result) {
@@ -29,6 +30,16 @@ export function grade(result: Result): number {
   } else {
     return 0;
   }
+}
+
+export function skips(answers: Answer[]): number {
+  let skips = 0;
+  answers.forEach((item) => {
+    if (item.grade?.evaluation === "skipped") {
+      skips += 1;
+    }
+  });
+  return skips;
 }
 
 export function secondsToMinutes(seconds: number | undefined): string {
