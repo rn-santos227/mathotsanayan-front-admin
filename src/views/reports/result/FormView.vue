@@ -30,7 +30,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" sm="6">
+      <v-col cols="12" sm="4">
         <v-text-field
           :class="`font-weight-bold text-${
             evaluateExam(props.result) === 'Passed' ? 'green' : 'red'
@@ -42,10 +42,18 @@
           readonly
         />
       </v-col>
-      <v-col cols="12" sm="6">
+      <v-col cols="12" sm="4">
         <v-text-field
           v-model.trim="totalTime"
           label="Total Time"
+          variant="outlined"
+          hide-details
+        />
+      </v-col>
+      <v-col cols="12" sm="4">
+        <v-text-field
+          v-model.trim="averageTime"
+          label="Average Time"
           variant="outlined"
           hide-details
         />
@@ -56,7 +64,11 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
+import {
+  evaluateExam,
+  secondsToMinutes,
+  getAverageTime,
+} from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
 
 import Result from "@/types/Result";
@@ -73,6 +85,10 @@ const studentName = computed<string | undefined>(
 
 const sectionName = computed<string | undefined>(() =>
   getSectionName(props.result.student.section)
+);
+
+const averageTime = computed<string | undefined>(() =>
+  getAverageTime(props.result.timer, props.result.items)
 );
 
 const grade = computed<string | undefined>(() => evaluateExam(props.result));
