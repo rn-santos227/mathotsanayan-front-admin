@@ -64,7 +64,7 @@
             <div class="ma-2">
               <ResultComponent
                 v-bind:color="'red'"
-                v-bind:title="'Skips'"
+                v-bind:title="'Total Skips'"
                 v-bind:data="`${skips(props.result.answers)}`"
                 v-bind:value="
                   skipAverage(props.result.answers, props.result.items)

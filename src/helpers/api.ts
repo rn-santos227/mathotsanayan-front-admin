@@ -34,6 +34,10 @@ export default {
     DELETE: `${BACKEND}courses/`,
   },
 
+  DASHBOARD: {
+    READ: `${BACKEND}admin/dashboard`,
+  },
+
   IMAGE: {
     IMAGE: `${BACKEND}image`,
   },
