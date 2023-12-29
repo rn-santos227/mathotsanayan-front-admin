@@ -1,6 +1,6 @@
 import Module from "./Module";
 import Answer from "./Answer";
-import Student from "./Person";
+import Student from "./Student";
 
 type Result = {
   id: number;

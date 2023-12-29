@@ -25,7 +25,9 @@
         <td class="text-left">
           {{ item.student.full_name }}
         </td>
-        <td class="text-left"></td>
+        <td class="text-left">
+          {{ getSectionName(item.student.section) }}
+        </td>
         <td class="text-left">
           {{ item.module?.name }}
         </td>
@@ -63,6 +65,7 @@ import ResultView from "./result/DialogView.vue";
 
 import headers from "@/helpers/headers/header_results";
 import Result from "@/types/Result";
+import { getSectionName } from "@/helpers/instance";
 
 const search = ref<string>("");
 const resultModule = useResultModule();

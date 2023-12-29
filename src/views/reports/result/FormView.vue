@@ -12,7 +12,7 @@
       </v-col>
       <v-col cols="12" sm="4">
         <v-text-field
-          v-model.trim="studentName"
+          v-model.trim="sectionName"
           label="Student Section"
           variant="outlined"
           hide-details
@@ -57,6 +57,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
+import { getSectionName } from "@/helpers/instance";
+
 import Result from "@/types/Result";
 
 const props = defineProps<{
@@ -67,6 +69,10 @@ const moduleName = computed<string | undefined>(() => props.result.module.name);
 
 const studentName = computed<string | undefined>(
   () => props.result.student.full_name
+);
+
+const sectionName = computed<string | undefined>(() =>
+  getSectionName(props.result.student.section)
 );
 
 const grade = computed<string | undefined>(() => evaluateExam(props.result));
