@@ -65,6 +65,7 @@ export default {
 
   RESULTS: {
     READ: `${BACKEND}results`,
+    INVALIDATE: `${BACKEND}results/`,
   },
 
   SCHOOLS: {

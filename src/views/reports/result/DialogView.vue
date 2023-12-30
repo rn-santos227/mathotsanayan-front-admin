@@ -1,11 +1,8 @@
 <template>
-  <v-btn
-    block
-    color="purple-darken-3"
-    variant="outlined"
-    prepend-icon="mdi-magnify"
-  >
-    View Details
+  <v-list-item @click.prevent>
+    <v-list-item-title class="text-button">
+      <v-icon icon="mdi-magnify"></v-icon> Details
+    </v-list-item-title>
     <v-dialog class="ma-auto" persistent v-model="dialog" activator="parent">
       <v-card>
         <v-card
@@ -79,7 +76,7 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-  </v-btn>
+  </v-list-item>
 </template>
 
 <script setup lang="ts">
