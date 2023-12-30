@@ -16,6 +16,10 @@ export const useResultModule = defineStore("result", {
       this.results = results;
     },
 
+    deleteResult(result: Result): void {
+      this.results = this.results.filter((item) => item.id !== result.id);
+    },
+
     async read(): Promise<boolean> {
       try {
         this.isTableLoading = true;
@@ -29,6 +33,32 @@ export const useResultModule = defineStore("result", {
         return false;
       } finally {
         this.isTableLoading = false;
+      }
+    },
+
+    async delete(payload: Result): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        const response = await authenticatedFetch(
+          `${api.RESULTS.INVALIDATE}${payload.id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          }
+        );
+
+        const data = await response.json();
+        const { result } = data;
+        this.deleteResult(result);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
       }
     },
   },

@@ -54,6 +54,7 @@
             <v-menu activator="parent">
               <v-list density="compact" variant="plain">
                 <ResultView v-bind:result="item" />
+                <InvalidateView v-bind:result="item" />
               </v-list>
             </v-menu>
           </v-btn>
@@ -73,6 +74,7 @@ import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
 
 import ResultView from "./result/DialogView.vue";
+import InvalidateView from "./InvalidateView.vue";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
