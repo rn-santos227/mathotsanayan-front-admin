@@ -8,6 +8,12 @@ const headers: ReadonlyHeaders = [
     key: "full_name",
   },
   {
+    title: "Course Abbreviaton",
+    align: "start",
+    sortable: true,
+    key: "abbreviation",
+  },
+  {
     title: "Action",
     align: "end",
     sortable: false,
