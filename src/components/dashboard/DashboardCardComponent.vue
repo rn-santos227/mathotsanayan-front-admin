@@ -6,13 +6,15 @@
     elevation="3"
   />
   <v-card v-else class="mx-4" elevation="3">
-    <v-card-item>
-      <span class="text-h6 font-weight-bold">{{ props.card.title }}</span>
-    </v-card-item>
+    <v-card-title>
+      <span :class="`text-h6 font-weight-bold text-${props.card.color}`">{{
+        props.card.title
+      }}</span>
+    </v-card-title>
     <v-list lines="two">
       <v-list-item>
         <template v-slot:prepend>
-          <v-avatar>
+          <v-avatar size="64">
             <v-icon class="larger-icons" :color="props.card.color">{{
               props.card.icon
             }}</v-icon>
@@ -47,5 +49,10 @@ const props = defineProps<{
 <style scoped>
 .larger-icons {
   font-size: 3em;
+}
+
+.custom-avatar {
+  width: 120px;
+  height: 120px;
 }
 </style>
