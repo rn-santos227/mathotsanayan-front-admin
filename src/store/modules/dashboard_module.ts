@@ -29,4 +29,10 @@ export const useDasboardModule = defineStore("dashboard", {
       }
     },
   },
+
+  getters: {
+    getDashboard(): Dashboard {
+      return this.dashboard;
+    },
+  },
 });
