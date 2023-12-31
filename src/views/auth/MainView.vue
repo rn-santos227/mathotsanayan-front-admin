@@ -1,5 +1,5 @@
 <template>
-  <v-container class="base fill-height" fluid>
+  <v-container class="fill-height" fluid>
     <v-card elevation="8" width="35%" class="ma-auto">
       <v-card class="rounded-0 rounded-t mb-6" color="purple-darken-3">
         <v-card-text>

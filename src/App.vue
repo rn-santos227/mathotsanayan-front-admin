@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <HeaderComponent :title="title" />
     <NavigationComponent />
-    <v-main app>
+    <v-main class="base">
       <router-view />
     </v-main>
     <LoadingDialogComponent v-bind:activate="authModule.isLoading" />

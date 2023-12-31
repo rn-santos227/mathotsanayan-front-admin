@@ -1,7 +1,11 @@
 <template>
-  <v-container class="base fill-height" fluid>
+  <v-container class="pa-12">
     <div class="d-flex justify-space-around flex-wrap">
-      <DashboardCardComponent v-bind:card="schoolCard" />
+      <DashboardCardComponent class="flex-grow-1" v-bind:card="schoolCard" />
+      <DashboardCardComponent class="flex-grow-1" v-bind:card="studentCard" />
+      <DashboardCardComponent class="flex-grow-1" v-bind:card="schoolCard" />
+      <DashboardCardComponent class="flex-grow-1" v-bind:card="schoolCard" />
+      <DashboardCardComponent class="flex-grow-1" v-bind:card="schoolCard" />
     </div>
   </v-container>
 </template>
@@ -14,15 +18,25 @@ import DashboardCardComponent from "@/components/dashboard/DashboardCardComponen
 
 import DashboardCard from "@/interfaces/DashboardCard";
 
-onMounted(async () => {
-  await useDasboardModule().read();
-});
-
 const schoolCard = ref<DashboardCard>({
   count: useDasboardModule().getDashboard.schools,
-  title: "School Count",
+  title: "Total Schools",
   link: "/schools",
   color: "primary",
   icon: "mdi-school",
+});
+
+const studentCard = ref<DashboardCard>({
+  count: useDasboardModule().getDashboard.students,
+  title: "Total Students",
+  link: "/schools",
+  color: "purple",
+  icon: "mdi-account-school",
+});
+
+onMounted(async () => {
+  await useDasboardModule().read();
+  schoolCard.value.count = useDasboardModule().getDashboard.schools;
+  studentCard.value.count = useDasboardModule().getDashboard.students;
 });
 </script>
