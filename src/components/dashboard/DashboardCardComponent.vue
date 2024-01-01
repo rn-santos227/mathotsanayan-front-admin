@@ -1,7 +1,7 @@
 <template>
   <v-skeleton-loader
     class="mx-4 border"
-    v-if="useDasboardModule().isLoading"
+    v-if="useDashboardModule().isLoading"
     type="card-avatar, actions"
     elevation="3"
   />
@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDasboardModule } from "../../store/index";
+import { useDashboardModule } from "../../store/index";
 import DashboardCard from "../../interfaces/DashboardCard";
 
 const props = defineProps<{

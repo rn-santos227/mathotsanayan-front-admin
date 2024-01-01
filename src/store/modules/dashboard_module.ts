@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 import Dashboard from "@/interfaces/Dashboard";
 
-export const useDasboardModule = defineStore("dashboard", {
+export const useDashboardModule = defineStore("dashboard", {
   state: () => ({
     isLoading: false as boolean,
     dashboard: {} as Dashboard,

@@ -4,7 +4,7 @@ import { useAdminsModule } from "./modules/admins_module";
 import { useAuthModule } from "./modules/auth_module";
 import { useCorrectModule } from "./modules/corrects_module";
 import { useCourseModule } from "./modules/courses_module";
-import { useDasboardModule } from "./modules/dashboard_module";
+import { useDashboardModule } from "./modules/dashboard_module";
 import { useImageModule } from "./modules/image_module";
 import { useModuleModule } from "./modules/modules_module";
 import { useOptionModule } from "./modules/options_module";
@@ -26,7 +26,7 @@ export {
   useAuthModule,
   useCorrectModule,
   useCourseModule,
-  useDasboardModule,
+  useDashboardModule,
   useImageModule,
   useModuleModule,
   useOptionModule,
