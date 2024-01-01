@@ -11,6 +11,7 @@
         props.card.title
       }}</span>
     </v-card-title>
+    <v-divider />
     <v-list lines="two">
       <v-list-item>
         <template v-slot:prepend>
