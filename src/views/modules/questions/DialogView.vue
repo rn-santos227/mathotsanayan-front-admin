@@ -8,7 +8,7 @@
       persistent
       v-model="dialog"
       activator="parent"
-      width="80%"
+      width="70%"
     >
       <v-card>
         <v-card
