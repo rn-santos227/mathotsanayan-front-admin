@@ -1,11 +1,30 @@
 <template>
-  <v-container class="pa-12" fluid>
+  <v-container fluid>
     <div class="d-flex justify-space-around flex-wrap">
-      <DashboardCardComponent class="flex-grow-1" v-bind:card="schoolCard" />
-      <DashboardCardComponent class="flex-grow-1" v-bind:card="studentCard" />
-      <DashboardCardComponent class="flex-grow-1" v-bind:card="teacherCard" />
-      <DashboardCardComponent class="flex-grow-1" v-bind:card="moduleCard" />
-      <DashboardCardComponent class="flex-grow-1" v-bind:card="resultCard" />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="schoolCard"
+      />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="studentCard"
+      />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="teacherCard"
+      />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="moduleCard"
+      />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="subjectCard"
+      />
+      <DashboardCardComponent
+        class="flex-grow-1 card-width"
+        v-bind:card="resultCard"
+      />
     </div>
   </v-container>
 </template>
@@ -50,10 +69,18 @@ const moduleCard = ref<DashboardCard>({
   icon: "mdi-text-box-check",
 });
 
+const subjectCard = ref<DashboardCard>({
+  count: useDasboardModule().getDashboard.subjects,
+  title: "Available Subjects",
+  link: "/subjects",
+  color: "green",
+  icon: "mdi-book",
+});
+
 const resultCard = ref<DashboardCard>({
   count: useDasboardModule().getDashboard.results,
   title: "Total Results",
-  link: "/results",
+  link: "/reports",
   color: "light-green",
   icon: "mdi-sticker-check-outline",
 });
@@ -64,6 +91,13 @@ onMounted(async () => {
   studentCard.value.count = useDasboardModule().getDashboard.students;
   teacherCard.value.count = useDasboardModule().getDashboard.teachers;
   moduleCard.value.count = useDasboardModule().getDashboard.modules;
+  subjectCard.value.count = useDasboardModule().getDashboard.subjects;
   resultCard.value.count = useDasboardModule().getDashboard.results;
 });
 </script>
+
+<style scoped>
+.card-width {
+  width: 180px;
+}
+</style>

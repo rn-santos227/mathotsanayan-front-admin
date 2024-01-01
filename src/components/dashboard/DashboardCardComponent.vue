@@ -5,7 +5,7 @@
     type="card-avatar, actions"
     elevation="3"
   />
-  <v-card v-else class="mx-4" elevation="3">
+  <v-card v-else class="ma-4" elevation="3">
     <v-card-title>
       <span :class="`text-h6 font-weight-bold text-${props.card.color}`">{{
         props.card.title
@@ -14,7 +14,7 @@
     <v-list lines="two">
       <v-list-item>
         <template v-slot:prepend>
-          <v-avatar size="64">
+          <v-avatar size="75">
             <v-icon class="larger-icons" :color="props.card.color">{{
               props.card.icon
             }}</v-icon>
@@ -22,7 +22,10 @@
         </template>
         <template v-slot:append>
           <div>
-            <span class="text-h4">{{ props.card.count }}</span>
+            <span
+              :class="`text-h4 font-weight-bold text-${props.card.color}`"
+              >{{ props.card.count }}</span
+            >
           </div>
         </template>
       </v-list-item>
@@ -30,7 +33,12 @@
     <v-divider />
     <v-card-actions>
       <v-spacer />
-      <v-btn variant="outlined" :color="props.card.color" :to="props.card.link">
+      <v-btn
+        variant="outlined"
+        block
+        :color="props.card.color"
+        :to="props.card.link"
+      >
         <v-icon>mdi-magnify</v-icon> See More
       </v-btn>
     </v-card-actions>
@@ -48,11 +56,6 @@ const props = defineProps<{
 
 <style scoped>
 .larger-icons {
-  font-size: 3em;
-}
-
-.custom-avatar {
-  width: 120px;
-  height: 120px;
+  font-size: 4em;
 }
 </style>
