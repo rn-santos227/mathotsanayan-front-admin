@@ -53,7 +53,7 @@ export function skipAverage(
 }
 
 export function secondsToMinutes(seconds: number | undefined): string {
-  if (!seconds) return "Invalid Time";
+  if (seconds === undefined) return "Invalid Time";
   const totalMinutes = Math.floor(seconds / 60);
   const minutes = totalMinutes % 60;
   const hours = Math.floor(totalMinutes / 60);
