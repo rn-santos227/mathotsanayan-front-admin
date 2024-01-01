@@ -31,14 +31,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { useDasboardModule } from "@/store";
+import { useDashboardModule } from "@/store";
 
 import DashboardCardComponent from "@/components/dashboard/DashboardCardComponent.vue";
 
 import DashboardCard from "@/interfaces/DashboardCard";
 
 const schoolCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.schools,
+  count: useDashboardModule().getDashboard.schools,
   title: "Total Schools",
   link: "/schools",
   color: "primary",
@@ -46,7 +46,7 @@ const schoolCard = ref<DashboardCard>({
 });
 
 const studentCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.students,
+  count: useDashboardModule().getDashboard.students,
   title: "Total Students",
   link: "/students",
   color: "purple",
@@ -54,7 +54,7 @@ const studentCard = ref<DashboardCard>({
 });
 
 const teacherCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.teachers,
+  count: useDashboardModule().getDashboard.teachers,
   title: "Total Teachers",
   link: "/teachers",
   color: "deep-purple",
@@ -62,7 +62,7 @@ const teacherCard = ref<DashboardCard>({
 });
 
 const moduleCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.modules,
+  count: useDashboardModule().getDashboard.modules,
   title: "Total Modules",
   link: "/modules",
   color: "indigo",
@@ -70,7 +70,7 @@ const moduleCard = ref<DashboardCard>({
 });
 
 const subjectCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.subjects,
+  count: useDashboardModule().getDashboard.subjects,
   title: "Available Subjects",
   link: "/subjects",
   color: "green",
@@ -78,7 +78,7 @@ const subjectCard = ref<DashboardCard>({
 });
 
 const resultCard = ref<DashboardCard>({
-  count: useDasboardModule().getDashboard.results,
+  count: useDashboardModule().getDashboard.results,
   title: "Total Results",
   link: "/reports",
   color: "light-green",
@@ -86,13 +86,13 @@ const resultCard = ref<DashboardCard>({
 });
 
 onMounted(async () => {
-  await useDasboardModule().read();
-  schoolCard.value.count = useDasboardModule().getDashboard.schools;
-  studentCard.value.count = useDasboardModule().getDashboard.students;
-  teacherCard.value.count = useDasboardModule().getDashboard.teachers;
-  moduleCard.value.count = useDasboardModule().getDashboard.modules;
-  subjectCard.value.count = useDasboardModule().getDashboard.subjects;
-  resultCard.value.count = useDasboardModule().getDashboard.results;
+  await useDashboardModule().read();
+  schoolCard.value.count = useDashboardModule().getDashboard.schools;
+  studentCard.value.count = useDashboardModule().getDashboard.students;
+  teacherCard.value.count = useDashboardModule().getDashboard.teachers;
+  moduleCard.value.count = useDashboardModule().getDashboard.modules;
+  subjectCard.value.count = useDashboardModule().getDashboard.subjects;
+  resultCard.value.count = useDashboardModule().getDashboard.results;
 });
 </script>
 
