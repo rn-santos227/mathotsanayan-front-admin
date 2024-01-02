@@ -1,5 +1,5 @@
 <template>
-  <v-btn variant="outlined" prepend-icon="mdi-magnify">
+  <v-btn variant="outlined" prepend-icon="mdi-magnify" height="40">
     Filter Search
     <v-dialog
       class="ma-auto"

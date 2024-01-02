@@ -31,7 +31,7 @@
           </v-card-actions>
         </v-card>
         <form>
-          <v-card-text  v-if="!$props.module.active">
+          <v-card-text v-if="!$props.module.active">
             <v-row>
               <v-col cols="9">
                 <v-text-field

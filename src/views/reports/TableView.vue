@@ -1,15 +1,18 @@
 <template>
   <v-card variant="flat">
-    <v-card-actions>
+    <v-row>
       <v-spacer />
-      <v-text-field
-        v-model="search"
-        label="Search Result"
-        density="compact"
-        variant="outlined"
-        prepend-inner-icon="mdi-magnify"
-      />
-    </v-card-actions>
+      <v-col class="d-flex">
+        <v-text-field
+          class="align-self-end"
+          v-model="search"
+          label="Search Result"
+          density="compact"
+          variant="outlined"
+        />
+        <FilterView class="ml-4" />
+      </v-col>
+    </v-row>
   </v-card>
   <v-divider />
   <v-data-table
@@ -74,6 +77,7 @@ import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
 
 import ResultView from "./result/DialogView.vue";
+import FilterView from "./FilterView.vue";
 import InvalidateView from "./InvalidateView.vue";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";

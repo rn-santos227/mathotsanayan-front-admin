@@ -30,7 +30,7 @@
           </v-card-actions>
         </v-card>
         <form>
-          <v-card-text >
+          <v-card-text>
             <v-row>
               <v-col>
                 <v-text-field
