@@ -77,7 +77,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import search_list from "@/helpers/searches/result_search";
+import search_list from "@/helpers/searches/search_results";
 
 const dialog = ref<boolean>(false);
 const search = ref<string>("");
