@@ -6,7 +6,7 @@
       persistent
       v-model="dialog"
       activator="parent"
-      width="50%"
+      width="40%"
     >
       <v-card>
         <v-card
@@ -29,7 +29,7 @@
         <form>
           <v-card-text>
             <v-row>
-              <v-col cols="9">
+              <v-col cols="8">
                 <v-text-field
                   v-model.trim="search"
                   label="Search Value"
@@ -37,7 +37,7 @@
                   variant="outlined"
                 />
               </v-col>
-              <v-col cols="3">
+              <v-col cols="4">
                 <v-select
                   :items="search_list"
                   item-title="text"
@@ -50,6 +50,20 @@
               </v-col>
             </v-row>
           </v-card-text>
+          <v-divider />
+          <v-card-actions class="text-right">
+            <v-spacer />
+            <v-btn
+              @click.prevent="submit"
+              variant="elevated"
+              width="200"
+              dark
+              color="purple-darken-3"
+              prepend-icon="mdi-magnify"
+            >
+              Search
+            </v-btn>
+          </v-card-actions>
         </form>
       </v-card>
     </v-dialog>
@@ -66,5 +80,9 @@ const category = ref<string>("");
 
 const close = () => {
   dialog.value = !dialog.value;
+};
+
+const submit = async () => {
+  //
 };
 </script>
