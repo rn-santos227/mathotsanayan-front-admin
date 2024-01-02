@@ -1,5 +1,10 @@
 <template>
-  <v-btn variant="outlined" prepend-icon="mdi-magnify" height="40">
+  <v-btn
+    variant="outlined"
+    color="purple-darken-3"
+    prepend-icon="mdi-magnify"
+    height="40"
+  >
     Filter Search
     <v-dialog
       class="ma-auto"

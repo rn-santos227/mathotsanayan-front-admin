@@ -1,6 +1,6 @@
 <template>
   <v-card variant="flat">
-    <v-row>
+    <v-row class="mt-1">
       <v-col>
         <GenerationView class="ml-4" />
       </v-col>
