@@ -34,7 +34,6 @@ import { ref, onMounted } from "vue";
 import { useDashboardModule } from "@/store";
 
 import DashboardCardComponent from "@/components/dashboard/DashboardCardComponent.vue";
-
 import DashboardCard from "@/interfaces/DashboardCard";
 
 const schoolCard = ref<DashboardCard>({
