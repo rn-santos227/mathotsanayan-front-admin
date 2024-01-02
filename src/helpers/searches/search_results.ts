@@ -1,6 +1,6 @@
-import Search from "@/interfaces/Search";
+import Category from "@/interfaces/Category";
 
-const search_list: Array<Search> = [
+const search_list: Array<Category> = [
   {
     text: "Module Name",
     value: "module.name",

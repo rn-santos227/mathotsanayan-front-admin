@@ -1,5 +1,5 @@
 interface Search {
-  value: string;
-  text: string;
+  search: string;
+  category: string;
 }
 export default Search;
