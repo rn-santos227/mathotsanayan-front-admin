@@ -13,5 +13,9 @@ const search_list: Array<Category> = [
     text: "Student Section",
     value: "student.section",
   },
+  {
+    text: "Subject Name",
+    value: "subject.name",
+  },
 ];
 export default search_list;
