@@ -27,7 +27,29 @@
           </v-card-actions>
         </v-card>
         <form>
-          <v-card-text> </v-card-text>
+          <v-card-text>
+            <v-row>
+              <v-col cols="9">
+                <v-text-field
+                  v-model.trim="search"
+                  label="Search Value"
+                  density="compact"
+                  variant="outlined"
+                />
+              </v-col>
+              <v-col cols="3">
+                <v-select
+                  :items="search_list"
+                  item-title="text"
+                  item-value="value"
+                  v-model.trim="category"
+                  label="Search Category"
+                  density="compact"
+                  variant="outlined"
+                />
+              </v-col>
+            </v-row>
+          </v-card-text>
         </form>
       </v-card>
     </v-dialog>
@@ -36,8 +58,11 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import search_list from "@/helpers/searches/result_search";
+
 const dialog = ref<boolean>(false);
 const search = ref<string>("");
+const category = ref<string>("");
 
 const close = () => {
   dialog.value = !dialog.value;

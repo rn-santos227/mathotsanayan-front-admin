@@ -1,6 +1,6 @@
 import Search from "@/interfaces/Search";
 
-const search: Array<Search> = [
+const search_list: Array<Search> = [
   {
     text: "Module Name",
     value: "module.name",
@@ -14,4 +14,4 @@ const search: Array<Search> = [
     value: "student.section",
   },
 ];
-export default search;
+export default search_list;
