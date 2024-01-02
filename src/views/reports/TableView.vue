@@ -1,7 +1,9 @@
 <template>
   <v-card variant="flat">
     <v-row>
-      <v-spacer />
+      <v-col>
+        <GenerationView class="ml-4" />
+      </v-col>
       <v-col class="d-flex">
         <v-text-field
           class="align-self-end"
@@ -76,9 +78,10 @@ import { useResultModule } from "@/store";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
 
-import ResultView from "./result/DialogView.vue";
 import FilterView from "./FilterView.vue";
+import GenerationView from "./GenerationView.vue";
 import InvalidateView from "./InvalidateView.vue";
+import ResultView from "./result/DialogView.vue";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
