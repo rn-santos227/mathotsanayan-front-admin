@@ -15,7 +15,7 @@
           flat
         >
           <v-card-actions class="mx-4">
-            <span class="text-h6"> Create New Module </span>
+            <span class="text-h6"> Result Advance Search </span>
             <v-spacer />
             <v-btn
               density="comfortable"
