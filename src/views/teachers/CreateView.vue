@@ -27,7 +27,7 @@
           </v-card-actions>
         </v-card>
         <form>
-          <v-card-text class="text--primary">
+          <v-card-text>
             <v-row>
               <v-col cols="3">
                 <v-text-field

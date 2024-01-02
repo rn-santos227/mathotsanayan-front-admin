@@ -26,6 +26,9 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <form>
+          <v-card-text> </v-card-text>
+        </form>
       </v-card>
     </v-dialog>
   </v-btn>
@@ -34,6 +37,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 const dialog = ref<boolean>(false);
+const search = ref<string>("");
 
 const close = () => {
   dialog.value = !dialog.value;

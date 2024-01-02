@@ -9,7 +9,7 @@
         </v-card-text>
       </v-card>
       <form>
-        <v-card-text class="text--primary">
+        <v-card-text>
           <v-text-field
             class="mx-4"
             v-model.trim="v$.email.$model"
