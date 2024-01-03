@@ -22,8 +22,10 @@
     :search="search"
     :items="results"
     :headers="headers"
+    :page="useResultModule().currentPage"
     :loading="useResultModule().isTableLoading"
     item-value="name"
+    @page-change="onPageChange"
   >
     <template v-slot:item="{ item }">
       <tr>
@@ -90,7 +92,6 @@ import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.
 import headers from "@/helpers/headers/header_results";
 import Result from "@/types/Result";
 
-const currentPage = ref<number>(1);
 const success = ref({
   show: (message: string) => {
     return message;
@@ -112,7 +113,6 @@ onMounted(async () => {
 });
 
 async function onPageChange(newPage: number): Promise<void> {
-  currentPage.value = newPage;
   await resultModule.read(newPage);
 }
 
