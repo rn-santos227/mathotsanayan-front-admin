@@ -112,8 +112,8 @@ onMounted(async () => {
   await useResultModule().read();
 });
 
-async function onPageChange(newPage: number): Promise<void> {
-  await resultModule.read(newPage);
+async function onPageChange(page: number): Promise<void> {
+  await resultModule.read(page);
 }
 
 provide("success", success);
