@@ -3,7 +3,7 @@ import Category from "@/interfaces/Category";
 const search_list: Array<Category> = [
   {
     text: "Module Name",
-    value: "module.name",
+    value: "name",
   },
   {
     text: "Subject Name",
