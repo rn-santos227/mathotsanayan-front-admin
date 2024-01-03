@@ -3,11 +3,11 @@ import Category from "@/interfaces/Category";
 const search_list: Array<Category> = [
   {
     text: "Student Name",
-    value: "student.full_name",
+    value: "full_name",
   },
   {
     text: "Student Email",
-    value: "student.email",
+    value: "email",
   },
   {
     text: "Student School",
@@ -15,7 +15,7 @@ const search_list: Array<Category> = [
   },
   {
     text: "Student Section",
-    value: "student.section",
+    value: "section.name",
   },
 ];
 export default search_list;
