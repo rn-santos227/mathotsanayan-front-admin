@@ -9,6 +9,7 @@ export const useResultModule = defineStore("result", {
     results: [] as Result[],
     isLoading: false,
     isTableLoading: false,
+    currentPage: 1,
   }),
 
   actions: {
@@ -16,17 +17,24 @@ export const useResultModule = defineStore("result", {
       this.results = results;
     },
 
+    setPage(current_page: number) {
+      this.currentPage = current_page;
+    },
+
     deleteResult(result: Result): void {
       this.results = this.results.filter((item) => item.id !== result.id);
     },
 
-    async read(): Promise<boolean> {
+    async read(page = 1): Promise<boolean> {
       try {
         this.isTableLoading = true;
-        const response = await authenticatedFetch(api.RESULTS.READ);
-        const data = await response.json();
-        const { results } = data;
-        this.setResults(results);
+        const response = await authenticatedFetch(
+          `${api.RESULTS.READ}?page=${page}`
+        );
+        const res = await response.json();
+        const { data, current_page } = res.results;
+        this.setResults(data);
+        this.setPage(current_page);
         return true;
       } catch (error) {
         console.error("Error Results in:", error);
