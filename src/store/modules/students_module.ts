@@ -9,6 +9,7 @@ export const useStudentModule = defineStore("student", {
     students: [] as Student[],
     isLoading: false,
     isTableLoading: false,
+    currentPage: 1,
   }),
 
   actions: {

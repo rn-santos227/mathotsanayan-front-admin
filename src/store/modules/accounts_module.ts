@@ -9,6 +9,7 @@ export const useAccountModule = defineStore("accounts", {
     accounts: [] as Account[],
     isLoading: false,
     isTableLoading: false,
+    currentPage: 1,
   }),
 
   actions: {

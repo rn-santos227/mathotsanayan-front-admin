@@ -9,6 +9,7 @@ export const useTeacherModule = defineStore("teachers", {
     teachers: [] as Teacher[],
     isLoading: false,
     isTableLoading: false,
+    currentPage: 1,
   }),
 
   actions: {
