@@ -25,7 +25,7 @@
     :page="useResultModule().currentPage"
     :loading="useResultModule().isTableLoading"
     item-value="name"
-    @page-change="onPageChange"
+    @update:page="onPageChange"
   >
     <template v-slot:item="{ item }">
       <tr>
