@@ -9,7 +9,7 @@ export const useResultModule = defineStore("result", {
     results: [] as Result[],
     isLoading: false,
     isTableLoading: false,
-    total: 100,
+    total: 0,
   }),
 
   actions: {
