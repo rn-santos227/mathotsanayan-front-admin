@@ -19,12 +19,12 @@
   <v-divider />
   <v-data-table
     class="w-100"
+    item-value="name"
     :search="search"
     :items="results"
     :headers="headers"
     :page="useResultModule().currentPage"
     :loading="useResultModule().isTableLoading"
-    item-value="name"
     @update:page="onPageChange"
   >
     <template v-slot:item="{ item }">

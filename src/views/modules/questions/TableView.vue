@@ -2,9 +2,9 @@
   <v-card-text class="question-height">
     <v-data-table
       class="w-100"
+      item-value="name"
       :items="table_props.questions"
       :headers="headers"
-      item-value="name"
       :loading="useQuestionModule().isTableLoading"
     >
       <template v-slot:item="{ item }">

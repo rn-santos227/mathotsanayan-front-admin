@@ -10,7 +10,6 @@ export const useResultModule = defineStore("result", {
     isLoading: false,
     isTableLoading: false,
     currentPage: 1,
-    total: 0,
   }),
 
   actions: {
@@ -33,9 +32,7 @@ export const useResultModule = defineStore("result", {
           `${api.RESULTS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, total } = res.results;
-
-        this.total = total;
+        const { data, current_page } = res.results;
         this.currentPage = current_page;
         this.setResults(data);
         return true;

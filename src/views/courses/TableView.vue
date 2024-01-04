@@ -1,10 +1,10 @@
 <template>
   <v-data-table
     class="w-100"
+    item-value="name"
     :items="courses"
     :headers="headers"
     :loading="useCourseModule().isTableLoading"
-    item-value="name"
   >
     <template v-slot:item="{ item }">
       <tr>

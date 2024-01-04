@@ -14,11 +14,11 @@
   <v-divider />
   <v-data-table
     class="w-100"
+    item-value="name"
     :search="search"
     :items="modules"
     :headers="headers"
     :loading="useModuleModule().isTableLoading"
-    item-value="name"
   >
     <template v-slot:item="{ item, index }">
       <tr>
