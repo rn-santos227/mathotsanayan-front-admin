@@ -21,9 +21,9 @@
     class="w-100"
     item-value="name"
     :search="search"
-    :items="results"
+    :total-items="useResultModule().total"
+    :items="useResultModule().getResults"
     :headers="headers"
-    :page="useResultModule().currentPage"
     :loading="useResultModule().isTableLoading"
     @update:page="onPageChange"
   >
@@ -75,7 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
+import { onMounted, provide, ref } from "vue";
 import { useResultModule } from "@/store";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
@@ -90,7 +90,6 @@ import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue"
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
 import headers from "@/helpers/headers/header_results";
-import Result from "@/types/Result";
 
 const success = ref({
   show: (message: string) => {
@@ -106,13 +105,13 @@ const error = ref({
 
 const search = ref<string>("");
 const resultModule = useResultModule();
-const results = computed<Result[]>(() => resultModule.getResults);
 
 onMounted(async () => {
   await useResultModule().read();
 });
 
 async function onPageChange(page: number): Promise<void> {
+  console.log(page);
   await resultModule.read(page);
 }
 

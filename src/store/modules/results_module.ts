@@ -9,7 +9,7 @@ export const useResultModule = defineStore("result", {
     results: [] as Result[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
+    total: 100,
   }),
 
   actions: {
@@ -17,24 +17,21 @@ export const useResultModule = defineStore("result", {
       this.results = results;
     },
 
-    setPage(current_page: number) {
-      this.currentPage = current_page;
-    },
-
     deleteResult(result: Result): void {
       this.results = this.results.filter((item) => item.id !== result.id);
     },
 
-    async read(page = 1): Promise<boolean> {
+    async read(page?: number): Promise<boolean> {
+      const pageNumber = page || 1;
       try {
         this.isTableLoading = true;
         const response = await authenticatedFetch(
-          `${api.RESULTS.READ}?page=${page}`
+          `${api.RESULTS.READ}?page=${pageNumber}`
         );
         const res = await response.json();
-        const { data, current_page } = res.results;
-        this.currentPage = current_page;
+        const { data, total } = res.results;
         this.setResults(data);
+        this.total = total;
         return true;
       } catch (error) {
         console.error("Error Results in:", error);
