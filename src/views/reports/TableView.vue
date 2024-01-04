@@ -24,6 +24,7 @@
     :items="results"
     :headers="headers"
     :loading="useResultModule().isTableLoading"
+    :page="useResultModule().currentPage"
     :hide-actions="true"
   >
     <template v-slot:item="{ item }">
@@ -67,7 +68,15 @@
         </td>
       </tr>
     </template>
-    <template v-slot:bottom></template>
+    <template v-slot:bottom>
+      <div class="text-left">
+        <v-pagination
+          v-model="useResultModule().currentPage"
+          :length="useResultModule().totalPages"
+          :total-visible="7"
+        />
+      </div>
+    </template>
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
@@ -75,7 +84,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
+import { computed, onMounted, provide, ref, watch } from "vue";
 import { useResultModule } from "@/store";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
@@ -112,9 +121,12 @@ onMounted(async () => {
   await useResultModule().read();
 });
 
-async function onPageChange(page: number): Promise<void> {
-  await resultModule.read(page);
-}
+watch(
+  () => useResultModule().currentPage,
+  async () => {
+    await resultModule.read(useResultModule().currentPage);
+  }
+);
 
 provide("success", success);
 provide("error", error);
