@@ -1,15 +1,18 @@
 <template>
   <v-card variant="flat">
-    <v-card-actions>
+    <v-row class="mt-1">
       <v-spacer />
-      <v-text-field
-        v-model="search"
-        label="Search Module"
-        density="compact"
-        variant="outlined"
-        prepend-inner-icon="mdi-magnify"
-      />
-    </v-card-actions>
+      <v-col class="d-flex">
+        <v-text-field
+          class="align-self-end"
+          v-model="search"
+          label="Search Module"
+          density="compact"
+          variant="outlined"
+        />
+        <FilterView class="ml-4" />
+      </v-col>
+    </v-row>
   </v-card>
   <v-divider />
   <v-data-table
