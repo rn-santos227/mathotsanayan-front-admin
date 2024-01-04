@@ -1,4 +1,20 @@
 <template>
+  <v-card variant="flat">
+    <v-row class="mt-1">
+      <v-spacer />
+      <v-col class="d-flex">
+        <v-text-field
+          class="align-self-end"
+          v-model="search"
+          label="Search Teacher"
+          density="compact"
+          variant="outlined"
+        />
+        <FilterView class="ml-4" />
+      </v-col>
+    </v-row>
+  </v-card>
+  <v-divider />
   <v-data-table
     class="w-100"
     :items="teachers"
@@ -64,6 +80,7 @@ const error = ref({
   },
 });
 
+const search = ref<string>("");
 const teacherModule = useTeacherModule();
 const teachers = computed<Teacher[]>(() => teacherModule.getTeachers);
 
