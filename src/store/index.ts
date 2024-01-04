@@ -13,7 +13,7 @@ import { useResultModule } from "./modules/results_module";
 import { useSchoolModule } from "./modules/schools_module";
 import { useSectionModule } from "./modules/sections_module";
 import { useStudentModule } from "./modules/students_module";
-import { useSubjectModule } from "./modules/subject_module";
+import { useSubjectModule } from "./modules/subjects_module";
 import { useTeacherModule } from "./modules/teachers_module";
 import { useTestModule } from "./modules/test_module";
 
