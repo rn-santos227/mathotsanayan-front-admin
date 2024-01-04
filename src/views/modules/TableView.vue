@@ -56,9 +56,11 @@ import { computed, onMounted, provide, ref } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
 import { getSubjectName } from "@/helpers/instance";
 
+import FilterView from "./FilterView.vue";
 import QuestionView from "./questions/DialogView.vue";
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
+
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";

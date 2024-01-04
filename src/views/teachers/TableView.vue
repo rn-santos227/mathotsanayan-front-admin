@@ -41,6 +41,7 @@ import { computed, onMounted, provide, ref } from "vue";
 import { useTeacherModule, useSchoolModule } from "@/store";
 import { getSchoolName } from "@/helpers/instance";
 
+import FilterView from "./FilterView.vue";
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
 
