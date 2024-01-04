@@ -18,7 +18,7 @@ export const useTeacherModule = defineStore("teachers", {
     },
 
     addTeacher(teacher: Teacher) {
-      this.teachers.push(teacher);
+      this.teachers.unshift(teacher);
     },
 
     updateTeacher(teacher: Teacher) {

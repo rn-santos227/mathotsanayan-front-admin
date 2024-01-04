@@ -18,7 +18,7 @@ export const useStudentModule = defineStore("student", {
     },
 
     addStudent(student: Student) {
-      this.students.push(student);
+      this.students.unshift(student);
     },
 
     updateStudent(student: Student) {

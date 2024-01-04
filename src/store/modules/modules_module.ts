@@ -45,7 +45,7 @@ export const useModuleModule = defineStore("modules", {
     },
 
     addModule(module: Module) {
-      this.modules.push(module);
+      this.modules.unshift(module);
     },
 
     updateModule(module: Module) {
