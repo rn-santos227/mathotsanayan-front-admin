@@ -18,7 +18,7 @@ export const useAdminsModule = defineStore("admins", {
     },
 
     addAdmin(admin: Admin): void {
-      this.admins.push(admin);
+      this.admins.unshift(admin);
     },
 
     updateAdmin(admin: Admin): void {

@@ -18,7 +18,7 @@ export const useSchoolModule = defineStore("schools", {
     },
 
     addSchool(school: School): void {
-      this.schools.push(school);
+      this.schools.unshift(school);
     },
 
     updateSchool(school: School): void {

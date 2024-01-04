@@ -18,7 +18,7 @@ export const useSectionModule = defineStore("sections", {
     },
 
     addSection(section: Section) {
-      this.sections.push(section);
+      this.sections.unshift(section);
     },
 
     updateSection(section: Section) {

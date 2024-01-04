@@ -18,7 +18,7 @@ export const useSubjectModule = defineStore("subjects", {
     },
 
     addSubject(subject: Subject): void {
-      this.subjects.push(subject);
+      this.subjects.unshift(subject);
     },
 
     updateSubject(subject: Subject): void {
