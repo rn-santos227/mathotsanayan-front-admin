@@ -10,6 +10,7 @@ export const useStudentModule = defineStore("student", {
     isLoading: false,
     isTableLoading: false,
     currentPage: 1,
+    totalPages: 0,
   }),
 
   actions: {
