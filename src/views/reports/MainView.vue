@@ -17,9 +17,7 @@
           </v-row>
         </v-card-title>
       </v-card>
-      <v-card-text>
-        <TableView />
-      </v-card-text>
+      <TableView />
     </v-card>
   </v-container>
 </template>
