@@ -10,7 +10,9 @@ export const useModuleModule = defineStore("modules", {
     modules: [] as Module[],
     isLoading: false,
     isTableLoading: false,
+    currentPage: 1,
     totalPages: 0,
+    itemsPerPage: 10,
   }),
 
   actions: {
