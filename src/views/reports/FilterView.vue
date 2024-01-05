@@ -77,12 +77,16 @@
       </v-card>
     </v-dialog>
   </v-btn>
+  <ErrorDialogComponent ref="error" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
+import { useResultModule } from "@/store";
+
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 
 import Search from "@/interfaces/Search";
 import VSearch from "@/helpers/validations/v_search";
@@ -90,6 +94,13 @@ import rules from "@/helpers/rules/rules_search";
 import search_list from "@/helpers/searches/search_results";
 
 const dialog = ref<boolean>(false);
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
 const state = reactive<Search>({
   search: "",
   category: "",
@@ -105,5 +116,11 @@ const close = () => {
 const submit = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
+  const response = await useResultModule().search(state);
+  if (response) {
+    close();
+  } else {
+    error.value.show("The server has not able to process request.");
+  }
 };
 </script>

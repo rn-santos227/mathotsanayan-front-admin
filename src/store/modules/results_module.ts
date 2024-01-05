@@ -49,7 +49,7 @@ export const useResultModule = defineStore("result", {
       try {
         this.isTableLoading = true;
         const response = await authenticatedFetch(
-          `${api.RESULTS.READ}?${payload}`
+          `${api.RESULTS.SEARCH}?category=${payload.category}&search=${payload.search}`
         );
         const data = await response.json();
         const { results } = data;
