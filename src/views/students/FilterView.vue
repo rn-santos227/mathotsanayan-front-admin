@@ -36,10 +36,12 @@
             <v-row>
               <v-col cols="8">
                 <v-text-field
-                  v-model.trim="search"
+                  v-model.trim="v$.search.$model"
                   label="Search Value"
                   density="compact"
                   variant="outlined"
+                  :error="v$.search.$error"
+                  :error-messages="errors.search"
                 />
               </v-col>
               <v-col cols="4">
@@ -47,10 +49,12 @@
                   :items="search_list"
                   item-title="text"
                   item-value="value"
-                  v-model.trim="category"
+                  v-model.trim="v$.category.$model"
                   label="Search Category"
                   density="compact"
                   variant="outlined"
+                  :error="v$.category.$error"
+                  :error-messages="errors.category"
                 />
               </v-col>
             </v-row>
@@ -76,18 +80,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref, reactive } from "vue";
+import { useVuelidate } from "@vuelidate/core";
+import { useValidationErrors } from "@/services/handlers";
+
+import Search from "@/interfaces/Search";
+import VSearch from "@/helpers/validations/v_search";
+import rules from "@/helpers/rules/rules_search";
 import search_list from "@/helpers/searches/search_students";
 
 const dialog = ref<boolean>(false);
-const search = ref<string>("");
-const category = ref<string>("");
+const state = reactive<Search>({
+  search: "",
+  category: "",
+});
+
+const v$ = useVuelidate(rules, state);
+const errors = computed(() => useValidationErrors<VSearch>(v$.value.$errors));
 
 const close = () => {
   dialog.value = !dialog.value;
 };
 
 const submit = async () => {
-  //
+  const result = await v$.value.$validate();
+  if (!result) return;
 };
 </script>
