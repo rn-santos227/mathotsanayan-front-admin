@@ -1,4 +1,5 @@
 import Result from "@/types/Result";
+import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
@@ -35,6 +36,18 @@ export const useResultModule = defineStore("result", {
         this.currentPage = current_page;
         this.itemsPerPage = total;
         this.setResults(data);
+        return true;
+      } catch (error) {
+        console.error("Error Results in:", error);
+        return false;
+      } finally {
+        this.isTableLoading = false;
+      }
+    },
+
+    async search(payload: Search): Promise<boolean> {
+      try {
+        this.isTableLoading = true;
         return true;
       } catch (error) {
         console.error("Error Results in:", error);

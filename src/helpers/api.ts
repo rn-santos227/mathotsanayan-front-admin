@@ -47,6 +47,7 @@ export default {
     READ: `${BACKEND}modules`,
     UPDATE: `${BACKEND}modules/`,
     DELETE: `${BACKEND}modules/`,
+    SEARCH: `${BACKEND}modules/search`,
   },
 
   OPTIONS: {
@@ -65,6 +66,7 @@ export default {
 
   RESULTS: {
     READ: `${BACKEND}results`,
+    SEARCH: `${BACKEND}results/search`,
     INVALIDATE: `${BACKEND}results/`,
   },
 
@@ -87,6 +89,7 @@ export default {
     READ: `${BACKEND}students`,
     UPDATE: `${BACKEND}students/`,
     DELETE: `${BACKEND}students/`,
+    SEARCH: `${BACKEND}students/search`,
   },
 
   SUBJECTS: {
@@ -105,5 +108,6 @@ export default {
     READ: `${BACKEND}teachers`,
     UPDATE: `${BACKEND}teachers/`,
     DELETE: `${BACKEND}teachers/`,
+    SEARCH: `${BACKEND}teachers/search`,
   },
 };
