@@ -11,6 +11,7 @@ export const useResultModule = defineStore("result", {
     isTableLoading: false,
     currentPage: 1,
     totalPages: 0,
+    itemsPerPage: 10,
   }),
 
   actions: {
@@ -29,9 +30,10 @@ export const useResultModule = defineStore("result", {
           `${api.RESULTS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page } = res.results;
+        const { data, current_page, last_page, total } = res.results;
         this.totalPages = last_page;
         this.currentPage = current_page;
+        this.itemsPerPage = total;
         this.setResults(data);
         return true;
       } catch (error) {

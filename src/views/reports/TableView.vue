@@ -26,6 +26,7 @@
       :search="search"
       :items="results"
       :headers="headers"
+      :items-per-page="useResultModule().itemsPerPage"
       :loading="useResultModule().isTableLoading"
       :page="useResultModule().currentPage"
       :hide-actions="true"
