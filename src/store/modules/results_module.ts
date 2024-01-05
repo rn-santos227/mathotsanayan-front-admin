@@ -55,7 +55,7 @@ export const useResultModule = defineStore("result", {
         const { results } = data;
 
         this.currentPage = 1;
-        this.itemsPerPage = 1;
+        this.totalPages = 1;
         this.itemsPerPage = results.length;
         this.setResults(results);
         return true;
