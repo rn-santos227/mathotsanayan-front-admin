@@ -48,6 +48,16 @@ export const useResultModule = defineStore("result", {
     async search(payload: Search): Promise<boolean> {
       try {
         this.isTableLoading = true;
+        const response = await authenticatedFetch(
+          `${api.RESULTS.READ}?${payload}`
+        );
+        const data = await response.json();
+        const { results } = data;
+
+        this.currentPage = 1;
+        this.itemsPerPage = 1;
+        this.itemsPerPage = results.length;
+        this.setResults(results);
         return true;
       } catch (error) {
         console.error("Error Results in:", error);
