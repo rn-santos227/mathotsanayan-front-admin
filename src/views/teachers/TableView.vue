@@ -46,6 +46,7 @@
         </td>
       </tr>
     </template>
+    <template v-slot:bottom> </template>
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
