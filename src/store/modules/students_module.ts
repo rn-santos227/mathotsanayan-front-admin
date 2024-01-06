@@ -57,13 +57,18 @@ export const useStudentModule = defineStore("student", {
       }
     },
 
-    async read(): Promise<boolean> {
+    async read(page = 1): Promise<boolean> {
       try {
         this.isTableLoading = true;
-        const response = await authenticatedFetch(api.STUDENTS.READ);
-        const data = await response.json();
-        const { students } = data;
-        this.setStudents(students);
+        const response = await authenticatedFetch(
+          `${api.STUDENTS.READ}?page=${page}`
+        );
+        const res = await response.json();
+        const { data, current_page, last_page, total } = res.students;
+        this.totalPages = last_page;
+        this.currentPage = current_page;
+        this.itemsPerPage = total;
+        this.setStudents(data);
         return true;
       } catch (error) {
         console.error("Error Student in:", error);
