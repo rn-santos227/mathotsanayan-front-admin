@@ -141,7 +141,7 @@ provide("error", error);
 
 <style scoped>
 .table-height {
-  height: calc(100vh - 280px);
+  height: calc(100vh - 250px);
   overflow-y: auto;
 }
 </style>

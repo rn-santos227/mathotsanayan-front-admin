@@ -96,3 +96,10 @@ onMounted(async () => {
 provide("success", success);
 provide("error", error);
 </script>
+
+<style scoped>
+.table-height {
+  height: calc(100vh - 250px);
+  overflow-y: auto;
+}
+</style>
