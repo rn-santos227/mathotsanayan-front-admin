@@ -79,27 +79,6 @@ export const useStudentModule = defineStore("student", {
       }
     },
 
-    async search(payload: Search): Promise<boolean> {
-      try {
-        this.isTableLoading = true;
-        const response = await authenticatedFetch(
-          `${api.STUDENTS.SEARCH}?category=${payload.category}&search=${payload.search}`
-        );
-        const data = await response.json();
-        const { students } = data;
-        this.currentPage = 1;
-        this.totalPages = 1;
-        this.itemsPerPage = students.length;
-        this.setStudents(students);
-        return true;
-      } catch (error) {
-        console.error("Error Results in:", error);
-        return false;
-      } finally {
-        this.isTableLoading = false;
-      }
-    },
-
     async update(payload: Student): Promise<boolean> {
       try {
         this.isLoading = true;
@@ -148,6 +127,27 @@ export const useStudentModule = defineStore("student", {
         return false;
       } finally {
         this.isLoading = false;
+      }
+    },
+
+    async search(payload: Search): Promise<boolean> {
+      try {
+        this.isTableLoading = true;
+        const response = await authenticatedFetch(
+          `${api.STUDENTS.SEARCH}?category=${payload.category}&search=${payload.search}`
+        );
+        const data = await response.json();
+        const { students } = data;
+        this.currentPage = 1;
+        this.totalPages = 1;
+        this.itemsPerPage = students.length;
+        this.setStudents(students);
+        return true;
+      } catch (error) {
+        console.error("Error Students in:", error);
+        return false;
+      } finally {
+        this.isTableLoading = false;
       }
     },
   },

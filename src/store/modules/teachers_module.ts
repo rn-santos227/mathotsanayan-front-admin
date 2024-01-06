@@ -1,4 +1,5 @@
 import Teacher from "@/types/Teacher";
+import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
@@ -126,6 +127,28 @@ export const useTeacherModule = defineStore("teachers", {
         return false;
       } finally {
         this.isLoading = false;
+      }
+    },
+
+    async search(payload: Search): Promise<boolean> {
+      try {
+        this.isTableLoading = true;
+        const response = await authenticatedFetch(
+          `${api.TEACHERS.SEARCH}?category=${payload.category}&search=${payload.search}`
+        );
+        const data = await response.json();
+        const { teachers } = data;
+
+        this.currentPage = 1;
+        this.totalPages = 1;
+        this.itemsPerPage = teachers.length;
+        this.setTeachers(teachers);
+        return true;
+      } catch (error) {
+        console.error("Error Teacher in:", error);
+        return false;
+      } finally {
+        this.isTableLoading = false;
       }
     },
   },
