@@ -1,55 +1,61 @@
 <template>
-  <v-card variant="flat">
-    <v-row class="mt-1">
-      <v-spacer />
-      <v-col class="d-flex">
-        <v-text-field
-          class="align-self-end"
-          v-model="search"
-          label="Search Module"
-          density="compact"
-          variant="outlined"
-        />
-        <FilterView class="ml-4" />
-      </v-col>
-    </v-row>
-  </v-card>
+  <v-card-text>
+    <v-card variant="flat">
+      <v-row class="mt-1">
+        <v-spacer />
+        <v-col class="d-flex">
+          <v-text-field
+            class="align-self-end"
+            v-model="search"
+            label="Search Module"
+            density="compact"
+            variant="outlined"
+          />
+          <FilterView class="ml-4" />
+        </v-col>
+      </v-row>
+    </v-card>
+  </v-card-text>
   <v-divider />
-  <v-data-table
-    class="w-100"
-    item-value="name"
-    :search="search"
-    :items="modules"
-    :headers="headers"
-    :loading="useModuleModule().isTableLoading"
-  >
-    <template v-slot:item="{ item, index }">
-      <tr>
-        <td class="text-xs-left">
-          {{ item.name }}
-        </td>
-        <td class="text-xs-left">
-          {{ item?.questions?.length }}
-        </td>
-        <td class="text-xs-left">
-          {{ getSubjectName(item?.subject) }}
-        </td>
-        <td>
-          <v-btn block color="purple-darken-3" variant="outlined">
-            <v-icon size="large">mdi-dots-horizontal</v-icon>
-            <v-menu activator="parent">
-              <v-list density="compact" variant="plain">
-                <QuestionView v-bind:module="item" v-bind:index="index" />
-                <UpdateView v-bind:module="item" />
-                <DeleteView v-bind:module="item" />
-              </v-list>
-            </v-menu>
-          </v-btn>
-        </td>
-      </tr>
-    </template>
-    <template v-slot:bottom> </template>
-  </v-data-table>
+  <v-card-text class="table-height">
+    <v-data-table
+      class="w-100"
+      item-value="name"
+      :search="search"
+      :items="modules"
+      :headers="headers"
+      :loading="useModuleModule().isTableLoading"
+    >
+      <template v-slot:item="{ item, index }">
+        <tr>
+          <td class="text-xs-left">
+            {{ item.name }}
+          </td>
+          <td class="text-xs-left">
+            {{ item?.questions?.length }}
+          </td>
+          <td class="text-xs-left">
+            {{ getSubjectName(item?.subject) }}
+          </td>
+          <td>
+            <v-btn block color="purple-darken-3" variant="outlined">
+              <v-icon size="large">mdi-dots-horizontal</v-icon>
+              <v-menu activator="parent">
+                <v-list density="compact" variant="plain">
+                  <QuestionView v-bind:module="item" v-bind:index="index" />
+                  <UpdateView v-bind:module="item" />
+                  <DeleteView v-bind:module="item" />
+                </v-list>
+              </v-menu>
+            </v-btn>
+          </td>
+        </tr>
+      </template>
+      <template v-slot:bottom> </template>
+    </v-data-table>
+  </v-card-text>
+  <v-divider />
+  <v-card-actions class="mt-auto pa-4 mb-4"> </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
   <LoadingDialogComponent v-bind:activate="useModuleModule().isLoading" />
