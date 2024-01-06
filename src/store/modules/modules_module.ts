@@ -85,19 +85,25 @@ export const useModuleModule = defineStore("modules", {
       }
     },
 
-    async read(): Promise<boolean> {
+    async read(page = 1): Promise<boolean> {
       try {
         this.isTableLoading = true;
-        const response = await authenticatedFetch(api.MODULES.READ);
-        const data = await response.json();
-        const { modules } = data;
-        if (modules) {
-          modules.forEach((item: Module) => {
+        const response = await authenticatedFetch(
+          `${api.MODULES.READ}?page=${page}`
+        );
+        const res = await response.json();
+        const { data, current_page, last_page, total } = res.modules;
+        this.totalPages = last_page;
+        this.currentPage = current_page;
+        this.itemsPerPage = total;
+
+        if (data) {
+          data.forEach((item: Module) => {
             if (item.active) item.active = true;
             else item.active = false;
           });
         }
-        this.setModules(modules);
+        this.setModules(data);
         return true;
       } catch (error) {
         console.error("Error Module in:", error);
