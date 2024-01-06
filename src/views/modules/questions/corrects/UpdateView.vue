@@ -88,7 +88,6 @@ const submit = async () => {
     await useCorrectModule()
       .update(state)
       .then((response) => {
-        console.log(response);
         if (response.length > 0) {
           useModuleModule().setQuestionsModule(props.index, response);
           success.value.show("Correct Answer has been successfully updated.");
@@ -107,7 +106,6 @@ const remove = async () => {
     await useCorrectModule()
       .delete(state)
       .then((response) => {
-        console.log(response);
         if (response.length > 0) {
           useModuleModule().setQuestionsModule(props.index, response);
           success.value.show("Correct Answer has been successfully removed.");

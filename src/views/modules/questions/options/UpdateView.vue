@@ -88,7 +88,6 @@ const submit = async () => {
     await useOptionModule()
       .update(state)
       .then((response) => {
-        console.log(response);
         if (response.length > 0) {
           useModuleModule().setQuestionsModule(props.index, response);
           success.value.show("Option has been successfully updated.");
@@ -107,7 +106,6 @@ const remove = async () => {
     await useOptionModule()
       .delete(state)
       .then((response) => {
-        console.log(response);
         if (response.length > 0) {
           useModuleModule().setQuestionsModule(props.index, response);
           success.value.show("Option has been successfully removed.");

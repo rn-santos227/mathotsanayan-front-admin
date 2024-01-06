@@ -102,12 +102,12 @@ import rules from "@/helpers/rules/rules_subject";
 const dialog = ref<boolean>(false);
 const success = ref({
   show: (message: string) => {
-    console.log(message);
+    return message;
   },
 });
 const error = ref({
   show: (message: string) => {
-    console.log(message);
+    return message;
   },
 });
 

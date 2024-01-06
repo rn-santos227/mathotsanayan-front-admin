@@ -73,7 +73,6 @@ const submit = async () => {
     await useCorrectModule()
       .create(state, props.question)
       .then((response) => {
-        console.log(response);
         if (response.length > 0) {
           useModuleModule().setQuestionsModule(props.index, response);
           success.value.show("Correct Answer has been successfully created.");
