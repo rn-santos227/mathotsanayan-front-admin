@@ -55,7 +55,7 @@
     </v-data-table>
   </v-card-text>
   <v-divider />
-  <v-card-actions class="mt-auto pa-4 mb-4"> </v-card-actions>
+  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
   <LoadingDialogComponent v-bind:activate="useModuleModule().isLoading" />
