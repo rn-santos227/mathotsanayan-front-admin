@@ -93,6 +93,13 @@ import rules from "@/helpers/rules/rules_search";
 import search_list from "@/helpers/searches/search_students";
 
 const dialog = ref<boolean>(false);
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
 const state = reactive<Search>({
   search: "",
   category: "",

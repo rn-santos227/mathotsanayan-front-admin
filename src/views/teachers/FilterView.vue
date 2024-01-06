@@ -84,6 +84,7 @@
 import { computed, ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
+import { useTeacherModule } from "@/store";
 
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 
@@ -93,6 +94,13 @@ import rules from "@/helpers/rules/rules_search";
 import search_list from "@/helpers/searches/search_teachers";
 
 const dialog = ref<boolean>(false);
+
+const error = ref({
+  show: (message: string) => {
+    return message;
+  },
+});
+
 const state = reactive<Search>({
   search: "",
   category: "",
@@ -108,5 +116,11 @@ const close = () => {
 const submit = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
+  const response = await useTeacherModule().search(state);
+  if (response) {
+    close();
+  } else {
+    error.value.show("The server has not able to process request.");
+  }
 };
 </script>
