@@ -5,13 +5,13 @@
         <v-spacer />
         <v-col class="d-flex">
           <v-text-field
-            class="align-self-end"
+            class="mr-4"
             v-model="search"
             label="Search Module"
             density="compact"
             variant="outlined"
           />
-          <FilterView class="ml-4" />
+          <FilterView />
         </v-col>
       </v-row>
     </v-card>
