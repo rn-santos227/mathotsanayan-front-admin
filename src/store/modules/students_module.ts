@@ -83,7 +83,7 @@ export const useStudentModule = defineStore("student", {
       try {
         this.isTableLoading = true;
         const response = await authenticatedFetch(
-          `${api.MODULES.SEARCH}?category=${payload.category}&search=${payload.search}`
+          `${api.STUDENTS.SEARCH}?category=${payload.category}&search=${payload.search}`
         );
         const data = await response.json();
         const { students } = data;

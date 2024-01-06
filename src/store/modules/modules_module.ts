@@ -1,5 +1,6 @@
 import Module from "@/types/Module";
 import Question from "@/types/Question";
+import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
@@ -107,6 +108,28 @@ export const useModuleModule = defineStore("modules", {
         return true;
       } catch (error) {
         console.error("Error Module in:", error);
+        return false;
+      } finally {
+        this.isTableLoading = false;
+      }
+    },
+
+    async search(payload: Search): Promise<boolean> {
+      try {
+        this.isTableLoading = true;
+        const response = await authenticatedFetch(
+          `${api.MODULES.SEARCH}?category=${payload.category}&search=${payload.search}`
+        );
+        const data = await response.json();
+        const { modules } = data;
+
+        this.currentPage = 1;
+        this.totalPages = 1;
+        this.itemsPerPage = modules.length;
+        this.setModules(modules);
+        return true;
+      } catch (error) {
+        console.error("Error Modules in:", error);
         return false;
       } finally {
         this.isTableLoading = false;
