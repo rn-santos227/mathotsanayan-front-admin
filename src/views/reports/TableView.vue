@@ -19,7 +19,7 @@
     </v-card>
   </v-card-text>
   <v-divider />
-  <v-card-text>
+  <v-card-text class="table-height">
     <v-data-table
       class="w-100"
       item-value="name"
@@ -138,3 +138,10 @@ watch(
 provide("success", success);
 provide("error", error);
 </script>
+
+<style scoped>
+.table-height {
+  height: calc(100vh - 280px);
+  overflow-y: auto;
+}
+</style>
