@@ -77,12 +77,15 @@
       </v-card>
     </v-dialog>
   </v-btn>
+  <ErrorDialogComponent ref="error" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
+
+import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 
 import Search from "@/interfaces/Search";
 import VSearch from "@/helpers/validations/v_search";
