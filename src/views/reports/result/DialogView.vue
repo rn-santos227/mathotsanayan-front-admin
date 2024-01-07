@@ -1,15 +1,11 @@
 <template>
-  <v-list-item @click.prevent>
-    <v-list-item-title class="text-button" @click,prevent="getAnswers">
+  <v-list-item @click.prevent="getAnswers">
+    <v-list-item-title class="text-button">
       <v-icon icon="mdi-magnify"></v-icon> Details
     </v-list-item-title>
     <v-dialog class="ma-auto" persistent v-model="dialog" activator="parent">
       <v-card>
-        <v-card
-          class="rounded-0 rounded-t mb-6 py-2"
-          color="purple-darken-3"
-          flat
-        >
+        <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3" flat>
           <v-card-actions class="mx-4">
             <span class="text-h6"> Examination Result </span>
             <v-spacer />
@@ -22,10 +18,19 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card-text
-          class="answers-height"
-          v-if="!useAnswerModules().isLoading"
-        >
+        <v-card-text v-if="useAnswerModule().isLoading" class="answers-height">
+          <div class="d-flex align-center justify-center fill-height">
+            <v-progress-circular
+              color="purple-darken-3"
+              width="16"
+              size="160"
+              indeterminate
+            >
+              Loading
+            </v-progress-circular>
+          </div>
+        </v-card-text>
+        <v-card-text v-else class="answers-height">
           <FormView v-bind:result="props.result" />
           <v-divider class="my-4" />
           <div class="d-flex justify-space-around flex-wrap">
@@ -49,9 +54,9 @@
               <ResultComponent
                 v-bind:color="'green'"
                 v-bind:title="'Total Attempts'"
-                v-bind:data="`${useAnswerModules().getAnswers?.length}`"
+                v-bind:data="`${useAnswerModule().getAnswers?.length}`"
                 v-bind:value="
-                  accuracy(props.result, useAnswerModules().getAnswers)
+                  accuracy(props.result, useAnswerModule().getAnswers)
                 "
               />
             </div>
@@ -61,10 +66,10 @@
                 v-bind:title="'Accuracy'"
                 v-bind:data="`${accuracy(
                   props.result,
-                  useAnswerModules().getAnswers
+                  useAnswerModule().getAnswers
                 ).toFixed(2)}%`"
                 v-bind:value="
-                  accuracy(props.result, useAnswerModules().getAnswers)
+                  accuracy(props.result, useAnswerModule().getAnswers)
                 "
               />
             </div>
@@ -72,14 +77,15 @@
               <ResultComponent
                 v-bind:color="'red'"
                 v-bind:title="'Total Skips'"
-                v-bind:data="`${skips(useAnswerModules().getAnswers)}`"
+                v-bind:data="`${skips(useAnswerModule().getAnswers)}`"
                 v-bind:value="
-                  skipAverage(useAnswerModules().getAnswers, props.result.items)
+                  skipAverage(useAnswerModule().getAnswers, props.result.items)
                 "
               />
             </div>
           </div>
           <v-divider class="mt-4" />
+          <TableView />
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -89,10 +95,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { grade, accuracy, skips, skipAverage } from "@/helpers/evaluation";
-import { useAnswerModules } from "@/store";
+import { useAnswerModule } from "@/store";
 
 import ResultComponent from "@/components/ResultComponent.vue";
 import FormView from "./FormView.vue";
+import TableView from "./TableView.vue";
+
 import Result from "@/types/Result";
 
 const dialog = ref<boolean>(false);
@@ -105,7 +113,7 @@ const close = () => {
 };
 
 const getAnswers = async () => {
-  //
+  await useAnswerModule().read(props.result.id);
 };
 </script>
 

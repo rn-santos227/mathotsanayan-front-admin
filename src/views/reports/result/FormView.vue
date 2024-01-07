@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form class="my-3">
     <v-row>
       <v-col cols="12" sm="4">
         <v-text-field

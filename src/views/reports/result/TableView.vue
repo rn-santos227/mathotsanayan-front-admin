@@ -1,7 +1,8 @@
 <template>
   <v-data-table
     class="w-100"
-    :items="props.answers"
+    :items="useAnswerModule().getAnswers"
+    :loading="useAnswerModule().isLoading"
     :headers="headers"
     item-value="id"
   >
@@ -31,13 +32,9 @@
 
 <script setup lang="ts">
 import { getQuestionContent, getGradeEvaluation } from "@/helpers/instance";
+import { useAnswerModule } from "@/store";
 import { secondsToMinutes } from "@/helpers/evaluation";
 import headers from "@/helpers/headers/header_answers";
-import Answer from "@/types/Answer";
-
-const props = defineProps<{
-  answers: Answer[] | undefined;
-}>();
 </script>
 
 <style scoped>
