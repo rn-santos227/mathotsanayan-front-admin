@@ -13,8 +13,8 @@
 import { ref } from "vue";
 import { useAuthModule } from "./store";
 
-import HeaderComponent from "./components/HeaderComponent.vue";
-import NavigationComponent from "./components/NavigationComponent.vue";
+import HeaderComponent from "./components/shared/HeaderComponent.vue";
+import NavigationComponent from "./components/shared/NavigationComponent.vue";
 import LoadingDialogComponent from "./components/dialogs/LoadingDialogComponent.vue";
 
 const authModule = useAuthModule();

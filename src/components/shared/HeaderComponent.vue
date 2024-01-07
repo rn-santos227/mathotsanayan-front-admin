@@ -37,7 +37,7 @@ import { ref } from "vue";
 import { useAuthModule } from "@/store";
 import { useRouter } from "vue-router";
 
-import QuestionDialogComponent from "./dialogs/QuestionDialogComponent.vue";
+import QuestionDialogComponent from "../dialogs/QuestionDialogComponent.vue";
 import PasswordView from "@/views/auth/PasswordView.vue";
 import HelpView from "@/views/help/DialogView.vue";
 
