@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import * as XLSX from "xlsx";
+import * as XLSX from "../../../plugin/xlsx";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { useResultModule } from "@/store";
 import Section from "@/types/Section";
