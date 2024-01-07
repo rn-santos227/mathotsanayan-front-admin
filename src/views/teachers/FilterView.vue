@@ -4,6 +4,7 @@
     color="purple-darken-3"
     prepend-icon="mdi-magnify"
     height="40"
+    width="180"
   >
     Filter Search
     <v-dialog
