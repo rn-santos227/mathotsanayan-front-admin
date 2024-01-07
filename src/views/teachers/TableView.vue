@@ -33,7 +33,7 @@
       class="w-100"
       :items="teachers"
       :headers="headers"
-      :loading="useSchoolModule().isTableLoading"
+      :loading="useTeacherModule().isTableLoading"
       item-value="name"
     >
       <template v-slot:item="{ item }">
