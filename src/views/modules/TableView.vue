@@ -55,14 +55,22 @@
     </v-data-table>
   </v-card-text>
   <v-divider />
-  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
+  <v-card-actions class="mt-auto pa-4 mb-12">
+    <v-spacer />
+    <v-pagination
+      color="purple-darken-3"
+      v-model="useModuleModule().currentPage"
+      :length="useModuleModule().totalPages"
+      :total-visible="7"
+    />
+  </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
   <LoadingDialogComponent v-bind:activate="useModuleModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
+import { computed, onMounted, provide, ref, watch } from "vue";
 import { useModuleModule, useSubjectModule } from "@/store";
 import { getSubjectName } from "@/helpers/instance";
 
@@ -98,6 +106,13 @@ onMounted(async () => {
   await useModuleModule().read();
   await useSubjectModule().read();
 });
+
+watch(
+  () => useModuleModule().currentPage,
+  async () => {
+    await moduleModule.read(useModuleModule().currentPage);
+  }
+);
 
 provide("success", success);
 provide("error", error);
