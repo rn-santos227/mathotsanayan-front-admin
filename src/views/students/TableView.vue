@@ -57,14 +57,22 @@
     </v-data-table>
   </v-card-text>
   <v-divider />
-  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
+  <v-card-actions class="mt-auto pa-4 mb-12">
+    <v-spacer />
+    <v-pagination
+      color="purple-darken-3"
+      v-model="useStudentModule().currentPage"
+      :length="useStudentModule().totalPages"
+      :total-visible="7"
+    />
+  </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
   <LoadingDialogComponent v-bind:activate="useStudentModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
+import { computed, onMounted, provide, ref, watch } from "vue";
 import {
   useStudentModule,
   useCourseModule,
@@ -106,6 +114,13 @@ onMounted(async () => {
   await useSchoolModule().read();
   await useSectionModule().read();
 });
+
+watch(
+  () => useStudentModule().currentPage,
+  async () => {
+    await studentModule.read(useStudentModule().currentPage);
+  }
+);
 
 provide("success", success);
 provide("error", error);
