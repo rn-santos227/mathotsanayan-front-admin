@@ -7,4 +7,14 @@ export const useAnswerModules = defineStore("answers", {
     isLoading: false,
     isTableLoading: false,
   }),
+
+  actions: {
+    //
+  },
+
+  getters: {
+    getAnswers(): Answer[] {
+      return this.answers;
+    },
+  },
 });

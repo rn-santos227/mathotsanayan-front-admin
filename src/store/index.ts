@@ -1,6 +1,7 @@
 import { createPinia } from "pinia";
 import { useAccountModule } from "./modules/accounts_module";
 import { useAdminsModule } from "./modules/admins_module";
+import { useAnswerModules } from "./modules/answers_module";
 import { useAuthModule } from "./modules/auth_module";
 import { useCorrectModule } from "./modules/corrects_module";
 import { useCourseModule } from "./modules/courses_module";
@@ -23,6 +24,7 @@ export {
   pinia,
   useAccountModule,
   useAdminsModule,
+  useAnswerModules,
   useAuthModule,
   useCorrectModule,
   useCourseModule,
