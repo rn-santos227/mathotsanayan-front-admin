@@ -5,13 +5,13 @@
         <v-spacer />
         <v-col class="d-flex">
           <v-text-field
-            class="align-self-end"
+            class="mr-4"
             v-model="search"
             label="Search Teacher"
             density="compact"
             variant="outlined"
           />
-          <FilterView class="ml-4" />
+          <FilterView />
         </v-col>
       </v-row>
     </v-card>
@@ -53,14 +53,22 @@
     </v-data-table>
   </v-card-text>
   <v-divider />
-  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
+  <v-card-actions class="mt-auto pa-4 mb-12">
+    <v-spacer />
+    <v-pagination
+      color="purple-darken-3"
+      v-model="useTeacherModule().currentPage"
+      :length="useTeacherModule().totalPages"
+      :total-visible="7"
+    />
+  </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
   <LoadingDialogComponent v-bind:activate="useSchoolModule().isLoading" />
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref } from "vue";
+import { computed, onMounted, provide, ref, watch } from "vue";
 import { useTeacherModule, useSchoolModule } from "@/store";
 import { getSchoolName } from "@/helpers/instance";
 
@@ -95,6 +103,13 @@ onMounted(async () => {
   await useTeacherModule().read();
   await useSchoolModule().read();
 });
+
+watch(
+  () => useTeacherModule().currentPage,
+  async () => {
+    await teacherModule.read(useTeacherModule().currentPage);
+  }
+);
 
 provide("success", success);
 provide("error", error);

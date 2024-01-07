@@ -65,7 +65,7 @@ export const useTeacherModule = defineStore("teachers", {
           `${api.TEACHERS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total } = res.teacher;
+        const { data, current_page, last_page, total } = res.teachers;
         this.totalPages = last_page;
         this.currentPage = current_page;
         this.itemsPerPage = total;
