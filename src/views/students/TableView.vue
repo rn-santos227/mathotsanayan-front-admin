@@ -12,6 +12,17 @@
             variant="outlined"
           />
           <FilterView />
+          <v-btn
+            class="ml-4"
+            variant="outlined"
+            color="purple-darken-3"
+            prepend-icon="mdi-refresh"
+            height="40"
+            width="180"
+            @click.prevent="resetSearch"
+          >
+            Reset List
+          </v-btn>
         </v-col>
       </v-row>
     </v-card>
@@ -121,6 +132,10 @@ watch(
     await studentModule.read(useStudentModule().currentPage);
   }
 );
+
+const resetSearch = async () => {
+  await useStudentModule().read();
+};
 
 provide("success", success);
 provide("error", error);

@@ -3,6 +3,7 @@
     variant="outlined"
     color="purple-darken-3"
     prepend-icon="mdi-magnify"
+    width="180"
     height="40"
   >
     Filter Search
