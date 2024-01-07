@@ -9,7 +9,6 @@ export const useQuestionModule = defineStore("questions", {
   state: () => ({
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
   }),
 
   actions: {

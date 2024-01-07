@@ -9,7 +9,6 @@ export const useAdminsModule = defineStore("admins", {
     admins: [] as Admin[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
   }),
 
   actions: {

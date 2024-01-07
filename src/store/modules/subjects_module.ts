@@ -9,7 +9,6 @@ export const useSubjectModule = defineStore("subjects", {
     subjects: [] as Subject[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
   }),
 
   actions: {

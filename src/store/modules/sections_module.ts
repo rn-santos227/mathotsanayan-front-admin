@@ -9,7 +9,6 @@ export const useSectionModule = defineStore("sections", {
     sections: [] as Section[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
   }),
 
   actions: {

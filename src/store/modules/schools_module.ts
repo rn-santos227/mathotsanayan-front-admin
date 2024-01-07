@@ -9,7 +9,6 @@ export const useSchoolModule = defineStore("schools", {
     schools: [] as School[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
   }),
 
   actions: {
