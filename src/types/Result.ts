@@ -1,5 +1,4 @@
 import Module from "./Module";
-import Answer from "./Answer";
 import Student from "./Student";
 
 type Result = {
@@ -14,6 +13,5 @@ type Result = {
   deleted_at?: string;
   module: Module;
   student: Student;
-  answers: Answer[];
 };
 export default Result;

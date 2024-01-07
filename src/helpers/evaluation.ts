@@ -11,10 +11,9 @@ export function evaluateExam(result: Result) {
   return average >= passing ? "Passed" : "Failed";
 }
 
-export function accuracy(result: Result): number {
-  const total_answers = result.answers?.length;
-  if (result.total_score && total_answers && result.items) {
-    const average = (result.total_score / total_answers) * 100;
+export function accuracy(result: Result, answers: Answer[]): number {
+  if (result.total_score && result.items) {
+    const average = (result.total_score / answers.length) * 100;
     const grade = (result.total_score / result.items) * 100;
     const accuracy = (average + grade) / 2;
     return accuracy;

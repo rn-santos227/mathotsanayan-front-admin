@@ -1,6 +1,6 @@
 <template>
   <v-list-item @click.prevent>
-    <v-list-item-title class="text-button">
+    <v-list-item-title class="text-button" @click,prevent="getAnswers">
       <v-icon icon="mdi-magnify"></v-icon> Details
     </v-list-item-title>
     <v-dialog class="ma-auto" persistent v-model="dialog" activator="parent">
@@ -22,7 +22,10 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card-text class="answers-height">
+        <v-card-text
+          class="answers-height"
+          v-if="!useAnswerModules().isLoading"
+        >
           <FormView v-bind:result="props.result" />
           <v-divider class="my-4" />
           <div class="d-flex justify-space-around flex-wrap">
@@ -46,33 +49,37 @@
               <ResultComponent
                 v-bind:color="'green'"
                 v-bind:title="'Total Attempts'"
-                v-bind:data="`${props.result.answers?.length}`"
-                v-bind:value="accuracy(props.result)"
+                v-bind:data="`${useAnswerModules().getAnswers?.length}`"
+                v-bind:value="
+                  accuracy(props.result, useAnswerModules().getAnswers)
+                "
               />
             </div>
             <div class="ma-2">
               <ResultComponent
                 v-bind:color="'light-green'"
                 v-bind:title="'Accuracy'"
-                v-bind:data="`${accuracy(props.result).toFixed(2)}%`"
-                v-bind:value="accuracy(props.result)"
+                v-bind:data="`${accuracy(
+                  props.result,
+                  useAnswerModules().getAnswers
+                ).toFixed(2)}%`"
+                v-bind:value="
+                  accuracy(props.result, useAnswerModules().getAnswers)
+                "
               />
             </div>
             <div class="ma-2">
               <ResultComponent
                 v-bind:color="'red'"
                 v-bind:title="'Total Skips'"
-                v-bind:data="`${skips(props.result.answers)}`"
+                v-bind:data="`${skips(useAnswerModules().getAnswers)}`"
                 v-bind:value="
-                  skipAverage(props.result.answers, props.result.items)
+                  skipAverage(useAnswerModules().getAnswers, props.result.items)
                 "
               />
             </div>
           </div>
           <v-divider class="mt-4" />
-          <div>
-            <TableView v-bind:answers="result.answers" />
-          </div>
         </v-card-text>
       </v-card>
     </v-dialog>
@@ -82,12 +89,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { grade, accuracy, skips, skipAverage } from "@/helpers/evaluation";
+import { useAnswerModules } from "@/store";
 
 import ResultComponent from "@/components/ResultComponent.vue";
-
-import TableView from "./TableView.vue";
 import FormView from "./FormView.vue";
-
 import Result from "@/types/Result";
 
 const dialog = ref<boolean>(false);
@@ -97,6 +102,10 @@ const props = defineProps<{
 
 const close = () => {
   dialog.value = !dialog.value;
+};
+
+const getAnswers = async () => {
+  //
 };
 </script>
 

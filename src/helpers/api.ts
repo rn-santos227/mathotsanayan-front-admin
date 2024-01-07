@@ -13,6 +13,10 @@ export default {
     DELETE: `${BACKEND}admins/`,
   },
 
+  ANSWERS: {
+    READ: `${BACKEND}answers/`,
+  },
+
   AUTH: {
     AUTH: `${BACKEND}auth`,
     LOGIN: `${BACKEND}admin`,
