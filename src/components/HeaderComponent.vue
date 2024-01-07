@@ -5,17 +5,7 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <div v-if="authModule.isAuthenticated" class="mr-2">
-      <v-menu>
-        <template v-slot:activator="{ props }">
-          <v-btn
-            v-bind="props"
-            density="comfortable"
-            icon="mdi-help-circle-outline"
-            size="x-large"
-          >
-          </v-btn>
-        </template>
-      </v-menu>
+      <HelpView />
       <v-menu>
         <template v-slot:activator="{ props }">
           <v-btn
@@ -49,6 +39,7 @@ import { useRouter } from "vue-router";
 
 import QuestionDialogComponent from "./dialogs/QuestionDialogComponent.vue";
 import PasswordView from "@/views/auth/PasswordView.vue";
+import HelpView from "@/views/help/DialogView.vue";
 
 const confirm = ref({
   show: (message: string) => {
