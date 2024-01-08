@@ -18,7 +18,7 @@ export const useAnswerModule = defineStore("answers", {
     async read(id: number): Promise<boolean> {
       try {
         this.isLoading = true;
-        const response = await authenticatedFetch(`${api.ANSWERS.READ}${id}}`);
+        const response = await authenticatedFetch(`${api.ANSWERS.READ}${id}`);
         const data = await response.json();
         const { answers } = data;
         this.setAnswers(answers);

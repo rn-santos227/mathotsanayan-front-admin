@@ -37,9 +37,9 @@
       :search="search"
       :items="results"
       :headers="headers"
-      :items-per-page="useResultModule().itemsPerPage"
+      :items-per-page="useResultModule().page.per_page"
       :loading="useResultModule().isTableLoading"
-      :page="useResultModule().currentPage"
+      :page="useResultModule().page.current_page"
       :hide-actions="true"
     >
       <template v-slot:item="{ item }">
@@ -91,8 +91,8 @@
     <v-spacer />
     <v-pagination
       color="purple-darken-3"
-      v-model="useResultModule().currentPage"
-      :length="useResultModule().totalPages"
+      v-model="useResultModule().page.current_page"
+      :length="useResultModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
@@ -140,9 +140,9 @@ onMounted(async () => {
 });
 
 watch(
-  () => useResultModule().currentPage,
+  () => useResultModule().page.current_page,
   async () => {
-    await resultModule.read(useResultModule().currentPage);
+    await resultModule.read(useResultModule().page.current_page);
   }
 );
 

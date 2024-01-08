@@ -4,22 +4,23 @@ import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
+import Page from "@/interfaces/Page";
 
 export const useResultModule = defineStore("result", {
   state: () => ({
     results: [] as Result[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
-    fromCount: 0,
-    toCount: 0,
-    totalPages: 0,
-    itemsPerPage: 10,
+    page: {} as Page,
   }),
 
   actions: {
     setResults(results: Result[]) {
       this.results = results;
+    },
+
+    setPage(page: Page) {
+      this.page = page;
     },
 
     deleteResult(result: Result): void {
@@ -33,12 +34,9 @@ export const useResultModule = defineStore("result", {
           `${api.RESULTS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total, from, to } = res.results;
-        this.totalPages = last_page;
-        this.fromCount = from;
-        this.toCount = to;
-        this.currentPage = current_page;
-        this.itemsPerPage = total;
+        this.setPage(res.results);
+
+        const { data } = res.results;
         this.setResults(data);
         return true;
       } catch (error) {
@@ -57,10 +55,9 @@ export const useResultModule = defineStore("result", {
         );
         const data = await response.json();
         const { results } = data;
-
-        this.currentPage = 1;
-        this.totalPages = 1;
-        this.itemsPerPage = results.length;
+        this.page.current_page = 1;
+        this.page.total = 1;
+        this.page.per_page = results.length;
         this.setResults(results);
         return true;
       } catch (error) {
