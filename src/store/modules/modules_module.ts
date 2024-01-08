@@ -12,6 +12,8 @@ export const useModuleModule = defineStore("modules", {
     isLoading: false,
     isTableLoading: false,
     currentPage: 1,
+    fromCount: 0,
+    toCount: 0,
     totalPages: 0,
     itemsPerPage: 10,
   }),
