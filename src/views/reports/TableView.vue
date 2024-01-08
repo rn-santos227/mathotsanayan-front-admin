@@ -40,7 +40,6 @@
       :items-per-page="useResultModule().page.per_page"
       :loading="useResultModule().isTableLoading"
       :page="useResultModule().page.current_page"
-      :hide-actions="true"
     >
       <template v-slot:item="{ item }">
         <tr>

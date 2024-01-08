@@ -31,11 +31,13 @@
   <v-card-text class="table-height">
     <v-data-table
       class="w-100"
+      item-value="name"
       :search="search"
       :items="students"
       :headers="headers"
+      :items-per-page="useStudentModule().page.per_page"
       :loading="useStudentModule().isTableLoading"
-      item-value="name"
+      :page="useStudentModule().page.current_page"
     >
       <template v-slot:item="{ item }">
         <tr>
@@ -70,10 +72,14 @@
   <v-divider />
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
+    <span class="text-body-2">
+      {{ useStudentModule().page.from }}-{{ useStudentModule().page.to }} of
+      {{ useStudentModule().page.total }}
+    </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useStudentModule().currentPage"
-      :length="useStudentModule().totalPages"
+      v-model="useStudentModule().page.current_page"
+      :length="useStudentModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
@@ -127,9 +133,9 @@ onMounted(async () => {
 });
 
 watch(
-  () => useStudentModule().currentPage,
+  () => useStudentModule().page.current_page,
   async () => {
-    await studentModule.read(useStudentModule().currentPage);
+    await studentModule.read(useStudentModule().page.current_page);
   }
 );
 

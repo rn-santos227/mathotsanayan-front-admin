@@ -175,7 +175,6 @@ export const useModuleModule = defineStore("modules", {
         );
         const data = await response.json();
         const { modules } = data;
-
         this.page.current_page = 1;
         this.page.total = 1;
         this.page.per_page = modules.length;

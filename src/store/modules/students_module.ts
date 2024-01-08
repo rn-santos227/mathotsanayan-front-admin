@@ -1,4 +1,5 @@
 import Student from "@/types/Student";
+import Page from "@/interfaces/Page";
 import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
@@ -10,16 +11,16 @@ export const useStudentModule = defineStore("student", {
     students: [] as Student[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
-    fromCount: 0,
-    toCount: 0,
-    totalPages: 0,
-    itemsPerPage: 10,
+    page: {} as Page,
   }),
 
   actions: {
     setStudents(students: Student[]) {
       this.students = students;
+    },
+
+    setPage(page: Page) {
+      this.page = page;
     },
 
     addStudent(student: Student) {
@@ -67,10 +68,8 @@ export const useStudentModule = defineStore("student", {
           `${api.STUDENTS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total } = res.students;
-        this.totalPages = last_page;
-        this.currentPage = current_page;
-        this.itemsPerPage = total;
+        const { data } = res.students;
+        this.setPage(res.students);
         this.setStudents(data);
         return true;
       } catch (error) {
@@ -140,9 +139,9 @@ export const useStudentModule = defineStore("student", {
         );
         const data = await response.json();
         const { students } = data;
-        this.currentPage = 1;
-        this.totalPages = 1;
-        this.itemsPerPage = students.length;
+        this.page.current_page = 1;
+        this.page.total = 1;
+        this.page.per_page = students.length;
         this.setStudents(students);
         return true;
       } catch (error) {
