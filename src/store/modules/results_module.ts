@@ -33,8 +33,10 @@ export const useResultModule = defineStore("result", {
           `${api.RESULTS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total } = res.results;
+        const { data, current_page, last_page, total, from, to } = res.results;
         this.totalPages = last_page;
+        this.fromCount = from;
+        this.toCount = to;
         this.currentPage = current_page;
         this.itemsPerPage = total;
         this.setResults(data);
