@@ -1,4 +1,5 @@
 import Teacher from "@/types/Teacher";
+import Page from "@/interfaces/Page";
 import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
@@ -10,16 +11,16 @@ export const useTeacherModule = defineStore("teachers", {
     teachers: [] as Teacher[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
-    fromCount: 0,
-    toCount: 0,
-    totalPages: 0,
-    itemsPerPage: 10,
+    page: {} as Page,
   }),
 
   actions: {
     setTeachers(teachers: Teacher[]) {
       this.teachers = teachers;
+    },
+
+    setPage(page: Page) {
+      this.page = page;
     },
 
     addTeacher(teacher: Teacher) {
@@ -67,10 +68,9 @@ export const useTeacherModule = defineStore("teachers", {
           `${api.TEACHERS.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total } = res.teachers;
-        this.totalPages = last_page;
-        this.currentPage = current_page;
-        this.itemsPerPage = total;
+        const { data } = res.teachers;
+
+        this.setPage(res.teachers);
         this.setTeachers(data);
         return true;
       } catch (error) {
@@ -140,10 +140,9 @@ export const useTeacherModule = defineStore("teachers", {
         );
         const data = await response.json();
         const { teachers } = data;
-
-        this.currentPage = 1;
-        this.totalPages = 1;
-        this.itemsPerPage = teachers.length;
+        this.page.current_page = 1;
+        this.page.total = 1;
+        this.page.per_page = teachers.length;
         this.setTeachers(teachers);
         return true;
       } catch (error) {

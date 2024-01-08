@@ -33,7 +33,9 @@
       class="w-100"
       :items="teachers"
       :headers="headers"
+      :items-per-page="useTeacherModule().page.per_page"
       :loading="useTeacherModule().isTableLoading"
+      :page="useTeacherModule().page.current_page"
       item-value="name"
     >
       <template v-slot:item="{ item }">
@@ -66,10 +68,14 @@
   <v-divider />
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
+    <span class="text-body-2">
+      {{ useTeacherModule().page.from }}-{{ useTeacherModule().page.to }} of
+      {{ useTeacherModule().page.total }}
+    </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useTeacherModule().currentPage"
-      :length="useTeacherModule().totalPages"
+      v-model="useTeacherModule().page.current_page"
+      :length="useTeacherModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
@@ -116,9 +122,9 @@ onMounted(async () => {
 });
 
 watch(
-  () => useTeacherModule().currentPage,
+  () => useTeacherModule().page.current_page,
   async () => {
-    await teacherModule.read(useTeacherModule().currentPage);
+    await teacherModule.read(useTeacherModule().page.current_page);
   }
 );
 

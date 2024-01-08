@@ -1,10 +1,10 @@
 import Result from "@/types/Result";
+import Page from "@/interfaces/Page";
 import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
-import Page from "@/interfaces/Page";
 
 export const useResultModule = defineStore("result", {
   state: () => ({
@@ -34,9 +34,9 @@ export const useResultModule = defineStore("result", {
           `${api.RESULTS.READ}?page=${page}`
         );
         const res = await response.json();
-        this.setPage(res.results);
-
         const { data } = res.results;
+
+        this.setPage(res.results);
         this.setResults(data);
         return true;
       } catch (error) {

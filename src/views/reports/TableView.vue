@@ -89,6 +89,10 @@
   <v-divider />
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
+    <span class="text-body-2">
+      {{ useResultModule().page.from }}-{{ useResultModule().page.to }} of
+      {{ useResultModule().page.total }}
+    </span>
     <v-pagination
       color="purple-darken-3"
       v-model="useResultModule().page.current_page"
