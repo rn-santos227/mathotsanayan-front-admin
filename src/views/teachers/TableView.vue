@@ -31,12 +31,13 @@
   <v-card-text class="table-height">
     <v-data-table
       class="w-100"
+      item-value="name"
+      :search="search"
       :items="teachers"
       :headers="headers"
       :items-per-page="useTeacherModule().page.per_page"
       :loading="useTeacherModule().isTableLoading"
       :page="useTeacherModule().page.current_page"
-      item-value="name"
     >
       <template v-slot:item="{ item }">
         <tr>

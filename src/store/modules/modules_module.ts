@@ -1,5 +1,6 @@
 import Module from "@/types/Module";
 import Question from "@/types/Question";
+import Page from "@/interfaces/Page";
 import Search from "@/interfaces/Search";
 import api from "@/helpers/api";
 
@@ -11,16 +12,16 @@ export const useModuleModule = defineStore("modules", {
     modules: [] as Module[],
     isLoading: false,
     isTableLoading: false,
-    currentPage: 1,
-    fromCount: 0,
-    toCount: 0,
-    totalPages: 0,
-    itemsPerPage: 10,
+    page: {} as Page,
   }),
 
   actions: {
     setModules(modules: Module[]) {
       this.modules = modules;
+    },
+
+    setPage(page: Page) {
+      this.page = page;
     },
 
     setQuestionsModule(index: number, questions: Question[]) {
@@ -95,10 +96,7 @@ export const useModuleModule = defineStore("modules", {
           `${api.MODULES.READ}?page=${page}`
         );
         const res = await response.json();
-        const { data, current_page, last_page, total } = res.modules;
-        this.totalPages = last_page;
-        this.currentPage = current_page;
-        this.itemsPerPage = total;
+        const { data } = res.modules;
 
         if (data) {
           data.forEach((item: Module) => {
@@ -106,6 +104,8 @@ export const useModuleModule = defineStore("modules", {
             else item.active = false;
           });
         }
+
+        this.setPage(res.modules);
         this.setModules(data);
         return true;
       } catch (error) {
@@ -176,9 +176,9 @@ export const useModuleModule = defineStore("modules", {
         const data = await response.json();
         const { modules } = data;
 
-        this.currentPage = 1;
-        this.totalPages = 1;
-        this.itemsPerPage = modules.length;
+        this.page.current_page = 1;
+        this.page.total = 1;
+        this.page.per_page = modules.length;
         this.setModules(modules);
         return true;
       } catch (error) {

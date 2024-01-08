@@ -35,7 +35,9 @@
       :search="search"
       :items="modules"
       :headers="headers"
+      :items-per-page="useModuleModule().page.per_page"
       :loading="useModuleModule().isTableLoading"
+      :page="useModuleModule().page.current_page"
     >
       <template v-slot:item="{ item, index }">
         <tr>
@@ -68,10 +70,14 @@
   <v-divider />
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
+    <span class="text-body-2">
+      {{ useModuleModule().page.from }}-{{ useModuleModule().page.to }} of
+      {{ useModuleModule().page.total }}
+    </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useModuleModule().currentPage"
-      :length="useModuleModule().totalPages"
+      v-model="useModuleModule().page.current_page"
+      :length="useModuleModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
@@ -119,9 +125,9 @@ onMounted(async () => {
 });
 
 watch(
-  () => useModuleModule().currentPage,
+  () => useModuleModule().page.current_page,
   async () => {
-    await moduleModule.read(useModuleModule().currentPage);
+    await moduleModule.read(useModuleModule().page.current_page);
   }
 );
 
