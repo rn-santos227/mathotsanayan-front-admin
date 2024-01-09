@@ -9,7 +9,9 @@
         <v-card-title>
           <v-row>
             <v-col>
-              <span class="text-h5 font-weight-bold"> Reports Manager </span>
+              <span class="text-h5 font-weight-bold">
+                Examination Results
+              </span>
             </v-col>
             <v-col class="d-flex">
               <v-spacer />

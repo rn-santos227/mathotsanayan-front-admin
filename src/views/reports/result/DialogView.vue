@@ -18,7 +18,7 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-        <v-card-text v-if="useAnswerModule().isLoading" class="answers-height">
+        <v-card-text v-if="useAnswersModule().isLoading" class="answers-height">
           <div class="d-flex align-center justify-center fill-height">
             <v-progress-circular
               color="purple-darken-3"
@@ -54,9 +54,9 @@
               <ResultComponent
                 v-bind:color="'green'"
                 v-bind:title="'Total Attempts'"
-                v-bind:data="`${useAnswerModule().getAnswers?.length}`"
+                v-bind:data="`${useAnswersModule().getAnswers?.length}`"
                 v-bind:value="
-                  accuracy(props.result, useAnswerModule().getAnswers)
+                  accuracy(props.result, useAnswersModule().getAnswers)
                 "
               />
             </div>
@@ -66,10 +66,10 @@
                 v-bind:title="'Accuracy'"
                 v-bind:data="`${accuracy(
                   props.result,
-                  useAnswerModule().getAnswers
+                  useAnswersModule().getAnswers
                 ).toFixed(2)}%`"
                 v-bind:value="
-                  accuracy(props.result, useAnswerModule().getAnswers)
+                  accuracy(props.result, useAnswersModule().getAnswers)
                 "
               />
             </div>
@@ -77,9 +77,9 @@
               <ResultComponent
                 v-bind:color="'red'"
                 v-bind:title="'Total Skips'"
-                v-bind:data="`${skips(useAnswerModule().getAnswers)}`"
+                v-bind:data="`${skips(useAnswersModule().getAnswers)}`"
                 v-bind:value="
-                  skipAverage(useAnswerModule().getAnswers, props.result.items)
+                  skipAverage(useAnswersModule().getAnswers, props.result.items)
                 "
               />
             </div>
@@ -95,7 +95,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { grade, accuracy, skips, skipAverage } from "@/helpers/evaluation";
-import { useAnswerModule } from "@/store";
+import { useAnswersModule } from "@/store";
 
 import ResultComponent from "@/components/ResultComponent.vue";
 import FormView from "./FormView.vue";
@@ -113,7 +113,7 @@ const close = () => {
 };
 
 const getAnswers = async () => {
-  await useAnswerModule().read(props.result.id);
+  await useAnswersModule().read(props.result.id);
 };
 </script>
 

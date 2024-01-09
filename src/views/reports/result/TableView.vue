@@ -1,8 +1,8 @@
 <template>
   <v-data-table
     class="w-100"
-    :items="useAnswerModule().getAnswers"
-    :loading="useAnswerModule().isLoading"
+    :items="useAnswersModule().getAnswers"
+    :loading="useAnswersModule().isLoading"
     :headers="headers"
     item-value="id"
   >
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { getQuestionContent, getGradeEvaluation } from "@/helpers/instance";
-import { useAnswerModule } from "@/store";
+import { useAnswersModule } from "@/store";
 import { secondsToMinutes } from "@/helpers/evaluation";
 import headers from "@/helpers/headers/header_answers";
 </script>

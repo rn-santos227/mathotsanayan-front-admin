@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { useAuthModule } from "@/store";
 
 import AccountView from "../views/accounts/MainView.vue";
 import AdminView from "../views/admins/MainView.vue";
@@ -12,8 +13,6 @@ import SectionsView from "../views/sections/MainView.vue";
 import StudentsView from "../views/students/MainView.vue";
 import SubjectView from "../views/subjects/MainView.vue";
 import TeachersView from "../views/teachers/MainView.vue";
-
-import { useAuthModule } from "@/store";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -135,7 +134,9 @@ router.beforeEach((to, from, next) => {
   if (to.meta.forAuth && !authStore.isAuthenticated) {
     next("/login");
   } else if (to.meta.forVisitors && authStore.isAuthenticated) {
-    next("/login");
+    next("/");
+  } else if (to.matched.length === 0) {
+    next("/");
   } else {
     next();
   }
