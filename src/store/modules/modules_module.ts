@@ -10,9 +10,9 @@ import { authenticatedFetch } from "@/services/api";
 export const useModuleModule = defineStore("modules", {
   state: () => ({
     modules: [] as Module[],
+    page: {} as Page,
     isLoading: false,
     isTableLoading: false,
-    page: {} as Page,
   }),
 
   actions: {

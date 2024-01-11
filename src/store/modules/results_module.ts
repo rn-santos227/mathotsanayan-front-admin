@@ -9,9 +9,9 @@ import { authenticatedFetch } from "@/services/api";
 export const useResultModule = defineStore("result", {
   state: () => ({
     results: [] as Result[],
+    page: {} as Page,
     isLoading: false,
     isTableLoading: false,
-    page: {} as Page,
   }),
 
   actions: {
