@@ -8,4 +8,10 @@ export const useAuditModule = defineStore("audit", {
     page: {} as Page,
     isLoading: false,
   }),
+
+  getters: {
+    getModules(): Audit[] {
+      return this.audit;
+    },
+  },
 });

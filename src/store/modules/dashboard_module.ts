@@ -1,8 +1,8 @@
+import Dashboard from "@/interfaces/Dashboard";
 import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
-import Dashboard from "@/interfaces/Dashboard";
 
 export const useDashboardModule = defineStore("dashboard", {
   state: () => ({
@@ -11,7 +11,7 @@ export const useDashboardModule = defineStore("dashboard", {
   }),
 
   actions: {
-    setAccounts(dashboard: Dashboard): void {
+    setDashboard(dashboard: Dashboard): void {
       this.dashboard = dashboard;
     },
 
@@ -21,7 +21,7 @@ export const useDashboardModule = defineStore("dashboard", {
         const response = await authenticatedFetch(api.DASHBOARD.READ);
         const data = await response.json();
         const { dashboard } = data;
-        this.setAccounts(dashboard);
+        this.setDashboard(dashboard);
       } catch (error) {
         console.error("Error Course in:", error);
       } finally {
