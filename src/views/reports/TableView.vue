@@ -138,13 +138,18 @@ const search = ref<string>("");
 const resultModule = useResultModule();
 const results = computed<Result[]>(() => resultModule.getResults);
 
+let initialCallMade = false;
+
 onMounted(async () => {
+  if (initialCallMade) return;
   await useResultModule().read();
+  initialCallMade = true;
 });
 
 watch(
   () => useResultModule().page.current_page,
   async () => {
+    if (!initialCallMade) return;
     await resultModule.read(useResultModule().page.current_page);
   }
 );

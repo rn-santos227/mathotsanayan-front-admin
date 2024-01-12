@@ -117,14 +117,19 @@ const search = ref<string>("");
 const teacherModule = useTeacherModule();
 const teachers = computed<Teacher[]>(() => teacherModule.getTeachers);
 
+let initialCallMade = false;
+
 onMounted(async () => {
+  if (initialCallMade) return;
   await useTeacherModule().read();
   await useSchoolModule().read();
+  initialCallMade = true;
 });
 
 watch(
   () => useTeacherModule().page.current_page,
   async () => {
+    if (!initialCallMade) return;
     await teacherModule.read(useTeacherModule().page.current_page);
   }
 );

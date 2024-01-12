@@ -125,16 +125,21 @@ const search = ref<string>("");
 const studentModule = useStudentModule();
 const students = computed<Student[]>(() => studentModule.getStudents);
 
+let initialCallMade = false;
+
 onMounted(async () => {
+  if (initialCallMade) return;
   await useStudentModule().read();
   await useCourseModule().read();
   await useSchoolModule().read();
   await useSectionModule().read();
+  initialCallMade = true;
 });
 
 watch(
   () => useStudentModule().page.current_page,
   async () => {
+    if (!initialCallMade) return;
     await studentModule.read(useStudentModule().page.current_page);
   }
 );

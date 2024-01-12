@@ -119,14 +119,19 @@ const search = ref<string>("");
 const moduleModule = useModuleModule();
 const modules = computed<Module[]>(() => moduleModule.getModules);
 
+let initialCallMade = false;
+
 onMounted(async () => {
+  if (initialCallMade) return;
   await useModuleModule().read();
   await useSubjectModule().read();
+  initialCallMade = true;
 });
 
 watch(
   () => useModuleModule().page.current_page,
   async () => {
+    if (!initialCallMade) return;
     await moduleModule.read(useModuleModule().page.current_page);
   }
 );

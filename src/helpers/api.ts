@@ -19,10 +19,10 @@ export default {
 
   AUTH: {
     AUTH: `${BACKEND}auth`,
-    LOGIN: `${BACKEND}admin`,
+    LOGIN: `${BACKEND}admin/login`,
     LOGOUT: `${BACKEND}logout`,
     PASSWORD: `${BACKEND}password`,
-    USER: `${BACKEND}user/1`,
+    USER: `${BACKEND}admin/user`,
   },
 
   CORRECTS: {
