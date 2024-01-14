@@ -122,8 +122,8 @@ const error = ref({
 });
 
 const search = ref<string>("");
-const studentModule = useStudentsModule();
-const students = computed<Student[]>(() => studentModule.getStudents);
+const studentsModule = useStudentsModule();
+const students = computed<Student[]>(() => studentsModule.getStudents);
 
 let initialCallMade = false;
 
@@ -140,7 +140,7 @@ watch(
   () => useStudentsModule().page.current_page,
   async () => {
     if (!initialCallMade) return;
-    await studentModule.read(useStudentsModule().page.current_page);
+    await studentsModule.read(useStudentsModule().page.current_page);
   }
 );
 
