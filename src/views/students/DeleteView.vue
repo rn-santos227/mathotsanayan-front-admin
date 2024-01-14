@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useStudentModule } from "@/store";
+import { useStudentsModule } from "@/store";
 
 import Student from "@/types/Student";
 
@@ -88,7 +88,7 @@ const error = inject("error", {
 });
 
 const confirm = async () => {
-  const response = await useStudentModule().delete(props.student);
+  const response = await useStudentsModule().delete(props.student);
   if (response) {
     success.value.show("Student has been successfully deleted.");
     dialog.value = false;

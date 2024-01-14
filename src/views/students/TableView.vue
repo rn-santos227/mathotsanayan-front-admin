@@ -35,9 +35,9 @@
       :search="search"
       :items="students"
       :headers="headers"
-      :items-per-page="useStudentModule().page.per_page"
-      :loading="useStudentModule().isTableLoading"
-      :page="useStudentModule().page.current_page"
+      :items-per-page="useStudentsModule().page.per_page"
+      :loading="useStudentsModule().isTableLoading"
+      :page="useStudentsModule().page.current_page"
     >
       <template v-slot:item="{ item }">
         <tr>
@@ -73,25 +73,25 @@
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
     <span class="text-body-2">
-      {{ useStudentModule().page.from }}-{{ useStudentModule().page.to }} of
-      {{ useStudentModule().page.total }}
+      {{ useStudentsModule().page.from }}-{{ useStudentsModule().page.to }} of
+      {{ useStudentsModule().page.total }}
     </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useStudentModule().page.current_page"
-      :length="useStudentModule().page.last_page"
+      v-model="useStudentsModule().page.current_page"
+      :length="useStudentsModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useStudentModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useStudentsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref, watch } from "vue";
 import {
-  useStudentModule,
+  useStudentsModule,
   useCourseModule,
   useSchoolModule,
   useSectionModule,
@@ -122,14 +122,14 @@ const error = ref({
 });
 
 const search = ref<string>("");
-const studentModule = useStudentModule();
+const studentModule = useStudentsModule();
 const students = computed<Student[]>(() => studentModule.getStudents);
 
 let initialCallMade = false;
 
 onMounted(async () => {
   if (initialCallMade) return;
-  await useStudentModule().read();
+  await useStudentsModule().read();
   await useCourseModule().read();
   await useSchoolModule().read();
   await useSectionModule().read();
@@ -137,15 +137,15 @@ onMounted(async () => {
 });
 
 watch(
-  () => useStudentModule().page.current_page,
+  () => useStudentsModule().page.current_page,
   async () => {
     if (!initialCallMade) return;
-    await studentModule.read(useStudentModule().page.current_page);
+    await studentModule.read(useStudentsModule().page.current_page);
   }
 );
 
 const resetSearch = async () => {
-  await useStudentModule().read();
+  await useStudentsModule().read();
 };
 
 provide("success", success);

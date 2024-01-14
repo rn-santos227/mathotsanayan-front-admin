@@ -13,7 +13,7 @@ import { useQuestionModule } from "./modules/questions_module";
 import { useResultModule } from "./modules/results_module";
 import { useSchoolModule } from "./modules/schools_module";
 import { useSectionModule } from "./modules/sections_module";
-import { useStudentModule } from "./modules/students_module";
+import { useStudentsModule } from "./modules/students_module";
 import { useSubjectModule } from "./modules/subjects_module";
 import { useTeacherModule } from "./modules/teachers_module";
 import { useTestModule } from "./modules/test_module";
@@ -36,7 +36,7 @@ export {
   useResultModule,
   useSchoolModule,
   useSectionModule,
-  useStudentModule,
+  useStudentsModule,
   useSubjectModule,
   useTeacherModule,
   useTestModule,

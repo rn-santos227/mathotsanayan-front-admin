@@ -214,7 +214,7 @@
   </v-btn>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useStudentModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useStudentsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -222,7 +222,7 @@ import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import {
-  useStudentModule,
+  useStudentsModule,
   useCourseModule,
   useSchoolModule,
   useSectionModule,
@@ -299,7 +299,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useStudentModule().create(state);
+  const response = await useStudentsModule().create(state);
   if (response) {
     clearForm();
     success.value.show("Student has been successfully recorded.");

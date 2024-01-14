@@ -223,7 +223,7 @@ import { inject, ref, reactive, computed, watch, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import {
-  useStudentModule,
+  useStudentsModule,
   useCourseModule,
   useSchoolModule,
   useSectionModule,
@@ -298,7 +298,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useStudentModule().update(state);
+  const response = await useStudentsModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Student has been successfully updated.");
