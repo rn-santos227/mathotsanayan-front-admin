@@ -3,7 +3,7 @@
     class="w-100"
     :items="subjects"
     :headers="headers"
-    :loading="useSubjectModule().isTableLoading"
+    :loading="useSubjectsModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">
@@ -30,12 +30,12 @@
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSubjectModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSubjectsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useSubjectModule } from "@/store";
+import { useSubjectsModule } from "@/store";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
@@ -58,11 +58,11 @@ const error = ref({
   },
 });
 
-const subjectModule = useSubjectModule();
+const subjectModule = useSubjectsModule();
 const subjects = computed<Subject[]>(() => subjectModule.getSubjects);
 
 onMounted(async () => {
-  await useSubjectModule().read();
+  await useSubjectsModule().read();
 });
 
 provide("success", success);

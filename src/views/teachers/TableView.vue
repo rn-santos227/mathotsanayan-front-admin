@@ -35,9 +35,9 @@
       :search="search"
       :items="teachers"
       :headers="headers"
-      :items-per-page="useTeacherModule().page.per_page"
-      :loading="useTeacherModule().isTableLoading"
-      :page="useTeacherModule().page.current_page"
+      :items-per-page="useTeachersModule().page.per_page"
+      :loading="useTeachersModule().isTableLoading"
+      :page="useTeachersModule().page.current_page"
     >
       <template v-slot:item="{ item }">
         <tr>
@@ -70,24 +70,24 @@
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
     <span class="text-body-2">
-      {{ useTeacherModule().page.from }}-{{ useTeacherModule().page.to }} of
-      {{ useTeacherModule().page.total }}
+      {{ useTeachersModule().page.from }}-{{ useTeachersModule().page.to }} of
+      {{ useTeachersModule().page.total }}
     </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useTeacherModule().page.current_page"
-      :length="useTeacherModule().page.last_page"
+      v-model="useTeachersModule().page.current_page"
+      :length="useTeachersModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSchoolModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSchoolsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref, watch } from "vue";
-import { useTeacherModule, useSchoolModule } from "@/store";
+import { useTeachersModule, useSchoolsModule } from "@/store";
 import { getSchoolName } from "@/helpers/instance";
 
 import FilterView from "./FilterView.vue";
@@ -114,28 +114,28 @@ const error = ref({
 });
 
 const search = ref<string>("");
-const teacherModule = useTeacherModule();
+const teacherModule = useTeachersModule();
 const teachers = computed<Teacher[]>(() => teacherModule.getTeachers);
 
 let initialCallMade = false;
 
 onMounted(async () => {
   if (initialCallMade) return;
-  await useTeacherModule().read();
-  await useSchoolModule().read();
+  await useTeachersModule().read();
+  await useSchoolsModule().read();
   initialCallMade = true;
 });
 
 watch(
-  () => useTeacherModule().page.current_page,
+  () => useTeachersModule().page.current_page,
   async () => {
     if (!initialCallMade) return;
-    await teacherModule.read(useTeacherModule().page.current_page);
+    await teacherModule.read(useTeachersModule().page.current_page);
   }
 );
 
 const resetSearch = async () => {
-  await useTeacherModule().read();
+  await useTeachersModule().read();
 };
 
 provide("success", success);

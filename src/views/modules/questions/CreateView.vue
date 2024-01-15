@@ -138,8 +138,8 @@ import OptionComponent from "@/components/questions/OptionComponent.vue";
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
 import CorrectComponent from "@/components/questions/CorrectComponent.vue";
 
-import { useQuestionModule } from "@/store";
-import { useModuleModule } from "@/store";
+import { useQuestionsModule } from "@/store";
+import { useModulesModule } from "@/store";
 
 import Module from "@/types/Module";
 import Question from "@/types/Question";
@@ -305,10 +305,10 @@ const submit = async () => {
 
   if (errors) return;
   try {
-    useQuestionModule()
+    useQuestionsModule()
       .createAll(questions, props.module)
       .then((response) => {
-        useModuleModule().setQuestionsModule(props.index, response);
+        useModulesModule().setQuestionsModule(props.index, response);
         success.value.show("Question has been successfully added.");
         clearForm();
         tab();

@@ -5,7 +5,7 @@ import api from "@/helpers/api";
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
-export const useOptionModule = defineStore("options", {
+export const useOptionsModule = defineStore("options", {
   state: () => ({
     isLoading: false,
     isTableLoading: false,

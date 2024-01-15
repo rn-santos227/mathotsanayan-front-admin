@@ -90,7 +90,7 @@
 import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSubjectModule } from "@/store";
+import { useSubjectsModule } from "@/store";
 
 import Subject from "@/types/Subject";
 import VSubject from "@/helpers/validations/v_subject";
@@ -136,7 +136,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useSubjectModule().update(state);
+  const response = await useSubjectsModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Subject has been successfully updated.");

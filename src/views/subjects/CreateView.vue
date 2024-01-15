@@ -82,14 +82,14 @@
   </v-btn>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSubjectModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSubjectsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSubjectModule } from "@/store";
+import { useSubjectsModule } from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
@@ -133,7 +133,7 @@ const clearForm = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useSubjectModule().create(state);
+  const response = await useSubjectsModule().create(state);
   if (response) {
     clearForm();
     success.value.show("Subject has been successfully recorded.");

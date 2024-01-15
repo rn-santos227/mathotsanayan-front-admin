@@ -3,7 +3,7 @@
     class="w-100"
     :items="accounts"
     :headers="headers"
-    :loading="useAccountModule().isTableLoading"
+    :loading="useAccountsModule().isTableLoading"
     item-value="id"
   >
     <template v-slot:item="{ item }">
@@ -30,12 +30,12 @@
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useAccountModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useAccountsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useAccountModule } from "@/store";
+import { useAccountsModule } from "@/store";
 import { getOwnerName } from "@/helpers/instance";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
@@ -57,11 +57,11 @@ const error = ref({
   },
 });
 
-const accountModule = useAccountModule();
+const accountModule = useAccountsModule();
 const accounts = computed<Account[]>(() => accountModule.getAccounts);
 
 onMounted(async () => {
-  await useAccountModule().read();
+  await useAccountsModule().read();
 });
 
 provide("success", success);

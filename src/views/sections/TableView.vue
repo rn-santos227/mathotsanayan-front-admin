@@ -3,7 +3,7 @@
     class="w-100"
     :items="sections"
     :headers="headers"
-    :loading="useSectionModule().isTableLoading"
+    :loading="useSectionsModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">
@@ -33,12 +33,12 @@
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSectionModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSectionsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
+import { useSectionsModule, useSchoolsModule, useTeachersModule } from "@/store";
 import { getTeacherName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";
@@ -62,13 +62,13 @@ const error = ref({
   },
 });
 
-const sectionModule = useSectionModule();
+const sectionModule = useSectionsModule();
 const sections = computed<Section[]>(() => sectionModule.getSections);
 
 onMounted(async () => {
-  await useSectionModule().read();
-  await useSchoolModule().read();
-  await useTeacherModule().read();
+  await useSectionsModule().read();
+  await useSchoolsModule().read();
+  await useTeachersModule().read();
 });
 
 provide("success", success);

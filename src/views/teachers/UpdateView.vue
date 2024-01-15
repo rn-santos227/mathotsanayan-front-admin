@@ -84,7 +84,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSchoolModule().getSchools"
+                  :items="useSchoolsModule().getSchools"
                   :error="v$.school.$error"
                   :error-messages="errors.school"
                 />
@@ -180,7 +180,7 @@
 import { inject, ref, reactive, computed, watch, onMounted } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useTeacherModule, useSchoolModule } from "@/store";
+import { useTeachersModule, useSchoolsModule } from "@/store";
 
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";
@@ -247,7 +247,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useTeacherModule().update(state);
+  const response = await useTeachersModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Teacher has been successfully updated.");

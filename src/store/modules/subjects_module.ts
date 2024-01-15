@@ -4,7 +4,7 @@ import api from "@/helpers/api";
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
-export const useSubjectModule = defineStore("subjects", {
+export const useSubjectsModule = defineStore("subjects", {
   state: () => ({
     subjects: [] as Subject[],
     isLoading: false,

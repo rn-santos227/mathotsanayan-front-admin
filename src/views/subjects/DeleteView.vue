@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useSubjectModule } from "@/store";
+import { useSubjectsModule } from "@/store";
 
 import Subject from "@/types/Subject";
 
@@ -88,7 +88,7 @@ const error = inject("error", {
 });
 
 const confirm = async () => {
-  const response = await useSubjectModule().delete(props.subject);
+  const response = await useSubjectsModule().delete(props.subject);
   if (response) {
     success.value.show("Subject has been successfully deleted.");
     dialog.value = false;

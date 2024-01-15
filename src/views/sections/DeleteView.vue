@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useSectionModule } from "@/store";
+import { useSectionsModule } from "@/store";
 
 import Section from "@/types/Section";
 
@@ -88,7 +88,7 @@ const error = inject("error", {
 });
 
 const confirm = async () => {
-  const response = await useSectionModule().delete(props.section);
+  const response = await useSectionsModule().delete(props.section);
   if (response) {
     success.value.show("Section has been successfully deleted.");
     dialog.value = false;

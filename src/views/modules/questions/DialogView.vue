@@ -61,7 +61,7 @@
   </v-list-item>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useQuestionModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useQuestionsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -73,7 +73,7 @@ import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
-import { useQuestionModule } from "@/store";
+import { useQuestionsModule } from "@/store";
 
 import Module from "@/types/Module";
 

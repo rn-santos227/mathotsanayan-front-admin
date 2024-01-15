@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useCourseModule } from "@/store";
+import { useCoursesModule } from "@/store";
 
 import Course from "@/types/Course";
 
@@ -88,7 +88,7 @@ const props = defineProps<{
 }>();
 
 const confirm = async () => {
-  const response = await useCourseModule().delete(props.course);
+  const response = await useCoursesModule().delete(props.course);
   if (response) {
     success.value.show("Course has been successfully deleted.");
   } else {

@@ -5,7 +5,7 @@
       item-value="name"
       :items="table_props.questions"
       :headers="headers"
-      :loading="useQuestionModule().isTableLoading"
+      :loading="useQuestionsModule().isTableLoading"
     >
       <template v-slot:item="{ item }">
         <tr>
@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import ImageComponent from "@/components/ImageComponent.vue";
 
-import { useQuestionModule } from "@/store";
+import { useQuestionsModule } from "@/store";
 
 import TestView from "./TestView.vue";
 import CorrectsView from "./corrects/CorrectsView.vue";

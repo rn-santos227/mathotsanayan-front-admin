@@ -80,7 +80,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSchoolModule().getSchools"
+                  :items="useSchoolsModule().getSchools"
                   :error="v$.school.$error"
                   :error-messages="errors.school"
                 />
@@ -172,14 +172,14 @@
   </v-btn>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useTeacherModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useTeachersModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref, reactive, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useTeacherModule, useSchoolModule } from "@/store";
+import { useTeachersModule, useSchoolsModule } from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
@@ -246,7 +246,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useTeacherModule().create(state);
+  const response = await useTeachersModule().create(state);
   if (response) {
     clearForm();
     success.value.show("Teacher has been successfully recorded.");

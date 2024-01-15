@@ -92,9 +92,9 @@
 import { computed, onMounted, provide, ref, watch } from "vue";
 import {
   useStudentsModule,
-  useCourseModule,
-  useSchoolModule,
-  useSectionModule,
+  useCoursesModule,
+  useSchoolsModule,
+  useSectionsModule,
 } from "@/store";
 import { getSchoolName, getSectionName } from "@/helpers/instance";
 
@@ -130,9 +130,9 @@ let initialCallMade = false;
 onMounted(async () => {
   if (initialCallMade) return;
   await useStudentsModule().read();
-  await useCourseModule().read();
-  await useSchoolModule().read();
-  await useSectionModule().read();
+  await useCoursesModule().read();
+  await useSchoolsModule().read();
+  await useSectionsModule().read();
   initialCallMade = true;
 });
 

@@ -73,7 +73,7 @@
 
 <script setup lang="ts">
 import { inject, reactive, ref } from "vue";
-import { useModuleModule, useQuestionModule } from "@/store";
+import { useModulesModule, useQuestionsModule } from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
@@ -147,12 +147,12 @@ const submit = async () => {
   if (validate.value.validate()) errors = true;
   if (errors) return;
   try {
-    useQuestionModule()
+    useQuestionsModule()
       .update(state)
       .then((response) => {
         const _question = response;
         if (_question) {
-          useModuleModule().updateQuestionModule(props.index, _question);
+          useModulesModule().updateQuestionModule(props.index, _question);
           success.value.show("Question has been successfully updated.");
           close();
         }

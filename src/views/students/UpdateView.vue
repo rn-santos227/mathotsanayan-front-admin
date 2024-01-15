@@ -84,7 +84,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useCourseModule().getCourses"
+                  :items="useCoursesModule().getCourses"
                   :error="v$.course.$error"
                   :error-messages="errors.course"
                 />
@@ -100,7 +100,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSchoolModule().getSchools"
+                  :items="useSchoolsModule().getSchools"
                   :error="v$.school.$error"
                   :error-messages="errors.school"
                 />
@@ -116,7 +116,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSectionModule().getSections"
+                  :items="useSectionsModule().getSections"
                   :error="v$.section.$error"
                   :error-messages="errors.section"
                 />
@@ -224,9 +224,9 @@ import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import {
   useStudentsModule,
-  useCourseModule,
-  useSchoolModule,
-  useSectionModule,
+  useCoursesModule,
+  useSchoolsModule,
+  useSectionsModule,
 } from "@/store";
 import { rules, rules_password } from "@/helpers/rules/rules_update_student";
 import { padLeft } from "@/helpers/utils";

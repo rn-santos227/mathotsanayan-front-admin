@@ -3,7 +3,7 @@
     class="w-100"
     :items="schools"
     :headers="headers"
-    :loading="useSchoolModule().isTableLoading"
+    :loading="useSchoolsModule().isTableLoading"
     item-value="name"
   >
     <template v-slot:item="{ item }">
@@ -30,12 +30,12 @@
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSchoolModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSchoolsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useSchoolModule } from "@/store";
+import { useSchoolsModule } from "@/store";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
@@ -58,11 +58,11 @@ const error = ref({
   },
 });
 
-const schoolModule = useSchoolModule();
+const schoolModule = useSchoolsModule();
 const schools = computed<School[]>(() => schoolModule.getSchools);
 
 onMounted(async () => {
-  await useSchoolModule().read();
+  await useSchoolsModule().read();
 });
 
 provide("success", success);

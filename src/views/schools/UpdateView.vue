@@ -122,7 +122,7 @@
 import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSchoolModule } from "@/store";
+import { useSchoolsModule } from "@/store";
 
 import School from "@/types/School";
 import VSchool from "@/helpers/validations/v_schools";
@@ -172,7 +172,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useSchoolModule().update(state);
+  const response = await useSchoolsModule().update(state);
   if (response) {
     resetForm();
     success.value.show("School has been successfully updated.");

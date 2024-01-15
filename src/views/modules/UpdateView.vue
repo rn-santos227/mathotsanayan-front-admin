@@ -76,7 +76,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSubjectModule().getSubjects"
+                  :items="useSubjectsModule().getSubjects"
                   :error="v$.subject.$error"
                   :error-messages="errors.subject"
                 />
@@ -158,7 +158,7 @@
 import { inject, ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useModuleModule, useSubjectModule } from "@/store";
+import { useModulesModule, useSubjectsModule } from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import Module from "@/types/Module";
@@ -198,7 +198,7 @@ watch(
       typeof state.subject === "number" ||
       typeof state.subject === "string"
     ) {
-      steps.value = useSubjectModule().getModuleCount(state.subject);
+      steps.value = useSubjectsModule().getModuleCount(state.subject);
     }
   }
 );
@@ -219,7 +219,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useModuleModule().update(state);
+  const response = await useModulesModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Module has been successfully updated.");

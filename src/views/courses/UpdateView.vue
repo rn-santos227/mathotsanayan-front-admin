@@ -102,7 +102,7 @@
 import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useCourseModule } from "@/store";
+import { useCoursesModule } from "@/store";
 
 import Course from "@/types/Course";
 import VCourse from "@/helpers/validations/v_courses";
@@ -149,7 +149,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useCourseModule().update(state);
+  const response = await useCoursesModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Course has been successfully updated.");

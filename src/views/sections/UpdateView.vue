@@ -54,7 +54,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSchoolModule().getSchools"
+                  :items="useSchoolsModule().getSchools"
                   :error="v$.school.$error"
                   :error-messages="errors.school"
                 />
@@ -70,7 +70,7 @@
                   variant="outlined"
                   item-title="full_name"
                   item-value="id"
-                  :items="useTeacherModule().getTeachers"
+                  :items="useTeachersModule().getTeachers"
                   :error="v$.teacher.$error"
                   :error-messages="errors.teacher"
                 />
@@ -124,7 +124,7 @@
 import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSectionModule, useSchoolModule, useTeacherModule } from "@/store";
+import { useSectionsModule, useSchoolsModule, useTeachersModule } from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import Section from "@/types/Section";
@@ -171,7 +171,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useSectionModule().update(state);
+  const response = await useSectionsModule().update(state);
   if (response) {
     resetForm();
     success.value.show("Module has been successfully updated.");

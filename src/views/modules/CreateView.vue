@@ -72,7 +72,7 @@
                   variant="outlined"
                   item-title="name"
                   item-value="id"
-                  :items="useSubjectModule().getSubjects"
+                  :items="useSubjectsModule().getSubjects"
                   :error="v$.subject.$error"
                   :error-messages="errors.subject"
                 />
@@ -142,14 +142,14 @@
   </v-btn>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useModuleModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useModulesModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, computed, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useModuleModule, useSubjectModule } from "@/store";
+import { useModulesModule, useSubjectsModule } from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
@@ -194,7 +194,7 @@ watch(
       typeof state.subject === "number" ||
       typeof state.subject === "string"
     ) {
-      steps.value = useSubjectModule().getModuleCount(state.subject);
+      steps.value = useSubjectsModule().getModuleCount(state.subject);
     }
   }
 );
@@ -215,7 +215,7 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useModuleModule().create(state);
+  const response = await useModulesModule().create(state);
   if (response) {
     clearForm();
     success.value.show("Course has been successfully recorded.");

@@ -5,7 +5,7 @@ import api from "@/helpers/api";
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
-export const useCorrectModule = defineStore("corrects", {
+export const useCorrectsModule = defineStore("corrects", {
   state: () => ({
     isLoading: false as boolean,
     isTableLoading: false,

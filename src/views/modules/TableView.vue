@@ -35,9 +35,9 @@
       :search="search"
       :items="modules"
       :headers="headers"
-      :items-per-page="useModuleModule().page.per_page"
-      :loading="useModuleModule().isTableLoading"
-      :page="useModuleModule().page.current_page"
+      :items-per-page="useModulesModule().page.per_page"
+      :loading="useModulesModule().isTableLoading"
+      :page="useModulesModule().page.current_page"
     >
       <template v-slot:item="{ item, index }">
         <tr>
@@ -71,24 +71,24 @@
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
     <span class="text-body-2">
-      {{ useModuleModule().page.from }}-{{ useModuleModule().page.to }} of
-      {{ useModuleModule().page.total }}
+      {{ useModulesModule().page.from }}-{{ useModulesModule().page.to }} of
+      {{ useModulesModule().page.total }}
     </span>
     <v-pagination
       color="purple-darken-3"
-      v-model="useModuleModule().page.current_page"
-      :length="useModuleModule().page.last_page"
+      v-model="useModulesModule().page.current_page"
+      :length="useModulesModule().page.last_page"
       :total-visible="7"
     />
   </v-card-actions>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useModuleModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useModulesModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref, watch } from "vue";
-import { useModuleModule, useSubjectModule } from "@/store";
+import { useModulesModule, useSubjectsModule } from "@/store";
 import { getSubjectName } from "@/helpers/instance";
 
 import FilterView from "./FilterView.vue";
@@ -116,28 +116,28 @@ const error = ref({
 });
 
 const search = ref<string>("");
-const moduleModule = useModuleModule();
+const moduleModule = useModulesModule();
 const modules = computed<Module[]>(() => moduleModule.getModules);
 
 let initialCallMade = false;
 
 onMounted(async () => {
   if (initialCallMade) return;
-  await useModuleModule().read();
-  await useSubjectModule().read();
+  await useModulesModule().read();
+  await useSubjectsModule().read();
   initialCallMade = true;
 });
 
 watch(
-  () => useModuleModule().page.current_page,
+  () => useModulesModule().page.current_page,
   async () => {
     if (!initialCallMade) return;
-    await moduleModule.read(useModuleModule().page.current_page);
+    await moduleModule.read(useModulesModule().page.current_page);
   }
 );
 
 const resetSearch = async () => {
-  await useModuleModule().read();
+  await useModulesModule().read();
 };
 
 provide("success", success);

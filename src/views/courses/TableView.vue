@@ -4,7 +4,7 @@
     item-value="name"
     :items="courses"
     :headers="headers"
-    :loading="useCourseModule().isTableLoading"
+    :loading="useCoursesModule().isTableLoading"
   >
     <template v-slot:item="{ item }">
       <tr>
@@ -30,12 +30,12 @@
   </v-data-table>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useCourseModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useCoursesModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useCourseModule } from "@/store";
+import { useCoursesModule } from "@/store";
 
 import UpdateView from "./UpdateView.vue";
 import DeleteView from "./DeleteView.vue";
@@ -59,11 +59,11 @@ const error = ref({
   },
 });
 
-const courseModule = useCourseModule();
+const courseModule = useCoursesModule();
 const courses = computed<Course[]>(() => courseModule.getCourses);
 
 onMounted(async () => {
-  await useCourseModule().read();
+  await useCoursesModule().read();
 });
 
 provide("success", success);

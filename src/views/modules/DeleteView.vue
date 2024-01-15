@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useModuleModule } from "@/store";
+import { useModulesModule } from "@/store";
 
 import Module from "@/types/Module";
 
@@ -88,7 +88,7 @@ const error = inject("error", {
 });
 
 const confirm = async () => {
-  const response = await useModuleModule().delete(props.module);
+  const response = await useModulesModule().delete(props.module);
   if (response) {
     success.value.show("Module has been successfully deleted.");
     dialog.value = false;

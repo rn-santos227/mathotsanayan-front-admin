@@ -30,8 +30,8 @@
 
 <script setup lang="ts">
 import { inject, ref, reactive } from "vue";
-import { useModuleModule } from "@/store";
-import { useOptionModule } from "@/store";
+import { useModulesModule } from "@/store";
+import { useOptionsModule } from "@/store";
 
 import ImageComponent from "@/components/ImageComponent.vue";
 import OptionComponent from "@/components/questions/OptionComponent.vue";
@@ -85,11 +85,11 @@ const submit = async () => {
   if (errors) return;
 
   try {
-    await useOptionModule()
+    await useOptionsModule()
       .update(state)
       .then((response) => {
         if (response.length > 0) {
-          useModuleModule().setQuestionsModule(props.index, response);
+          useModulesModule().setQuestionsModule(props.index, response);
           success.value.show("Option has been successfully updated.");
           emit("close");
         } else {
@@ -103,11 +103,11 @@ const submit = async () => {
 
 const remove = async () => {
   try {
-    await useOptionModule()
+    await useOptionsModule()
       .delete(state)
       .then((response) => {
         if (response.length > 0) {
-          useModuleModule().setQuestionsModule(props.index, response);
+          useModulesModule().setQuestionsModule(props.index, response);
           success.value.show("Option has been successfully removed.");
           emit("close");
         } else {

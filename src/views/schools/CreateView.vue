@@ -114,14 +114,14 @@
   </v-btn>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useSchoolModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useSchoolsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSchoolModule } from "@/store";
+import { useSchoolsModule } from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
@@ -172,7 +172,7 @@ const clearForm = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useSchoolModule().create(state);
+  const response = await useSchoolsModule().create(state);
   if (response) {
     clearForm();
     success.value.show("School has been successfully recorded.");
