@@ -6,7 +6,7 @@ import api from "@/helpers/api";
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
 
-export const useResultModule = defineStore("result", {
+export const useResultsModule = defineStore("results", {
   state: () => ({
     results: [] as Result[],
     page: {} as Page,

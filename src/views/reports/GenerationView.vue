@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import * as XLSX from "../../../plugin/xlsx";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
-import { useResultModule } from "@/store";
+import { useResultsModule } from "@/store";
 import Section from "@/types/Section";
 
 const exportToExcel = async () => {
@@ -31,7 +31,7 @@ const exportToExcel = async () => {
   const currentDate = new Date();
   const formattedDate = currentDate.toISOString().split("T")[0];
 
-  useResultModule().getResults.forEach((item) => {
+  useResultsModule().getResults.forEach((item) => {
     const row: string[] = [];
     row.push(item.student.full_name ?? "");
     row.push((item.student.section as Section)?.name ?? "");

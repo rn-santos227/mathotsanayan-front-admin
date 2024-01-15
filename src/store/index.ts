@@ -10,7 +10,7 @@ import { useImageModule } from "./modules/image_module";
 import { useModuleModule } from "./modules/modules_module";
 import { useOptionModule } from "./modules/options_module";
 import { useQuestionModule } from "./modules/questions_module";
-import { useResultModule } from "./modules/results_module";
+import { useResultsModule } from "./modules/results_module";
 import { useSchoolModule } from "./modules/schools_module";
 import { useSectionModule } from "./modules/sections_module";
 import { useStudentsModule } from "./modules/students_module";
@@ -33,7 +33,7 @@ export {
   useModuleModule,
   useOptionModule,
   useQuestionModule,
-  useResultModule,
+  useResultsModule,
   useSchoolModule,
   useSectionModule,
   useStudentsModule,

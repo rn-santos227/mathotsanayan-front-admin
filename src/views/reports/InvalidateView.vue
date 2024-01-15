@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from "vue";
-import { useResultModule } from "@/store";
+import { useResultsModule } from "@/store";
 
 import Result from "@/types/Result";
 
@@ -88,7 +88,7 @@ const props = defineProps<{
 }>();
 
 const confirm = async () => {
-  const response = await useResultModule().delete(props.result);
+  const response = await useResultsModule().delete(props.result);
   if (response) {
     success.value.show("Result has been successfully invalidated.");
   } else {
