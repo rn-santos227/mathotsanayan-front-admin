@@ -99,7 +99,7 @@ export const useSectionsModule = defineStore("sections", {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
-          `${api.TEACHERS.DELETE}${payload.id}`,
+          `${api.SECTIONS.DELETE}${payload.id}`,
           {
             method: "DELETE",
             headers: {
