@@ -39,9 +39,7 @@ export function getTeacherName(teacher: number | string | Teacher) {
   return "DefaultName";
 }
 
-export function getOwnerName(
-  owner: number | string | Teacher | Student | Admin
-) {
+export function getOwnerName(owner: Teacher | Student | Admin) {
   if (
     typeof owner === "object" &&
     owner !== null &&

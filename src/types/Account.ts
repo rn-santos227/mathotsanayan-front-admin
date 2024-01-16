@@ -1,5 +1,5 @@
 import Admin from "./Admin";
-import Student from "./Person";
+import Student from "./Student";
 import Teacher from "./Teacher";
 
 type Account = {

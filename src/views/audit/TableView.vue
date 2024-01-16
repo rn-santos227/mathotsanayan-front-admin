@@ -29,11 +29,16 @@
       </v-row>
     </v-card>
   </v-card-text>
+  <v-divider />
+  <v-card-text class="table-height"> </v-card-text>
+  <v-divider />
+  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
 import { useAuditModule } from "@/store/modules/audit_module";
+import { getOwnerName } from "@/helpers/instance";
 
 import header from "@/helpers/headers/header_audit";
 import Audit from "@/types/Audit";
@@ -62,3 +67,10 @@ const resetSearch = async () => {
   await useAuditModule().read();
 };
 </script>
+
+<style scoped>
+.table-height {
+  height: calc(100vh - 250px);
+  overflow-y: auto;
+}
+</style>
