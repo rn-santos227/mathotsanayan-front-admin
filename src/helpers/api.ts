@@ -17,6 +17,10 @@ export default {
     READ: `${BACKEND}answers/`,
   },
 
+  AUDIT: {
+    READ: `${BACKEND}/aadmin/audit`,
+  },
+
   AUTH: {
     AUTH: `${BACKEND}auth`,
     LOGIN: `${BACKEND}admin/login`,
