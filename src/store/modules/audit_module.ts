@@ -44,7 +44,7 @@ export const useAuditModule = defineStore("audit", {
   },
 
   getters: {
-    getModules(): Audit[] {
+    getAudit(): Audit[] {
       return this.audit;
     },
   },

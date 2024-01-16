@@ -3,20 +3,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, provide, ref, watch } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { useAuditModule } from "@/store/modules/audit_module";
 
+import header from "@/helpers/headers/header_audit";
 import Audit from "@/types/Audit";
 
-const success = ref({
-  show: (message: string) => {
-    return message;
-  },
-});
+const search = ref<string>("");
+const auditModule = useAuditModule();
+const audit = computed<Audit[]>(() => auditModule.getAudit);
+let initialCallMade = false;
 
-const error = ref({
-  show: (message: string) => {
-    return message;
-  },
-});
 </script>
