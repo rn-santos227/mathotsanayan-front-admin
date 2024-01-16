@@ -41,6 +41,25 @@
       :loading="useAuditModule().isTableLoading"
       :page="useAuditModule().page.current_page"
     >
+      <template v-slot:item="{ item }">
+        <tr>
+          <td class="text-left">
+            {{ getOwnerName(item.user.owner) }}
+          </td>
+          <td class="text-left">
+            {{ item.activity }}
+          </td>
+          <td class="text-left">
+            {{ item.table }}
+          </td>
+          <td class="text-left">
+            {{ item.ip_address }}
+          </td>
+          <td class="text-left">
+            {{ formatDate(item.created_at) }}
+          </td>
+        </tr>
+      </template>
       <template v-slot:bottom> </template>
     </v-data-table>
   </v-card-text>
@@ -64,6 +83,7 @@
 import { computed, onMounted, ref, watch } from "vue";
 import { useAuditModule } from "@/store/modules/audit_module";
 import { getOwnerName } from "@/helpers/instance";
+import { formatDate } from "@/helpers/utils";
 
 import headers from "@/helpers/headers/header_audit";
 import Audit from "@/types/Audit";

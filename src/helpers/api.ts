@@ -18,7 +18,7 @@ export default {
   },
 
   AUDIT: {
-    READ: `${BACKEND}/aadmin/audit`,
+    READ: `${BACKEND}admin/audit`,
   },
 
   AUTH: {
