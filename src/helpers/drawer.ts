@@ -84,4 +84,11 @@ export default [
       },
     ],
   },
+  {
+    text: "Audit Logs",
+    icon: "mdi-clipboard-text",
+    route: "/audit",
+    activator: false,
+    children: [],
+  },
 ];
