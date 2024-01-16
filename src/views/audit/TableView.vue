@@ -32,7 +32,19 @@
   <v-divider />
   <v-card-text class="table-height"> </v-card-text>
   <v-divider />
-  <v-card-actions class="mt-auto pa-4 mb-12"> </v-card-actions>
+  <v-card-actions class="mt-auto pa-4 mb-12">
+    <v-spacer />
+    <span class="text-body-2">
+      {{ useAuditModule().page.from }}-{{ useAuditModule().page.to }} of
+      {{ useAuditModule().page.total }}
+    </span>
+    <v-pagination
+      color="purple-darken-3"
+      v-model="useAuditModule().page.current_page"
+      :length="useAuditModule().page.last_page"
+      :total-visible="7"
+    />
+  </v-card-actions>
 </template>
 
 <script setup lang="ts">
