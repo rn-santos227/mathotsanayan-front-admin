@@ -3,6 +3,7 @@ import { useAuthModule } from "@/store";
 
 import AccountView from "../views/accounts/MainView.vue";
 import AdminView from "../views/admins/MainView.vue";
+import AuditView from "../views/audit/MainView.vue";
 import AuthView from "../views/auth/MainView.vue";
 import CoursesView from "../views/courses/MainView.vue";
 import DashboardView from "../views/dashboard/MainView.vue";
@@ -37,6 +38,15 @@ const routes: Array<RouteRecordRaw> = [
     path: "/admins",
     name: "admins",
     component: AdminView,
+    meta: {
+      forAuth: true,
+    },
+  },
+
+  {
+    path: "/audit",
+    name: "audit",
+    component: AuditView,
     meta: {
       forAuth: true,
     },
