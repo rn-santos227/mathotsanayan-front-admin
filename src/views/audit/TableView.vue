@@ -30,7 +30,20 @@
     </v-card>
   </v-card-text>
   <v-divider />
-  <v-card-text class="table-height"> </v-card-text>
+  <v-card-text class="table-height">
+    <v-data-table
+      class="w-100"
+      item-value="name"
+      :search="search"
+      :items="audit"
+      :headers="headers"
+      :items-per-page="useAuditModule().page.per_page"
+      :loading="useAuditModule().isTableLoading"
+      :page="useAuditModule().page.current_page"
+    >
+      <template v-slot:bottom> </template>
+    </v-data-table>
+  </v-card-text>
   <v-divider />
   <v-card-actions class="mt-auto pa-4 mb-12">
     <v-spacer />
@@ -52,7 +65,7 @@ import { computed, onMounted, ref, watch } from "vue";
 import { useAuditModule } from "@/store/modules/audit_module";
 import { getOwnerName } from "@/helpers/instance";
 
-import header from "@/helpers/headers/header_audit";
+import headers from "@/helpers/headers/header_audit";
 import Audit from "@/types/Audit";
 
 const search = ref<string>("");
