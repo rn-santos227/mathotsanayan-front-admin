@@ -1,8 +1,8 @@
-import Accounts from "./Account";
+import Account from "./Account";
 
 type Audit = {
   id: number;
-  user: Accounts;
+  user: Account;
   activity: string;
   table: string;
   content: string;
