@@ -12,7 +12,7 @@
         >
           <v-card
             class="rounded-0 rounded-t mb-2"
-            color="success"
+            color="orange-darken-3"
             variant="flat"
           >
             <v-card-text class="text-left">

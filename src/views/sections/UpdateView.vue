@@ -124,7 +124,11 @@
 import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSectionsModule, useSchoolsModule, useTeachersModule } from "@/store";
+import {
+  useSectionsModule,
+  useSchoolsModule,
+  useTeachersModule,
+} from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import Section from "@/types/Section";
