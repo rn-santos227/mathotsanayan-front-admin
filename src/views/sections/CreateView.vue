@@ -121,7 +121,11 @@
 import { ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useSectionsModule, useSchoolsModule, useTeachersModule } from "@/store";
+import {
+  useSectionsModule,
+  useSchoolsModule,
+  useTeachersModule,
+} from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
