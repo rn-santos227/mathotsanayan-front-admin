@@ -38,7 +38,11 @@
 
 <script setup lang="ts">
 import { computed, onMounted, provide, ref } from "vue";
-import { useSectionsModule, useSchoolsModule, useTeachersModule } from "@/store";
+import {
+  useSectionsModule,
+  useSchoolsModule,
+  useTeachersModule,
+} from "@/store";
 import { getTeacherName } from "@/helpers/instance";
 
 import UpdateView from "./UpdateView.vue";
