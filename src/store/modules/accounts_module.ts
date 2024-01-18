@@ -3,6 +3,7 @@ import api from "@/helpers/api";
 
 import { defineStore } from "pinia";
 import { authenticatedFetch } from "@/services/api";
+import Password from "@/interfaces/Password";
 
 export const useAccountsModule = defineStore("accounts", {
   state: () => ({
@@ -34,6 +35,25 @@ export const useAccountsModule = defineStore("accounts", {
         return false;
       } finally {
         this.isTableLoading = false;
+      }
+    },
+
+    async reset(payload: Password, id: number): Promise<boolean> {
+      try {
+        this.isLoading = true;
+        await authenticatedFetch(`${api.ACCOUNTS.RESET}${id}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        return true;
+      } catch (error) {
+        console.error("Error Account in:", error);
+        return false;
+      } finally {
+        this.isLoading = false;
       }
     },
 

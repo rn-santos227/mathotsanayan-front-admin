@@ -1,7 +1,7 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-key"></v-icon> Update
+      <v-icon icon="mdi-key"></v-icon> Password Reset
     </v-list-item-title>
     <v-dialog
       class="ma-auto"
@@ -17,7 +17,7 @@
           flat
         >
           <v-card-actions class="mx-4">
-            <span class="text-h6"> Change Password </span>
+            <span class="text-h6"> Reset Password </span>
             <v-spacer />
             <v-btn
               density="comfortable"
@@ -95,19 +95,20 @@
   </v-list-item>
   <SuccessDialogComponent ref="success" />
   <ErrorDialogComponent ref="error" />
-  <LoadingDialogComponent v-bind:activate="useAuthModule().isLoading" />
+  <LoadingDialogComponent v-bind:activate="useAccountsModule().isLoading" />
 </template>
 
 <script setup lang="ts">
 import { computed, ref, reactive, watch } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useAuthModule } from "@/store";
+import { useAccountsModule } from "@/store";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
+import Account from "@/types/Account";
 import Password from "@/interfaces/Password";
 import VPassword from "@/helpers/validations/v_password";
 import { rules, rules_password } from "@/helpers/rules/rules_password";
@@ -119,6 +120,11 @@ const success = ref({
     return message;
   },
 });
+
+const props = defineProps<{
+  acount: Account;
+}>();
+
 const error = ref({
   show: (message: string) => {
     return message;
@@ -155,7 +161,8 @@ const close = () => {
 const submitForm = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useAuthModule().changePassword(state);
+  if (!props.acount.id) return;
+  const response = await useAccountsModule().reset(state, props.acount.id);
   if (response) {
     clearForm();
     success.value.show("Password has been changed successfully.");

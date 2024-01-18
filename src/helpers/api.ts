@@ -3,6 +3,7 @@ const BACKEND = `${process.env.VUE_APP_BACKEND}/api/`;
 export default {
   ACCOUNTS: {
     READ: `${BACKEND}accounts`,
+    RESET: `${BACKEND}accounts/reset/`,
     DELETE: `${BACKEND}accounts/`,
   },
 
