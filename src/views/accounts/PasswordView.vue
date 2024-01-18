@@ -1,9 +1,8 @@
 <template>
   <v-list-item @click.prevent>
-    <template v-slot:prepend>
-      <v-icon icon="mdi-key"></v-icon>
-    </template>
-    <v-list-item-title>Change Password</v-list-item-title>
+    <v-list-item-title class="text-button">
+      <v-icon icon="mdi-key"></v-icon> Update
+    </v-list-item-title>
     <v-dialog
       class="ma-auto"
       persistent
@@ -31,23 +30,6 @@
         </v-card>
         <form>
           <v-card-text>
-            <v-row>
-              <v-col>
-                <v-text-field
-                  prepend-inner-icon="mdi-lock"
-                  v-model.trim="v$.current_password.$model"
-                  autocomplete="new-password"
-                  label="Current Password"
-                  density="compact"
-                  variant="outlined"
-                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show ? 'text' : 'password'"
-                  :error="v$.password.$error"
-                  :error-messages="errors.password"
-                  @click:append-inner="show = !show"
-                />
-              </v-col>
-            </v-row>
             <v-row>
               <v-col>
                 <v-text-field
@@ -144,7 +126,7 @@ const error = ref({
 });
 
 const state = reactive<Password>({
-  current_password: "",
+  current_password: "reset",
   password: "",
   password_confirm: "",
 });
@@ -160,7 +142,6 @@ watch(
 );
 
 const clearForm = () => {
-  state.current_password = "";
   state.password = "";
   state.password_confirm = "";
   v$.value.$reset();
