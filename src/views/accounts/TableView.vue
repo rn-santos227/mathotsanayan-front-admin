@@ -21,7 +21,9 @@
           <v-btn block color="purple-darken-3" variant="outlined">
             <v-icon size="large">mdi-dots-horizontal</v-icon>
             <v-menu activator="parent">
-              <v-list density="compact" variant="plain"> </v-list>
+              <v-list density="compact" variant="plain">
+                <PasswordView v-bind:acount="item" />
+              </v-list>
             </v-menu>
           </v-btn>
         </td>
@@ -37,6 +39,8 @@
 import { computed, onMounted, provide, ref } from "vue";
 import { useAccountsModule } from "@/store";
 import { getOwnerName } from "@/helpers/instance";
+
+import PasswordView from "./PasswordView.vue";
 
 import SuccessDialogComponent from "@/components/dialogs/SuccessDialogComponent.vue";
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
