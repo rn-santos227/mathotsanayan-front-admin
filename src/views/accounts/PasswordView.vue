@@ -132,7 +132,7 @@ const error = ref({
 });
 
 const state = reactive<Password>({
-  current_password: "reset",
+  current_password: "reset_password",
   password: "",
   password_confirm: "",
 });
