@@ -85,6 +85,7 @@
 import { computed, ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
+import { useStudentsModule } from "@/store";
 
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 
@@ -92,7 +93,6 @@ import Search from "@/interfaces/Search";
 import VSearch from "@/helpers/validations/v_search";
 import rules from "@/helpers/rules/rules_search";
 import search_list from "@/helpers/searches/search_students";
-import { useStudentsModule } from "@/store";
 
 const dialog = ref<boolean>(false);
 
