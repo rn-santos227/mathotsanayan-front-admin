@@ -170,6 +170,7 @@ export const useModulesModule = defineStore("modules", {
     async search(payload: Search): Promise<boolean> {
       try {
         this.isTableLoading = true;
+        this.isLoading = true;
         const response = await authenticatedFetch(
           `${api.MODULES.SEARCH}?category=${payload.category}&search=${payload.search}`
         );
@@ -185,6 +186,7 @@ export const useModulesModule = defineStore("modules", {
         return false;
       } finally {
         this.isTableLoading = false;
+        this.isLoading = false;
       }
     },
   },
