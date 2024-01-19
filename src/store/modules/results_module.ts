@@ -50,6 +50,7 @@ export const useResultsModule = defineStore("results", {
     async search(payload: Search): Promise<boolean> {
       try {
         this.isTableLoading = true;
+        this.isLoading = true;
         const response = await authenticatedFetch(
           `${api.RESULTS.SEARCH}?category=${payload.category}&search=${payload.search}`
         );
@@ -65,6 +66,7 @@ export const useResultsModule = defineStore("results", {
         return false;
       } finally {
         this.isTableLoading = false;
+        this.isLoading = false;
       }
     },
 
