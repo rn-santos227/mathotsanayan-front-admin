@@ -134,6 +134,7 @@ export const useStudentsModule = defineStore("student", {
     async search(payload: Search): Promise<boolean> {
       try {
         this.isTableLoading = true;
+        this.isLoading = true;
         const response = await authenticatedFetch(
           `${api.STUDENTS.SEARCH}?category=${payload.category}&search=${payload.search}`
         );
@@ -149,6 +150,7 @@ export const useStudentsModule = defineStore("student", {
         return false;
       } finally {
         this.isTableLoading = false;
+        this.isLoading = false;
       }
     },
   },
