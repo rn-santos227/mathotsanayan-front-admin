@@ -69,38 +69,6 @@
                 />
               </v-col>
             </v-row>
-            <v-row>
-              <v-col>
-                <v-text-field
-                  prepend-inner-icon="mdi-lock"
-                  v-model.trim="v$.password.$model"
-                  autocomplete="new-password"
-                  label="Password"
-                  density="compact"
-                  variant="outlined"
-                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show ? 'text' : 'password'"
-                  :error="v$.password.$error"
-                  :error-messages="errors.password"
-                  @click:append-inner="show = !show"
-                />
-              </v-col>
-              <v-col>
-                <v-text-field
-                  prepend-inner-icon="mdi-lock"
-                  v-model.trim="v$.password_confirm.$model"
-                  autocomplete="new-password"
-                  label="Password"
-                  density="compact"
-                  variant="outlined"
-                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show ? 'text' : 'password'"
-                  :error="v$.password_confirm.$error"
-                  :error-messages="errors.password_confirm"
-                  @click:append-inner="show = !show"
-                />
-              </v-col>
-            </v-row>
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
@@ -133,17 +101,16 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive, computed, watch, onMounted } from "vue";
+import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useAdminsModule } from "@/store";
-import { rules, rules_password } from "@/helpers/rules/rules_update_admin";
+import { rules } from "@/helpers/rules/rules_update_admin";
 import { padLeft } from "@/helpers/utils";
 
 import Admin from "@/types/Admin";
 import VAdmin from "@/helpers/validations/v_admins";
 
-const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
 const success = inject("success", {
   value: {
@@ -169,26 +136,9 @@ const state = reactive<Admin>({ ...props.admin });
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VAdmin>(v$.value.$errors));
 
-onMounted(() => {
-  state.password = "";
-  state.password_confirm = "";
-  rules_password.value = "";
-});
-
-watch(
-  () => state.password,
-  (pword: string) => {
-    rules_password.value = pword;
-  }
-);
-
 const resetForm = () => {
   state.name = props.admin.name;
   state.email = props.admin.email;
-  state.current_password = props.admin.current_password;
-  state.password = "";
-  state.password_confirm = "";
-  rules_password.value = "";
   v$.value.$reset();
 };
 
