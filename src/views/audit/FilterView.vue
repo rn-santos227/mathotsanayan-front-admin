@@ -92,7 +92,7 @@ import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue"
 import Search from "@/interfaces/Search";
 import VSearch from "@/helpers/validations/v_search";
 import rules from "@/helpers/rules/rules_search";
-import search_list from "@/helpers/searches/search_modules";
+import search_list from "@/helpers/searches/search_audit";
 
 const dialog = ref<boolean>(false);
 
