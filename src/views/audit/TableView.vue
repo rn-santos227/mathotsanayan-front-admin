@@ -50,10 +50,15 @@
             {{ item.table }}
           </td>
           <td class="text-left">
-            {{ item.ip_address }}
-          </td>
-          <td class="text-left">
             {{ formatDate(item.created_at) }}
+          </td>
+          <td>
+            <v-btn block color="purple-darken-3" variant="outlined">
+              <v-icon size="large">mdi-dots-horizontal</v-icon>
+              <v-menu activator="parent">
+                <v-list density="compact" variant="plain"> </v-list>
+              </v-menu>
+            </v-btn>
           </td>
         </tr>
       </template>

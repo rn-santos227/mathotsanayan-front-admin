@@ -20,16 +20,16 @@ const headers: ReadonlyHeaders = [
     key: "table",
   },
   {
-    title: "IP Address",
-    align: "start",
-    sortable: true,
-    key: "ip_address",
-  },
-  {
     title: "Timestamp",
     align: "start",
     sortable: true,
     key: "created_at",
+  },
+  {
+    title: "Action",
+    align: "end",
+    sortable: true,
+    width: "10%",
   },
 ];
 
