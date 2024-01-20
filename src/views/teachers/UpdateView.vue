@@ -113,38 +113,6 @@
                 />
               </v-col>
             </v-row>
-            <v-row>
-              <v-col>
-                <v-text-field
-                  prepend-inner-icon="mdi-lock"
-                  v-model.trim="v$.password.$model"
-                  autocomplete="new-password"
-                  label="Password"
-                  density="compact"
-                  variant="outlined"
-                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show ? 'text' : 'password'"
-                  :error="v$.password.$error"
-                  :error-messages="errors.password"
-                  @click:append-inner="show = !show"
-                />
-              </v-col>
-              <v-col>
-                <v-text-field
-                  prepend-inner-icon="mdi-lock"
-                  v-model.trim="v$.password_confirm.$model"
-                  autocomplete="new-password"
-                  label="Password"
-                  density="compact"
-                  variant="outlined"
-                  :append-inner-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  :type="show ? 'text' : 'password'"
-                  :error="v$.password_confirm.$error"
-                  :error-messages="errors.password_confirm"
-                  @click:append-inner="show = !show"
-                />
-              </v-col>
-            </v-row>
           </v-card-text>
           <v-divider class="mb-2 mt-auto" />
           <v-card-actions class="text-right">
@@ -177,17 +145,16 @@
 </template>
 
 <script setup lang="ts">
-import { inject, ref, reactive, computed, watch, onMounted } from "vue";
+import { inject, ref, reactive, computed } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
 import { useTeachersModule, useSchoolsModule } from "@/store";
 
 import Teacher from "@/types/Teacher";
 import VTeacher from "@/helpers/validations/v_teachers";
-import { rules, rules_password } from "@/helpers/rules/rules_update_teacher";
+import { rules } from "@/helpers/rules/rules_update_teacher";
 import { padLeft } from "@/helpers/utils";
 
-const show = ref<boolean>(false);
 const dialog = ref<boolean>(false);
 const success = inject("success", {
   value: {
@@ -214,19 +181,6 @@ const state = reactive<Teacher>({ ...props.teacher });
 const v$ = useVuelidate(rules, state);
 const errors = computed(() => useValidationErrors<VTeacher>(v$.value.$errors));
 
-onMounted(() => {
-  state.password = "";
-  state.password_confirm = "";
-  rules_password.value = "";
-});
-
-watch(
-  () => state.password,
-  (pword: string) => {
-    rules_password.value = pword;
-  }
-);
-
 const resetForm = () => {
   state.first_name = props.teacher.first_name;
   state.middle_name = props.teacher.middle_name;
@@ -235,8 +189,7 @@ const resetForm = () => {
   state.email = props.teacher.email;
   state.contact_number = props.teacher.contact_number;
   state.school = props.teacher.school;
-  state.password = "";
-  state.password_confirm = "";
+
   v$.value.$reset();
 };
 
