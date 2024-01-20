@@ -20,6 +20,7 @@ export default {
 
   AUDIT: {
     READ: `${BACKEND}admin/audit`,
+    SEARCH: `${BACKEND}admin/audit/search`,
   },
 
   AUTH: {
