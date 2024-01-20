@@ -2,9 +2,7 @@
   <v-card-text>
     <v-card variant="flat">
       <v-row class="mt-1">
-        <v-col>
-          <GenerationView />
-        </v-col>
+        <v-spacer />
         <v-col class="d-flex">
           <v-text-field
             class="mr-4"
@@ -13,7 +11,6 @@
             density="compact"
             variant="outlined"
           />
-          <FilterView />
           <v-btn
             class="ml-4"
             variant="outlined"
