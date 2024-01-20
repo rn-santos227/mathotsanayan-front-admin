@@ -11,6 +11,7 @@
             density="compact"
             variant="outlined"
           />
+          <FilterView />
           <v-btn
             class="ml-4"
             variant="outlined"
@@ -79,6 +80,7 @@
       :total-visible="7"
     />
   </v-card-actions>
+  <LoadingDialogComponent v-bind:activate="useAuditModule().isLoading" />
 </template>
 
 <script setup lang="ts">
@@ -86,6 +88,10 @@ import { computed, onMounted, ref, watch } from "vue";
 import { useAuditModule } from "@/store/modules/audit_module";
 import { getOwnerName } from "@/helpers/instance";
 import { formatDate } from "@/helpers/utils";
+
+import FilterView from "./FilterView.vue";
+
+import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";
 
 import headers from "@/helpers/headers/header_audit";
 import Audit from "@/types/Audit";

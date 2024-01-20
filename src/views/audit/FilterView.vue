@@ -85,7 +85,7 @@
 import { computed, ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { useValidationErrors } from "@/services/handlers";
-import { useModulesModule } from "@/store";
+import { useAuditModule } from "@/store";
 
 import ErrorDialogComponent from "@/components/dialogs/ErrorDialogComponent.vue";
 
@@ -117,7 +117,7 @@ const close = () => {
 const submit = async () => {
   const result = await v$.value.$validate();
   if (!result) return;
-  const response = await useModulesModule().search(state);
+  const response = await useAuditModule().search(state);
   if (response) {
     close();
   } else {
