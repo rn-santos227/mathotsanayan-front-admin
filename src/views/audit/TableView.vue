@@ -57,7 +57,9 @@
             <v-btn block color="purple-darken-3" variant="outlined">
               <v-icon size="large">mdi-dots-horizontal</v-icon>
               <v-menu activator="parent">
-                <v-list density="compact" variant="plain"> </v-list>
+                <v-list density="compact" variant="plain">
+                  <DetailsView v-bind:audit="item" />
+                </v-list>
               </v-menu>
             </v-btn>
           </td>
@@ -89,6 +91,7 @@ import { useAuditModule } from "@/store/modules/audit_module";
 import { getOwnerName } from "@/helpers/instance";
 import { formatDate } from "@/helpers/utils";
 
+import DetailsView from "./DetailsView.vue";
 import FilterView from "./FilterView.vue";
 
 import LoadingDialogComponent from "@/components/dialogs/LoadingDialogComponent.vue";

@@ -1,7 +1,7 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-maagnify"></v-icon> Details
+      <v-icon icon="mdi-magnify"></v-icon> Details
     </v-list-item-title>
     <v-dialog
       class="ma-auto"
