@@ -42,7 +42,7 @@ export const useAccountsModule = defineStore("accounts", {
       try {
         this.isLoading = true;
         await authenticatedFetch(`${api.ACCOUNTS.RESET}${id}`, {
-          method: "POST",
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
