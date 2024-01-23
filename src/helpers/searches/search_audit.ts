@@ -6,19 +6,19 @@ const search_list: Array<Category> = [
     value: "user.full_name",
   },
   {
-    text: "Activity",
+    text: "Audit Activity",
     value: "activity",
   },
   {
-    text: "Content",
+    text: "Audit Content",
     value: "content",
   },
   {
-    text: "Date",
+    text: "Audit Date",
     value: "date",
   },
   {
-    text: "Table",
+    text: "Audit Table",
     value: "table",
   },
 ];
