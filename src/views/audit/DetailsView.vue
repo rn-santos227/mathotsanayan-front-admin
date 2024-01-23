@@ -76,7 +76,7 @@
           <v-row>
             <v-col cols="12">
               <v-textarea
-                rows="3"
+                rows="5"
                 v-model="state.content"
                 label="Audit Content"
                 density="compact"
