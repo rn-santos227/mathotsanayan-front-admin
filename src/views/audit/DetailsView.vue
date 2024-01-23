@@ -28,6 +28,63 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <v-card-text class="pb-6">
+          <v-row>
+            <v-col cols="12" sm="6">
+              <v-text-field
+                v-model.trim="owner"
+                label="User Name"
+                density="compact"
+                variant="outlined"
+                hide-details
+                readonly
+              />
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-text-field
+                v-model.trim="state.ip_address"
+                label="IP Address"
+                density="compact"
+                variant="outlined"
+                hide-details
+                readonly
+              />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12" sm="6">
+              <v-text-field
+                v-model.trim="state.activity"
+                label="Audit Activity"
+                density="compact"
+                variant="outlined"
+                hide-details
+                readonly
+              />
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-text-field
+                v-model.trim="state.table"
+                label="Audited Table"
+                density="compact"
+                variant="outlined"
+                hide-details
+                readonly
+              />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="12">
+              <v-textarea
+                rows="3"
+                v-model="state.content"
+                label="Audit Content"
+                density="compact"
+                variant="outlined"
+              />
+            </v-col>
+          </v-row>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -38,12 +95,14 @@ import { reactive, ref } from "vue";
 import { padLeft } from "@/helpers/utils";
 
 import Audit from "@/types/Audit";
+import { getOwnerName } from "@/helpers/instance";
 
 const dialog = ref<boolean>(false);
 const props = defineProps<{
   audit: Audit;
 }>();
 const state = reactive<Audit>({ ...props.audit });
+const owner = ref<string | undefined>(getOwnerName(state.user.owner));
 const close = () => {
   dialog.value = !dialog.value;
 };
