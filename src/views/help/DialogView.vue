@@ -21,6 +21,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
+      <v-card-text class="question-height"> </v-card-text>
     </v-card>
   </v-dialog>
 </template>
@@ -33,3 +34,10 @@ const close = () => {
   dialog.value = !dialog.value;
 };
 </script>
+
+<style scoped>
+.question-height {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+</style>
