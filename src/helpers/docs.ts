@@ -62,12 +62,46 @@ export default [
   {
     text: "Students",
     page: 4,
-    subpages: [],
+    subpages: [
+      {
+        text: "Students",
+        page: 1,
+      },
+      {
+        text: "Students Creation",
+        page: 2,
+      },
+      {
+        text: "Students Update",
+        page: 3,
+      },
+      {
+        text: "Students Deletion",
+        page: 4,
+      },
+    ],
   },
   {
     text: "Reports",
     page: 5,
-    subpages: [],
+    subpages: [
+      {
+        text: "Results",
+        page: 1,
+      },
+      {
+        text: "Results Details",
+        page: 2,
+      },
+      {
+        text: "Answers List",
+        page: 3,
+      },
+      {
+        text: "Result Invalidation",
+        page: 3,
+      },
+    ],
   },
   {
     text: "Teachers",
