@@ -23,7 +23,7 @@
       </v-card>
       <div class="d-flex justify-space-around flex-wrap question-height">
         <v-row no-gutters>
-          <v-col cols="2" class="flex-grow-0">
+          <v-col cols="3" class="flex-grow-0">
             <v-list density="compact">
               <template v-for="(doc, key_1) in docs" :key="key_1">
                 <v-list-item
@@ -32,15 +32,20 @@
                   :title="doc.text"
                   :value="doc.page"
                 />
-                <v-list-group v-else :key="key_1" :value="doc.page">
+                <v-list-group v-else :key="key_1">
                   <template v-slot:activator="{ props }">
                     <v-list-item
                       prepend-icon="mdi-book-multiple"
                       v-bind="props"
                       :title="doc.text"
-                      :value="doc.page"
                     />
                   </template>
+                  <v-list-item
+                    v-for="(subpage, key_2) in doc.subpages"
+                    :key="key_2"
+                    :title="subpage.text"
+                    :value="subpage.page"
+                  />
                 </v-list-group>
               </template>
             </v-list>
