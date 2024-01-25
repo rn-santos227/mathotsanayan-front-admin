@@ -23,7 +23,7 @@ export default [
       },
       {
         text: "Modules Creation",
-        page: "module-creation",
+        page: "module-create",
       },
       {
         text: "Modules Update",
@@ -69,23 +69,23 @@ export default [
     subpages: [
       {
         text: "Students",
-        page: 1,
+        page: "students-main",
       },
       {
         text: "Filter Search",
-        page: 2,
+        page: "students-search",
       },
       {
         text: "Students Creation",
-        page: 3,
+        page: "students-create",
       },
       {
         text: "Students Update",
-        page: 4,
+        page: "students-update",
       },
       {
         text: "Students Deletion",
-        page: 5,
+        page: "students-delete",
       },
     ],
   },
@@ -95,23 +95,27 @@ export default [
     subpages: [
       {
         text: "Reports",
-        page: 1,
+        page: "reports-main",
       },
       {
         text: "Filter Search",
-        page: 3,
+        page: "reports-search",
+      },
+      {
+        text: "Reports Generation",
+        page: "reports-generate",
       },
       {
         text: "Results Details",
-        page: 4,
+        page: "reports-details",
       },
       {
         text: "Answers List",
-        page: 5,
+        page: "reports-answers",
       },
       {
         text: "Result Invalidation",
-        page: 6,
+        page: "reports-invalidate",
       },
     ],
   },
