@@ -68,16 +68,20 @@ export default [
         page: 1,
       },
       {
-        text: "Students Creation",
+        text: "Filter Search",
         page: 2,
       },
       {
-        text: "Students Update",
+        text: "Students Creation",
         page: 3,
       },
       {
-        text: "Students Deletion",
+        text: "Students Update",
         page: 4,
+      },
+      {
+        text: "Students Deletion",
+        page: 5,
       },
     ],
   },
@@ -90,16 +94,20 @@ export default [
         page: 1,
       },
       {
+        text: "Filter Search",
+        page: 3,
+      },
+      {
         text: "Results Details",
-        page: 2,
+        page: 4,
       },
       {
         text: "Answers List",
-        page: 3,
+        page: 5,
       },
       {
         text: "Result Invalidation",
-        page: 3,
+        page: 6,
       },
     ],
   },
@@ -112,16 +120,20 @@ export default [
         page: 1,
       },
       {
-        text: "Teachers Creation",
+        text: "Filter Search",
         page: 2,
       },
       {
-        text: "Teachers Update",
+        text: "Teachers Creation",
         page: 3,
       },
       {
-        text: "Teachers Deletion",
+        text: "Teachers Update",
         page: 4,
+      },
+      {
+        text: "Teachers Deletion",
+        page: 5,
       },
     ],
   },
@@ -158,6 +170,19 @@ export default [
   {
     text: "Audit Trail",
     page: 8,
-    subpages: [],
+    subpages: [
+      {
+        text: "Auidt Trail",
+        page: 1,
+      },
+      {
+        text: "Filter Search",
+        page: 2,
+      },
+      {
+        text: "Audit Details",
+        page: 3,
+      },
+    ],
   },
 ];
