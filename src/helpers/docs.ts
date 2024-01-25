@@ -125,23 +125,23 @@ export default [
     subpages: [
       {
         text: "Teachers",
-        page: 1,
+        page: "teachers-main",
       },
       {
         text: "Filter Search",
-        page: 2,
+        page: "teachers-search",
       },
       {
         text: "Teachers Creation",
-        page: 3,
+        page: "teachers-create",
       },
       {
         text: "Teachers Update",
-        page: 4,
+        page: "teachers-update",
       },
       {
         text: "Teachers Deletion",
-        page: 5,
+        page: "teachers-delete",
       },
     ],
   },
@@ -151,27 +151,27 @@ export default [
     subpages: [
       {
         text: "Accounts",
-        page: 1,
+        page: "library-accounts",
       },
       {
         text: "Administrators",
-        page: 2,
+        page: "library-admins",
       },
       {
         text: "Courses",
-        page: 3,
+        page: "library-courses",
       },
       {
         text: "Schools",
-        page: 4,
+        page: "library-schools",
       },
       {
         text: "Sections",
-        page: 5,
+        page: "library-sections",
       },
       {
         text: "Subjects",
-        page: 6,
+        page: "library-subjects",
       },
     ],
   },
@@ -181,15 +181,15 @@ export default [
     subpages: [
       {
         text: "Auidt Trail",
-        page: 1,
+        page: "audit-main",
       },
       {
         text: "Filter Search",
-        page: 2,
+        page: "audit-search",
       },
       {
         text: "Audit Details",
-        page: 3,
+        page: "audit-details",
       },
     ],
   },
