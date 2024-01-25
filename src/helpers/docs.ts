@@ -126,9 +126,34 @@ export default [
     ],
   },
   {
-    text: "Libraries",
+    text: "Library",
     page: 7,
-    subpages: [],
+    subpages: [
+      {
+        text: "Accounts",
+        page: 1,
+      },
+      {
+        text: "Administrators",
+        page: 2,
+      },
+      {
+        text: "Courses",
+        page: 3,
+      },
+      {
+        text: "Schools",
+        page: 4,
+      },
+      {
+        text: "Sections",
+        page: 5,
+      },
+      {
+        text: "Subjects",
+        page: 6,
+      },
+    ],
   },
   {
     text: "Audit Trail",
