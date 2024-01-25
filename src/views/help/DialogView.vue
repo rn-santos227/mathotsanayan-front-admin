@@ -21,7 +21,13 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-      <v-card-text class="question-height"> </v-card-text>
+      <div class="question-height">
+        <v-row no-gutters>
+          <v-col cols="2" class="flex-grow-0"> </v-col>
+          <v-divider vertical />
+          <v-col class="flex-grow-1"> </v-col>
+        </v-row>
+      </div>
     </v-card>
   </v-dialog>
 </template>
