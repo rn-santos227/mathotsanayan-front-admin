@@ -106,7 +106,24 @@ export default [
   {
     text: "Teachers",
     page: 6,
-    subpages: [],
+    subpages: [
+      {
+        text: "Teachers",
+        page: 1,
+      },
+      {
+        text: "Teachers Creation",
+        page: 2,
+      },
+      {
+        text: "Teachers Update",
+        page: 3,
+      },
+      {
+        text: "Teachers Deletion",
+        page: 4,
+      },
+    ],
   },
   {
     text: "Libraries",
