@@ -16,7 +16,7 @@
           ></v-btn>
         </template>
       </v-list-item>
-      <v-divider></v-divider>
+      <v-divider />
       <v-list density="compact" nav>
         <template v-for="(route, key_1) in routesItem" :key="key_1">
           <v-list-item

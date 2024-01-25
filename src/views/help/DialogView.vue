@@ -23,7 +23,17 @@
       </v-card>
       <div class="d-flex justify-space-around flex-wrap question-height">
         <v-row no-gutters>
-          <v-col cols="2" class="flex-grow-0"></v-col>
+          <v-col cols="2" class="flex-grow-0">
+            <v-list density="compact">
+              <template v-for="(doc, key_1) in docs" :key="key_1">
+                <v-list-item
+                  v-if="doc.subpages.length <= 0"
+                  :title="doc.text"
+                  :value="doc.page"
+                ></v-list-item>
+              </template>
+            </v-list>
+          </v-col>
           <v-divider vertical />
           <v-col class="flex-grow-1"> </v-col>
         </v-row>
@@ -34,6 +44,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import docs from "@/helpers/docs";
 
 const dialog = ref<boolean>(false);
 const close = () => {
