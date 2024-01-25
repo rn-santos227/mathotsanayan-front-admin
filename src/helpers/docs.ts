@@ -18,28 +18,32 @@ export default [
         page: 1,
       },
       {
-        text: "Modules Creation",
+        text: "Filter Search",
         page: 2,
       },
       {
-        text: "Modules Update",
+        text: "Modules Creation",
         page: 3,
       },
       {
-        text: "Modules Deletion",
+        text: "Modules Update",
         page: 4,
       },
       {
-        text: "Questions List",
+        text: "Modules Deletion",
         page: 5,
       },
       {
-        text: "Question Creation",
+        text: "Questions List",
         page: 6,
       },
       {
-        text: "Question Update",
+        text: "Question Creation",
         page: 7,
+      },
+      {
+        text: "Question Update",
+        page: 8,
       },
       {
         text: "Question Delete",
