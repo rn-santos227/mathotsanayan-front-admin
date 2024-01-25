@@ -10,7 +10,9 @@
     <v-card>
       <v-card class="rounded-0 rounded-t py-2" color="purple-darken-3" flat>
         <v-card-actions class="mx-4">
-          <span class="text-h6"> Help Library </span>
+          <span class="text-h6"
+            ><v-icon icon="mdi-help-circle-outline" /> Help Library
+          </span>
           <v-spacer />
           <v-btn
             density="comfortable"
