@@ -28,9 +28,20 @@
               <template v-for="(doc, key_1) in docs" :key="key_1">
                 <v-list-item
                   v-if="doc.subpages.length <= 0"
+                  prepend-icon="mdi-book-multiple"
                   :title="doc.text"
                   :value="doc.page"
-                ></v-list-item>
+                />
+                <v-list-group v-else :key="key_1" :value="doc.page">
+                  <template v-slot:activator="{ props }">
+                    <v-list-item
+                      prepend-icon="mdi-book-multiple"
+                      v-bind="props"
+                      :title="doc.text"
+                      :value="doc.page"
+                    />
+                  </template>
+                </v-list-group>
               </template>
             </v-list>
           </v-col>
