@@ -1,71 +1,71 @@
 export default [
   {
     text: "Introduction",
-    page: 1,
+    page: "intro",
     subpages: [],
   },
   {
     text: "Dashboard",
-    page: 2,
+    page: "dahsboard",
     subpages: [],
   },
   {
     text: "Modules",
-    page: 3,
+    page: "module",
     subpages: [
       {
         text: "Modules",
-        page: 1,
+        page: "module-main",
       },
       {
         text: "Filter Search",
-        page: 2,
+        page: "module-search",
       },
       {
         text: "Modules Creation",
-        page: 3,
+        page: "module-creation",
       },
       {
         text: "Modules Update",
-        page: 4,
+        page: "module-update",
       },
       {
         text: "Modules Deletion",
-        page: 5,
+        page: "module-delete",
       },
       {
         text: "Questions List",
-        page: 6,
+        page: "module-question",
       },
       {
         text: "Question Creation",
-        page: 7,
+        page: "module-question-create",
       },
       {
         text: "Question Update",
-        page: 8,
+        page: "module-question-update",
       },
       {
         text: "Question Delete",
-        page: 9,
+        page: "module-question-delete",
       },
       {
         text: "Question Test",
-        page: 10,
+        page: "module-question-test",
       },
       {
         text: "Options Panel",
-        page: 11,
+        page: "module-question-options",
       },
       {
         text: "Solutions Panel",
-        page: 12,
+        page: "module-question-solutions",
       },
     ],
   },
   {
     text: "Students",
-    page: 4,
+    page: "students",
     subpages: [
       {
         text: "Students",
@@ -91,10 +91,10 @@ export default [
   },
   {
     text: "Reports",
-    page: 5,
+    page: "reports",
     subpages: [
       {
-        text: "Results",
+        text: "Reports",
         page: 1,
       },
       {
@@ -117,7 +117,7 @@ export default [
   },
   {
     text: "Teachers",
-    page: 6,
+    page: "teachers",
     subpages: [
       {
         text: "Teachers",
@@ -143,7 +143,7 @@ export default [
   },
   {
     text: "Library",
-    page: 7,
+    page: "library",
     subpages: [
       {
         text: "Accounts",
@@ -173,7 +173,7 @@ export default [
   },
   {
     text: "Audit Trail",
-    page: 8,
+    page: "audit",
     subpages: [
       {
         text: "Auidt Trail",
