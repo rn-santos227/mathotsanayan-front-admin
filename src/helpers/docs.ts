@@ -14,7 +14,7 @@ export default [
     page: "module",
     subpages: [
       {
-        text: "Modules",
+        text: "Modules Table",
         page: "module-main",
       },
       {
@@ -68,7 +68,7 @@ export default [
     page: "students",
     subpages: [
       {
-        text: "Students",
+        text: "Students Table",
         page: "students-main",
       },
       {
@@ -94,7 +94,7 @@ export default [
     page: "reports",
     subpages: [
       {
-        text: "Reports",
+        text: "Reports Table",
         page: "reports-main",
       },
       {
@@ -124,7 +124,7 @@ export default [
     page: "teachers",
     subpages: [
       {
-        text: "Teachers",
+        text: "Teachers Table",
         page: "teachers-main",
       },
       {
