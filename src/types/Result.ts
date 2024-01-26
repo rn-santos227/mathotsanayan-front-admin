@@ -7,7 +7,7 @@ type Result = {
   timer: number;
   total_score: number;
   items: number;
-  average: number;
+  grade: number;
   created_at?: string;
   updated_at?: string;
   deleted_at?: string;
