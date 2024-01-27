@@ -45,8 +45,9 @@ export default {
   },
 
   DASHBOARD: {
-    READ: `${BACKEND}admin/dashboard`,
+    MODULE: `${BACKEND}admin/dashboard/modules`,
     RATIO: `${BACKEND}admin/dashboard/ratio`,
+    READ: `${BACKEND}admin/dashboard`,
   },
 
   IMAGE: {
