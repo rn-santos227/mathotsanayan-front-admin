@@ -11,9 +11,9 @@
         <thead>
           <tr>
             <th class="font-weight-bold">Module Name</th>
-            <th class="font-weight-bold">Passed</th>
-            <th class="font-weight-bold">Failed</th>
-            <th class="font-weight-bold">Passing Rate</th>
+            <th class="text-center font-weight-bold">Passed</th>
+            <th class="text-center font-weight-bold">Failed</th>
+            <th class="text-center font-weight-bold">Passing Rate</th>
           </tr>
         </thead>
         <tbody>
@@ -22,6 +22,8 @@
             :key="index"
           >
             <td>{{ resModule.module.name }}</td>
+            <td class="text-center">{{ resModule.passed }}</td>
+            <td class="text-center">{{ resModule.failed }}</td>
           </tr>
         </tbody>
       </v-table>
