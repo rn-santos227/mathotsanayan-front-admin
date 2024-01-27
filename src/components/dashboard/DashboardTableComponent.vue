@@ -6,7 +6,18 @@
       </span>
     </v-card-title>
     <v-divider />
-    <div class="table-height">
+    <div
+      class="d-flex align-center justify-center table-height"
+      v-if="useDashboardModule().isLoading"
+    >
+      <v-progress-circular
+        color="purple-darken-3"
+        width="16"
+        size="160"
+        indeterminate
+      />
+    </div>
+    <div v-else class="table-height">
       <v-table>
         <thead>
           <tr>

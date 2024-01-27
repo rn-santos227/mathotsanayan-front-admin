@@ -64,6 +64,6 @@ const { doughnutChartProps } = useDoughnutChart({
 
 <style scoped>
 .top-margin-loading {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 </style>
