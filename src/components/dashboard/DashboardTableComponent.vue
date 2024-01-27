@@ -37,6 +37,9 @@
             <td class="text-center">{{ resModule.total }}</td>
             <td class="text-center">{{ resModule.passed }}</td>
             <td class="text-center">{{ resModule.failed }}</td>
+            <td class="text-center">
+              {{ (resModule.passed / resModule.total) * 100 }}%
+            </td>
           </tr>
         </tbody>
       </v-table>
