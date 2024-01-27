@@ -1,12 +1,24 @@
 <template>
   <v-card class="ma-4" elevation="3">
     <v-card-title>
-      <span class="text-h6 font-weight-bold text-purple">
+      <span class="text-h6 font-weight-bold text-purple-darken-3">
         Module Passed-Failed Ratio
       </span>
     </v-card-title>
     <v-divider />
-    <div class="ma-6">
+    <div
+      class="d-flex align-center justify-center"
+      v-if="useDashboardModule().isLoading"
+    >
+      <v-progress-circular
+        class="top-margin-loading"
+        color="purple-darken-3"
+        width="16"
+        size="160"
+        indeterminate
+      />
+    </div>
+    <div v-else class="ma-6">
       <DoughnutChart v-bind="doughnutChartProps" />
     </div>
   </v-card>
@@ -49,3 +61,9 @@ const { doughnutChartProps } = useDoughnutChart({
   options,
 });
 </script>
+
+<style scoped>
+.top-margin-loading {
+  margin-top: 100px;
+}
+</style>

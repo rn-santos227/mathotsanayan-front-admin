@@ -11,6 +11,7 @@
         <thead>
           <tr>
             <th class="font-weight-bold">Module Name</th>
+            <th class="text-center font-weight-bold">Total</th>
             <th class="text-center font-weight-bold">Passed</th>
             <th class="text-center font-weight-bold">Failed</th>
             <th class="text-center font-weight-bold">Passing Rate</th>
@@ -22,6 +23,7 @@
             :key="index"
           >
             <td>{{ resModule.module.name }}</td>
+            <td class="text-center">{{ resModule.total }}</td>
             <td class="text-center">{{ resModule.passed }}</td>
             <td class="text-center">{{ resModule.failed }}</td>
           </tr>
@@ -37,7 +39,7 @@ import { useDashboardModule } from "@/store";
 
 <style scoped>
 .table-height {
-  height: calc(100vh - 420px);
+  height: 470px;
   overflow-y: auto;
 }
 </style>
