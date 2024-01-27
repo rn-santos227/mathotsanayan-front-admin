@@ -27,7 +27,8 @@
       />
     </div>
     <div class="d-flex justify-space-around flex-wrap">
-      <DashboardPieGraphComponent class="flex-grow-1 card-width" />
+      <DashboardPieGraphComponent class="flex-grow-0 card-width-pie" />
+      <DashboardTableComponent class="flex-grow-1 card-width" />
     </div>
   </v-container>
 </template>
@@ -38,6 +39,7 @@ import { useDashboardModule } from "@/store";
 
 import DashboardCardComponent from "@/components/dashboard/DashboardCardComponent.vue";
 import DashboardPieGraphComponent from "@/components/dashboard/DashboardPieGraphComponent.vue";
+import DashboardTableComponent from "@/components/dashboard/DashboardTableComponent.vue";
 import DashboardCard from "@/interfaces/DashboardCard";
 
 const schoolCard = ref<DashboardCard>({
@@ -109,5 +111,9 @@ onMounted(async () => {
 <style scoped>
 .card-width {
   width: 180px;
+}
+
+.card-width-pie {
+  width: 490px;
 }
 </style>
