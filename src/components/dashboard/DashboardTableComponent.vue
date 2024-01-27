@@ -6,20 +6,36 @@
       </span>
     </v-card-title>
     <v-divider />
-    <div>
+    <div class="table-height">
       <v-table>
         <thead>
           <tr>
-            <th>Module Name</th>
-            <th>Passed</th>
-            <th>Failed</th>
-            <th>Passing Rate</th>
+            <th class="font-weight-bold">Module Name</th>
+            <th class="font-weight-bold">Passed</th>
+            <th class="font-weight-bold">Failed</th>
+            <th class="font-weight-bold">Passing Rate</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <tr
+            v-for="(resModule, index) in useDashboardModule().resultModules"
+            :key="index"
+          >
+            <td>{{ resModule.module.name }}</td>
+          </tr>
+        </tbody>
       </v-table>
     </div>
   </v-card>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useDashboardModule } from "@/store";
+</script>
+
+<style scoped>
+.table-height {
+  height: calc(100vh - 420px);
+  overflow-y: auto;
+}
+</style>
