@@ -87,6 +87,7 @@ const resultCard = ref<DashboardCard>({
 onMounted(async () => {
   useDashboardModule().isLoading = true;
   await Promise.all([
+    useDashboardModule().modules(),
     useDashboardModule().read(),
     useDashboardModule().ratio(),
   ]);
