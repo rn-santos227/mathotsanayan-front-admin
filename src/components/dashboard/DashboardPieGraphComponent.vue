@@ -30,11 +30,13 @@ const modulesData = computed<ChartData<"doughnut">>(() => ({
         useDashboardModule().graphPie.failed,
       ],
       backgroundColor: ["#4CAF50", "#F44336"],
+      hoverOffset: 4,
     },
   ],
 }));
 
 const options = computed<ChartOptions<"doughnut">>(() => ({
+  responsive: true,
   plugins: {
     legend: {
       position: "top",
