@@ -26,6 +26,9 @@
         v-bind:card="resultCard"
       />
     </div>
+    <div class="d-flex justify-space-around flex-wrap">
+      <DashboardPieGraphComponent class="flex-grow-1 card-width" />
+    </div>
   </v-container>
 </template>
 
@@ -34,6 +37,7 @@ import { ref, onMounted } from "vue";
 import { useDashboardModule } from "@/store";
 
 import DashboardCardComponent from "@/components/dashboard/DashboardCardComponent.vue";
+import DashboardPieGraphComponent from "@/components/dashboard/DashboardPieGraphComponent.vue";
 import DashboardCard from "@/interfaces/DashboardCard";
 
 const schoolCard = ref<DashboardCard>({
