@@ -94,8 +94,8 @@ onMounted(async () => {
   useDashboardModule().isLoading = true;
   await Promise.all([
     useDashboardModule().modules(),
-    useDashboardModule().read(),
     useDashboardModule().ratio(),
+    useDashboardModule().read(),
   ]);
   schoolCard.value.count = useDashboardModule().getDashboard.schools;
   studentCard.value.count = useDashboardModule().getDashboard.students;
