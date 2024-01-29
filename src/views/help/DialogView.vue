@@ -53,7 +53,9 @@
             </v-list>
           </v-col>
           <v-divider vertical />
-          <v-col class="flex-grow-1"> </v-col>
+          <v-col class="flex-grow-1">
+            <IntroView v-if="page === 'intro'" />
+          </v-col>
         </v-row>
       </div>
     </v-card>
@@ -63,6 +65,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import docs from "@/helpers/docs";
+
+import IntroView from "./documentation/IntroView.vue";
 
 const dialog = ref<boolean>(false);
 const page = ref<string>("intro");
