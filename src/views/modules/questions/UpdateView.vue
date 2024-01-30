@@ -14,29 +14,24 @@
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
-          flat
+          variant="flat"
         >
-          <v-card-title>
-            <v-row>
-              <v-col>
-                <span class="text-h6">
-                  Update Question ID: {{ padLeft(state.id) }}
-                </span>
-              </v-col>
-              <v-col class="d-flex">
-                <v-spacer />
-                <v-btn
-                  density="comfortable"
-                  variant="outlined"
-                  icon="mdi-close"
-                  @click="close"
-                >
-                </v-btn>
-              </v-col>
-            </v-row>
-          </v-card-title>
+          <v-card-actions class="mx-4">
+            <span class="text-h6">
+              Update Question ID: {{ padLeft(state.id) }}
+            </span>
+
+            <v-spacer />
+            <v-btn
+              density="comfortable"
+              variant="outlined"
+              icon="mdi-close"
+              @click="close"
+            >
+            </v-btn>
+          </v-card-actions>
         </v-card>
-        <v-card-text class="question-height">
+        <v-card-text>
           <form class="mx-2">
             <QuestionComponent
               v-model:content="state.content"
@@ -49,23 +44,28 @@
           </form>
         </v-card-text>
         <v-divider />
-        <v-row class="mx-6 my-3">
-          <v-col>
-            <v-btn
-              class="mb-2"
-              @click.prevent="resetForm"
-              color="purple-darken-3"
-              block
-            >
-              Reset
-            </v-btn>
-          </v-col>
-          <v-col>
-            <v-btn class="mb-2" @click.prevent="submit" color="success" block>
-              Submit
-            </v-btn>
-          </v-col>
-        </v-row>
+        <v-card-actions class="text-right">
+          <v-spacer />
+          <v-btn
+            @click.prevent="resetForm"
+            variant="elevated"
+            width="200"
+            color="error"
+            prepend-icon="mdi-close"
+            dark
+          >
+            Reset
+          </v-btn>
+          <v-btn
+            @click.prevent="submit"
+            variant="elevated"
+            width="200"
+            color="success"
+            prepend-icon="mdi-check"
+          >
+            Submit
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-list-item>
@@ -162,10 +162,3 @@ const submit = async () => {
   }
 };
 </script>
-
-<style scoped>
-.question-height {
-  height: calc(100vh - 450px);
-  overflow-y: auto;
-}
-</style>
