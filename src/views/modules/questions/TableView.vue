@@ -43,7 +43,9 @@
                     v-bind:index="table_props.index"
                   />
                   <OptionsView
-                    v-if="!table_props.module.active"
+                    v-if="
+                      !table_props.module.active && item.type != 'word problem'
+                    "
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
