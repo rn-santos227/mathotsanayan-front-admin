@@ -6,6 +6,20 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'audit-search'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Audit Filter Search
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'audit-details'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Audit Details
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
