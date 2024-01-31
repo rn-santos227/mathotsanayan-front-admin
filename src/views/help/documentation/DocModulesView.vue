@@ -41,6 +41,34 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'module-question-create'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Create
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-question-update'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Update
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-question-delete'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Delete
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-question-test'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Test
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
