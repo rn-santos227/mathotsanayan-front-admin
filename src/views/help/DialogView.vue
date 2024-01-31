@@ -56,7 +56,10 @@
           <v-col class="flex-grow-1">
             <DocIntroView v-if="page === 'intro'" />
             <DocDashboardView v-else-if="page === 'dahsboard'" />
-            <DocModulesView v-else-if="page.includes('module')" />
+            <DocModulesView
+              v-else-if="page.includes('module')"
+              v-bind:page="page"
+            />
             <DocStudentsView v-else-if="page.includes('students')" />
             <DocReportsView v-else-if="page.includes('reports')" />
             <DocTeachersView v-else-if="page.includes('teachers')" />
