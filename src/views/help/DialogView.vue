@@ -63,7 +63,10 @@
             <DocStudentsView v-else-if="page.includes('students')" />
             <DocReportsView v-else-if="page.includes('reports')" />
             <DocTeachersView v-else-if="page.includes('teachers')" />
-            <DocLibraryView v-else-if="page.includes('library')" />
+            <DocLibraryView
+              v-else-if="page.includes('library')"
+              v-bind:page="page"
+            />
             <DocAuditView v-else-if="page.includes('audit')" />
           </v-col>
         </v-row>
