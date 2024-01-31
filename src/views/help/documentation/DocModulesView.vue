@@ -13,6 +13,34 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'module-create'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Module Creation
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-update'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Modules Update
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-delete'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Module Delete
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-question'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Table
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
