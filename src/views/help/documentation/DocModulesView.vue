@@ -69,6 +69,20 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'module-question-options'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Options
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'module-question-solutions'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Question Solutions
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
