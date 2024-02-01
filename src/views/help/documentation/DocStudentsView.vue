@@ -27,6 +27,13 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'students-delete'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Students Deletion
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
