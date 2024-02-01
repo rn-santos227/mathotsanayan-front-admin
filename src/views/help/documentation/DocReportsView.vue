@@ -4,6 +4,20 @@
       <span class="text-h5 font-weight-bold"> MatHotSanayan Admin Report </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'reports-search'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Report Filter Search
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'reports-generate'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Report Generation
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
