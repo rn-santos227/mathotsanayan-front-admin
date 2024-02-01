@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'audit-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Audit Trail
+        MatHotSanayan Admin Audit Trail Page
       </span>
       <v-divider class="my-2" />
     </div>

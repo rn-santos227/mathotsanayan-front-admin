@@ -1,7 +1,9 @@
 <template>
   <v-card-text>
     <div v-if="focusPage === 'reports-main'">
-      <span class="text-h5 font-weight-bold"> MatHotSanayan Admin Report </span>
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Report Page
+      </span>
       <v-divider class="my-2" />
     </div>
 

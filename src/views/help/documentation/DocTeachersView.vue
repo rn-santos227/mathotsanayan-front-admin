@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'teachers-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers
+        MatHotSanayan Admin Teachers Page
       </span>
       <v-divider class="my-2" />
     </div>
