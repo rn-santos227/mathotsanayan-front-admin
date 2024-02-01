@@ -6,6 +6,34 @@
       </span>
       <v-divider class="my-2" />
     </div>
+
+    <div v-if="focusPage === 'teachers-search'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Teachers Filter Search
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'teachers-create'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Teachers Creation
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'teachers-update'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Teachers Update
+      </span>
+      <v-divider class="my-2" />
+    </div>
+
+    <div v-if="focusPage === 'teachers-delete'">
+      <span class="text-h5 font-weight-bold">
+        MatHotSanayan Admin Teachers Deletion
+      </span>
+      <v-divider class="my-2" />
+    </div>
   </v-card-text>
 </template>
 
