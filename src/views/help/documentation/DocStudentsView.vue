@@ -9,21 +9,21 @@
 
     <div v-if="focusPage === 'students-search'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Students
+        MatHotSanayan Admin Students Filter Search
       </span>
       <v-divider class="my-2" />
     </div>
 
-    <div v-if="focusPage === 'students-main'">
+    <div v-if="focusPage === 'students-create'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Students
+        MatHotSanayan Admin Students Creation
       </span>
       <v-divider class="my-2" />
     </div>
 
-    <div v-if="focusPage === 'students-main'">
+    <div v-if="focusPage === 'students-update'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Students
+        MatHotSanayan Admin Students Update
       </span>
       <v-divider class="my-2" />
     </div>

@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'module-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Modules Table
+        MatHotSanayan Admin Modules Page
       </span>
       <v-divider class="my-2" />
     </div>
@@ -30,7 +30,7 @@
 
     <div v-if="focusPage === 'module-delete'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Module Delete
+        MatHotSanayan Admin Module Deletion
       </span>
       <v-divider class="my-2" />
     </div>
@@ -58,7 +58,7 @@
 
     <div v-if="focusPage === 'module-question-delete'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Delete
+        MatHotSanayan Admin Question Deletion
       </span>
       <v-divider class="my-2" />
     </div>
