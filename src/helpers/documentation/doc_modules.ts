@@ -189,6 +189,33 @@ const docs: string[] = [
   interface, coupled with the diverse question types, exemplifies the
   platform's commitment to providing a robust and adaptable environment
   for effective question management.`,
+
+  `Administrators wield the power to seamlessly refine existing questions
+  through the "Update" option within the Question Management Page of
+  MatHotSanayan. This focused functionality enables precise modifications
+  limited to essential elements such as question type, question content,
+  and question image. By offering this streamlined approach,
+  administrators can ensure that the assessment content remains aligned
+  with evolving educational objectives, allowing for dynamic adjustments
+  to cater to the institution's changing needs.`,
+
+  `Accessing the "Update" option presents administrators with an interface
+  designed for efficiency. The flexibility to modify question types
+  accommodates changes in assessment structures, adapting to the diverse
+  nature of educational content. Whether administrators need to refine the
+  wording of a question, adjust the type to better suit the learning
+  objectives, or update associated images for clarity, the "Update" option
+  provides a straightforward avenue for these necessary modifications.`,
+
+  `This refined set of update options not only simplifies the modification
+  process but also underscores the commitment of MatHotSanayan to
+  empowering administrators with precise control over assessment content.
+  By focusing on essential elements, the platform ensures that
+  modifications are made with purpose and accuracy, contributing to the
+  overall effectiveness of assessments within the educational ecosystem.
+  The "Update" option stands as a targeted tool, allowing administrators
+  to uphold the integrity of assessments while adapting to the evolving
+  landscape of educational objectives.`,
 ];
 
 export default docs;
