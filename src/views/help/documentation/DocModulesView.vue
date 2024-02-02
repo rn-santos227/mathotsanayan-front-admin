@@ -167,6 +167,19 @@
         MatHotSanayan Admin Question Deletion
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[24] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_013.png')" />
+
+      <p class="ma-6">
+        {{ docs[25] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[26] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-question-test'">

@@ -216,6 +216,31 @@ const docs: string[] = [
   The "Update" option stands as a targeted tool, allowing administrators
   to uphold the integrity of assessments while adapting to the evolving
   landscape of educational objectives.`,
+
+  `Efficiently managing assessment content, the "Delete" option within the
+  Question Management Page of MatHotSanayan provides administrators with a
+  powerful tool to eliminate outdated or irrelevant questions. This
+  streamlined functionality is designed to simplify the question
+  management process, allowing administrators to maintain a precise and
+  up-to-date question database. Confirming the deletion initiates a
+  controlled cleanup, ensuring that only pertinent questions remain in the
+  system.`,
+
+  `By utilizing the "Delete" option, administrators can confidently
+  declutter the assessment repository, eliminating questions that may no
+  longer align with the current curriculum or learning objectives. This
+  strategic removal of outdated questions contributes to the overall
+  relevance and effectiveness of assessments within the educational
+  institution.`,
+
+  `The confirmation step in the deletion process serves as a deliberate
+  safeguard, preventing accidental removals and ensuring that each
+  deletion is an intentional action. This intentional design choice
+  promotes a systematic and controlled cleanup, assuring administrators
+  that the question database remains relevant, streamlined, and aligned
+  with the educational goals of the institution. The "Delete" option,
+  therefore, stands as a key component in maintaining the integrity and
+  precision of the question management process within MatHotSanayan.`,
 ];
 
 export default docs;
