@@ -142,6 +142,39 @@
         MatHotSanayan Admin Modules Update
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        Effortlessly refine and update existing assessment modules within
+        MatHotSanayan through the intuitive "Update" option. This streamlined
+        process provides administrators with a user-friendly interface to make
+        necessary adjustments to module details. By accessing this option,
+        administrators can easily modify parameters such as the module name,
+        subject, passing grade, and other essential details. Once the
+        modifications are made, simply save the changes, ensuring that the
+        module information remains up-to-date, accurate, and reflective of the
+        institution's evolving requirements. This seamless updating process
+        enhances the adaptability of assessment modules, allowing educational
+        institutions to maintain relevance and precision in their evaluation
+        strategies.
+      </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/help/doc_005.png')"
+      ></v-img>
+
+      <p class="ma-6">
+        Furthermore, the Modules Manager Page in MatHotSanayan introduces a
+        dynamic activation feature that empowers administrators to enable or
+        disable modules based on specific scheduling needs. This functionality
+        offers strategic control over the availability of assessments within the
+        system. By toggling the activation status of modules, administrators can
+        precisely manage the timing of assessments, ensuring that they align
+        with the academic calendar and institutional requirements. This flexible
+        approach enables administrators to orchestrate the assessment
+        environment with precision, enhancing overall control and efficiency in
+        the administration of exams.
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-delete'">
