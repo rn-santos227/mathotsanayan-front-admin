@@ -44,6 +44,39 @@ const docs: string[] = [
   administrators to locate modules based on specific keywords present in
   their descriptions, providing a more nuanced and tailored approach to
   information retrieval.`,
+
+  `Effortlessly initiate the creation of new assessment modules within
+  MatHotSanayan by accessing the dedicated "Create Module" section. This
+  intuitive process facilitates a seamless experience for administrators
+  tasked with building robust assessments. Upon entering this section,
+  administrators encounter a user-friendly interface featuring fields such
+  as the module name, module step, passing grade, module description,
+  module objective, and module instructions.`,
+
+  `Begin the module creation process by specifying the module name, acting
+  as the distinct title for the assessment. This field allows
+  administrators to provide a clear and identifiable name, enhancing
+  organization and clarity within the MatHotSanayan system.`,
+
+  `As administrators enter module details, the module step field stands out
+  as a unique and impactful element. This feature functions as a
+  stage-setting tool, determining the accessibility of the module for
+  students. If set to step 1, the module becomes immediately accessible to
+  students. However, by adjusting the module step to 2 or higher,
+  administrators can establish a sequential progression, allowing students
+  to access the module only when they reach the designated stage.`,
+
+  `Utilizing the passing grade slider, administrators have the flexibility
+  to set the passing grade for the exam on a scale ranging from 10% to
+  100%. This dynamic feature tailors assessments to meet the precise
+  grading standards of the institution, offering adaptability in line with
+  educational goals.`,
+
+  `Furthermore, administrators can furnish additional information about the
+  module through the module description, module objective, and module
+  instruction fields. These details provide a comprehensive overview of
+  the module's purpose, objectives, and specific instructions for both
+  administrators and exam-takers.`,
 ];
 
 export default docs;
