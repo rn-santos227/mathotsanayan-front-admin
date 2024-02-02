@@ -182,6 +182,36 @@
         MatHotSanayan Admin Module Deletion
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        Efficiently declutter your assessment system by removing redundant
+        modules with a straightforward deletion process within [CAA Tool Name].
+        This user-friendly functionality streamlines the task of module
+        management, ensuring a seamless experience for administrators. To
+        initiate the deletion process, administrators can simply select the
+        module they wish to remove. Once the target module is chosen, a
+        confirmation prompt ensures intentional actions, minimizing the risk of
+        accidental deletions. Confirm the action, and with a click, effortlessly
+        eliminate the selected module, promoting a system cleanup that aligns
+        with the evolving needs of your educational institution.
+      </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/help/doc_006.png')"
+      ></v-img>
+
+      <p class="ma-6">
+        It's important to note that the deletion function is designed with a
+        failsafe mechanism — a module can only be deleted if it has no questions
+        attached to it. This built-in safeguard ensures the integrity of your
+        assessment data and prevents unintentional data loss. This intentional
+        design choice prioritizes data accuracy and helps administrators
+        maintain a well-organized and error-free assessment environment. By
+        incorporating this precaution, [CAA Tool Name] ensures a secure and
+        controlled deletion process, reinforcing the commitment to precision and
+        reliability in module management.
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-question'">
