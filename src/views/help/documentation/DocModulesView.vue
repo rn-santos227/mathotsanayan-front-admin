@@ -18,11 +18,7 @@
         empowering administrators with the control they need.
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/help/doc_002.png')"
-      ></v-img>
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_002.png')" />
 
       <p class="ma-6">
         In addition to core module management functionalities, this
@@ -53,11 +49,7 @@
         module's description.
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/help/doc_004.png')"
-      ></v-img>
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_004.png')" />
 
       <p class="ma-6">
         With the search by module name option, administrators can quickly locate
@@ -97,11 +89,7 @@
         module objective, and module instructions.
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/help/doc_003.png')"
-      ></v-img>
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_003.png')" />
 
       <p class="ma-6">
         Begin the module creation process by specifying the module name, acting
@@ -157,11 +145,7 @@
         strategies.
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/help/doc_005.png')"
-      ></v-img>
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_005.png')" />
 
       <p class="ma-6">
         Furthermore, the Modules Manager Page in MatHotSanayan introduces a
@@ -184,7 +168,7 @@
       <v-divider class="my-2" />
       <p class="ma-6">
         Efficiently declutter your assessment system by removing redundant
-        modules with a straightforward deletion process within [CAA Tool Name].
+        modules with a straightforward deletion process within MatHotSanayan.
         This user-friendly functionality streamlines the task of module
         management, ensuring a seamless experience for administrators. To
         initiate the deletion process, administrators can simply select the
@@ -195,11 +179,7 @@
         with the evolving needs of your educational institution.
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/help/doc_006.png')"
-      ></v-img>
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_006.png')" />
 
       <p class="ma-6">
         It's important to note that the deletion function is designed with a
@@ -208,7 +188,7 @@
         assessment data and prevents unintentional data loss. This intentional
         design choice prioritizes data accuracy and helps administrators
         maintain a well-organized and error-free assessment environment. By
-        incorporating this precaution, [CAA Tool Name] ensures a secure and
+        incorporating this precaution, MatHotSanayan ensures a secure and
         controlled deletion process, reinforcing the commitment to precision and
         reliability in module management.
       </p>
