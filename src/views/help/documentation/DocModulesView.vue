@@ -88,8 +88,8 @@
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
-        Effortlessly initiate the creation of new assessment modules within [CAA
-        Tool Name] by accessing the dedicated "Create Module" section. This
+        Effortlessly initiate the creation of new assessment modules within
+        MatHotSanayan by accessing the dedicated "Create Module" section. This
         intuitive process facilitates a seamless experience for administrators
         tasked with building robust assessments. Upon entering this section,
         administrators encounter a user-friendly interface featuring fields such
@@ -107,7 +107,7 @@
         Begin the module creation process by specifying the module name, acting
         as the distinct title for the assessment. This field allows
         administrators to provide a clear and identifiable name, enhancing
-        organization and clarity within the [CAA Tool Name] system.
+        organization and clarity within the MatHotSanayan system.
       </p>
 
       <p class="ma-6">
