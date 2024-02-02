@@ -199,6 +199,48 @@
         MatHotSanayan Admin Question Table
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        The Question Management Page in MatHotSanayan offers administrators a
+        highly organized and transparent interface for overseeing and
+        customizing assessment content. This page provides a structured display
+        of questions associated with each module, allowing administrators to
+        effortlessly access a comprehensive list. This design promotes ease of
+        navigation and ensures a quick overview of the assessment content,
+        fostering transparency in question management. Through this feature,
+        administrators can stay well-informed about the composition of
+        assessments, facilitating efficient oversight and customization.
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_007.png')" />
+
+      <p class="ma-6">
+        One key aspect of the Question Management Page is the detailed breakdown
+        of columns, each providing essential information about the questions.
+        The "Image" column allows administrators to incorporate visuals
+        associated with questions, adding a multimedia dimension to assessment
+        content. The "Question" column presents the textual content of each
+        question, ensuring clarity and precision in conveying assessment
+        prompts. The "Question Type" column categorizes questions based on their
+        format, aiding administrators in distinguishing between various question
+        types, such as word problems, multiple-answer questions, or
+        single-correct answer questions. Additionally, the "Correct Answers and
+        Solutions" column provides critical information about the number of
+        correct answers and corresponding solutions, empowering administrators
+        to evaluate question complexity effectively. Finally, the "Number of
+        Available Options" column signifies the total count of answer choices,
+        contributing to a comprehensive understanding of question structure.
+      </p>
+
+      <p class="ma-6">
+        In conclusion, the Question Management Page serves as a central hub for
+        administrators, streamlining the process of managing and customizing
+        assessment questions. Its user-friendly interface, coupled with detailed
+        column descriptions, ensures transparency and efficiency in question
+        administration within MatHotSanayan. This comprehensive feature reflects
+        the commitment to providing a robust platform that facilitates precise
+        and diverse assessment content customization for educational
+        institutions.
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-question-create'">
