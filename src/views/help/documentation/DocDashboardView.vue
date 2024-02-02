@@ -3,38 +3,25 @@
     <span class="text-h5 font-weight-bold"> MatHotSanayan Admin Dasboard </span>
     <v-divider class="my-2" />
     <p class="ma-6">
-      Gain instant access to critical information with the dashboard features.
-      Track real-time data on ongoing assessments, upcoming exams, and recent
-      results. Navigate effortlessly through key performance indicators to make
-      quick and informed decisions.
+      {{ docs[0] }}
     </p>
 
-    <v-img
-      class="ma-6"
-      cover
-      :src="require('@/assets/help/doc_001.png')"
-    ></v-img>
+    <v-img class="ma-6" cover :src="require('@/assets/help/doc_001.png')" />
 
     <p class="ma-6">
-      The dashboard encompasses a count tally providing a consolidated overview
-      of the total number of schools, students, teachers, modules, subjects, and
-      recorded results. This feature streamlines administrative tasks by
-      presenting a snapshot of the educational landscape.
+      {{ docs[1] }}
     </p>
 
     <p class="ma-6">
-      A visually informative doughnut graph highlights the pass/fail ratio of
-      exam takers. This graphical representation offers administrators a quick
-      and clear understanding of overall performance trends, aiding in the
-      identification of areas that may require attention.
+      {{ docs[2] }}
     </p>
 
     <p class="ma-6">
-      Furthermore, a detailed table breaks down each module, providing essential
-      insights. It includes the number of examinees, those who passed, those who
-      failed, and the corresponding passing rate. This granular data allows
-      administrators to assess the effectiveness of each module and make
-      data-driven decisions to enhance the overall quality of assessments.
+      {{ docs[3] }}
     </p>
   </v-card-text>
 </template>
+
+<script setup lang="ts">
+import docs from "@/helpers/documentation/doc_dashboard";
+</script>
