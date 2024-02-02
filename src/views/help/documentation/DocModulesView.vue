@@ -222,7 +222,7 @@
         question, ensuring clarity and precision in conveying assessment
         prompts. The "Question Type" column categorizes questions based on their
         format, aiding administrators in distinguishing between various question
-        types, such as word problems, multiple-answer questions, or
+        types, such as word problems, multiple selection questions, or
         single-correct answer questions. Additionally, the "Correct Answers and
         Solutions" column provides critical information about the number of
         correct answers and corresponding solutions, empowering administrators
@@ -248,6 +248,47 @@
         MatHotSanayan Admin Question Create
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        Accessing the "Create Questions" section within the Question Management
+        Page in MatHotSanayan marks the inception of a streamlined process for
+        incorporating new questions into assessments. This dedicated section
+        offers administrators an intuitive and user-friendly interface designed
+        to simplify the customization of assessment content. Within this
+        environment, administrators can seamlessly input the question text,
+        provide multiple-choice answers, and designate the correct solution,
+        fostering a dynamic approach to question creation.
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_008.png')" />
+
+      <p class="ma-6">
+        Furthermore, the "Create Questions" section supports the efficient
+        addition of multiple questions, each with distinct complexities.
+        Administrators have the flexibility to create questions with multiple
+        correct answers and multiple options, catering to the diverse nature of
+        assessments. The "Word Questions" type permits the creation of questions
+        where administrators can specify multiple correct answers, yet no
+        solution is provided, allowing students to input their responses. The
+        "Multiple Selection" type empowers administrators to add questions with
+        multiple correct answers and multiple options, offering a comprehensive
+        approach to capturing nuanced understanding. Meanwhile, the "Single
+        Correct" type enables administrators to craft questions with multiple
+        options but only one correct answer, streamlining the process of
+        generating various question formats to suit the educational
+        institution's assessment goals.
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_009.png')" />
+
+      <p class="ma-6">
+        This multifaceted functionality not only enhances the efficiency of the
+        question creation process but also ensures that administrators have the
+        tools needed to tailor assessments according to their specific
+        requirements within the MatHotSanayan ecosystem. The user-friendly
+        interface, coupled with the diverse question types, exemplifies the
+        platform's commitment to providing a robust and adaptable environment
+        for effective question management.
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-question-update'">
