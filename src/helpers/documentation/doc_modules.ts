@@ -241,6 +241,39 @@ const docs: string[] = [
   with the educational goals of the institution. The "Delete" option,
   therefore, stands as a key component in maintaining the integrity and
   precision of the question management process within MatHotSanayan.`,
+
+  `To ensure the precision and efficacy of assessments within
+  MatHotSanayan, administrators can take advantage of the dedicated
+  "Question Testing" section. Navigating to this area within the Question
+  Management Page serves as the first step, providing a controlled
+  environment for administrators to thoroughly evaluate questions before
+  they are presented to students. In this section, administrators can
+  meticulously select specific questions from the available list, offering
+  a targeted approach to testing and ensuring a comprehensive review of
+  each assessment item.`,
+
+  `Within the "Question Testing" section, administrators are presented with
+  a versatile testing environment that can display two types of questions:
+  those requiring student input for answers and those offering
+  multiple-choice options. This dual capability enhances the testing
+  process, allowing administrators to assess questions that demand direct
+  student responses and those structured with multiple-choice formats. By
+  inputting test parameters that mirror actual testing conditions,
+  administrators can initiate the test, simulating the student experience
+  and carefully evaluating how questions are presented and answered in a
+  controlled setting.`,
+
+  `Upon completing the test, administrators can review the results,
+  carefully examining question presentation, answer options, and
+  correctness of solutions. This step is pivotal in identifying any
+  discrepancies, ambiguities, or inaccuracies before questions are
+  incorporated into live assessments. The iterative and adaptable nature
+  of this testing process empowers administrators to refine questions as
+  needed, ensuring that assessments maintain a high standard of accuracy
+  and clarity. Ultimately, these comprehensive testing guidelines equip
+  administrators within MatHotSanayan with the tools needed to deliver
+  assessments that align seamlessly with educational objectives and
+  enhance the overall learning experience for students.`,
 ];
 
 export default docs;
