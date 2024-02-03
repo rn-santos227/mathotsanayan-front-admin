@@ -307,6 +307,39 @@ const docs: string[] = [
   engaging, and aligned with learning objectives, solidifying Admin
   Question Options as a cornerstone for delivering assessments of the
   highest quality.`,
+
+  `Within MatHotSanayan, administrators exercise robust control over
+  question solutions through the Admin Question Solutions section within
+  the Question Management Page. This dedicated platform empowers
+  administrators to seamlessly add, update, and delete solutions
+  associated with various questions, ensuring a dynamic and adaptable
+  assessment environment. Navigating to the Admin Question Solutions
+  section initiates a user-friendly interface where administrators can
+  effortlessly introduce new solutions by utilizing the "Add Solution"
+  feature. This process allows for the input of solution content, addition
+  of relevant images, and designation of correctness if applicable,
+  ensuring precise and informative solutions for students.`,
+
+  `For ongoing refinement, administrators can utilize the "Update Solution"
+  functionality to make real-time adjustments to existing solutions.
+  Whether modifying content, uploading new images, or adjusting
+  correctness status, this feature facilitates responsive content
+  management aligned with evolving educational objectives. The "Delete
+  Solution" feature streamlines the process of removing outdated or
+  irrelevant solutions, and confirming the deletion ensures a controlled
+  cleanup, maintaining the relevance and coherence of available answers.`,
+
+  `Moreover, Admin Question Solutions include image management
+  capabilities, allowing administrators to upload, replace, or remove
+  images associated with each solution. This ensures that visual content
+  remains in harmony with the educational context, enhancing the overall
+  assessment experience. Embracing an iterative approach to content
+  refinement, administrators can continually add, update, or delete
+  solutions based on feedback, assessment results, or changes in
+  educational requirements. This iterative process guarantees that
+  question solutions remain current, accurate, and aligned with learning
+  objectives, solidifying Admin Question Solutions as a cornerstone for
+  delivering assessments of the highest quality.`,
 ];
 
 export default docs;

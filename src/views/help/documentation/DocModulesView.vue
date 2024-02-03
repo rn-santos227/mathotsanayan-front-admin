@@ -229,6 +229,20 @@
         MatHotSanayan Admin Question Solutions
       </span>
       <v-divider class="my-2" />
+
+      <p class="ma-6">
+        {{ docs[33] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_011.png')" />
+
+      <p class="ma-6">
+        {{ docs[34] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[35] }}
+      </p>
     </div>
   </v-card-text>
 </template>
