@@ -5,6 +5,19 @@
         MatHotSanayan Admin Students Page
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[1] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_016.png')" />
+
+      <p class="ma-6">
+        {{ docs[2] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[3] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'students-search'">
@@ -12,9 +25,6 @@
         MatHotSanayan Admin Students Filter Search
       </span>
       <v-divider class="my-2" />
-      <p class="ma-6">
-        {{ docs[0] }}
-      </p>
     </div>
 
     <div v-if="focusPage === 'students-create'">
