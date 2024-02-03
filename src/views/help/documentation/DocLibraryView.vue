@@ -5,6 +5,9 @@
         MatHotSanayan Admin Library Account
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[0] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'library-admins'">
@@ -46,6 +49,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import docs from "@/helpers/documentation/doc_library";
 
 const props = defineProps<{
   page: string;

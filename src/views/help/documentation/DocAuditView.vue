@@ -5,6 +5,9 @@
         MatHotSanayan Admin Audit Trail Page
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[0] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'audit-search'">
@@ -25,6 +28,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import docs from "@/helpers/documentation/doc_audit";
 
 const props = defineProps<{
   page: string;

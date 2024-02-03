@@ -250,6 +250,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import docs from "@/helpers/documentation/doc_modules";
+
 const props = defineProps<{
   page: string;
 }>();
