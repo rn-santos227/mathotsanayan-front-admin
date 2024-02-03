@@ -274,6 +274,39 @@ const docs: string[] = [
   administrators within MatHotSanayan with the tools needed to deliver
   assessments that align seamlessly with educational objectives and
   enhance the overall learning experience for students.`,
+
+  `Within MatHotSanayan, administrators wield powerful control over
+  question options, facilitating seamless content management through the
+  Admin Question Options section within the Question Management Page. This
+  dedicated platform empowers administrators to add, update, and delete
+  options associated with various questions, ensuring a dynamic and
+  adaptable assessment environment. Navigating to the Admin Question
+  Options section initiates a user-friendly interface where administrators
+  can effortlessly introduce new options by utilizing the "Add Option"
+  feature. This process allows for the input of option content, addition
+  of relevant images, and designation of correctness if applicable,
+  ensuring a diverse and engaging set of choices for students.`,
+
+  `For ongoing refinement, administrators can utilize the "Update Option"
+  functionality to make real-time adjustments to existing options. Whether
+  modifying content, uploading new images, or adjusting correctness
+  status, this feature facilitates responsive content management aligned
+  with evolving educational objectives. The "Delete Option" feature
+  streamlines the process of removing outdated or irrelevant options, and
+  confirming the deletion ensures a controlled cleanup, maintaining the
+  relevance and coherence of available choices.`,
+
+  `Moreover, Admin Question Options include image management capabilities,
+  allowing administrators to upload, replace, or remove images associated
+  with each option. This ensures that visual content remains in harmony
+  with the educational context, enhancing the overall assessment
+  experience. Embracing an iterative approach to content refinement,
+  administrators can continually add, update, or delete options based on
+  feedback, assessment results, or changes in educational requirements.
+  This iterative process guarantees that question options remain current,
+  engaging, and aligned with learning objectives, solidifying Admin
+  Question Options as a cornerstone for delivering assessments of the
+  highest quality.`,
 ];
 
 export default docs;
