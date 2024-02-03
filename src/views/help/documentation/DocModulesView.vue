@@ -208,6 +208,20 @@
         MatHotSanayan Admin Question Options
       </span>
       <v-divider class="my-2" />
+
+      <p class="ma-6">
+        {{ docs[30] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_010.png')" />
+
+      <p class="ma-6">
+        {{ docs[31] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[32] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-question-solutions'">
