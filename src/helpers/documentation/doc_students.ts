@@ -64,9 +64,35 @@ const docs: string[] = [
   criteria, contributing to a more effective student information
   management process.`,
 
-  ``,
+  `Effortlessly initiate the creation of new student profiles within 
+  MatHotSanayan by navigating to the dedicated "Create Student" section. 
+  This intuitive process facilitates a seamless experience for administrators
+  tasked with adding new students to the system. Upon entering this
+  section, administrators encounter a user-friendly interface featuring
+  fields such as first name, last name, middle name, suffix (optional),
+  course, school, section, email address, contact number (optional),
+  student number, and temporary password.`,
 
-  ``,
+  `To begin the student creation process, administrators input essential
+  details such as the student's first and last name, with the middle name
+  and suffix being optional. This information ensures accurate
+  identification and organization within the MatHotSanayan system.
+  Administrators then specify the student's course, school, and section,
+  providing key categorization details. The student email address, serving
+  as the login username, is a crucial element, and administrators can also
+  optionally include the student's contact number. The student number,
+  provided by the school, further contributes to the unique identification
+  of each student within the system. Lastly, administrators set a
+  temporary password for the student, which is required for initial login.`,
+
+  `Upon the successful creation of a new student, an automated email is
+  promptly sent to the provided student email address. This email contains
+  the student's username (email) and temporary password, essential for the
+  student's first login to the MatHotSanayan application. This streamlined
+  process ensures that students receive the necessary credentials without
+  delay, facilitating a smooth onboarding experience. Administrators can
+  confidently leverage this feature to efficiently manage and integrate
+  new students into the MatHotSanayan ecosystem.`,
 ];
 
 export default docs;
