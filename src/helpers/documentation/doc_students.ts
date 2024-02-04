@@ -36,9 +36,33 @@ const docs: string[] = [
   records, contributing to the overall efficiency and organization within
   the educational institution.`,
 
-  ``,
+  `The Students Management Page Filter Search feature within [CAA Tool
+    Name] introduces a highly adaptable and efficient approach for
+    administrators to precisely locate student records based on multiple
+    criteria. This feature equips users with the ability to streamline their
+    workflow by searching for students according to four key parameters:
+    student name, student email, student school, and student section.`,
 
-  ``,
+  `With the search by student name option, administrators can swiftly
+  pinpoint a particular student by entering their name directly into the
+  search bar. This focused approach ensures quick access to specific
+  student records, saving time and facilitating a more streamlined
+  navigation process.`,
+
+  `Similarly, the search by student email option allows for the effortless
+  identification of students based on their email addresses. This
+  functionality supports administrators in quickly locating specific
+  students associated with their unique email identifiers, enhancing the
+  precision of information retrieval.`,
+
+  `Moreover, the search by student school and student section adds an
+  additional layer of granularity to the search process. Administrators
+  can filter student records based on their designated school or section,
+  facilitating a systematic organization that aligns seamlessly with the
+  educational institution's structure. This tailored approach ensures that
+  administrators can efficiently retrieve information based on specific
+  criteria, contributing to a more effective student information
+  management process.`,
 ];
 
 export default docs;
