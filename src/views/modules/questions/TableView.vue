@@ -42,6 +42,11 @@
                     v-bind:question="item"
                     v-bind:index="table_props.index"
                   />
+                  <RemoveImgView
+                    v-if="!table_props.module.active && item.file"
+                    v-bind:question="item"
+                    v-bind:index="table_props.index"
+                  />
                   <OptionsView
                     v-if="
                       !table_props.module.active && item.type != 'word problem'
@@ -75,6 +80,7 @@ import ImageComponent from "@/components/ImageComponent.vue";
 import { useQuestionsModule } from "@/store";
 
 import TestView from "./TestView.vue";
+import RemoveImgView from "./RemoveImgView.vue";
 import CorrectsView from "./corrects/CorrectsView.vue";
 import OptionsView from "./options/OptionsView.vue";
 import DeleteView from "./DeleteView.vue";

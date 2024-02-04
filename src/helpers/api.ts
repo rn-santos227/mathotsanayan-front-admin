@@ -72,7 +72,7 @@ export default {
     CREATE: `${BACKEND}questions/create`,
     CREATEALL: `${BACKEND}questions/create-all/`,
     READ: `${BACKEND}questions`,
-    REMOVEIMG: `${BACKEND}questions/questions/img-remove/`,
+    REMOVEIMG: `${BACKEND}questions/img-remove/`,
     UPDATE: `${BACKEND}questions/`,
     DELETE: `${BACKEND}questions/`,
   },
