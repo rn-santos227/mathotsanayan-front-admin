@@ -35,6 +35,10 @@ const docs: string[] = [
   empowers administrators to maintain accurate and up-to-date student
   records, contributing to the overall efficiency and organization within
   the educational institution.`,
+
+  ``,
+
+  ``,
 ];
 
 export default docs;
