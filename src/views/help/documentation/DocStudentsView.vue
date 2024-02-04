@@ -26,10 +26,14 @@
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
-        {{ docs[4] }}
+        {{ docs[3] }}
       </p>
 
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_017.png')" />
+
+      <p class="ma-6">
+        {{ docs[4] }}
+      </p>
 
       <p class="ma-6">
         {{ docs[5] }}
@@ -37,10 +41,6 @@
 
       <p class="ma-6">
         {{ docs[6] }}
-      </p>
-
-      <p class="ma-6">
-        {{ docs[7] }}
       </p>
     </div>
 
