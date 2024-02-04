@@ -119,5 +119,28 @@ export const useQuestionsModule = defineStore("questions", {
         this.isLoading = false;
       }
     },
+
+    async removeImage(payload: Question): Promise<Question | null> {
+      try {
+        this.isLoading = true;
+        this.isTableLoading = true;
+        const response = await authenticatedFetch(
+          `${api.QUESTIONS.REMOVEIMG}${payload.id}`,
+          {
+            method: "PATCH",
+          }
+        );
+        const data = await response.json();
+        const { question } = data;
+        question.trigger = true;
+        return question;
+      } catch (error) {
+        console.error("Error Question in:", error);
+        return null;
+      } finally {
+        this.isLoading = false;
+        this.isTableLoading = false;
+      }
+    },
   },
 });
