@@ -14,7 +14,7 @@
         <v-card
           class="rounded-0 rounded-t mb-6 py-2"
           color="purple-darken-3"
-          flat
+          variant="flat"
         >
           <v-card-actions class="mx-4">
             <span class="text-h6"> Activity ID: {{ padLeft(state.id) }} </span>

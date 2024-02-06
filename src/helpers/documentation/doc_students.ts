@@ -93,6 +93,35 @@ const docs: string[] = [
   delay, facilitating a smooth onboarding experience. Administrators can
   confidently leverage this feature to efficiently manage and integrate
   new students into the MatHotSanayan ecosystem.`,
+
+  `Update student information within MatHotSanayan by utilizing the
+  dedicated "Update Student" functionality in the Students Management
+  Page. This streamlined process provides administrators with a
+  user-friendly interface to modify student details, ensuring accuracy and
+  currency of information within the system. Upon entering this section,
+  administrators are presented with fields such as first name, last name,
+  middle name, suffix (optional), course, school, section, email address,
+  and contact number (optional).`,
+
+  `To initiate the update process, administrators navigate through the
+  relevant fields, making adjustments as needed. Whether modifying the
+  student's name, course, school, or contact details, this feature
+  accommodates a wide range of updates to accurately reflect changing
+  student information. Notably, the password field has been intentionally
+  removed from the update process, as the functionality to change
+  passwords is now seamlessly integrated into the Accounts Library Page,
+  providing a more centralized approach to account management. The
+  inclusion of a reset button allows administrators to easily revert the
+  values of the fields to their previous values if needed.`,
+
+  `Upon completing the updates, administrators can save the changes,
+  ensuring that the student's information is promptly and accurately
+  reflected within the MatHotSanayan system. This efficient and
+  straightforward update functionality empowers administrators to keep
+  student records current and aligned with the institution's evolving
+  requirements. By separating the password update process, MatHotSanayan
+  offers a more cohesive and organized approach to student information
+  management, further enhancing the administrative experience.`,
 ];
 
 export default docs;
