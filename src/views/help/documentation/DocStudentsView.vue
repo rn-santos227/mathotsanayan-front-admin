@@ -91,6 +91,20 @@
         MatHotSanayan Admin Students Deletion
       </span>
       <v-divider class="my-2" />
+
+      <p class="ma-6">
+        {{ docs[13] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_020.png')" />
+
+      <p class="ma-6">
+        {{ docs[14] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[15] }}
+      </p>
     </div>
   </v-card-text>
 </template>

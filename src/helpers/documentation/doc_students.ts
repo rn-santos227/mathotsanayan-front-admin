@@ -122,6 +122,39 @@ const docs: string[] = [
   requirements. By separating the password update process, MatHotSanayan
   offers a more cohesive and organized approach to student information
   management, further enhancing the administrative experience.`,
+
+  `Efficiently streamline your student management process within
+  MatHotSanayan by leveraging the deletion functionality to remove
+  redundant student records from the system. This user-friendly feature
+  offers administrators a straightforward approach to decluttering the
+  assessment system, ensuring a seamless experience. To initiate the
+  deletion process, administrators can select the student record they wish
+  to remove. Once the target student is chosen, a confirmation prompt
+  ensures intentional actions, minimizing the risk of accidental
+  deletions. Confirm the action, and with a click, effortlessly eliminate
+  the selected student record, promoting a system cleanup that aligns with
+  the evolving needs of your educational institution.`,
+
+  `Upon deletion of a student record, administrators can rest assured that
+  associated accounts and module results will also be promptly removed
+  from the system. This ensures a comprehensive cleanup process,
+  maintaining the integrity and accuracy of student-related data within
+  MatHotSanayan. By automating the removal of associated accounts and
+  module results, administrators can efficiently manage student records
+  without the need for manual intervention, saving time and resources.
+  This integrated approach to student deletion reinforces the platform's
+  commitment to data accuracy and security, providing administrators with
+  peace of mind as they maintain a streamlined and organized assessment
+  system.`,
+
+  `As administrators navigate the deletion process, they can trust that
+  MatHotSanayan's robust functionality will facilitate a seamless cleanup
+  process. With intuitive controls and built-in safeguards, administrators
+  can confidently manage student records, ensuring that the system remains
+  optimized for efficient assessment administration. By empowering
+  administrators with tools for effective student management,
+  MatHotSanayan promotes a productive learning environment where resources
+  are utilized effectively to support educational objectives.`,
 ];
 
 export default docs;
