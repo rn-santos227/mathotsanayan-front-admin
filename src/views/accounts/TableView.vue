@@ -5,7 +5,7 @@
       <v-text-field
         class="mr-4"
         v-model="search"
-        label="Search Student"
+        label="Search Account"
         density="compact"
         variant="outlined"
       />
