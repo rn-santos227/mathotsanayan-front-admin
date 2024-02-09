@@ -26,6 +26,36 @@ const docs: string[] = [
   result analysis and management, MatHotSanayan's Module/Exam Result
   Manager enhances administrators' ability to support student learning and
   drive academic success effectively.`,
+
+  `The Module/Exam Result Manager's search functionality in MatHotSanayan
+  enables administrators to find results efficiently by various criteria,
+  ensuring a streamlined process for result retrieval. Administrators can
+  utilize this feature to search for results based on module name, student
+  name, student school, student section, and subject name. By entering
+  specific keywords or parameters into the search bar, administrators can
+  quickly pinpoint the desired results, saving time and enhancing
+  productivity.`,
+
+  `This adaptable approach allows administrators to tailor their search
+  criteria according to their specific needs, facilitating efficient
+  navigation and information retrieval within the Module/Exam Result
+  Manager. Whether seeking results for a particular module, specific
+  student, or designated school or section, administrators can easily
+  filter and locate the relevant information. By providing multiple search
+  options, MatHotSanayan empowers administrators to efficiently manage
+  exam results, ensuring they have the necessary tools to track student
+  progress and analyze performance effectively.`,
+
+  `Moreover, the search functionality enhances the precision of information
+  retrieval, enabling administrators to extract valuable insights from the
+  exam data. By being able to pinpoint results based on specific criteria
+  such as student name or subject name, administrators can conduct
+  targeted analyses and identify trends or patterns in student
+  performance. This enables informed decision-making and supports
+  data-driven interventions to enhance student learning outcomes. Overall,
+  the Module/Exam Result Manager's search feature offers administrators a
+  powerful tool for managing and analyzing exam results with ease and
+  precision.`,
 ];
 
 export default docs;

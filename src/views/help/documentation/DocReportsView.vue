@@ -25,6 +25,19 @@
         MatHotSanayan Admin Report Filter Search
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[3] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_022.png')" />
+
+      <p class="ma-6">
+        {{ docs[4] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[5] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'reports-generate'">
