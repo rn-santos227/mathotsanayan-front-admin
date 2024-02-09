@@ -45,6 +45,19 @@
         MatHotSanayan Admin Report Generation
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[6] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_045.png')" />
+
+      <p class="ma-6">
+        {{ docs[7] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[8] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'reports-details'">

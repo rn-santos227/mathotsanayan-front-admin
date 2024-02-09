@@ -56,6 +56,30 @@ const docs: string[] = [
   the Module/Exam Result Manager's search feature offers administrators a
   powerful tool for managing and analyzing exam results with ease and
   precision.`,
+
+  `Generate detailed Excel reports seamlessly within MatHotSanayan by
+  leveraging the Advanced Filter feature to extract specific data based on
+  your search criteria. This functionality allows administrators to tailor
+  reports according to their precise needs, ensuring that the generated
+  Excel file contains relevant information. The report includes essential
+  details such as student name, section, module name, module stage, score
+  result, grade, and total time taken by the student.`,
+
+  `To begin generating a report, first, conduct a search using the Advanced
+  Filter feature to refine the dataset based on your desired parameters.
+  This could include filtering results by student name, section, module
+  name, or any other relevant criteria. Once you have narrowed down the
+  dataset to your satisfaction, proceed to export the filtered data into
+  an Excel file by selecting the appropriate option within the interface.`,
+
+  `The generated Excel report provides a comprehensive overview of student
+  performance, allowing administrators to analyze key metrics such as
+  scores, grades, and completion times. This valuable information can be
+  utilized for various purposes, including academic assessments,
+  performance evaluations, and progress tracking. With the ability to
+  customize reports based on specific search criteria, MatHotSanayan
+  empowers administrators to derive actionable insights and make informed
+  decisions to support student learning and development.`,
 ];
 
 export default docs;
