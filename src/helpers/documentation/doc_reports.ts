@@ -70,7 +70,7 @@ const docs: string[] = [
   This could include filtering results by student name, section, module
   name, or any other relevant criteria. Once you have narrowed down the
   dataset to your satisfaction, proceed to export the filtered data into
-  an Excel file by selecting the appropriate option within the interface.`,
+  an Excel file by selecting the appropriate option within the interface. The `,
 
   `The generated Excel report provides a comprehensive overview of student
   performance, allowing administrators to analyze key metrics such as
