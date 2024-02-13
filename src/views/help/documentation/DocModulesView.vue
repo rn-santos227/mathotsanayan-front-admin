@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'module-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Modules Page
+        MatHOTSanayanAdmin Modules Page
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -18,7 +18,7 @@
 
     <div v-if="focusPage === 'module-search'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Modules Filter Search
+        MatHOTSanayanAdmin Modules Filter Search
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -42,7 +42,7 @@
 
     <div v-if="focusPage === 'module-create'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Module Creation
+        MatHOTSanayanAdmin Module Creation
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -70,7 +70,7 @@
 
     <div v-if="focusPage === 'module-update'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Modules Update
+        MatHOTSanayanAdmin Modules Update
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -86,7 +86,7 @@
 
     <div v-if="focusPage === 'module-delete'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Module Deletion
+        MatHOTSanayanAdmin Module Deletion
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -102,7 +102,7 @@
 
     <div v-if="focusPage === 'module-question'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Table
+        MatHOTSanayanAdmin Question Table
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -122,7 +122,7 @@
 
     <div v-if="focusPage === 'module-question-create'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Create
+        MatHOTSanayanAdmin Question Create
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -144,7 +144,7 @@
 
     <div v-if="focusPage === 'module-question-update'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Update
+        MatHOTSanayanAdmin Question Update
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -164,7 +164,7 @@
 
     <div v-if="focusPage === 'module-question-delete'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Deletion
+        MatHOTSanayanAdmin Question Deletion
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -184,7 +184,7 @@
 
     <div v-if="focusPage === 'module-question-test'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Test
+        MatHOTSanayanAdmin Question Test
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -205,7 +205,7 @@
 
     <div v-if="focusPage === 'module-question-options'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Options
+        MatHOTSanayanAdmin Question Options
       </span>
       <v-divider class="my-2" />
 
@@ -226,7 +226,7 @@
 
     <div v-if="focusPage === 'module-question-solutions'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Question Solutions
+        MatHOTSanayanAdmin Question Solutions
       </span>
       <v-divider class="my-2" />
 

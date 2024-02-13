@@ -42,7 +42,7 @@ const docs: string[] = [
   Manager. Whether seeking results for a particular module, specific
   student, or designated school or section, administrators can easily
   filter and locate the relevant information. By providing multiple search
-  options, MatHotSanayan empowers administrators to efficiently manage
+  options, MatHOTSanayanempowers administrators to efficiently manage
   exam results, ensuring they have the necessary tools to track student
   progress and analyze performance effectively.`,
 
@@ -57,7 +57,7 @@ const docs: string[] = [
   powerful tool for managing and analyzing exam results with ease and
   precision.`,
 
-  `Generate detailed Excel reports seamlessly within MatHotSanayan by
+  `Generate detailed Excel reports seamlessly within MatHOTSanayanby
   leveraging the Advanced Filter feature to extract specific data based on
   your search criteria. This functionality allows administrators to tailor
   reports according to their precise needs, ensuring that the generated

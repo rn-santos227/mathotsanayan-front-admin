@@ -1,7 +1,7 @@
 const docs: string[] = [
-  `Welcome to MatHotSanayan Administration, your comprehensive platform for proficiently managing Computer Aided Assessment (CAA). In this guide, we aim to illuminate the key functionalities that empower administrators to oversee assessments seamlessly. The admin dashboard serves as the nerve center, offering a bird's-eye view of ongoing assessments, upcoming exams, and recent results. With an intuitive interface, administrators can effortlessly navigate through vital performance indicators, ensuring informed decision-making at every step.`,
+  `Welcome to MatHOTSanayanAdministration, your comprehensive platform for proficiently managing Computer Aided Assessment (CAA). In this guide, we aim to illuminate the key functionalities that empower administrators to oversee assessments seamlessly. The admin dashboard serves as the nerve center, offering a bird's-eye view of ongoing assessments, upcoming exams, and recent results. With an intuitive interface, administrators can effortlessly navigate through vital performance indicators, ensuring informed decision-making at every step.`,
 
-  `In the realm of Modules Management, MatHotSanayan provides administrators
+  `In the realm of Modules Management, MatHOTSanayanprovides administrators
   with the tools to create, customize, and monitor assessment modules
   efficiently. From defining exam parameters to scheduling assessments, the
   system ensures a streamlined process, giving administrators full control

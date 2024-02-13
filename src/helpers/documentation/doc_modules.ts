@@ -1,5 +1,5 @@
 const docs: string[] = [
-  `The Modules Manager Page in MatHotSanayan acts as a central hub,
+  `The Modules Manager Page in MatHOTSanayanacts as a central hub,
   providing administrators with a robust set of tools to oversee and
   manage assessment modules efficiently. This pivotal control center
   streamlines essential tasks, offering a comprehensive suite of features
@@ -20,9 +20,9 @@ const docs: string[] = [
   assessments to their specific needs. This dual functionality,
   encompassing both module and question management, establishes the
   Modules Manager Page as a versatile and indispensable tool within the
-  MatHotSanayan ecosystem.`,
+  MatHOTSanayanecosystem.`,
 
-  `The Module Page Filter Search function in MatHotSanayan introduces a
+  `The Module Page Filter Search function in MatHOTSanayanintroduces a
   versatile and efficient way for administrators to pinpoint specific
   modules based on various criteria. This feature empowers users to
   streamline their workflow by searching for modules according to three
@@ -46,7 +46,7 @@ const docs: string[] = [
   information retrieval.`,
 
   `Effortlessly initiate the creation of new assessment modules within
-  MatHotSanayan by accessing the dedicated "Create Module" section. This
+  MatHOTSanayanby accessing the dedicated "Create Module" section. This
   intuitive process facilitates a seamless experience for administrators
   tasked with building robust assessments. Upon entering this section,
   administrators encounter a user-friendly interface featuring fields such
@@ -56,7 +56,7 @@ const docs: string[] = [
   `Begin the module creation process by specifying the module name, acting
   as the distinct title for the assessment. This field allows
   administrators to provide a clear and identifiable name, enhancing
-  organization and clarity within the MatHotSanayan system.`,
+  organization and clarity within the MatHOTSanayansystem.`,
 
   `As administrators enter module details, the module step field stands out
   as a unique and impactful element. This feature functions as a
@@ -79,7 +79,7 @@ const docs: string[] = [
   administrators and exam-takers.`,
 
   `Effortlessly refine and update existing assessment modules within
-  MatHotSanayan through the intuitive "Update" option. This streamlined
+  MatHOTSanayanthrough the intuitive "Update" option. This streamlined
   process provides administrators with a user-friendly interface to make
   necessary adjustments to module details. By accessing this option,
   administrators can easily modify parameters such as the module name,
@@ -91,7 +91,7 @@ const docs: string[] = [
   institutions to maintain relevance and precision in their evaluation
   strategies.`,
 
-  `Furthermore, the Modules Manager Page in MatHotSanayan introduces a
+  `Furthermore, the Modules Manager Page in MatHOTSanayanintroduces a
   dynamic activation feature that empowers administrators to enable or
   disable modules based on specific scheduling needs. This functionality
   offers strategic control over the availability of assessments within the
@@ -119,11 +119,11 @@ const docs: string[] = [
   assessment data and prevents unintentional data loss. This intentional
   design choice prioritizes data accuracy and helps administrators
   maintain a well-organized and error-free assessment environment. By
-  incorporating this precaution, MatHotSanayan ensures a secure and
+  incorporating this precaution, MatHOTSanayanensures a secure and
   controlled deletion process, reinforcing the commitment to precision and
   reliability in module management.`,
 
-  `The Question Management Page in MatHotSanayan offers administrators a
+  `The Question Management Page in MatHOTSanayanoffers administrators a
   highly organized and transparent interface for overseeing and
   customizing assessment content. This page provides a structured display
   of questions associated with each module, allowing administrators to
@@ -159,7 +159,7 @@ const docs: string[] = [
   institutions.`,
 
   `Accessing the "Create Questions" section within the Question Management
-  Page in MatHotSanayan marks the inception of a streamlined process for
+  Page in MatHOTSanayanmarks the inception of a streamlined process for
   incorporating new questions into assessments. This dedicated section
   offers administrators an intuitive and user-friendly interface designed
   to simplify the customization of assessment content. Within this
@@ -185,7 +185,7 @@ const docs: string[] = [
   `This multifaceted functionality not only enhances the efficiency of the
   question creation process but also ensures that administrators have the
   tools needed to tailor assessments according to their specific
-  requirements within the MatHotSanayan ecosystem. The user-friendly
+  requirements within the MatHOTSanayanecosystem. The user-friendly
   interface, coupled with the diverse question types, exemplifies the
   platform's commitment to providing a robust and adaptable environment
   for effective question management.`,
@@ -208,7 +208,7 @@ const docs: string[] = [
   provides a straightforward avenue for these necessary modifications.`,
 
   `This refined set of update options not only simplifies the modification
-  process but also underscores the commitment of MatHotSanayan to
+  process but also underscores the commitment of MatHOTSanayanto
   empowering administrators with precise control over assessment content.
   By focusing on essential elements, the platform ensures that
   modifications are made with purpose and accuracy, contributing to the
@@ -218,7 +218,7 @@ const docs: string[] = [
   landscape of educational objectives.`,
 
   `Efficiently managing assessment content, the "Delete" option within the
-  Question Management Page of MatHotSanayan provides administrators with a
+  Question Management Page of MatHOTSanayanprovides administrators with a
   powerful tool to eliminate outdated or irrelevant questions. This
   streamlined functionality is designed to simplify the question
   management process, allowing administrators to maintain a precise and
@@ -271,7 +271,7 @@ const docs: string[] = [
   of this testing process empowers administrators to refine questions as
   needed, ensuring that assessments maintain a high standard of accuracy
   and clarity. Ultimately, these comprehensive testing guidelines equip
-  administrators within MatHotSanayan with the tools needed to deliver
+  administrators within MatHOTSanayanwith the tools needed to deliver
   assessments that align seamlessly with educational objectives and
   enhance the overall learning experience for students.`,
 

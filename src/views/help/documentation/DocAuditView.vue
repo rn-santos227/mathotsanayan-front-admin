@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'audit-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Audit Trail Page
+        MatHOTSanayanAdmin Audit Trail Page
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -12,14 +12,14 @@
 
     <div v-if="focusPage === 'audit-search'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Audit Filter Search
+        MatHOTSanayanAdmin Audit Filter Search
       </span>
       <v-divider class="my-2" />
     </div>
 
     <div v-if="focusPage === 'audit-details'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Audit Details
+        MatHOTSanayanAdmin Audit Details
       </span>
       <v-divider class="my-2" />
     </div>

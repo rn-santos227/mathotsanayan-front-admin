@@ -1,5 +1,5 @@
 const docs: string[] = [
-  `The Students Management Page in MatHotSanayan serves as a central
+  `The Students Management Page in MatHOTSanayanserves as a central
   repository for efficient student record administration, providing
   administrators with powerful tools to manage student information
   seamlessly. This integral hub allows administrators to gain quick
@@ -22,11 +22,11 @@ const docs: string[] = [
   adaptable nature of the system allows administrators to continually
   refine student information based on feedback, assessment results, or
   changes in educational requirements. With the Students Management Page
-  as a central hub, MatHotSanayan ensures a streamlined administrative
+  as a central hub, MatHOTSanayanensures a streamlined administrative
   process, contributing to the overall efficiency of the educational
   institution.`,
 
-  `The Students Management Page in MatHotSanayan stands as an indispensable
+  `The Students Management Page in MatHOTSanayanstands as an indispensable
   tool for administrators, providing a centralized platform for efficient
   student record management. From adding new students to refining existing
   information and removing records when necessary, the page streamlines
@@ -36,7 +36,7 @@ const docs: string[] = [
   records, contributing to the overall efficiency and organization within
   the educational institution.`,
 
-  `The Students Management Page Filter Search feature within MatHotSanayan 
+  `The Students Management Page Filter Search feature within MatHOTSanayan
   introduces a highly adaptable and efficient approach for
   administrators to precisely locate student records based on multiple
   criteria. This feature equips users with the ability to streamline their
@@ -65,7 +65,7 @@ const docs: string[] = [
   management process.`,
 
   `Effortlessly initiate the creation of new student profiles within 
-  MatHotSanayan by navigating to the dedicated "Create Student" section. 
+  MatHOTSanayanby navigating to the dedicated "Create Student" section. 
   This intuitive process facilitates a seamless experience for administrators
   tasked with adding new students to the system. Upon entering this
   section, administrators encounter a user-friendly interface featuring
@@ -76,7 +76,7 @@ const docs: string[] = [
   `To begin the student creation process, administrators input essential
   details such as the student's first and last name, with the middle name
   and suffix being optional. This information ensures accurate
-  identification and organization within the MatHotSanayan system.
+  identification and organization within the MatHOTSanayansystem.
   Administrators then specify the student's course, school, and section,
   providing key categorization details. The student email address, serving
   as the login username, is a crucial element, and administrators can also
@@ -88,13 +88,13 @@ const docs: string[] = [
   `Upon the successful creation of a new student, an automated email is
   promptly sent to the provided student email address. This email contains
   the student's username (email) and temporary password, essential for the
-  student's first login to the MatHotSanayan application. This streamlined
+  student's first login to the MatHOTSanayanapplication. This streamlined
   process ensures that students receive the necessary credentials without
   delay, facilitating a smooth onboarding experience. Administrators can
   confidently leverage this feature to efficiently manage and integrate
-  new students into the MatHotSanayan ecosystem.`,
+  new students into the MatHOTSanayanecosystem.`,
 
-  `Update student information within MatHotSanayan by utilizing the
+  `Update student information within MatHOTSanayanby utilizing the
   dedicated "Update Student" functionality in the Students Management
   Page. This streamlined process provides administrators with a
   user-friendly interface to modify student details, ensuring accuracy and
@@ -116,7 +116,7 @@ const docs: string[] = [
 
   `Upon completing the updates, administrators can save the changes,
   ensuring that the student's information is promptly and accurately
-  reflected within the MatHotSanayan system. This efficient and
+  reflected within the MatHOTSanayansystem. This efficient and
   straightforward update functionality empowers administrators to keep
   student records current and aligned with the institution's evolving
   requirements. By separating the password update process, MatHotSanayan
@@ -124,7 +124,7 @@ const docs: string[] = [
   management, further enhancing the administrative experience.`,
 
   `Efficiently streamline your student management process within
-  MatHotSanayan by leveraging the deletion functionality to remove
+  MatHOTSanayanby leveraging the deletion functionality to remove
   redundant student records from the system. This user-friendly feature
   offers administrators a straightforward approach to decluttering the
   assessment system, ensuring a seamless experience. To initiate the
@@ -153,7 +153,7 @@ const docs: string[] = [
   can confidently manage student records, ensuring that the system remains
   optimized for efficient assessment administration. By empowering
   administrators with tools for effective student management,
-  MatHotSanayan promotes a productive learning environment where resources
+  MatHOTSanayanpromotes a productive learning environment where resources
   are utilized effectively to support educational objectives.`,
 ];
 

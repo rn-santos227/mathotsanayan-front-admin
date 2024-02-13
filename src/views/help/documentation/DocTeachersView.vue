@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'teachers-main'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers Page
+        MatHOTSanayanAdmin Teachers Page
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -12,28 +12,28 @@
 
     <div v-if="focusPage === 'teachers-search'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers Filter Search
+        MatHOTSanayanAdmin Teachers Filter Search
       </span>
       <v-divider class="my-2" />
     </div>
 
     <div v-if="focusPage === 'teachers-create'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers Creation
+        MatHOTSanayanAdmin Teachers Creation
       </span>
       <v-divider class="my-2" />
     </div>
 
     <div v-if="focusPage === 'teachers-update'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers Update
+        MatHOTSanayanAdmin Teachers Update
       </span>
       <v-divider class="my-2" />
     </div>
 
     <div v-if="focusPage === 'teachers-delete'">
       <span class="text-h5 font-weight-bold">
-        MatHotSanayan Admin Teachers Deletion
+        MatHOTSanayanAdmin Teachers Deletion
       </span>
       <v-divider class="my-2" />
     </div>
