@@ -1,7 +1,7 @@
 <template>
   <v-list-item @click.prevent>
     <v-list-item-title class="text-button">
-      <v-icon icon="mdi-key"></v-icon> Password
+      <v-icon icon="mdi-lock-reset"></v-icon> Password
     </v-list-item-title>
     <v-dialog
       class="ma-auto"
