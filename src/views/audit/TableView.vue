@@ -7,7 +7,7 @@
           <v-text-field
             class="mr-4"
             v-model="search"
-            label="Search Result"
+            label="Search Logs"
             density="compact"
             variant="outlined"
           />
