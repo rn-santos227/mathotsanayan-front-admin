@@ -47,6 +47,13 @@ const headers: ReadonlyHeaders = [
     width: "140",
   },
   {
+    title: "Examination Date",
+    align: "start",
+    sortable: true,
+    key: "created_at",
+    width: "230",
+  },
+  {
     title: "Action",
     align: "end",
     sortable: false,

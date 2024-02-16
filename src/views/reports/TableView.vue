@@ -70,6 +70,9 @@
             {{ secondsToMinutes(item.timer) }}
           </td>
           <td class="text-left">
+            {{ formatDate(item.created_at) }}
+          </td>
+          <td class="text-left">
             <v-btn block color="purple-darken-3" variant="outlined">
               <v-icon size="large">mdi-dots-horizontal</v-icon>
               <v-menu activator="parent">
@@ -109,6 +112,7 @@ import { computed, onMounted, provide, ref, watch } from "vue";
 import { useResultsModule } from "@/store";
 import { evaluateExam, secondsToMinutes } from "@/helpers/evaluation";
 import { getSectionName } from "@/helpers/instance";
+import { formatDate } from "@/helpers/utils";
 
 import FilterView from "./FilterView.vue";
 import GenerationView from "./GenerationView.vue";
