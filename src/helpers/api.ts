@@ -112,15 +112,15 @@ export default {
     DELETE: `${BACKEND}subjects/`,
   },
 
-  TEST: {
-    SUBMIT: `${BACKEND}test/`,
-  },
-
   TEACHERS: {
     CREATE: `${BACKEND}teachers/create`,
     READ: `${BACKEND}teachers`,
     UPDATE: `${BACKEND}teachers/`,
     DELETE: `${BACKEND}teachers/`,
     SEARCH: `${BACKEND}teachers/search`,
+  },
+
+  TEST: {
+    SUBMIT: `${BACKEND}test/`,
   },
 };
