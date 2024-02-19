@@ -33,6 +33,9 @@ export const useQuestionsModule = defineStore("questions", {
         this.isLoading = true;
         const response = await authenticatedFetch(`${api.QUESTIONS.READ}${id}`);
         const data = await response.json();
+        const { questions } = data;
+        this.setQuestions(questions);
+        return true;
       } catch (error) {
         console.error("Error Question in:", error);
         return null;
