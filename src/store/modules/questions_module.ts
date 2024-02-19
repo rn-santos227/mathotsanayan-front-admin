@@ -7,6 +7,7 @@ import { authenticatedFetch } from "@/services/api";
 
 export const useQuestionsModule = defineStore("questions", {
   state: () => ({
+    questions: [] as Question[],
     isLoading: false,
     isTableLoading: false,
   }),
@@ -152,6 +153,12 @@ export const useQuestionsModule = defineStore("questions", {
         this.isLoading = false;
         this.isTableLoading = false;
       }
+    },
+  },
+
+  getters: {
+    getQuestions(): Question[] {
+      return this.questions;
     },
   },
 });
