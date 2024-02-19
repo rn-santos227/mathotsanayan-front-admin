@@ -12,6 +12,17 @@ export const useQuestionsModule = defineStore("questions", {
   }),
 
   actions: {
+    async read(id: number) {
+      try {
+        this.isLoading = true;
+      } catch (error) {
+        console.error("Error Question in:", error);
+        return null;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
     async createAll(payload: Question[], module: Module) {
       try {
         this.isLoading = true;
