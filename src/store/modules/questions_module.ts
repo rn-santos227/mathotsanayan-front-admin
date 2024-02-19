@@ -13,9 +13,26 @@ export const useQuestionsModule = defineStore("questions", {
   }),
 
   actions: {
+    setQuestions(questions: Question[]): void {
+      this.questions = questions;
+    },
+
+    updateQuestion(question: Question) {
+      const index = this.questions.findIndex((item) => item.id === question.id);
+      if (index !== -1) {
+        this.questions[index] = question;
+      }
+    },
+
+    deleteQuestion(question: Question) {
+      this.questions = this.questions.filter((item) => item.id !== question.id);
+    },
+
     async read(id: number) {
       try {
         this.isLoading = true;
+        const response = await authenticatedFetch(`${api.QUESTIONS.READ}${id}`);
+        const data = await response.json();
       } catch (error) {
         console.error("Error Question in:", error);
         return null;
