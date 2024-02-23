@@ -3,7 +3,7 @@
     <v-text-field
       class="mr-4"
       v-model="search"
-      label="Question Module"
+      label="Question Search"
       density="compact"
       variant="outlined"
     />
@@ -14,7 +14,7 @@
       class="w-100"
       item-value="name"
       :search="search"
-      :items="table_props.questions"
+      :items="questions"
       :headers="headers"
       :loading="useQuestionsModule().isTableLoading"
     >
@@ -49,31 +49,31 @@
                 <v-list density="compact" variant="plain">
                   <TestView v-bind:question="item" />
                   <CorrectsView
-                    v-if="!table_props.module.active"
+                    v-if="!module_props.module.active"
                     v-bind:question="item"
-                    v-bind:index="table_props.index"
+                    v-bind:index="module_props.index"
                   />
                   <RemoveImgView
-                    v-if="!table_props.module.active && item.file"
+                    v-if="!module_props.module.active && item.file"
                     v-bind:question="item"
-                    v-bind:index="table_props.index"
+                    v-bind:index="module_props.index"
                   />
                   <OptionsView
                     v-if="
-                      !table_props.module.active && item.type != 'word problem'
+                      !module_props.module.active && item.type != 'word problem'
                     "
                     v-bind:question="item"
-                    v-bind:index="table_props.index"
+                    v-bind:index="module_props.index"
                   />
                   <UpdateView
-                    v-if="!table_props.module.active"
+                    v-if="!module_props.module.active"
                     v-bind:question="item"
-                    v-bind:index="table_props.index"
+                    v-bind:index="module_props.index"
                   />
                   <DeleteView
-                    v-if="!table_props.module.active"
+                    v-if="!module_props.module.active"
                     v-bind:question="item"
-                    v-bind:index="table_props.index"
+                    v-bind:index="module_props.index"
                   />
                 </v-list>
               </v-menu>
@@ -86,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import ImageComponent from "@/components/ImageComponent.vue";
 
 import { useQuestionsModule } from "@/store";
@@ -103,11 +103,21 @@ import headers from "@/helpers/headers/header_question";
 import Module from "@/types/Module";
 
 const search = ref<string>("");
-const table_props = defineProps<{
+const questionModule = useQuestionsModule();
+const questions = computed<Question[]>(() => questionModule.getQuestions);
+
+const module_props = defineProps<{
   index: number;
   module: Module;
   questions?: Question[];
 }>();
+
+onMounted(async () => {
+  const id = module_props.module.id;
+  if (id) {
+    await useQuestionsModule().read(id);
+  }
+});
 </script>
 
 <style scoped>
