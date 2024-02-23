@@ -1,8 +1,19 @@
 <template>
+  <v-card-text>
+    <v-text-field
+      class="mr-4"
+      v-model="search"
+      label="Question Module"
+      density="compact"
+      variant="outlined"
+    />
+  </v-card-text>
+  <v-divider />
   <v-card-text class="question-height">
     <v-data-table
       class="w-100"
       item-value="name"
+      :search="search"
       :items="table_props.questions"
       :headers="headers"
       :loading="useQuestionsModule().isTableLoading"
@@ -75,6 +86,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import ImageComponent from "@/components/ImageComponent.vue";
 
 import { useQuestionsModule } from "@/store";
@@ -90,6 +102,7 @@ import Question from "@/types/Question";
 import headers from "@/helpers/headers/header_question";
 import Module from "@/types/Module";
 
+const search = ref<string>("");
 const table_props = defineProps<{
   index: number;
   module: Module;
