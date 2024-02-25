@@ -12,7 +12,7 @@ export const useCorrectsModule = defineStore("corrects", {
   }),
 
   actions: {
-    async create(payload: Correct, question: Question): Promise<Question[]> {
+    async create(payload: Correct, id: number): Promise<Question | null> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -24,18 +24,18 @@ export const useCorrectsModule = defineStore("corrects", {
         }
 
         const response = await authenticatedFetch(
-          `${api.CORRECTS.CREATE}${question.id}`,
+          `${api.CORRECTS.CREATE}${id}`,
           {
             method: "POST",
             body: formData,
           }
         );
         const data = await response.json();
-        const { questions } = data;
-        return questions;
+        const { question } = data;
+        return question;
       } catch (error) {
         console.error("Error Correct in:", error);
-        return [];
+        return null;
       } finally {
         this.isLoading = false;
       }
