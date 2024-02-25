@@ -73,7 +73,7 @@
 
 <script setup lang="ts">
 import { inject, reactive, ref } from "vue";
-import { useModulesModule, useQuestionsModule } from "@/store";
+import { useQuestionsModule } from "@/store";
 import { padLeft } from "@/helpers/utils";
 
 import QuestionComponent from "@/components/questions/QuestionComponent.vue";
@@ -149,13 +149,9 @@ const submit = async () => {
   try {
     useQuestionsModule()
       .update(state)
-      .then((response) => {
-        const _question = response;
-        if (_question) {
-          useModulesModule().updateQuestionModule(props.index, _question);
-          success.value.show("Question has been successfully updated.");
-          close();
-        }
+      .then(() => {
+        success.value.show("Question has been successfully updated.");
+        close();
       });
   } catch (e) {
     error.value.show("The server has not able to process the request.");
