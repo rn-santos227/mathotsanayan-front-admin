@@ -98,7 +98,7 @@ export const useQuestionsModule = defineStore("questions", {
       }
     },
 
-    async update(payload: Question): Promise<Question | null> {
+    async update(payload: Question): Promise<void> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -120,10 +120,9 @@ export const useQuestionsModule = defineStore("questions", {
         const data = await response.json();
         const { question } = data;
         question.trigger = true;
-        return question;
+        this.updateQuestion(question);
       } catch (error) {
         console.error("Error Question in:", error);
-        return null;
       } finally {
         this.isLoading = false;
         this.isTableLoading = false;
