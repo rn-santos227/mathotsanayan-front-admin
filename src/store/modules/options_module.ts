@@ -12,7 +12,7 @@ export const useOptionsModule = defineStore("options", {
   }),
 
   actions: {
-    async create(payload: Option, question: Question): Promise<Question[]> {
+    async create(payload: Option, id: number): Promise<Question | null> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -24,18 +24,18 @@ export const useOptionsModule = defineStore("options", {
         }
 
         const response = await authenticatedFetch(
-          `${api.OPTIONS.CREATE}${question.id}`,
+          `${api.OPTIONS.CREATE}${id}`,
           {
             method: "POST",
             body: formData,
           }
         );
         const data = await response.json();
-        const { questions } = data;
-        return questions;
+        const { question } = data;
+        return question;
       } catch (error) {
         console.error("Error Question in:", error);
-        return [];
+        return null;
       } finally {
         this.isLoading = false;
       }

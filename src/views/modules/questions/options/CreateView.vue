@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { inject, ref, reactive } from "vue";
-import { useModulesModule } from "@/store";
+import { useQuestionsModule } from "@/store";
 import { useOptionsModule } from "@/store";
 
 import OptionComponent from "@/components/questions/OptionComponent.vue";
@@ -68,17 +68,19 @@ const submit = async () => {
   if (errors) return;
 
   try {
-    await useOptionsModule()
-      .create(state, props.question)
-      .then((response) => {
-        if (response.length > 0) {
-          useModulesModule().setQuestionsModule(props.index, response);
-          success.value.show("Option has been successfully created.");
-          emit("close");
-        } else {
-          error.value.show("The server has not able to process the request.");
-        }
-      });
+    if (props.question.id) {
+      await useOptionsModule()
+        .create(state, props.question.id)
+        .then((response) => {
+          if (response) {
+            useQuestionsModule().updateQuestion(response);
+            success.value.show("Option has been successfully created.");
+            emit("close");
+          } else {
+            error.value.show("The server has not able to process the request.");
+          }
+        });
+    }
   } catch (e) {
     error.value.show("The server has not able to process the request.");
   }
