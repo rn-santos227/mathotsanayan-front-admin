@@ -107,7 +107,7 @@ const remove = async () => {
       .delete(state)
       .then((response) => {
         if (response) {
-          useQuestionsModule().deleteQuestion(response);
+          useQuestionsModule().updateQuestion(response);
           success.value.show("Correct Answer has been successfully removed.");
           emit("close");
         } else {
