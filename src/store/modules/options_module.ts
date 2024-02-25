@@ -41,7 +41,7 @@ export const useOptionsModule = defineStore("options", {
       }
     },
 
-    async update(payload: Option): Promise<Question[]> {
+    async update(payload: Option): Promise<Question | null> {
       try {
         this.isLoading = true;
         this.isTableLoading = true;
@@ -61,18 +61,18 @@ export const useOptionsModule = defineStore("options", {
         );
 
         const data = await response.json();
-        const { questions } = data;
-        return questions;
+        const { question } = data;
+        return question;
       } catch (error) {
         console.error("Error Question in:", error);
-        return [];
+        return null;
       } finally {
         this.isLoading = false;
         this.isTableLoading = false;
       }
     },
 
-    async delete(payload: Option): Promise<Question[]> {
+    async delete(payload: Option): Promise<Question | null> {
       try {
         this.isLoading = true;
         const response = await authenticatedFetch(
@@ -87,11 +87,11 @@ export const useOptionsModule = defineStore("options", {
         );
 
         const data = await response.json();
-        const { questions } = data;
-        return questions;
+        const { question } = data;
+        return question;
       } catch (error) {
         console.error("Error Option in:", error);
-        return [];
+        return null;
       } finally {
         this.isLoading = false;
       }
