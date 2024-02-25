@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import { inject, ref, reactive } from "vue";
-import { useModulesModule } from "@/store";
+import { useQuestionsModule } from "@/store";
 import { useCorrectsModule } from "@/store";
 
 import ImageComponent from "@/components/ImageComponent.vue";
@@ -88,8 +88,8 @@ const submit = async () => {
     await useCorrectsModule()
       .update(state)
       .then((response) => {
-        if (response.length > 0) {
-          useModulesModule().setQuestionsModule(props.index, response);
+        if (response) {
+          useQuestionsModule().updateQuestion(response);
           success.value.show("Correct Answer has been successfully updated.");
           emit("close");
         } else {
@@ -106,8 +106,8 @@ const remove = async () => {
     await useCorrectsModule()
       .delete(state)
       .then((response) => {
-        if (response.length > 0) {
-          useModulesModule().setQuestionsModule(props.index, response);
+        if (response) {
+          useQuestionsModule().deleteQuestion(response);
           success.value.show("Correct Answer has been successfully removed.");
           emit("close");
         } else {
