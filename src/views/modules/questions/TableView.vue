@@ -93,8 +93,8 @@ import { useQuestionsModule } from "@/store";
 
 import TestView from "./TestView.vue";
 import RemoveImgView from "./RemoveImgView.vue";
-import CorrectsView from "./corrects/CorrectsView.vue";
-import OptionsView from "./options/OptionsView.vue";
+import CorrectsView from "./corrects/DialogView.vue";
+import OptionsView from "./options/DialogView.vue";
 import DeleteView from "./DeleteView.vue";
 import UpdateView from "./UpdateView.vue";
 
