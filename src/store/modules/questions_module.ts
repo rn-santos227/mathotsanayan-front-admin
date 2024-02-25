@@ -17,14 +17,18 @@ export const useQuestionsModule = defineStore("questions", {
       this.questions = questions;
     },
 
-    updateQuestion(question: Question) {
+    addQuestion(question: Question): void {
+      this.questions.push(question);
+    },
+
+    updateQuestion(question: Question): void {
       const index = this.questions.findIndex((item) => item.id === question.id);
       if (index !== -1) {
         this.questions[index] = question;
       }
     },
 
-    deleteQuestion(question: Question) {
+    deleteQuestion(question: Question): void {
       this.questions = this.questions.filter((item) => item.id !== question.id);
     },
 
@@ -44,7 +48,7 @@ export const useQuestionsModule = defineStore("questions", {
       }
     },
 
-    async createAll(payload: Question[], module: Module) {
+    async createAll(payload: Question[], module: Module): Promise<void> {
       try {
         this.isLoading = true;
         const formData = new FormData();
@@ -86,10 +90,9 @@ export const useQuestionsModule = defineStore("questions", {
         );
         const data = await response.json();
         const { questions } = data;
-        return questions;
+        this.setQuestions(questions);
       } catch (error) {
         console.error("Error Question in:", error);
-        return null;
       } finally {
         this.isLoading = false;
       }
