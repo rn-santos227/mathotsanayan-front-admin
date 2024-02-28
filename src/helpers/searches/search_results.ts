@@ -10,15 +10,19 @@ const search_list: Array<Category> = [
     value: "student.full_name",
   },
   {
-    text: "Student School",
-    value: "student.school",
+    text: "Course",
+    value: "course.name",
   },
   {
-    text: "Student Section",
-    value: "student.section",
+    text: "School",
+    value: "school.name",
   },
   {
-    text: "Subject Name",
+    text: "Section",
+    value: "section.name",
+  },
+  {
+    text: "Subject",
     value: "subject.name",
   },
 ];
