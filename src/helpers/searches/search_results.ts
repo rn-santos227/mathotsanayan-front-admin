@@ -11,19 +11,19 @@ const search_list: Array<Category> = [
   },
   {
     text: "Course",
-    value: "course.name",
+    value: "student.course",
   },
   {
     text: "School",
-    value: "school.name",
+    value: "student.school",
   },
   {
     text: "Section",
-    value: "section.name",
+    value: "student.section",
   },
   {
     text: "Subject",
-    value: "subject.name",
+    value: "student.subject",
   },
 ];
 export default search_list;
