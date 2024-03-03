@@ -14,7 +14,7 @@ const headers: ReadonlyHeaders = [
     key: "questions.length",
   },
   {
-    title: "Module Subject",
+    title: "Subject",
     align: "start",
     sortable: true,
     key: "subject.name",
