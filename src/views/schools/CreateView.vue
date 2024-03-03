@@ -77,7 +77,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.description"
-                  label="School Description/Notes (Optional)"
+                  label="School Description (Optional)"
                   density="compact"
                   variant="outlined"
                 />

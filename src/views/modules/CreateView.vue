@@ -83,7 +83,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.description"
-                  label="Module Description/Notes"
+                  label="Module Description"
                   density="compact"
                   variant="outlined"
                 />

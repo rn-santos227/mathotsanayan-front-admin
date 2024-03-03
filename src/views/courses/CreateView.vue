@@ -57,7 +57,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.description"
-                  label="Course Description/Notes"
+                  label="Course Description"
                   density="compact"
                   variant="outlined"
                 />

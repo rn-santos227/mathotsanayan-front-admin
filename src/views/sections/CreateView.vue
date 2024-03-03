@@ -32,7 +32,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="v$.name.$model"
-                  label="Section Name"
+                  label="Section"
                   density="compact"
                   variant="outlined"
                   :error="v$.name.$error"
@@ -45,7 +45,7 @@
                 <v-autocomplete
                   v-model.trim="v$.school.$model"
                   prepend-inner-icon="mdi-school"
-                  label="Section School Name"
+                  label="School"
                   density="compact"
                   variant="outlined"
                   item-title="name"
@@ -77,7 +77,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.description"
-                  label="Sectopm Description/Notes"
+                  label="Section Description"
                   density="compact"
                   variant="outlined"
                 />
