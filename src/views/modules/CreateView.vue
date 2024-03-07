@@ -43,7 +43,7 @@
                 <v-select
                   :items="steps"
                   v-model.trim="v$.step.$model"
-                  label="Module Step"
+                  label="Module Stage"
                   density="compact"
                   variant="outlined"
                   :error="v$.step.$error"
@@ -67,7 +67,7 @@
                 <v-autocomplete
                   v-model.trim="v$.subject.$model"
                   prepend-inner-icon="mdi-book"
-                  label="Module Subject"
+                  label="Subject"
                   density="compact"
                   variant="outlined"
                   item-title="name"
@@ -83,7 +83,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.description"
-                  label="Module Description"
+                  label="Description"
                   density="compact"
                   variant="outlined"
                 />
@@ -94,7 +94,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.objective"
-                  label="Module Objective"
+                  label="Objective"
                   density="compact"
                   variant="outlined"
                 />
@@ -105,7 +105,7 @@
                 <v-textarea
                   rows="3"
                   v-model.trim="state.direction"
-                  label="Module Direction/Instruction"
+                  label="Instructions"
                   density="compact"
                   variant="outlined"
                 />
