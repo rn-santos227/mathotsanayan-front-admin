@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'module-main'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Modules Page
+        MatHOTSanayanAdmin Modules Manager Page
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
