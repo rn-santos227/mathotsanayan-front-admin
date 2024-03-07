@@ -14,7 +14,7 @@ export default [
     page: "module",
     subpages: [
       {
-        text: "Modules Page",
+        text: "Modules Manager Page",
         page: "module-main",
       },
       {
@@ -34,7 +34,7 @@ export default [
         page: "module-delete",
       },
       {
-        text: "Questions List",
+        text: "Questions Management Page",
         page: "module-question",
       },
       {
@@ -54,7 +54,7 @@ export default [
         page: "module-question-test",
       },
       {
-        text: "Options Panel",
+        text: "Answers Panel",
         page: "module-question-options",
       },
       {
