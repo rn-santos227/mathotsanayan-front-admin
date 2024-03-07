@@ -1,8 +1,10 @@
 const docs: string[] = [
-  `Gain instant access to critical information with the dashboard features.
-  Track real-time data on ongoing assessments, upcoming exams, and recent
-  results. Navigate effortlessly through key performance indicators to make
-  quick and informed decisions.`,
+  `The dashboard feature offers instant access to critical information for
+  administrators, allowing them to monitor ongoing assessments and recent
+  results in real-time. This ensures administrators can remain updated on
+  student progress and performance promptly, facilitating timely
+  interventions and support when needed. Additionally, it facilitates
+  administrators' oversight of teachers' interactions within the platform.`,
 
   `The dashboard encompasses a count tally providing a consolidated overview
   of the total number of schools, students, teachers, modules, subjects, and
