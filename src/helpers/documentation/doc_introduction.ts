@@ -1,9 +1,12 @@
 const docs: string[] = [
-  `Welcome to MatHOTSanayan, a premier destination for students looking to
-  refine their mathematical skills through Higher Order Thinking Skills
-  (HOTS) practice tests. With a focus on empowering learners, MatHOTSanayan
-  provides a comprehensive test bank specifically designed to enhance
-  problem-solving abilities in mathematics.`,
+  `Welcome to MatHOTSanayan, the ultimate destination for both students and
+  teachers seeking to refine their mathematical skills through Higher Order
+  Thinking Skills (HOTS) practice tests. MatHOTSanayan is dedicated to
+  empowering learners and educators alike with its comprehensive test bank
+  designed to enhance analytical thinking and problem-solving abilities in
+  mathematics. Whether a student aiming to strengthen problem solving skills
+  or a teacher looking for enriching classroom resources, MatHOTSanayan is
+  here to support their journey towards mastery in mathematics.`,
 
   ` At the core of the platform lies the subject of mathematics, a fundamental
   discipline that plays a crucial role in various academic and professional
