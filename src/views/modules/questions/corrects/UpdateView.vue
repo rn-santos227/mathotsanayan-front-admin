@@ -14,7 +14,7 @@
         v-model:content="state.content"
         v-model:file="state.file"
         v-model:solution="state.solution"
-        v-bind:title="'Update Option'"
+        v-bind:title="'Update Answer'"
         :index="index"
         :check="checkCount()"
         @remove="remove"
