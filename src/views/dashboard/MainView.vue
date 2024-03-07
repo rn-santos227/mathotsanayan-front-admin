@@ -7,11 +7,11 @@
       />
       <DashboardCardComponent
         class="flex-grow-1 card-width"
-        v-bind:card="studentCard"
+        v-bind:card="teacherCard"
       />
       <DashboardCardComponent
         class="flex-grow-1 card-width"
-        v-bind:card="teacherCard"
+        v-bind:card="studentCard"
       />
       <DashboardCardComponent
         class="flex-grow-1 card-width"
@@ -50,20 +50,20 @@ const schoolCard = ref<DashboardCard>({
   icon: "mdi-school",
 });
 
-const studentCard = ref<DashboardCard>({
-  count: useDashboardModule().getDashboard.students,
-  title: "Total Students",
-  link: "/students",
-  color: "purple",
-  icon: "mdi-account-school",
-});
-
 const teacherCard = ref<DashboardCard>({
   count: useDashboardModule().getDashboard.teachers,
   title: "Total Teachers",
   link: "/teachers",
-  color: "deep-purple",
+  color: "purple",
   icon: "mdi-human-male-board",
+});
+
+const studentCard = ref<DashboardCard>({
+  count: useDashboardModule().getDashboard.students,
+  title: "Total Students",
+  link: "/students",
+  color: "deep-purple",
+  icon: "mdi-account-school",
 });
 
 const moduleCard = ref<DashboardCard>({
