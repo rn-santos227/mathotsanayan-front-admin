@@ -19,6 +19,12 @@ const docs: string[] = [
   failed attempts per module, allowing administrators to discern overall
   performance trends quickly. This aids in identifying areas requiring
   attention and facilitates targeted interventions.`,
+
+  `Furthermore, a detailed table breaks down each module, presenting
+  essential insights such as the total number of attempts, passed attempts,
+  failed attempts, and corresponding passing rates. This granular data
+  empowers administrators to assess the effectiveness of each module and
+  make informed decisions to enhance the overall quality of assessments.`,
 ];
 
 export default docs;
