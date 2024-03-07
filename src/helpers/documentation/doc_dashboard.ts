@@ -6,10 +6,10 @@ const docs: string[] = [
   interventions and support when needed. Additionally, it facilitates
   administrators' oversight of teachers' interactions within the platform.`,
 
-  `The dashboard encompasses a count tally providing a consolidated overview
-  of the total number of schools, students, teachers, modules, subjects, and
-  recorded results. This feature streamlines administrative tasks by
-  presenting a snapshot of the educational landscape.`,
+  `Designed for effortless navigation, the dashboard provides access to key
+  performance indicators such as metrics, graphs, and tables, offering
+  insights into various aspects of student performance. This user-friendly
+  interface enables administrators to quickly locate necessary information.`,
 
   `A visually informative doughnut graph highlights the pass/fail ratio of
   exam takers. This graphical representation offers administrators a quick
