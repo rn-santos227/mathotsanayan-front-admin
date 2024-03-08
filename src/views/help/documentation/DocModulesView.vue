@@ -14,6 +14,10 @@
       <p class="ma-6">
         {{ docs[1] }}
       </p>
+
+      <p class="ma-6">
+        {{ docs[2] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'module-search'">

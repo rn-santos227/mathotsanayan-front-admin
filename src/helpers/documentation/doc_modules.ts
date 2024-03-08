@@ -16,12 +16,11 @@ const docs: string[] = [
   within, providing valuable insight into the depth and breadth of each
   module's content.`,
 
-  `The Module Page Filter Search function in MatHOTSanayanintroduces a
-  versatile and efficient way for administrators to pinpoint specific
-  modules based on various criteria. This feature empowers users to
-  streamline their workflow by searching for modules according to three
-  key parameters: module name, subject name, or keywords within the
-  module's description.`,
+  `Furthermore, modules are systematically categorized according to their
+  respective subjects, facilitating efficient navigation for
+  administrators seeking content relevant to specific academic
+  disciplines. This categorization ensures seamless access to the
+  appropriate materials.`,
 
   `With the search by module name option, administrators can quickly locate
   a particular module by typing its name directly into the search bar.
