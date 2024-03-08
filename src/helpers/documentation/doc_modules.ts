@@ -131,23 +131,32 @@ const docs: string[] = [
   controlled deletion process, reinforcing the commitment to precision and
   reliability in module management.`,
 
-  `In conclusion, the Question Management Page serves as a central hub for
-  administrators, streamlining the process of managing and customizing
-  assessment questions. Its user-friendly interface, coupled with detailed
-  column descriptions, ensures transparency and efficiency in question
-  administration within MatHotSanayan. This comprehensive feature reflects
-  the commitment to providing a robust platform that facilitates precise
-  and diverse assessment content customization for educational
-  institutions.`,
+  `The Question Management Page in MatHOTSanayan offers administrators a
+  highly organized and transparent interface for overseeing and
+  customizing assessment content. This page provides a structured display
+  of questions associated with each module, allowing administrators to
+  effortlessly access a comprehensive list. This design promotes ease of
+  navigation and ensures a quick overview of the assessment content,
+  fostering transparency in questions management. Through this feature,
+  administrators can stay well-informed about the composition of
+  assessments, facilitating efficient oversight and customization.`,
 
-  `Accessing the "Create Questions" section within the Question Management
-  Page in MatHOTSanayanmarks the inception of a streamlined process for
-  incorporating new questions into assessments. This dedicated section
-  offers administrators an intuitive and user-friendly interface designed
-  to simplify the customization of assessment content. Within this
-  environment, administrators can seamlessly input the question text,
-  provide multiple-choice answers, and designate the correct solution,
-  fostering a dynamic approach to question creation.`,
+  `One key aspect of the Question Management Page is the detailed breakdown
+  of columns, each providing essential information about the questions.
+  The inclusion of "Image" column enables administrators to enrich
+  assessment content with visuals, thereby adding a multimedia dimension
+  that enhances engagement and comprehension. Meanwhile, the "Question"
+  column presents the textual content of each question, ensuring clarity
+  and precision in conveying assessment prompts. The "Question Type"
+  column categorizes questions based on their format, aiding
+  administrators in distinguishing between various question types, such as
+  word problems, multiple selection questions, or single-correct answer
+  questions. Additionally, the "Number of Correct Answers" column provides
+  information about the number of correct answers or predetermined correct
+  responses stored within the system. Finally, the "Number of Options"
+  column provides a comprehensive overview of the answer choices
+  available, particularly useful for multiple-choice questions, enabling
+  administrators to grasp the structure of questions at a glance.`,
 
   `Furthermore, the "Create Questions" section supports the efficient
   addition of multiple questions, each with distinct complexities.
