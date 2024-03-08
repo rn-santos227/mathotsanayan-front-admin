@@ -98,15 +98,16 @@ const docs: string[] = [
   simply save the changes by clicking submit, ensuring that the module
   information remains up-to-date and accurate.`,
 
-  `It's important to note that the deletion function is designed with a
-  failsafe mechanism — a module can only be deleted if it has no questions
-  attached to it. This built-in safeguard ensures the integrity of your
-  assessment data and prevents unintentional data loss. This intentional
-  design choice prioritizes data accuracy and helps administrators
-  maintain a well-organized and error-free assessment environment. By
-  incorporating this precaution, MatHOTSanayanensures a secure and
-  controlled deletion process, reinforcing the commitment to precision and
-  reliability in module management.`,
+  `Furthermore, the Modules Manager Page in MatHOTSanayan introduces a
+  dynamic activation feature that empowers administrators to activate or
+  deactivate modules based on specific scheduling needs. This
+  functionality offers strategic control over the availability of
+  assessments within the system. By toggling the activation status of
+  modules, administrators can precisely manage the timing of assessments,
+  ensuring that they align with the academic calendar and institutional
+  requirements. This flexible approach enables administrators to
+  orchestrate the assessment environment with precision, enhancing overall
+  control and efficiency in the administration of exams.`,
 
   `The Question Management Page in MatHOTSanayanoffers administrators a
   highly organized and transparent interface for overseeing and
