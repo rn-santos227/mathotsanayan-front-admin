@@ -37,19 +37,14 @@ const docs: string[] = [
   primary parameters: module title, subject, or keywords within the
   module's description.`,
 
-  `Moreover, the search by words within the module's description adds a
-  layer of granularity to the search process. This functionality allows
-  administrators to locate modules based on specific keywords present in
-  their descriptions, providing a more nuanced and tailored approach to
-  information retrieval.`,
+  `With the search by module title option, administrators can quickly
+  locate a particular module by typing its title directly into the search
+  bar. This targeted approach ensures efficient access to specific
+  assessments, saving valuable time and enhancing overall navigation.`,
 
-  `Effortlessly initiate the creation of new assessment modules within
-  MatHOTSanayanby accessing the dedicated "Create Module" section. This
-  intuitive process facilitates a seamless experience for administrators
-  tasked with building robust assessments. Upon entering this section,
-  administrators encounter a user-friendly interface featuring fields such
-  as the module name, module step, passing grade, module description,
-  module objective, and module instructions.`,
+  `Similarly, the search by subject feature allows for the effortless
+  categorization of modules. Administrators can filter modules based on
+  their designated subject.`,
 
   `Begin the module creation process by specifying the module name, acting
   as the distinct title for the assessment. This field allows
