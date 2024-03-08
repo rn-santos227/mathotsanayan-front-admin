@@ -50,7 +50,7 @@ export default [
         page: "module-question-delete",
       },
       {
-        text: "Question Test",
+        text: "Question Testing",
         page: "module-question-test",
       },
       {

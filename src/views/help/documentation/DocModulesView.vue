@@ -192,11 +192,12 @@
       </p>
 
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_015.png')" />
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_014.png')" />
 
       <p class="ma-6">
         {{ docs[28] }}
       </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_014.png')" />
 
       <p class="ma-6">
         {{ docs[29] }}
