@@ -52,13 +52,13 @@ const docs: string[] = [
   present in their descriptions, offering a more refined and tailored
   approach to information retrieval.`,
 
-  `As administrators enter module details, the module step field stands out
-  as a unique and impactful element. This feature functions as a
-  stage-setting tool, determining the accessibility of the module for
-  students. If set to step 1, the module becomes immediately accessible to
-  students. However, by adjusting the module step to 2 or higher,
-  administrators can establish a sequential progression, allowing students
-  to access the module only when they reach the designated stage.`,
+  `Effortlessly launch the creation of new assessment modules within
+  MatHOTSanayan by accessing the "Create Module" section. This intuitive
+  interface facilitates a seamless experience, for administrators tasked
+  with crafting comprehensive assessments. Upon entering this section,
+  administrators encounter a user-friendly interface featuring fields such
+  as the module title, module stage, passing rate, subject, description,
+  objective, and instructions.`,
 
   `Utilizing the passing grade slider, administrators have the flexibility
   to set the passing grade for the exam on a scale ranging from 10% to
