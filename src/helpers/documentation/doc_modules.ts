@@ -8,17 +8,13 @@ const docs: string[] = [
   every aspect is meticulously covered, empowering administrators with the
   control they need.`,
 
-  `In addition to core module management functionalities, this
-  documentation sheds light on the seamless integration of question
-  management within the Modules Manager Page. This ensures a holistic
-  approach to assessment administration, allowing administrators to not
-  only structure modules but also add questions effortlessly. By providing
-  detailed insights into the process of question addition, MatHotSanayan
-  offers a comprehensive solution that enables administrators to tailor
-  assessments to their specific needs. This dual functionality,
-  encompassing both module and question management, establishes the
-  Modules Manager Page as a versatile and indispensable tool within the
-  MatHOTSanayanecosystem.`,
+  `Beyond module creation, the Modules Manager page presents a clear list
+  of all available modules, each distinctly identified by its title. This
+  layout enables administrators to quickly identify the module they wish
+  to access. Alongside each module title, administrators can find
+  pertinent information regarding the number of test items contained
+  within, providing valuable insight into the depth and breadth of each
+  module's content.`,
 
   `The Module Page Filter Search function in MatHOTSanayanintroduces a
   versatile and efficient way for administrators to pinpoint specific
