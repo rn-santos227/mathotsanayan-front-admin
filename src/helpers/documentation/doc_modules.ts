@@ -1,14 +1,12 @@
 const docs: string[] = [
-  `The Modules Manager Page in MatHOTSanayanacts as a central hub,
-  providing administrators with a robust set of tools to oversee and
-  manage assessment modules efficiently. This pivotal control center
-  streamlines essential tasks, offering a comprehensive suite of features
-  for creating, updating, activating, and deleting modules. Administrators
-  can effortlessly navigate through step-by-step procedures outlined in
-  this documentation, ensuring a user-friendly experience in handling the
-  intricacies of module management. From the inception of a new module to
-  its eventual deactivation or deletion, every aspect is covered,
-  empowering administrators with the control they need.`,
+  `The Modules Manager Page in MatHOTSanayan acts as a central hub,
+  providing administrators with a comprehensive set of tools to
+  efficiently oversee and manage assessment modules. This pivotal control
+  center streamlines essential tasks, offering a comprehensive suite of
+  features for creating, updating, activating, and deleting modules. From
+  the inception of a new module to its eventual deactivation or deletion,
+  every aspect is meticulously covered, empowering administrators with the
+  control they need.`,
 
   `In addition to core module management functionalities, this
   documentation sheds light on the seamless integration of question
