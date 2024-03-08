@@ -206,7 +206,7 @@
 
     <div v-if="focusPage === 'module-question-options'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Question Options
+        MatHOTSanayanAdmin Question Answers
       </span>
       <v-divider class="my-2" />
 
@@ -227,7 +227,7 @@
 
     <div v-if="focusPage === 'module-question-solutions'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Question Solutions
+        MatHOTSanayanAdmin Question Options
       </span>
       <v-divider class="my-2" />
 

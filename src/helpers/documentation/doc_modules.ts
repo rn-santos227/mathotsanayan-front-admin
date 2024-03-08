@@ -256,6 +256,30 @@ const docs: string[] = [
   seamlessly with educational objectives and enhance the overall learning
   experience for students.`,
 
+  `In MatHOTSanayan, administrators have extensive control over answers
+  through the "Answers Panel" on the Question Management Page. This panel
+  enables administrators to easily manage answer content by adding,
+  updating, and deleting answers associated with questions. Accessing the
+  "Answers Panel" provides a user-friendly interface for administrators to
+  add new answers using the "Create New Correct Answer" feature. They can
+  input answer content, add images, and designate correctness. This
+  ensures a varied set of choices for students.`,
+
+  `Administrators can use the "Update Answer" function to make real-time
+  adjustments to existing answers, such as modifying content, adding new
+  images, or adjusting correctness status. The "Delete Option" feature
+  simplifies the removal of outdated or irrelevant answers, maintaining
+  the coherence of available choices.`,
+
+  `Additionally, the "Answers Panel” allows for image management, enabling
+  administrators to upload, replace, or remove images associated with each
+  answer. This ensures visual content aligns with educational goals,
+  enhancing the assessment experience. By embracing an iterative approach,
+  administrators can continuously refine answers based on feedback,
+  assessment results, or educational changes. This ensures that answers
+  remain current, engaging, and aligned with learning objectives, making
+  the "Answers Panel” essential for delivering high-quality assessments.`,
+
   `Within MatHotSanayan, administrators wield powerful control over
   question options, facilitating seamless content management through the
   Admin Question Options section within the Question Management Page. This
