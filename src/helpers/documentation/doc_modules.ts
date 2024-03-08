@@ -109,31 +109,27 @@ const docs: string[] = [
   orchestrate the assessment environment with precision, enhancing overall
   control and efficiency in the administration of exams.`,
 
-  `The Question Management Page in MatHOTSanayanoffers administrators a
-  highly organized and transparent interface for overseeing and
-  customizing assessment content. This page provides a structured display
-  of questions associated with each module, allowing administrators to
-  effortlessly access a comprehensive list. This design promotes ease of
-  navigation and ensures a quick overview of the assessment content,
-  fostering transparency in question management. Through this feature,
-  administrators can stay well-informed about the composition of
-  assessments, facilitating efficient oversight and customization.`,
+  `Simplify the streamlining of your assessment system within MatHOTSanayan
+  by effortlessly eliminating redundant modules through a straightforward
+  deletion process. This userfriendly feature optimizes module management,
+  guaranteeing a hassle-free experience for administrators. To begin,
+  administrators can effortlessly select the module they wish to remove,
+  initiating the deletion process. Once the target module is chosen, a
+  confirmation prompt ensures deliberate actions, effectively reducing the
+  possibility of accidental deletions. With a simple click to confirm, the
+  selected module is effortlessly eliminated, facilitating a system
+  cleanup that caters to the evolving needs of the educational
+  institution.`,
 
-  `One key aspect of the Question Management Page is the detailed breakdown
-  of columns, each providing essential information about the questions.
-  The "Image" column allows administrators to incorporate visuals
-  associated with questions, adding a multimedia dimension to assessment
-  content. The "Question" column presents the textual content of each
-  question, ensuring clarity and precision in conveying assessment
-  prompts. The "Question Type" column categorizes questions based on their
-  format, aiding administrators in distinguishing between various question
-  types, such as word problems, multiple selection questions, or
-  single-correct answer questions. Additionally, the "Correct Answers and
-  Solutions" column provides critical information about the number of
-  correct answers and corresponding solutions, empowering administrators
-  to evaluate question complexity effectively. Finally, the "Number of
-  Available Options" column signifies the total count of answer choices,
-  contributing to a comprehensive understanding of question structure.`,
+  `It is important to note that the deletion function is designed with a
+  failsafe mechanism — a module can only be deleted if it contains no
+  questions. This built-in safeguard ensures the integrity of the
+  assessment data and prevents unintentional data loss. This intentional
+  design choice prioritizes data accuracy and helps administrators
+  maintain a well-organized and error-free assessment environment. By
+  incorporating this precaution, MatHOTSanayan ensures a secure and
+  controlled deletion process, reinforcing the commitment to precision and
+  reliability in module management.`,
 
   `In conclusion, the Question Management Page serves as a central hub for
   administrators, streamlining the process of managing and customizing
