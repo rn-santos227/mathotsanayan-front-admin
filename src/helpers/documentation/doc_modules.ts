@@ -206,30 +206,26 @@ const docs: string[] = [
   objectives, or update associated images for clarity, the "Update" option
   provides a straightforward avenue for these necessary modifications`,
 
-  `Efficiently managing assessment content, the "Delete" option within the
-  Question Management Page of MatHOTSanayanprovides administrators with a
-  powerful tool to eliminate outdated or irrelevant questions. This
-  streamlined functionality is designed to simplify the question
-  management process, allowing administrators to maintain a precise and
-  up-to-date question database. Confirming the deletion initiates a
-  controlled cleanup, ensuring that only pertinent questions remain in the
-  system.`,
+  `This refined set of update options simplifies the modification process
+  while highlighting MatHOTSanayan’s commitment to empowering
+  administrators with precise control over assessment content. By focusing
+  on essential elements, the platform ensures that modifications are made
+  with purpose and accuracy, contributing to the overall effectiveness of
+  assessments. The "Update" option stands as a targeted tool, allowing
+  administrators to uphold the integrity of assessments while adapting to
+  the evolving landscape of educational objectives.`,
 
-  `By utilizing the "Delete" option, administrators can confidently
-  declutter the assessment repository, eliminating questions that may no
-  longer align with the current curriculum or learning objectives. This
-  strategic removal of outdated questions contributes to the overall
-  relevance and effectiveness of assessments within the educational
-  institution.`,
+  `The "Delete" option within the Question Management Page of MatHOTSanayan
+  offers administrators a powerful tool for efficiently managing
+  assessment content. This feature is designed to streamline the process
+  of eliminating outdated or irrelevant questions, thereby maintaining a
+  precise and up-to-date question database.`,
 
-  `The confirmation step in the deletion process serves as a deliberate
-  safeguard, preventing accidental removals and ensuring that each
-  deletion is an intentional action. This intentional design choice
-  promotes a systematic and controlled cleanup, assuring administrators
-  that the question database remains relevant, streamlined, and aligned
-  with the educational goals of the institution. The "Delete" option,
-  therefore, stands as a key component in maintaining the integrity and
-  precision of the question management process within MatHotSanayan.`,
+  `Confirming deletions in MatHOTSanayan helps administrators control
+  cleanup, ensuring only relevant questions stay. This deliberate step
+  prevents accidental removals, promoting controlled management and
+  assuring administrators of intentional actions. This approach helps
+  maintain the integrity and precision of the question database.`,
 
   `To ensure the precision and efficacy of assessments within
   MatHotSanayan, administrators can take advantage of the dedicated
