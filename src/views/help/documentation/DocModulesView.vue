@@ -60,7 +60,7 @@
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_003.png')" />
 
       <p class="ma-6">
-        {{ docs[7] }}
+        {{ docs[9] }}
       </p>
 
       <p class="ma-6">

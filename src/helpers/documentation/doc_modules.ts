@@ -60,11 +60,11 @@ const docs: string[] = [
   as the module title, module stage, passing rate, subject, description,
   objective, and instructions.`,
 
-  `Utilizing the passing grade slider, administrators have the flexibility
-  to set the passing grade for the exam on a scale ranging from 10% to
-  100%. This dynamic feature tailors assessments to meet the precise
-  grading standards of the institution, offering adaptability in line with
-  educational goals.`,
+  `Begin the module creation process by specifying the module title,
+  servings as a distinct title for the assessment. This clear and
+  identifiable name enhances organization and clarity within the
+  MatHOTSanayan system, ensuring administrators can easily distinguish
+  between various modules.`,
 
   `Furthermore, administrators can furnish additional information about the
   module through the module description, module objective, and module
