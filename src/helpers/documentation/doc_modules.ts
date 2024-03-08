@@ -190,23 +190,21 @@ const docs: string[] = [
   diverse question types, exemplifies the platform's commitment to
   providing an adaptable environment for effective question management.`,
 
+  `The "Update" option within the Question Management Page of MatHOTSanayan
+  provides administrators with a powerful tool for refining existing
+  questions with precision and efficiency. This functionality is designed
+  to cater to the evolving educational objectives and institutional needs.
+  Administrators can seamlessly modify essential elements such as question
+  type, content, and image, ensuring that assessment content remains
+  relevant and effective.`,
+
   `Accessing the "Update" option presents administrators with an interface
   designed for efficiency. The flexibility to modify question types
   accommodates changes in assessment structures, adapting to the diverse
   nature of educational content. Whether administrators need to refine the
   wording of a question, adjust the type to better suit the learning
   objectives, or update associated images for clarity, the "Update" option
-  provides a straightforward avenue for these necessary modifications.`,
-
-  `This refined set of update options not only simplifies the modification
-  process but also underscores the commitment of MatHOTSanayanto
-  empowering administrators with precise control over assessment content.
-  By focusing on essential elements, the platform ensures that
-  modifications are made with purpose and accuracy, contributing to the
-  overall effectiveness of assessments within the educational ecosystem.
-  The "Update" option stands as a targeted tool, allowing administrators
-  to uphold the integrity of assessments while adapting to the evolving
-  landscape of educational objectives.`,
+  provides a straightforward avenue for these necessary modifications`,
 
   `Efficiently managing assessment content, the "Delete" option within the
   Question Management Page of MatHOTSanayanprovides administrators with a
