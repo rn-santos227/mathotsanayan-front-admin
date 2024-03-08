@@ -130,13 +130,13 @@
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
-        {{ docs[18] }}
+        {{ docs[19] }}
       </p>
 
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_008.png')" />
 
       <p class="ma-6">
-        {{ docs[19] }}
+        {{ docs[20] }}
       </p>
 
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_009.png')" />

@@ -158,28 +158,30 @@ const docs: string[] = [
   available, particularly useful for multiple-choice questions, enabling
   administrators to grasp the structure of questions at a glance.`,
 
+  `Accessing the "Create Questions" section within the Question Management
+  Page in MatHOTSanayan marks the beginning of a streamlined process for
+  incorporating new questions into assessments. This section offers
+  administrators an intuitive and user-friendly interface designed to
+  simplify the customization of assessment content. Within this
+  environment, administrators can seamlessly input the question text,
+  provide predetermined correct answers, and designate the correct
+  solution, fostering a dynamic approach to question creation.`,
+
   `Furthermore, the "Create Questions" section supports the efficient
-  addition of multiple questions, each with distinct complexities.
+  addition of multiple questions, each varying in complexity.
   Administrators have the flexibility to create questions with multiple
   correct answers and multiple options, catering to the diverse nature of
-  assessments. The "Word Questions" type permits the creation of questions
-  where administrators can specify multiple correct answers, yet no
-  solution is provided, allowing students to input their responses. The
-  "Multiple Selection" type empowers administrators to add questions with
-  multiple correct answers and multiple options, offering a comprehensive
-  approach to capturing nuanced understanding. Meanwhile, the "Single
-  Correct" type enables administrators to craft questions with multiple
-  options but only one correct answer, streamlining the process of
-  generating various question formats to suit the educational
-  institution's assessment goals.`,
-
-  `This multifaceted functionality not only enhances the efficiency of the
-  question creation process but also ensures that administrators have the
-  tools needed to tailor assessments according to their specific
-  requirements within the MatHOTSanayanecosystem. The user-friendly
-  interface, coupled with the diverse question types, exemplifies the
-  platform's commitment to providing a robust and adaptable environment
-  for effective question management.`,
+  assessments. The "word problem" type permits the creation of questions
+  where administrators can specify multiple correct answers with their
+  corresponding solution, enabling students to input responses without
+  requiring a solution. The "Multiple Selection" type empowers
+  administrators to add questions with multiple correct answers and
+  multiple options, offering a comprehensive approach to capturing nuanced
+  understanding. Meanwhile, the "Single Correct" type enables
+  administrators to craft questions with multiple options but only one
+  correct answer, simplifying the process of generating various question
+  formats to align with the educational institution's assessment
+  objectives.`,
 
   `Administrators wield the power to seamlessly refine existing questions
   through the "Update" option within the Question Management Page of
