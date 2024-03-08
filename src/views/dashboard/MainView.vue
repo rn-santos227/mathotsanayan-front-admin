@@ -76,7 +76,7 @@ const moduleCard = ref<DashboardCard>({
 
 const subjectCard = ref<DashboardCard>({
   count: useDashboardModule().getDashboard.subjects,
-  title: "Available Subjects",
+  title: "Total Subjects",
   link: "/subjects",
   color: "green",
   icon: "mdi-book",
