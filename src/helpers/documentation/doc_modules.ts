@@ -89,16 +89,14 @@ const docs: string[] = [
   purpose and expectations of the module, facilitating seamless engagement
   and understanding for all stakeholders involved.`,
 
-  `Efficiently declutter your assessment system by removing redundant
-  modules with a straightforward deletion process within MatHotSanayan.
-  This user-friendly functionality streamlines the task of module
-  management, ensuring a seamless experience for administrators. To
-  initiate the deletion process, administrators can simply select the
-  module they wish to remove. Once the target module is chosen, a
-  confirmation prompt ensures intentional actions, minimizing the risk of
-  accidental deletions. Confirm the action, and with a click, effortlessly
-  eliminate the selected module, promoting a system cleanup that aligns
-  with the evolving needs of your educational institution.`,
+  `Refine and update existing assessment modules within MatHOTSanayan
+  through the "Update" option. This streamlined process provides
+  administrators with a user-friendly interface to make necessary
+  adjustments to module details. By accessing this option, administrators
+  can easily modify parameters such as the module title, subject, passing
+  rate, and other essential details. Once the modifications are made,
+  simply save the changes by clicking submit, ensuring that the module
+  information remains up-to-date and accurate.`,
 
   `It's important to note that the deletion function is designed with a
   failsafe mechanism — a module can only be deleted if it has no questions
