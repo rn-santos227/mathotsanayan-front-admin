@@ -30,10 +30,12 @@ const docs: string[] = [
   they enable administrators to promptly update modules by activating or
   deactivating them as necessary.`,
 
-  `Similarly, the search by subject name allows for the effortless
-  categorization of modules. Administrators can filter modules based on
-  their designated subject, facilitating a systematic organization that
-  aligns with the educational institution's curriculum structure.`,
+  `The Module Filter Search feature in MatHOTSanayan introduces a versatile
+  and efficient solution for administrators to precisely locate modules
+  based on various criteria. This feature enables administrators to
+  optimize their workflow by searching for modules according to three
+  primary parameters: module title, subject, or keywords within the
+  module's description.`,
 
   `Moreover, the search by words within the module's description adds a
   layer of granularity to the search process. This functionality allows

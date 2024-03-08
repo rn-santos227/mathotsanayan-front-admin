@@ -30,7 +30,7 @@
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
-        {{ docs[2] }}
+        {{ docs[4] }}
       </p>
 
       <v-img class="ma-6" cover :src="require('@/assets/help/doc_004.png')" />
