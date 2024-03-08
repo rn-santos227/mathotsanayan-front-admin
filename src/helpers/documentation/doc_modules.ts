@@ -66,35 +66,28 @@ const docs: string[] = [
   MatHOTSanayan system, ensuring administrators can easily distinguish
   between various modules.`,
 
-  `Furthermore, administrators can furnish additional information about the
-  module through the module description, module objective, and module
-  instruction fields. These details provide a comprehensive overview of
-  the module's purpose, objectives, and specific instructions for both
-  administrators and exam-takers.`,
+  `As administrators enter module details, the module stage field plays a
+  pivotal role. This feature functions as a stage-setting tool, it
+  dictates the accessibility of the module for students. By setting it to
+  stage 1, the module becomes instantly accessible to students.
+  Alternatively, by adjusting the module stage to 2 or higher establishes
+  a sequential progression, ensuring students can only access the module
+  upon reaching the designated stage.`,
 
-  `Effortlessly refine and update existing assessment modules within
-  MatHOTSanayanthrough the intuitive "Update" option. This streamlined
-  process provides administrators with a user-friendly interface to make
-  necessary adjustments to module details. By accessing this option,
-  administrators can easily modify parameters such as the module name,
-  subject, passing grade, and other essential details. Once the
-  modifications are made, simply save the changes, ensuring that the
-  module information remains up-to-date, accurate, and reflective of the
-  institution's evolving requirements. This seamless updating process
-  enhances the adaptability of assessment modules, allowing educational
-  institutions to maintain relevance and precision in their evaluation
-  strategies.`,
+  `Utilizing the passing rate slider, administrators have the flexibility
+  to set the passing rate for the exam on a scale ranging from 0% to 100%.
+  This dynamic feature customizes assessments to meet the precise grading
+  standards of the institution, offering adaptability in line with
+  educational goals.`,
 
-  `Furthermore, the Modules Manager Page in MatHOTSanayanintroduces a
-  dynamic activation feature that empowers administrators to enable or
-  disable modules based on specific scheduling needs. This functionality
-  offers strategic control over the availability of assessments within the
-  system. By toggling the activation status of modules, administrators can
-  precisely manage the timing of assessments, ensuring that they align
-  with the academic calendar and institutional requirements. This flexible
-  approach enables administrators to orchestrate the assessment
-  environment with precision, enhancing overall control and efficiency in
-  the administration of exams.`,
+  `Furthermore, administrators can f enrich the module by furnishing
+  additional information through the module description, objective, and
+  instructions fields. These components offer a comprehensive overview of
+  the module's content, objective, and precise instructions tailored for
+  administrators, teachers, and students alike. By leveraging these
+  fields, administrators can ensure clarity and coherence in conveying the
+  purpose and expectations of the module, facilitating seamless engagement
+  and understanding for all stakeholders involved.`,
 
   `Efficiently declutter your assessment system by removing redundant
   modules with a straightforward deletion process within MatHotSanayan.

@@ -64,15 +64,15 @@
       </p>
 
       <p class="ma-6">
-        {{ docs[8] }}
-      </p>
-
-      <p class="ma-6">
-        {{ docs[9] }}
-      </p>
-
-      <p class="ma-6">
         {{ docs[10] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[11] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[12] }}
       </p>
     </div>
 
