@@ -55,11 +55,11 @@ export default [
       },
       {
         text: "Answers Panel",
-        page: "module-question-options",
+        page: "module-question-answers",
       },
       {
-        text: "Solutions Panel",
-        page: "module-question-solutions",
+        text: "Options Panel",
+        page: "module-question-options",
       },
     ],
   },

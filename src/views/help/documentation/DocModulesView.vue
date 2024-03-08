@@ -204,7 +204,7 @@
       </p>
     </div>
 
-    <div v-if="focusPage === 'module-question-options'">
+    <div v-if="focusPage === 'module-question-answers'">
       <span class="text-h5 font-weight-bold">
         MatHOTSanayanAdmin Question Answers
       </span>
@@ -225,7 +225,7 @@
       </p>
     </div>
 
-    <div v-if="focusPage === 'module-question-solutions'">
+    <div v-if="focusPage === 'module-question-options'">
       <span class="text-h5 font-weight-bold">
         MatHOTSanayanAdmin Question Options
       </span>
