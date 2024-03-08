@@ -46,10 +46,11 @@ const docs: string[] = [
   categorization of modules. Administrators can filter modules based on
   their designated subject.`,
 
-  `Begin the module creation process by specifying the module name, acting
-  as the distinct title for the assessment. This field allows
-  administrators to provide a clear and identifiable name, enhancing
-  organization and clarity within the MatHOTSanayansystem.`,
+  `Moreover, the search by keywords within the module's description
+  enhances the search process with increased precision. This functionality
+  allows administrators to locate modules based on specific keywords
+  present in their descriptions, offering a more refined and tailored
+  approach to information retrieval.`,
 
   `As administrators enter module details, the module step field stands out
   as a unique and impactful element. This feature functions as a
