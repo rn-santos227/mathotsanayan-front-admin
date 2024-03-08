@@ -22,10 +22,13 @@ const docs: string[] = [
   disciplines. This categorization ensures seamless access to the
   appropriate materials.`,
 
-  `With the search by module name option, administrators can quickly locate
-  a particular module by typing its name directly into the search bar.
-  This targeted approach ensures swift access to specific assessments,
-  saving valuable time and enhancing overall navigation.`,
+  `Additionally, intuitive action buttons are provided for each listed
+  module, enabling administrators to effortlessly access the test
+  questions within and update the module as needed. These action buttons
+  provide direct access to the test questions, simplifying the process of
+  reviewing and exploring the content of each module in detail. Moreover,
+  they enable administrators to promptly update modules by activating or
+  deactivating them as necessary.`,
 
   `Similarly, the search by subject name allows for the effortless
   categorization of modules. Administrators can filter modules based on
