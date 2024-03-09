@@ -76,17 +76,25 @@
       <v-divider class="my-2" />
 
       <p class="ma-6">
-        {{ docs[10] }}
-      </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_019.png')" />
-
-      <p class="ma-6">
         {{ docs[11] }}
       </p>
 
       <p class="ma-6">
         {{ docs[12] }}
+      </p>
+
+      <v-img class="ma-6" cover :src="require('@/assets/help/doc_019.png')" />
+
+      <p class="ma-6">
+        {{ docs[12] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[13] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[14] }}
       </p>
     </div>
 
