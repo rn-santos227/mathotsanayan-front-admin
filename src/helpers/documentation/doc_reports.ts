@@ -12,23 +12,20 @@ const docs: string[] = [
   questions were skipped. On the other hand, the "Invalidate" button lets
   administrators invalidate exam results if there is a reason to do so.`,
 
-  `As part of its comprehensive functionality, the Module/Exam Result
-  Manager empowers administrators to invalidate exam results if necessary.
-  This feature provides administrators with the flexibility to address any
-  anomalies or discrepancies in student performance, ensuring the
-  integrity and accuracy of exam data. By offering a range of tools for
-  result analysis and management, MatHotSanayan's Module/Exam Result
-  Manager enhances administrators' ability to support student learning and
-  drive academic success effectively.`,
+  `        The Examination Results Page's search functionality helps administrators
+  quickly find results using different criteria, making it easy to get the
+  information they need. They can search by module title, student name,
+  course, school, section, or subject. Just by typing in keywords or
+  details, administrators can find exactly what they are looking for,
+  saving time and making their work more efficient.`,
 
-  `The Module/Exam Result Manager's search functionality in MatHotSanayan
-  enables administrators to find results efficiently by various criteria,
-  ensuring a streamlined process for result retrieval. Administrators can
-  utilize this feature to search for results based on module name, student
-  name, student school, student section, and subject name. By entering
-  specific keywords or parameters into the search bar, administrators can
-  quickly pinpoint the desired results, saving time and enhancing
-  productivity.`,
+  `        This flexible feature lets administrators customize their searches to
+  fit their needs, making it easier to find and organize information in
+  the Examination Results Page. Whether they are looking for results for a
+  specific module, student, course, school, section, or subject,
+  administrators can easily filter and find what they need. MatHOTSanayan
+  gives them many options to search, so they can manage exam results
+  effectively and keep track of student progress.`,
 
   `This adaptable approach allows administrators to tailor their search
   criteria according to their specific needs, facilitating efficient

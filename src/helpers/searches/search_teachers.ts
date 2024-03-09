@@ -2,7 +2,7 @@ import Category from "@/interfaces/Category";
 
 const search_list: Array<Category> = [
   {
-    text: "Teacher Name",
+    text: "Teacher's Name",
     value: "full_name",
   },
   {
