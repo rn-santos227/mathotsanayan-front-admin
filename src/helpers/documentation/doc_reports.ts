@@ -27,34 +27,26 @@ const docs: string[] = [
   gives them many options to search, so they can manage exam results
   effectively and keep track of student progress.`,
 
-  `This adaptable approach allows administrators to tailor their search
-  criteria according to their specific needs, facilitating efficient
-  navigation and information retrieval within the Module/Exam Result
-  Manager. Whether seeking results for a particular module, specific
-  student, or designated school or section, administrators can easily
-  filter and locate the relevant information. By providing multiple search
-  options, MatHOTSanayanempowers administrators to efficiently manage
-  exam results, ensuring they have the necessary tools to track student
-  progress and analyze performance effectively.`,
+  `        In MatHOTSanayan, administrators can effortlessly create detailed Excel
+  reports using the Advanced Filter feature. This feature helps them
+  extract precise data based on their search criteria, ensuring that the
+  Excel file contains exactly the information they need. This reports
+  includes essential details such as student name, section, module title,
+  module stage, score, remarks, and total time taken by students to finish
+  a module.`,
 
-  `Moreover, the search functionality enhances the precision of information
-  retrieval, enabling administrators to extract valuable insights from the
-  exam data. By being able to pinpoint results based on specific criteria
-  such as student name or subject name, administrators can conduct
-  targeted analyses and identify trends or patterns in student
-  performance. This enables informed decision-making and supports
-  data-driven interventions to enhance student learning outcomes. Overall,
-  the Module/Exam Result Manager's search feature offers administrators a
-  powerful tool for managing and analyzing exam results with ease and
-  precision.`,
+  `        To start generating a report, administrators first refine their dataset
+  by conducting a search using the Advanced Filter feature. They can
+  filter results by student names, sections, module titles, or any other
+  relevant criteria. Once satisfied with the filtered dataset, they can
+  export the data into an Excel file by clicking the “Download Excel”
+  button.`,
 
-  `Generate detailed Excel reports seamlessly within MatHOTSanayanby
-  leveraging the Advanced Filter feature to extract specific data based on
-  your search criteria. This functionality allows administrators to tailor
-  reports according to their precise needs, ensuring that the generated
-  Excel file contains relevant information. The report includes essential
-  details such as student name, section, module name, module stage, score
-  result, grade, and total time taken by the student.`,
+  `        The generated Excel report provides a comprehensive overview of student
+  performance, allowing administrators to analyze key metrics such as
+  scores and completion times. This valuable information can be utilized
+  for various purposes, including academic assessments, performance
+  evaluations, and progress tracking.`,
 
   `To begin generating a report, first, conduct a search using the Advanced
   Filter feature to refine the dataset based on your desired parameters.

@@ -23,8 +23,8 @@ const exportToExcel = async () => {
       "Section",
       "Module Title",
       "Stage",
-      "Score Result",
-      "Grade",
+      "Score",
+      "Remarks",
       "Total Time",
     ],
   ];
