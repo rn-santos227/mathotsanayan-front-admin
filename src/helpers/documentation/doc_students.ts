@@ -45,44 +45,33 @@ const docs: string[] = [
   find information quickly and efficiently, making student management more
   effective.`,
 
-  `Effortlessly initiate the creation of new student profiles within 
-  MatHOTSanayanby navigating to the dedicated "Create Student" section. 
-  This intuitive process facilitates a seamless experience for administrators
-  tasked with adding new students to the system. Upon entering this
-  section, administrators encounter a user-friendly interface featuring
-  fields such as first name, last name, middle name, suffix (optional),
-  course, school, section, email address, contact number (optional),
-  student number, and temporary password.`,
+  `        Effortlessly initiate the creation of new student profiles within
+  MatHOTSanayan by going to the "Create Student" section. This intuitive
+  process facilitates a seamless experience for administrators tasked with
+  adding new students to the system.`,
 
-  `To begin the student creation process, administrators input essential
+  `        Upon entering this section, administrators encounter a user-friendly
+  interface featuring fields such as first name, middle name (optional),
+  last name, suffix (optional), course, school, section, email address,
+  contact number (optional), student number, and temporary password.`,
+
+  `        To begin the student creation process, administrators input essential
   details such as the student's first and last name, with the middle name
   and suffix being optional. This information ensures accurate
-  identification and organization within the MatHOTSanayansystem.
+  identification and organization within the MatHOTSanayan system.
   Administrators then specify the student's course, school, and section,
-  providing key categorization details. The student email address, serving
-  as the login username, is a crucial element, and administrators can also
-  optionally include the student's contact number. The student number,
-  provided by the school, further contributes to the unique identification
-  of each student within the system. Lastly, administrators set a
-  temporary password for the student, which is required for initial login.`,
+  which helps categorize them properly. The student's email serves as
+  their username for logging in. Administrators can also add a contact
+  number if they want. The student number, provided by the school, further
+  contributes to the unique identification of each student within the
+  system. Finally, administrators set a temporary password for the
+  student's initial login.`,
 
-  `Upon the successful creation of a new student, an automated email is
-  promptly sent to the provided student email address. This email contains
-  the student's username (email) and temporary password, essential for the
-  student's first login to the MatHOTSanayanapplication. This streamlined
-  process ensures that students receive the necessary credentials without
-  delay, facilitating a smooth onboarding experience. Administrators can
-  confidently leverage this feature to efficiently manage and integrate
-  new students into the MatHOTSanayanecosystem.`,
-
-  `Update student information within MatHOTSanayanby utilizing the
-  dedicated "Update Student" functionality in the Students Management
-  Page. This streamlined process provides administrators with a
-  user-friendly interface to modify student details, ensuring accuracy and
-  currency of information within the system. Upon entering this section,
-  administrators are presented with fields such as first name, last name,
-  middle name, suffix (optional), course, school, section, email address,
-  and contact number (optional).`,
+  `        Upon the successful creation of a new student, an automated email is
+  promptly sent to the student's provided email address. This email
+  contains the student's username (email) and temporary password needed
+  for initial logging into MatHOTSanayan. This process ensures students
+  get their login details quickly, making it easy for them to get started.`,
 
   `To initiate the update process, administrators navigate through the
   relevant fields, making adjustments as needed. Whether modifying the
