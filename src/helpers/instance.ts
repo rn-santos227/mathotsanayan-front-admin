@@ -10,7 +10,7 @@ import Grade from "@/types/Grade";
 
 export function getCourseName(course: number | string | Course) {
   if (typeof course === "object" && course !== null && "name" in course) {
-    return (course as Course).name;
+    return (course as Course).abbreviation;
   }
   return "DefaultName";
 }

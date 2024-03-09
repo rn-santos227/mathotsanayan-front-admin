@@ -48,7 +48,7 @@
             {{ getSectionName(item.section) }}
           </td>
           <td class="text-left">
-            {{ item.email }}
+            {{ getCourseName(item.course) }}
           </td>
           <td class="text-left">
             {{ getSchoolName(item?.school) }}
@@ -96,7 +96,11 @@ import {
   useSchoolsModule,
   useSectionsModule,
 } from "@/store";
-import { getSchoolName, getSectionName } from "@/helpers/instance";
+import {
+  getCourseName,
+  getSchoolName,
+  getSectionName,
+} from "@/helpers/instance";
 
 import FilterView from "./FilterView.vue";
 import UpdateView from "./UpdateView.vue";
