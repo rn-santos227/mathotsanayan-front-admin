@@ -1,5 +1,5 @@
 const docs: string[] = [
-  `        The Students Manager Page within MatHOTSanayan serves as a centralized
+  `The Students Manager Page within MatHOTSanayan serves as a centralized
   hub for efficiently managing student records. Acting as a control
   center, it offers administrators a seamless platform to oversee
   important details such as student names, sections, courses, and schools
@@ -8,43 +8,42 @@ const docs: string[] = [
   administrators to both add new students and update existing records
   effortlessly.`,
 
-  `        One of the key functionalities of this page is its ease of use. Whether
+  `One of the key functionalities of this page is its ease of use. Whether
   administrators are tasked with adding new students or updating existing
   information, the interface is designed to simplify these processes,
   reducing the time and effort required for such tasks. This simplicity
   ensures that administrators can navigate the system with ease,
   regardless of their level of technical expertise.`,
 
-  `        Moreover, the page incorporates a powerful search functionality,
+  `Moreover, the page incorporates a powerful search functionality,
   allowing administrators to swiftly locate specific students. Whether
   searching by name, section, course, or school, the filter tool provides
   quick and precise results, saving valuable time and effort.`,
 
-  `      Furthermore, the page offers a seamless process for deleting student
+  `Furthermore, the page offers a seamless process for deleting student
   records when necessary. Administrators can trust that this action is
   performed accurately, maintaining the integrity and reliability of the
   student database.`,
 
-  `With the search by student name option, administrators can swiftly
-  pinpoint a particular student by entering their name directly into the
-  search bar. This focused approach ensures quick access to specific
-  student records, saving time and facilitating a more streamlined
-  navigation process.`,
+  `        The Students Management Page Filter Search feature within MatHOTSanayan
+  introduces a highly adaptable and efficient approach for administrators
+  to precisely locate student records based on multiple criteria. This
+  feature equips administrators with the ability to streamline their
+  workflow by searching for students according to four key parameters:
+  student name, course, section, and school.`,
 
-  `Similarly, the search by student email option allows for the effortless
-  identification of students based on their email addresses. This
-  functionality supports administrators in quickly locating specific
-  students associated with their unique email identifiers, enhancing the
-  precision of information retrieval.`,
+  `        With the search by student name option, admins can quickly find a
+  student by typing their name into the search bar. This saves time and
+  makes navigating through records easier.`,
 
-  `Moreover, the search by student school and student section adds an
-  additional layer of granularity to the search process. Administrators
-  can filter student records based on their designated school or section,
-  facilitating a systematic organization that aligns seamlessly with the
-  educational institution's structure. This tailored approach ensures that
-  administrators can efficiently retrieve information based on specific
-  criteria, contributing to a more effective student information
-  management process.`,
+  `        Furthermore, the ability to search by a student's course, section, and
+  school adds even more detail to the search process. Administrators can
+  filter student records based on the course they are enrolled in, the
+  school they belong to, or the section they are part of. This makes it
+  easier to organize information in line with how the educational
+  institution is set up. This personalized approach helps administrators
+  find information quickly and efficiently, making student management more
+  effective.`,
 
   `Effortlessly initiate the creation of new student profiles within 
   MatHOTSanayanby navigating to the dedicated "Create Student" section. 
