@@ -1,47 +1,29 @@
 const docs: string[] = [
-  `The Students Management Page in MatHOTSanayanserves as a central
-  repository for efficient student record administration, providing
-  administrators with powerful tools to manage student information
-  seamlessly. This integral hub allows administrators to gain quick
-  insights into the student population, displaying essential details such
-  as names, schools, and sections in a comprehensive list. Whether adding
-  new students or updating existing information, the page ensures a
-  user-friendly experience by providing a straightforward interface for
-  these essential tasks. The search functionality further enhances
-  administrators' ability to locate specific students based on their name,
-  school, or section, streamlining the management of individual student
-  records. With careful attention to detail, administrators can also
-  remove student records when necessary, ensuring the integrity of the
-  student database within the educational institution.`,
+  `        The Students Manager Page within MatHOTSanayan serves as a centralized
+  hub for efficiently managing student records. Acting as a control
+  center, it offers administrators a seamless platform to oversee
+  important details such as student names, sections, courses, and schools
+  all within a single interface. Its primary purpose is to streamline the
+  process of handling student information, making it convenient for
+  administrators to both add new students and update existing records
+  effortlessly.`,
 
-  `In addition to its core functionalities, the Students Management Page
-  offers administrators a holistic approach to student information
-  handling. This documentation guides administrators through the various
-  features, enabling them to seamlessly navigate the process of adding new
-  students, updating information, and removing records. The iterative and
-  adaptable nature of the system allows administrators to continually
-  refine student information based on feedback, assessment results, or
-  changes in educational requirements. With the Students Management Page
-  as a central hub, MatHOTSanayanensures a streamlined administrative
-  process, contributing to the overall efficiency of the educational
-  institution.`,
+  `        One of the key functionalities of this page is its ease of use. Whether
+  administrators are tasked with adding new students or updating existing
+  information, the interface is designed to simplify these processes,
+  reducing the time and effort required for such tasks. This simplicity
+  ensures that administrators can navigate the system with ease,
+  regardless of their level of technical expertise.`,
 
-  `The Students Management Page in MatHOTSanayanstands as an indispensable
-  tool for administrators, providing a centralized platform for efficient
-  student record management. From adding new students to refining existing
-  information and removing records when necessary, the page streamlines
-  these essential tasks, ensuring a user-friendly and comprehensive
-  approach to student information administration. This dedicated platform
-  empowers administrators to maintain accurate and up-to-date student
-  records, contributing to the overall efficiency and organization within
-  the educational institution.`,
+  `        Moreover, the page incorporates a powerful search functionality,
+  allowing administrators to swiftly locate specific students. Whether
+  searching by name, section, course, or school, the filter tool provides
+  quick and precise results, saving valuable time and effort.`,
 
-  `The Students Management Page Filter Search feature within MatHOTSanayan
-  introduces a highly adaptable and efficient approach for
-  administrators to precisely locate student records based on multiple
-  criteria. This feature equips users with the ability to streamline their
-  workflow by searching for students according to four key parameters:
-  student name, student email, student school, and student section.`,
+  `      Furthermore, the page offers a seamless process for deleting student
+  records when necessary. Administrators can trust that this action is
+  performed accurately, maintaining the integrity and reliability of the
+  student database.`,
 
   `With the search by student name option, administrators can swiftly
   pinpoint a particular student by entering their name directly into the
