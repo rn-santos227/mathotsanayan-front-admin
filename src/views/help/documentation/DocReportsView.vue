@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'reports-main'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Report Page
+        MatHOTSanayanAdmin Examination Report Page
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -13,10 +13,6 @@
 
       <p class="ma-6">
         {{ docs[1] }}
-      </p>
-
-      <p class="ma-6">
-        {{ docs[2] }}
       </p>
     </div>
 

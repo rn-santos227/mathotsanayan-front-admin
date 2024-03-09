@@ -94,7 +94,7 @@ export default [
     page: "reports",
     subpages: [
       {
-        text: "Reports Page",
+        text: "Examination Report Page",
         page: "reports-main",
       },
       {
