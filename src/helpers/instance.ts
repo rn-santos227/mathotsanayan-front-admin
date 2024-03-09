@@ -1,4 +1,5 @@
 import Admin from "@/types/Admin";
+import Course from "@/types/Course";
 import Student from "@/types/Student";
 import School from "@/types/School";
 import Section from "@/types/Section";
@@ -6,6 +7,13 @@ import Subject from "@/types/Subject";
 import Teacher from "@/types/Teacher";
 import Question from "@/types/Question";
 import Grade from "@/types/Grade";
+
+export function getCourseName(course: number | string | Course) {
+  if (typeof course === "object" && course !== null && "name" in course) {
+    return (course as Course).name;
+  }
+  return "DefaultName";
+}
 
 export function getSchoolName(school: number | string | School) {
   if (typeof school === "object" && school !== null && "name" in school) {
