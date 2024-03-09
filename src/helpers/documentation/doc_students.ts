@@ -103,6 +103,28 @@ const docs: string[] = [
   update process, MatHotSanayan offers a more cohesive and organized
   approach to student information management, further enhancing the
   administrative experience.`,
+
+  `To make managing student records easier in MatHOTSanayan, administrators
+  can use the “Students Deletion” feature. This user-friendly feature
+  offers administrators a straightforward approach to decluttering the
+  system by removing unnecessary student records.`,
+
+  `To initiate the deletion process, administrators can select the student
+  record they wish to remove. Once the target student is chosen, a
+  confirmation prompt ensures intentional actions, minimizing the risk of
+  accidental deletions. Confirm the action, and with a click, effortlessly
+  eliminate the selected student record, promoting a system cleanup.`,
+
+  `Upon deletion of a student record, administrators can rest assured that
+  associated accounts and module results will also be promptly removed
+  from the system. This ensures a comprehensive cleanup process,
+  maintaining the integrity and accuracy of student-related data within
+  MatHOTSanayan. By automating the removal of associated accounts and
+  module results, administrators save time and resources, as they do not
+  have to manually remove related data. This integrated approach to
+  student deletion reinforces the platform's commitment to data accuracy
+  and security, providing administrators with peace of mind as they keep
+  the system organized.`,
 ];
 
 export default docs;
