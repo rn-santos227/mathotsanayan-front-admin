@@ -48,12 +48,14 @@ const docs: string[] = [
   for various purposes, including academic assessments, performance
   evaluations, and progress tracking.`,
 
-  `To begin generating a report, first, conduct a search using the Advanced
-  Filter feature to refine the dataset based on your desired parameters.
-  This could include filtering results by student name, section, module
-  name, or any other relevant criteria. Once you have narrowed down the
-  dataset to your satisfaction, proceed to export the filtered data into
-  an Excel file by selecting the appropriate option within the interface. The `,
+  `        The Results Details section gives administrators a thorough look at
+  students' exam performance, helping them understand what students are
+  good at and where they need to improve. It starts by showing important
+  information like the student's name, section, the module title
+  corresponding to the examination taken, as well as whether they passed
+  or failed. Administrators can also see how long it took students to
+  finish the exam and get an idea of how much time they spent on each
+  question.`,
 
   `The generated Excel report provides a comprehensive overview of student
   performance, allowing administrators to analyze key metrics such as
