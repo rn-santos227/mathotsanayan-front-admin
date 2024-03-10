@@ -17,7 +17,12 @@ const docs: string[] = [
   `Moreover, the page incorporates a powerful search functionality,
   allowing administrators to quickly find specific teachers by searching
   their names or schools. This saves a lot of time and effort, making it
-  easier to stay organized.`.
+  easier to stay organized.`,
+
+  `Furthermore, the page offers a seamless process for deleting teacher’s
+  records when necessary. Administrators can trust that this action is
+  performed accurately, maintaining the integrity and reliability of the
+  teacher database.`,
 ];
 
 export default docs;
