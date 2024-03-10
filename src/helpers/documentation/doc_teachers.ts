@@ -63,6 +63,35 @@ const docs: string[] = [
   needed for initial logging into MatHOTSanayan. This process ensures
   teachers get their login details quickly, making it easy for them to get
   started.`,
+
+  `In MatHOTSanayan, administrators can easily update teacher's information
+  using the "Update Teacher" feature found in the Teachers Manager Page.
+  This feature provides administrators with a user-friendly interface to
+  modify teacher's details, ensuring everything stays accurate and
+  up-to-date.`,
+
+  `When administrators enter this section, they will see a user-friendly
+  interface with fields like first name, middle name (optional), last
+  name, suffix (optional), school, email address, and contact number
+  (optional).`,
+
+  `To start updating, administrators just need to navigate through the
+  fields and make changes as needed. Whether it is changing a teacher's
+  name, school, or contact info, this feature covers a lot of updates to
+  keep everything right. Additionally, there is a reset button in case
+  administrators need to undo any changes and go back to how things were
+  before.`,
+
+  `Notably, the password field has been intentionally removed from the
+  update process, as the functionality to change passwords is seamlessly
+  integrated into the Accounts Library Page, which keeps everything
+  related to accounts in one place.`,
+
+  `After making all the updates, administrators can save the changes. This
+  makes sure the teacher's info is promptly updated in the MatHOTSanayan
+  system. By keeping the password update separate, MatHOTSanayan makes
+  managing teacher information even smoother and more organized for
+  administrators.`,
 ];
 
 export default docs;
