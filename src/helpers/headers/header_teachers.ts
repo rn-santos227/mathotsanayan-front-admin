@@ -8,13 +8,7 @@ const headers: ReadonlyHeaders = [
     key: "fullname",
   },
   {
-    title: "Teacher's Email",
-    align: "start",
-    sortable: true,
-    key: "email",
-  },
-  {
-    title: "Teacher's School",
+    title: "School",
     align: "start",
     sortable: true,
     key: "school.name",

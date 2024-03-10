@@ -45,9 +45,6 @@
             {{ item.full_name }}
           </td>
           <td class="text-left">
-            {{ item.email }}
-          </td>
-          <td class="text-left">
             {{ getSchoolName(item?.school) }}
           </td>
           <td>
