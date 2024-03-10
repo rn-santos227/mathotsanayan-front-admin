@@ -38,6 +38,31 @@ const docs: string[] = [
   `Furthermore, the ability to search by the teacher's school, adding even
   more detail to the search. This helps administrators find the right
   information fast, making managing teachers easier and more effective.`,
+
+  `Initiating the creation of new teacher profiles in MatHOTSanayan is a
+  breeze with the "Create Teacher" section. This straightforward process
+  makes it simple for administrators to add new teachers to the system.`,
+
+  `Upon entering this section, administrators find a user-friendly
+  interface featuring fields such as first name, middle name (optional),
+  last name, suffix (optional), school, email address, contact number
+  (optional), and temporary password.`,
+
+  `To begin the teacher creation process, administrators input essential
+  details such as the teacher's first and last name, with the middle name
+  and suffix being optional. This information ensures accurate
+  identification and organization within the MatHOTSanayan system.
+  Administrators then specify the teacher's school, which helps categorize
+  them properly. The teacher's email serves as their username for logging
+  in. Administrators can also add a contact number if they want. Finally,
+  administrators set a temporary password for the teacher's initial login.`,
+
+  `After successfully creating a new teacher profile, an automated email is
+  promptly sent to the teacher's provided email address. This email
+  contains the teacher's username (their email) and temporary password
+  needed for initial logging into MatHOTSanayan. This process ensures
+  teachers get their login details quickly, making it easy for them to get
+  started.`,
 ];
 
 export default docs;

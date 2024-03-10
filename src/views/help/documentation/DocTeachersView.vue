@@ -45,6 +45,21 @@
         MatHOTSanayanAdmin Teachers Creation
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[7] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[8] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[9] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[10] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'teachers-update'">
