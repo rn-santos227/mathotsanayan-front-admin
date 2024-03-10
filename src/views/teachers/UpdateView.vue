@@ -79,7 +79,7 @@
                 <v-autocomplete
                   v-model.trim="v$.school.$model"
                   prepend-inner-icon="mdi-school"
-                  label="School Name"
+                  label="School"
                   density="compact"
                   variant="outlined"
                   item-title="name"
