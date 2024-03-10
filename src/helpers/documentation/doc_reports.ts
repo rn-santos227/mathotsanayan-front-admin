@@ -107,6 +107,17 @@ const docs: string[] = [
   took to answer each question. This helps administrators understand how
   well students manage their time during the exam and how they pace
   themselves.`,
+
+  `As part of the Examination Results Page's complete set of features,
+  administrators can invalidate exam results if necessary. This gives them
+  the flexibility to address any unusual or inconsistent student
+  performance, ensuring the accuracy and reliability of the exam data.
+  Possible causes of unusual or inconsistent student performance could
+  include technical issues during the exam, misunderstandings of the exam
+  instructions, or even instances of academic misconduct. By having the
+  ability to invalidate results, administrators can thoroughly investigate
+  and resolve such issues, maintaining fairness and reliability in the
+  assessment process.`,
 ];
 
 export default docs;
