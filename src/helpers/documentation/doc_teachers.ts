@@ -19,10 +19,25 @@ const docs: string[] = [
   their names or schools. This saves a lot of time and effort, making it
   easier to stay organized.`,
 
-  `Furthermore, the page offers a seamless process for deleting teacher’s
+  `Furthermore, the page offers a seamless process for deleting teacher's
   records when necessary. Administrators can trust that this action is
   performed accurately, maintaining the integrity and reliability of the
   teacher database.`,
+
+  `The Filter Search feature on the Teachers Manager Page in MatHOTSanayan
+  introduces a highly adaptable and efficient approach for administrators
+  to precisely locate teacher's records based on multiple criteria. This
+  feature equips administrators with the ability to streamline their
+  workflow by searching for teachers according to two key parameters:
+  teacher's name and their school.`,
+
+  `With the search by teacher's name option, administrators can just type
+  in the teacher's name and find them right away. This saves time and
+  makes it simple to go through records.`,
+
+  `Furthermore, the ability to search by the teacher's school, adding even
+  more detail to the search. This helps administrators find the right
+  information fast, making managing teachers easier and more effective.`,
 ];
 
 export default docs;

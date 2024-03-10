@@ -27,6 +27,17 @@
         MatHOTSanayanAdmin Teachers Filter Search
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[4] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[5] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[6] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'teachers-create'">
