@@ -87,7 +87,26 @@ const docs: string[] = [
 
   `In the Response Category column, administrators can quickly see if
   students' answers were correct or incorrect. This helps them understand
-  overall performance and find areas where students need to improve.`
+  overall performance and find areas where students need to improve.`,
+
+  `Between the Response Category and Question columns, the Response column
+  shows exactly what each student responded for each question. This makes
+  it simple to compare students' answers with what the questions asked,
+  helping administrators spot any misunderstandings or areas that need
+  clarification.`,
+
+  `The Question Content column presents the content of the exam questions,
+  giving administrators all details they need to understand what is being
+  assessed.`,
+
+  `The Attempt Number column tells administrators how many times each
+  student tried to answer a question. This gives insights into how
+  persistent and engaged students were with the material.`,
+
+  `In the Time Spent column, administrators can see how long each student
+  took to answer each question. This helps administrators understand how
+  well students manage their time during the exam and how they pace
+  themselves.`,
 ];
 
 export default docs;
