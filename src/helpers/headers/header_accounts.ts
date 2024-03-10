@@ -2,7 +2,7 @@ import type { VDataTable } from "vuetify/lib/components/index.mjs";
 type ReadonlyHeaders = InstanceType<typeof VDataTable>["headers"];
 const headers: ReadonlyHeaders = [
   {
-    title: "Acccount Email Address",
+    title: "Email Address",
     align: "start",
     sortable: true,
     key: "email",
