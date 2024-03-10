@@ -80,6 +80,28 @@
         MatHOTSanayanAdmin Report Answer Table
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[11] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[12] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[13] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[14] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[15] }}
+      </p>
+      <p class="ma-6">
+        {{ docs[16] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'reports-invalidate'">
@@ -87,6 +109,9 @@
         MatHOTSanayanAdmin Invalidating a Result
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[17] }}
+      </p>
     </div>
   </v-card-text>
 </template>

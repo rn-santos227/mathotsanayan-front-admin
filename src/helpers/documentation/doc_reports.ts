@@ -79,6 +79,15 @@ const docs: string[] = [
   By looking closely at individual responses, administrators can figure
   out where students are strong and where they need help, making it easier
   to plan ways to improve their performance in future exams.`,
+
+  `The Response Details section serves as a comprehensive tool for
+  administrators to gauge how well students did on their exams. It
+  provides a breakdown of each student's responses, making it easy to
+  analyze and evaluate.`,
+
+  `In the Response Category column, administrators can quickly see if
+  students' answers were correct or incorrect. This helps them understand
+  overall performance and find areas where students need to improve.`
 ];
 
 export default docs;
