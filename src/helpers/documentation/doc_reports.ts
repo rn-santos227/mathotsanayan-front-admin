@@ -57,14 +57,12 @@ const docs: string[] = [
   finish the exam and get an idea of how much time they spent on each
   question.`,
 
-  `The generated Excel report provides a comprehensive overview of student
-  performance, allowing administrators to analyze key metrics such as
-  scores, grades, and completion times. This valuable information can be
-  utilized for various purposes, including academic assessments,
-  performance evaluations, and progress tracking. With the ability to
-  customize reports based on specific search criteria, MatHotSanayan
-  empowers administrators to derive actionable insights and make informed
-  decisions to support student learning and development.`,
+  `        In addition to qualitative insights, the Results Details section
+  provides numbers that give a clear idea of how well students understand
+  the subject. These numbers show their scores compared to the total
+  number of questions, giving a measure of their skills. The percentage
+  grade shows how well they did according to the grading system, helping
+  administrators know if they met expectations.`,
 ];
 
 export default docs;
