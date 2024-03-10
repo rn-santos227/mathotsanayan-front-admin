@@ -12,7 +12,12 @@ const docs: string[] = [
   the interface is designed to simplify these processes, reducing the time
   and effort required for such tasks. This simplicity ensures that
   administrators can navigate the system with ease, regardless of their
-  level of technical expertise.`
+  level of technical expertise.`,
+
+  `Moreover, the page incorporates a powerful search functionality,
+  allowing administrators to quickly find specific teachers by searching
+  their names or schools. This saves a lot of time and effort, making it
+  easier to stay organized.`.
 ];
 
 export default docs;
