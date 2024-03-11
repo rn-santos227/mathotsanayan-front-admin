@@ -88,6 +88,25 @@ const docs: string[] = [
   Deleting courses also helps declutter the platform and streamline course
   selection for users, ensuring they have access to the most current and
   pertinent courses.`,
+
+  `The Schools Manager serves as a centralized hub for managing all schools
+  that are part of the platform. It displays the names of all schools
+  registered on the platform. Each school name provides a clear
+  identification of the educational institution, allowing users to easily
+  recognize and select their respective schools. Alongside the school
+  names, the Schools Manager displays email addresses associated with each
+  school. These email addresses serve as the primary means of
+  communication between MatHOTSanayan and the schools, facilitating
+  seamless correspondence between MatHOTSanayan's administrators,
+  teachers, and students.`,
+
+  `One of the primary features of the Schools Manager is the ability to
+  create new school profiles. This functionality enables administrators to
+  add new schools to the platform by providing necessary details such as
+  the school's name, email address, contact number, address, and school
+  description. Creating a new school enables institutions to establish
+  their presence on the platform, offering users access to a diverse range
+  of options.`,
 ];
 
 export default docs;
