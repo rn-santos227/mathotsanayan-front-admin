@@ -8,6 +8,10 @@
       <p class="ma-6">
         {{ docs[0] }}
       </p>
+
+      <p class="ma-6">
+        {{ docs[1] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'library-admins'">
