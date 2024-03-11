@@ -32,6 +32,20 @@ const docs: string[] = [
   allows administrators to initiate the password reset process directly
   from the interface, enabling users to regain access to their accounts in
   case of forgotten or compromised passwords.`,
+
+  `The Admin Manager in MatHOTSanayan is designed to oversee and manage
+  administrative users and their contact numbers efficiently.`,
+
+  `It displays the names of all administrative users registered on the
+  platform. Each admin is identified by their name, which helps in
+  recognizing and distinguishing between different administrators.
+  Alongside the admin names, the Admin Manager lists the email addresses
+  associated with each administrator. These email addresses serve as the
+  primary means of communication and identification for administrative
+  tasks and notifications. In addition to email addresses, the Admin
+  Manager also includes contact numbers for each administrator. This
+  allows for alternative means of communication and provides a way to
+  reach administrators quickly for urgent matters or inquiries.`,
 ];
 
 export default docs;
