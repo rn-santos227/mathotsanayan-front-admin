@@ -20,6 +20,18 @@ const docs: string[] = [
   typically the student themselves, while for teacher accounts, it is the
   respective educator. Account ownership ensures accountability,
   personalized user experiences, and tailored access privileges.`,
+
+  `To facilitate efficient account management, the Accounts Manager
+  features search options. Administrators can quickly locate specific
+  accounts based on criteria like email address, account type, or account
+  owner, streamlining tasks such as troubleshooting or account
+  verification.`,
+
+  `For enhanced security and user convenience, the Accounts Manager
+  incorporates action button for resetting passwords. This functionality
+  allows administrators to initiate the password reset process directly
+  from the interface, enabling users to regain access to their accounts in
+  case of forgotten or compromised passwords.`,
 ];
 
 export default docs;
