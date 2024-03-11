@@ -124,6 +124,21 @@
         MatHOTSanayanAdmin Library Subjects
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[22] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[23] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[24] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[25] }}
+      </p>
     </div>
   </v-card-text>
 </template>
