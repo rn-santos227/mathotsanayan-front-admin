@@ -48,7 +48,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="v$.email.$model"
-                  label="School Email (Optional)"
+                  label="Email Address (Optional)"
                   density="compact"
                   variant="outlined"
                   :error="v$.email.$error"
@@ -60,7 +60,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="state.contact_number"
-                  label="School Contact Number (Optional)"
+                  label="Contact Number (Optional)"
                   density="compact"
                   variant="outlined"
                 />
@@ -70,7 +70,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="state.address"
-                  label="School Address (Optional)"
+                  label="Address (Optional)"
                   density="compact"
                   variant="outlined"
                 />

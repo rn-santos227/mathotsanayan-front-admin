@@ -26,7 +26,7 @@
           {{ item.name }}
         </td>
         <td class="text-left">
-          {{ item.contact_number }}
+          {{ item.email }}
         </td>
         <td>
           <v-btn block color="purple-darken-3" variant="outlined">

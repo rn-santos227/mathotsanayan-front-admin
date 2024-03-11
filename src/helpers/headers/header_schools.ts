@@ -8,10 +8,10 @@ const headers: ReadonlyHeaders = [
     key: "name",
   },
   {
-    title: "School Contact",
+    title: "Email Address",
     align: "start",
     sortable: false,
-    key: "contact_number",
+    key: "email",
   },
   {
     title: "Action",
