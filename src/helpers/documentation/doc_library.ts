@@ -122,6 +122,33 @@ const docs: string[] = [
   profiles helps maintain the integrity and quality of the platform's
   school listings, enhancing the user experience for students and
   teachers.`,
+
+  `The Sections Manager serves as a central hub for organizing and managing
+  the different sections within the platform. It displays all the sections
+  available on the platform, each listed with a clear identifier, allowing
+  users to easily distinguish between them. Alongside each section, the
+  Sections Manager shows the number of students and teachers assigned to
+  that section, providing users with valuable information about its size
+  and composition.`,
+
+  `One of the primary features of the Sections Manager is the ability to
+  create new sections. This functionality allows administrators to add new
+  sections to the platform by specifying essential details such as the
+  section, school, assigned teacher, and section description. Creating a
+  new section enables the platform to accommodate diverse learning groups.`,
+
+  `The Sections Manager also allows for the seamless updating of existing
+  sections. Administrators can modify section details such as the section,
+  school, assigned teacher and section description to ensure accuracy and
+  relevance. This functionality enables continuous improvement and
+  refinement of section information to meet the evolving needs of users.`,
+
+  `Additionally, the Sections Manager provides the functionality to delete
+  sections when necessary. This feature allows administrators to delete
+  outdated or inactive sections from the platform, ensuring the platform's
+  section listings remain current and organized. Deleting sections also
+  helps declutter the platform and provides users with a more focused
+  selection of section options.`,
 ];
 
 export default docs;

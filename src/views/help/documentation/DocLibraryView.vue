@@ -102,6 +102,21 @@
         MatHOTSanayanAdmin Library Sections
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[18] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[19] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[20] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[21] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'library-subjects'">
