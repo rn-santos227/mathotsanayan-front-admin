@@ -32,7 +32,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="v$.name.$model"
-                  label="Admin Name"
+                  label="Full Name"
                   density="compact"
                   variant="outlined"
                   :error="v$.name.$error"
@@ -57,7 +57,7 @@
                 <v-text-field
                   v-model.trim="v$.email.$model"
                   autocomplete="email"
-                  label="Admin Email Address"
+                  label="Email Address"
                   density="compact"
                   variant="outlined"
                   :error="v$.email.$error"
