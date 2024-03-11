@@ -74,6 +74,20 @@ const docs: string[] = [
   course title, abbreviation, and description. Creating courses enables
   the expansion of the platform's course catalog, offering users a broader
   selection and accommodating students whose courses are not yet listed.`,
+
+  `The Courses Manager also facilitates the updating of existing courses.
+  Administrators can modify course details, such as the title,
+  abbreviation, or description to ensure accuracy and relevance. This
+  functionality enables continuous improvement and refinement of the
+  courses to meet the evolving needs of learners.`,
+
+  `In addition to creating and updating courses, the Courses Manager
+  provides the functionality to delete courses when necessary. This
+  feature allows administrators to remove outdated or irrelevant courses
+  from the platform's catalog, maintaining its relevance and quality.
+  Deleting courses also helps declutter the platform and streamline course
+  selection for users, ensuring they have access to the most current and
+  pertinent courses.`,
 ];
 
 export default docs;
