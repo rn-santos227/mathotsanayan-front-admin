@@ -104,6 +104,15 @@ const docs: string[] = [
   intentional, reducing the chance of accidental deletions. After
   confirming, administrators can click to easily delete the selected
   teacher's record, helping keep the system clean and organized.`,
+
+  `When a teacher's record is deleted, administrators can be confident that
+  any associated accounts will be promptly removed from the system too.
+  This ensures a thorough cleanup process, keeping teacher-related data
+  accurate and secure in MatHOTSanayan. By automatically removing
+  associated accounts, administrators save time and effort, since they
+  don't have to manually delete related data. This integrated approach to
+  teacher deletion shows MatHOTSanayan's dedication to data accuracy and
+  security, giving administrators peace of mind as they manage the system.`,
 ];
 
 export default docs;
