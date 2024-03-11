@@ -46,6 +46,19 @@ const docs: string[] = [
   Manager also includes contact numbers for each administrator. This
   allows for alternative means of communication and provides a way to
   reach administrators quickly for urgent matters or inquiries.`,
+
+  `One of the key features of the Admin Manager is the ability to create
+  new administrative accounts. This feature enables existing
+  administrators to add new administrators to the administrative team,
+  granting them access to platform management tools and functionalities
+  and thereby distributing administrative tasks and responsibilities
+  effectively.`,
+
+  `Creating a new admin typically involves filling out a form or providing
+  necessary details such as the new admin's name, email address, contact
+  number, and a temporary password. Once created, the new admin can log in
+  to the platform with their credentials and start performing
+  administrative tasks as assigned`,
 ];
 
 export default docs;
