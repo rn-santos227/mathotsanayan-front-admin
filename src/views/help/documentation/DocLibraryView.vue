@@ -12,6 +12,22 @@
       <p class="ma-6">
         {{ docs[1] }}
       </p>
+
+      <p class="ma-6">
+        {{ docs[2] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[3] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[4] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[5] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'library-admins'">
