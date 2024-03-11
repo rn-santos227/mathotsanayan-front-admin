@@ -107,6 +107,21 @@ const docs: string[] = [
   description. Creating a new school enables institutions to establish
   their presence on the platform, offering users access to a diverse range
   of options.`,
+
+  `The Schools Manager also facilitates the updating of existing school
+  profiles. Administrators can modify school details such as the name,
+  email address, contact number, address, and school description to ensure
+  accuracy and relevance. This functionality allows administrators to keep
+  school profiles up-to-date and reflective of any changes or developments
+  within the institution.`,
+
+  `Additionally, the Schools Manager provides the functionality to delete
+  school profiles when necessary. This feature allows administrators to
+  remove outdated or inactive school profiles from the platform, ensuring
+  the platform's database remains current and relevant. Deleting school
+  profiles helps maintain the integrity and quality of the platform's
+  school listings, enhancing the user experience for students and
+  teachers.`,
 ];
 
 export default docs;
