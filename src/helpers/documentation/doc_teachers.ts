@@ -97,6 +97,13 @@ const docs: string[] = [
   administrators can use the “Teachers Deletion” feature. This
   user-friendly feature offers administrators a straightforward approach
   to decluttering the system by removing unnecessary teacher's records.`,
+
+  `To start the deletion process, administrators just need to choose the
+  teacher's record they want to delete. Once the right teacher is
+  selected, a confirmation prompt pops up to make sure the deletion is
+  intentional, reducing the chance of accidental deletions. After
+  confirming, administrators can click to easily delete the selected
+  teacher's record, helping keep the system clean and organized.`,
 ];
 
 export default docs;
