@@ -93,6 +93,17 @@
         MatHOTSanayanAdmin Teachers Deletion
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[16] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[17] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[18] }}
+      </p>
     </div>
   </v-card-text>
 </template>

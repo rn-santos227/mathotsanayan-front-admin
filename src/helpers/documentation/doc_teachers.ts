@@ -92,6 +92,11 @@ const docs: string[] = [
   system. By keeping the password update separate, MatHOTSanayan makes
   managing teacher information even smoother and more organized for
   administrators.`,
+
+  `To make managing teacher's records easier in MatHOTSanayan,
+  administrators can use the “Teachers Deletion” feature. This
+  user-friendly feature offers administrators a straightforward approach
+  to decluttering the system by removing unnecessary teacher's records.`,
 ];
 
 export default docs;
