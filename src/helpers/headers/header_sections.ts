@@ -14,7 +14,7 @@ const headers: ReadonlyHeaders = [
     key: "level",
   },
   {
-    title: "Section Teacher",
+    title: "Teacher",
     align: "start",
     sortable: false,
     key: "teacher.full_name",

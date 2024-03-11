@@ -61,7 +61,7 @@
                 <v-autocomplete
                   v-model.trim="v$.teacher.$model"
                   prepend-inner-icon="mdi-human-male-board"
-                  label="Teacher Assignment"
+                  label="Teacher"
                   density="compact"
                   variant="outlined"
                   item-title="full_name"

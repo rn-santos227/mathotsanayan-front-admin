@@ -36,7 +36,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="v$.name.$model"
-                  label="Course Title"
+                  label="Section"
                   density="compact"
                   variant="outlined"
                   :error="v$.name.$error"
@@ -65,7 +65,7 @@
                 <v-autocomplete
                   v-model.trim="v$.teacher.$model"
                   prepend-inner-icon="mdi-human-male-board"
-                  label="Teacher Assignment"
+                  label="Teacher"
                   density="compact"
                   variant="outlined"
                   item-title="full_name"
