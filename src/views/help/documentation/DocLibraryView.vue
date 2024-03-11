@@ -58,6 +58,21 @@
         MatHOTSanayanAdmin Library Courses
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[10] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[11] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[12] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[13] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'library-schools'">

@@ -59,6 +59,21 @@ const docs: string[] = [
   number, and a temporary password. Once created, the new admin can log in
   to the platform with their credentials and start performing
   administrative tasks as assigned`,
+
+  `The Courses Manager is a central component of MatHOTSanayan, designed to
+  facilitate efficient management of courses. It provides a comprehensive
+  overview of all available courses, displaying their titles and
+  corresponding abbreviations. This display format allows administrators
+  to quickly identify, and access relevant courses based on their titles
+  and abbreviations, enhancing navigation and usability within the
+  platform.`,
+
+  `One of the primary features of the Courses Manager is the ability to
+  create new courses. This functionality empowers administrators to add
+  new courses to the platform, specifying essential details such as the
+  course title, abbreviation, and description. Creating courses enables
+  the expansion of the platform's course catalog, offering users a broader
+  selection and accommodating students whose courses are not yet listed.`,
 ];
 
 export default docs;
