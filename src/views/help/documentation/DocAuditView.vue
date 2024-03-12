@@ -53,6 +53,9 @@
         MatHOTSanayanAdmin Audit Details
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[9] }}
+      </p>
     </div>
   </v-card-text>
 </template>
