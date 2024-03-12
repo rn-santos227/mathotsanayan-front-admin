@@ -149,6 +149,16 @@ const docs: string[] = [
   section listings remain current and organized. Deleting sections also
   helps declutter the platform and provides users with a more focused
   selection of section options.`,
+
+  `The Subjects Manager serves as a central hub for organizing and managing
+  the various subjects offered within the platform. It displays all
+  subjects available on the platform, each listed with a clear title. This
+  allows users to easily identify and select the subjects they are
+  interested in exploring further. Alongside each subject, the Subjects
+  Manager shows the number of modules associated with that subject. This
+  provides users with valuable information about the depth and breadth of
+  content covered within each subject, providing insights into the
+  curriculum coverage, and learning opportunities available.`,
 ];
 
 export default docs;
