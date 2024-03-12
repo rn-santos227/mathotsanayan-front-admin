@@ -40,6 +40,11 @@ const docs: string[] = [
   in, such as login, update, creation, deletion, or any other activity
   tracked in the audit trail. This helps administrators focus on specific
   types of actions they want to review.`,
+
+  `The resource field allows administrators to narrow down their search by
+  specifying the resource affected by the activity. For example,
+  administrators can filter by resources related to users, modules,
+  questions, courses, or any other relevant system components.`,
 ];
 
 export default docs;
