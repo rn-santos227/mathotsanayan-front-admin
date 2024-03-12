@@ -32,7 +32,7 @@
               <v-col>
                 <v-text-field
                   v-model.trim="v$.name.$model"
-                  label="Subject Name"
+                  label="Subject Title"
                   density="compact"
                   variant="outlined"
                   :error="v$.name.$error"
