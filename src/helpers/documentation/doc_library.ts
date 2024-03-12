@@ -166,6 +166,13 @@ const docs: string[] = [
   subject title and description. Creating a new subject expands the
   platform's offerings, providing users with a broader range of academic
   disciplines to explore.`,
+
+  `The Subjects Manager also facilitates the updating of existing subject
+  details. Administrators can modify subject information such as the title
+  and description to ensure accuracy and relevance. This functionality
+  enables administrators to adapt to changing curriculum requirements or
+  user preferences while maintaining the integrity of the subject
+  offerings.`,
 ];
 
 export default docs;
