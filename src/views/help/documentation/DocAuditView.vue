@@ -27,6 +27,21 @@
         MatHOTSanayanAdmin Audit Filter Search
       </span>
       <v-divider class="my-2" />
+      <p class="ma-6">
+        {{ docs[4] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[5] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[6] }}
+      </p>
+
+      <p class="ma-6">
+        {{ docs[7] }}
+      </p>
     </div>
 
     <div v-if="focusPage === 'audit-details'">

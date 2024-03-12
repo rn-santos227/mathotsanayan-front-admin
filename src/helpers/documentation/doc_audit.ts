@@ -25,6 +25,11 @@ const docs: string[] = [
   chronological ordering facilitates seamless analysis and investigation,
   allowing administrators to swiftly identify anomalies, monitor system
   usage, and uphold the integrity of the platform.`,
+
+  `The Filter Search feature on the Audit Trail Page in MatHOTSanayan
+  allows administrators to narrow down and find specific information
+  within an audit trail based on various criteria. It typically includes
+  fields such as account name, activity, resources, and date.`,
 ];
 
 export default docs;
