@@ -9,8 +9,6 @@
         {{ docs[0] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_021.png')" />
-
       <p class="ma-6">
         {{ docs[1] }}
       </p>
@@ -25,8 +23,6 @@
         {{ docs[2] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_022.png')" />
-
       <p class="ma-6">
         {{ docs[3] }}
       </p>
@@ -40,8 +36,6 @@
       <p class="ma-6">
         {{ docs[4] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_045.png')" />
 
       <p class="ma-6">
         {{ docs[5] }}

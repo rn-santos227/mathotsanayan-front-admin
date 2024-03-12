@@ -9,8 +9,6 @@
         {{ docs[0] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_002.png')" />
-
       <p class="ma-6">
         {{ docs[1] }}
       </p>
@@ -33,8 +31,6 @@
         {{ docs[4] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_004.png')" />
-
       <p class="ma-6">
         {{ docs[5] }}
       </p>
@@ -56,8 +52,6 @@
       <p class="ma-6">
         {{ docs[8] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_003.png')" />
 
       <p class="ma-6">
         {{ docs[9] }}
@@ -85,8 +79,6 @@
         {{ docs[13] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_005.png')" />
-
       <p class="ma-6">
         {{ docs[14] }}
       </p>
@@ -100,8 +92,6 @@
       <p class="ma-6">
         {{ docs[15] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_006.png')" />
 
       <p class="ma-6">
         {{ docs[16] }}
@@ -117,8 +107,6 @@
         {{ docs[17] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_007.png')" />
-
       <p class="ma-6">
         {{ docs[18] }}
       </p>
@@ -133,13 +121,9 @@
         {{ docs[19] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_008.png')" />
-
       <p class="ma-6">
         {{ docs[20] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_009.png')" />
 
       <p class="ma-6">
         {{ docs[21] }}
@@ -154,8 +138,6 @@
       <p class="ma-6">
         {{ docs[22] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_012.png')" />
 
       <p class="ma-6">
         {{ docs[23] }}
@@ -175,8 +157,6 @@
         {{ docs[25] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_013.png')" />
-
       <p class="ma-6">
         {{ docs[26] }}
       </p>
@@ -191,13 +171,9 @@
         {{ docs[27] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_015.png')" />
-
       <p class="ma-6">
         {{ docs[28] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_014.png')" />
 
       <p class="ma-6">
         {{ docs[29] }}
@@ -234,8 +210,6 @@
       <p class="ma-6">
         {{ docs[33] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_011.png')" />
 
       <p class="ma-6">
         {{ docs[34] }}

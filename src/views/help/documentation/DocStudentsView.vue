@@ -9,8 +9,6 @@
         {{ docs[0] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_016.png')" />
-
       <p class="ma-6">
         {{ docs[1] }}
       </p>
@@ -32,8 +30,6 @@
       <p class="ma-6">
         {{ docs[4] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_017.png')" />
 
       <p class="ma-6">
         {{ docs[5] }}
@@ -58,8 +54,6 @@
         {{ docs[8] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_018.png')" />
-
       <p class="ma-6">
         {{ docs[9] }}
       </p>
@@ -83,8 +77,6 @@
         {{ docs[12] }}
       </p>
 
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_019.png')" />
-
       <p class="ma-6">
         {{ docs[12] }}
       </p>
@@ -107,8 +99,6 @@
       <p class="ma-6">
         {{ docs[15] }}
       </p>
-
-      <v-img class="ma-6" cover :src="require('@/assets/help/doc_020.png')" />
 
       <p class="ma-6">
         {{ docs[16] }}
