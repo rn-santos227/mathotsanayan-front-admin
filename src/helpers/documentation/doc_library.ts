@@ -173,6 +173,13 @@ const docs: string[] = [
   enables administrators to adapt to changing curriculum requirements or
   user preferences while maintaining the integrity of the subject
   offerings.`,
+
+  `Additionally, the Subjects Manager provides the functionality to delete
+  subjects when necessary. This feature allows administrators to remove
+  outdated or redundant subjects from the platform, ensuring the
+  platform's subject listings remain current and organized. Deleting
+  subjects also helps declutter the platform and provides users with a
+  more focused selection of subject options.`,
 ];
 
 export default docs;
