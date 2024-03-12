@@ -19,6 +19,12 @@ const docs: string[] = [
   modules, questions, courses, or other system components, this attribute
   adds depth to the audit trail, offering clarity on the scope and context
   of each activity within system interactions.`,
+
+  `The inclusion of timestamps ensures precise tracking of when each
+  activity occurred, establishing a chronological sequence of events. This
+  chronological ordering facilitates seamless analysis and investigation,
+  allowing administrators to swiftly identify anomalies, monitor system
+  usage, and uphold the integrity of the platform.`,
 ];
 
 export default docs;
