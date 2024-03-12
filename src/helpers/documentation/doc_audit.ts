@@ -50,6 +50,15 @@ const docs: string[] = [
   range to search within the audit trail. This allows them to focus on
   activities that occurred within a particular period, making it easier to
   track changes or incidents over time.`,
+
+  `The Audit Details component of the Audit Trail serves as a comprehensive
+  log that documents the specifics of every action taken within the system
+  Here, the administrators uncover essential details such as the identity
+  of the individual who performed the action, the IP address of the user,
+  the activity undertaken, the resources affected, and audit content. This
+  component holds immense significance as it provides a comprehensive
+  overview of all activities, ensuring transparency, accountability, and
+  security within the system.`,
 ];
 
 export default docs;
