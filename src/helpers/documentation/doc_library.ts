@@ -159,6 +159,13 @@ const docs: string[] = [
   provides users with valuable information about the depth and breadth of
   content covered within each subject, providing insights into the
   curriculum coverage, and learning opportunities available.`,
+
+  `One of the primary features of the Subjects Manager is the ability to
+  create new subjects. This functionality empowers administrators to add
+  new subjects to the platform by specifying essential details such as the
+  subject title and description. Creating a new subject expands the
+  platform's offerings, providing users with a broader range of academic
+  disciplines to explore.`,
 ];
 
 export default docs;
