@@ -30,6 +30,11 @@ const docs: string[] = [
   allows administrators to narrow down and find specific information
   within an audit trail based on various criteria. It typically includes
   fields such as account name, activity, resources, and date.`,
+
+  `With the search by account name option, administrators can just enter
+  the username of a specific user or account. By doing so, administrators
+  can filter the audit trail to show only actions performed by that
+  particular individual.`,
 ];
 
 export default docs;
