@@ -35,6 +35,11 @@ const docs: string[] = [
   the username of a specific user or account. By doing so, administrators
   can filter the audit trail to show only actions performed by that
   particular individual.`,
+
+  `Administrators can also specify the type of action they are interested
+  in, such as login, update, creation, deletion, or any other activity
+  tracked in the audit trail. This helps administrators focus on specific
+  types of actions they want to review.`,
 ];
 
 export default docs;
