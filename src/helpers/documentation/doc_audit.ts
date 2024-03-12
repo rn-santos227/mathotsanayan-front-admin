@@ -45,6 +45,11 @@ const docs: string[] = [
   specifying the resource affected by the activity. For example,
   administrators can filter by resources related to users, modules,
   questions, courses, or any other relevant system components.`,
+
+  `Additionally, administrators can define a specific timeframe or date
+  range to search within the audit trail. This allows them to focus on
+  activities that occurred within a particular period, making it easier to
+  track changes or incidents over time.`,
 ];
 
 export default docs;
