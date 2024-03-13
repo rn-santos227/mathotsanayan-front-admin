@@ -45,7 +45,7 @@
             {{ item.name }}
           </td>
           <td class="text-xs-left">
-            {{ item?.questions?.length }}
+            {{ item?.count }}
           </td>
           <td class="text-xs-left">
             {{ getSubjectName(item?.subject) }}
