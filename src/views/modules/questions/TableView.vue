@@ -122,7 +122,7 @@ onMounted(async () => {
 
 <style scoped>
 .question-height {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 280px);
   overflow-y: auto;
 }
 </style>
