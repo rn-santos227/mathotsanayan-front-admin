@@ -12,28 +12,28 @@ export function getCourseName(course: number | string | Course) {
   if (typeof course === "object" && course !== null && "name" in course) {
     return (course as Course).name;
   }
-  return "DefaultName";
+  return "";
 }
 
 export function getSchoolName(school: number | string | School) {
   if (typeof school === "object" && school !== null && "name" in school) {
     return (school as School).name;
   }
-  return "DefaultName";
+  return "";
 }
 
 export function getSectionName(section: number | string | Section) {
   if (typeof section === "object" && section !== null && "name" in section) {
     return (section as Section).name;
   }
-  return "DefaultName";
+  return "";
 }
 
 export function getSubjectName(subject: number | string | Subject) {
   if (typeof subject === "object" && subject !== null && "name" in subject) {
     return (subject as Subject).name;
   }
-  return "DefaultName";
+  return "";
 }
 
 export function getTeacherName(teacher: number | string | Teacher) {
@@ -44,7 +44,7 @@ export function getTeacherName(teacher: number | string | Teacher) {
   ) {
     return (teacher as Teacher).full_name;
   }
-  return "DefaultName";
+  return "";
 }
 
 export function getOwnerName(owner: Teacher | Student | Admin) {
