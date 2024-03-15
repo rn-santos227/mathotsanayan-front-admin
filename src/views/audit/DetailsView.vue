@@ -55,7 +55,7 @@
             <v-col cols="12" sm="6">
               <v-text-field
                 v-model.trim="state.activity"
-                label="Audit Activity"
+                label="Activity"
                 density="compact"
                 variant="outlined"
                 hide-details
@@ -65,7 +65,7 @@
             <v-col cols="12" sm="6">
               <v-text-field
                 v-model.trim="state.table"
-                label="Audited Table"
+                label="Resource"
                 density="compact"
                 variant="outlined"
                 hide-details
