@@ -14,7 +14,7 @@ const headers: ReadonlyHeaders = [
     key: "activity",
   },
   {
-    title: "Table",
+    title: "Resource",
     align: "start",
     sortable: true,
     key: "table",
