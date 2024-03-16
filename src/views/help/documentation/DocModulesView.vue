@@ -97,6 +97,12 @@
         {{ docs[13] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_005.png')"
+      />
+
       <p class="ma-6">
         {{ docs[14] }}
       </p>
