@@ -187,6 +187,12 @@
         {{ docs[22] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_010.png')"
+      />
+
       <p class="ma-6">
         {{ docs[23] }}
       </p>
