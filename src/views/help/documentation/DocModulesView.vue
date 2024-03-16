@@ -157,9 +157,21 @@
         {{ docs[19] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_008.png')"
+      />
+
       <p class="ma-6">
         {{ docs[20] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_009.png')"
+      />
 
       <p class="ma-6">
         {{ docs[21] }}
