@@ -9,12 +9,6 @@
         {{ docs[0] }}
       </p>
 
-      <v-img
-        class="ma-6"
-        cover
-        :src="require('@/assets/images/help/doc_032.png')"
-      />
-
       <p class="ma-6">
         {{ docs[1] }}
       </p>
@@ -27,6 +21,12 @@
         {{ docs[3] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_032.png')"
+      />
+
       <p class="ma-6">
         {{ docs[4] }}
       </p>
@@ -34,6 +34,12 @@
       <p class="ma-6">
         {{ docs[5] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_033.png')"
+      />
     </div>
 
     <div v-if="focusPage === 'library-admins'">
