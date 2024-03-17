@@ -224,9 +224,21 @@
         {{ docs[22] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_048.png')"
+      />
+
       <p class="ma-6">
         {{ docs[23] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_049.png')"
+      />
 
       <p class="ma-6">
         {{ docs[24] }}
