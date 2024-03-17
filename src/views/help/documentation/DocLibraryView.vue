@@ -86,9 +86,21 @@
         {{ docs[10] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_036.png')"
+      />
+
       <p class="ma-6">
         {{ docs[11] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_037.png')"
+      />
 
       <p class="ma-6">
         {{ docs[12] }}
