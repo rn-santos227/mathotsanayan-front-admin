@@ -2,7 +2,7 @@
   <v-card-text>
     <div v-if="focusPage === 'library-accounts'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Library Account
+        MatHOTSanayanAdmin Library Accounts Manager
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -44,7 +44,7 @@
 
     <div v-if="focusPage === 'library-admins'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Library Admins
+        MatHOTSanayanAdmin Library Administrations Manager
       </span>
       <v-divider class="my-2" />
 
@@ -79,7 +79,7 @@
 
     <div v-if="focusPage === 'library-courses'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Library Courses
+        MatHOTSanayanAdmin Library Courses Manager
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
@@ -125,12 +125,18 @@
 
     <div v-if="focusPage === 'library-schools'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Library Schools
+        MatHOTSanayanAdmin Library Schools Manager
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
         {{ docs[14] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_039.png')"
+      />
 
       <p class="ma-6">
         {{ docs[15] }}
@@ -147,7 +153,7 @@
 
     <div v-if="focusPage === 'library-sections'">
       <span class="text-h5 font-weight-bold">
-        MatHOTSanayanAdmin Library Sections
+        MatHOTSanayanAdmin Library Sections Manager
       </span>
       <v-divider class="my-2" />
       <p class="ma-6">
