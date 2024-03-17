@@ -135,7 +135,7 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_039.png')"
+        :src="require('@/assets/images/help/doc_041.png')"
       />
 
       <p class="ma-6">
@@ -145,16 +145,28 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_040.png')"
+        :src="require('@/assets/images/help/doc_042.png')"
       />
 
       <p class="ma-6">
         {{ docs[16] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_043.png')"
+      />
+
       <p class="ma-6">
         {{ docs[17] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_042.png')"
+      />
     </div>
 
     <div v-if="focusPage === 'library-sections'">
