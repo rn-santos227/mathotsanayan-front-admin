@@ -198,9 +198,21 @@
         {{ docs[20] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_046.png')"
+      />
+
       <p class="ma-6">
         {{ docs[21] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_047.png')"
+      />
     </div>
 
     <div v-if="focusPage === 'library-subjects'">
