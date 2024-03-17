@@ -244,9 +244,21 @@
         {{ docs[24] }}
       </p>
 
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_050.png')"
+      />
+
       <p class="ma-6">
         {{ docs[25] }}
       </p>
+
+      <v-img
+        class="ma-6"
+        cover
+        :src="require('@/assets/images/help/doc_051.png')"
+      />
     </div>
   </v-card-text>
 </template>
