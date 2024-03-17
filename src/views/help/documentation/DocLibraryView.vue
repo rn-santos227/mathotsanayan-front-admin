@@ -135,7 +135,7 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_041.png')"
+        :src="require('@/assets/images/help/doc_040.png')"
       />
 
       <p class="ma-6">
@@ -145,7 +145,7 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_042.png')"
+        :src="require('@/assets/images/help/doc_041.png')"
       />
 
       <p class="ma-6">
@@ -155,7 +155,7 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_043.png')"
+        :src="require('@/assets/images/help/doc_042.png')"
       />
 
       <p class="ma-6">
@@ -165,7 +165,7 @@
       <v-img
         class="ma-6"
         cover
-        :src="require('@/assets/images/help/doc_042.png')"
+        :src="require('@/assets/images/help/doc_043.png')"
       />
     </div>
 
